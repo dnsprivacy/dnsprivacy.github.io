@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>IETF DNS Privacy Tutorial on dnsprivacy.org</title>
+    <link>http://dnsprivacy.org/ietf_dns_privacy_tutorial/</link>
+    <description>Recent content in IETF DNS Privacy Tutorial on dnsprivacy.org</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 21 Jul 2021 11:16:02 +0100</lastBuildDate><atom:link href="http://dnsprivacy.org/ietf_dns_privacy_tutorial/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

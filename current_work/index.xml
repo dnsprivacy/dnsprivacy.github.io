@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Current Work on dnsprivacy.org</title>
+    <link>http://dnsprivacy.org/current_work/</link>
+    <description>Recent content in Current Work on dnsprivacy.org</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 21 Jul 2021 11:03:17 +0100</lastBuildDate><atom:link href="http://dnsprivacy.org/current_work/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>
