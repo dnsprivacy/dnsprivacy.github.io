@@ -12,22 +12,22 @@
     <title>Running a DNS Privacy server :: dnsprivacy.org</title>
 
     
-    <link href="/css/nucleus.css?1629998312" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1629998312" rel="stylesheet">
-    <link href="/css/hybrid.css?1629998312" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1629998312" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1629998312" rel="stylesheet">
-    <link href="/css/auto-complete.css?1629998312" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1629998312" rel="stylesheet">
-    <link href="/css/theme.css?1629998312" rel="stylesheet">
-    <link href="/css/tabs.css?1629998312" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1629998312" rel="stylesheet">
+    <link href="/css/nucleus.css?1630059336" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1630059336" rel="stylesheet">
+    <link href="/css/hybrid.css?1630059336" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1630059336" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1630059336" rel="stylesheet">
+    <link href="/css/auto-complete.css?1630059336" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1630059336" rel="stylesheet">
+    <link href="/css/theme.css?1630059336" rel="stylesheet">
+    <link href="/css/tabs.css?1630059336" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1630059336" rel="stylesheet">
     
-    <link href="/css/theme-blue.css?1629998312" rel="stylesheet">
+    <link href="/css/theme-blue.css?1630059336" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1629998312"></script>
+    <script src="/js/jquery-3.3.1.min.js?1630059336"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1629998312"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1629998312"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1630059336"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1630059336"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/dnsprivacy.org\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1629998312"></script>
+<script type="text/javascript" src="/js/search.js?1630059336"></script>
 
     
   </div>
@@ -1065,7 +1065,7 @@ email <a href="mailto:sara@sinodun.com">sara@sinodun.com</a></p>
 <p>We welcome and are keen to support anyone who would like to run an open
 DNS Privacy Server and make the server details available to the DNS
 Privacy project.  For an overview of why DNS Privacy is important,
-please see <a href="DNS_Privacy_-_The_Problem">DNS Privacy - The Problem</a>. The
+please see <a href="/the_problem/">DNS Privacy - The Problem</a>. The
 current list of servers is available here <a href="/test_servers">DNS Privacy Test
 Servers</a> and <a href="/public_resolvers">DNS Public
 Resolvers.</a></p>
@@ -1090,11 +1090,11 @@ activists and journalist local access to DNS Privacy services.</p>
 what features are currently supported in the various open source
 nameserver implementations.</p>
 <ul>
-<li>Don&rsquo;t forget that you can also <a href="Using_a_TLS_proxy">run a TLS-proxy</a>
+<li>Don&rsquo;t forget that you can also <a href="/running_a_dns_privacy_server/using_a_tls_proxy/">run a TLS-proxy</a>
 in front of any nameserver to offer DoT (and there is a <a href="https://github.com/wkumari/dprive-nginx-bind">Docker
 image</a> for doing this
 with BIND).</li>
-<li>We&rsquo;ve also added a description of how to <a href="Building_HAProxy_so_that_it_can_use_TLSv1.3">build HAProxy with TLS 1.3
+<li>We&rsquo;ve also added a description of how to <a href="/running_a_dns_privacy_server/using_a_tls_proxy/building_haproxy_using_tlsv1_3/">build HAProxy with TLS 1.3
 support</a>.</li>
 </ul>
 
@@ -1107,22 +1107,22 @@ current software and experience of setting up DNS-over-TLS.</p>
 <h2 id="dot-nameserver-configuration">DoT Nameserver Configuration</h2>
 <p>Example configurations can be found on this site for DNS-over-TLS</p>
 <ul>
-<li><a href="Using_a_TLS_proxy">Running a TLS Proxy</a></li>
-<li><a href="Using_Unbound_as_a_DNS_Privacy_server">Unbound</a></li>
-<li><a href="Using_Knot-resolver_as_a_DNS_Privacy_server">Knot resolver</a></li>
-<li><a href="Using_dnsdist_for_DoT_and_DoH">How to setup dnsdist for DoT</a></li>
+<li><a href="/running_a_dns_privacy_server/using_a_tls_proxy/">Running a TLS Proxy</a></li>
+<li><a href="/running_a_dns_privacy_server/using_unbound/">Unbound</a></li>
+<li><a href="/running_a_dns_privacy_server/using_knot_resolver/">Knot resolver</a></li>
+<li><a href="/running_a_dns_privacy_server/using_dnsdist/">How to setup dnsdist for DoT</a></li>
 </ul>
 <h2 id="doh-nameserver-configuration">DoH Nameserver Configuration</h2>
 <p>One good reference for available DoH implementations
 is <a href="https://github.com/curl/curl/wiki/DNS-over-HTTPS">https://github.com/curl/curl/wiki/DNS-over-HTTPS</a></p>
 <ul>
-<li><a href="Using_dnsdist_for_DoT_and_DoH">How to setup dnsdist for DoH</a></li>
+<li><a href="/running_a_dns_privacy_server/using_dnsdist/">How to setup dnsdist for DoH</a></li>
 <li><a href="https://github.com/jedisct1/dnscrypt-proxy/wiki/How-to-setup-your-own-DNSCrypt-server-in-less-than-10-minutes">How to set up a DNSCrypt
 server</a></li>
 </ul>
 <h2 id="read-up-on-best-current-practices">Read up on Best Current practices</h2>
 <p>A best current practice document for DNS privacy operators is under
-development, see <a href="Best_Current_Practices">BCP for DNS privacy operators</a>
+development, see <a href="/running_a_dns_privacy_server/best_current_practices/">BCP for DNS privacy operators</a>
 for more details.</p>
 <h2 id="does-my-dot-server-need-a-x509-certificate">Does my DoT server need a X.509 certificate?</h2>
 <p>In order to allow users to authenticate the server (for &lsquo;Strict&rsquo; mode)
@@ -1130,7 +1130,7 @@ the server needs to be configured with a X.509 certificate. This is
 optional but recommended.</p>
 <ul>
 <li>Many of the existing servers use the great service at Let&rsquo;s Encrypt
-to obtain certificates. See our how-to guide <a href="Let_s_Encrypt_Certificate_renewal">on using Let&rsquo;s
+to obtain certificates. See our how-to guide <a href="/running_a_dns_privacy_server/lets_encrypt_certificate_renewal/">on using Let&rsquo;s
 Encrypt</a>. </li>
 <li>If you do this then it is helpful to also provide the pinset for the
 certificate (the SHA-256 fingerprint of the public key) as an
@@ -1142,7 +1142,7 @@ a certificate.</li>
 <li>Use the same key(s) when renewing the certificate to avoid
 having to manage key rollovers see: 
 <ul>
-<li><a href="Let_s_Encrypt_Certificate_renewal">Short guide on Let&rsquo;s Encrypt Key
+<li><a href="/running_a_dns_privacy_server/lets_encrypt_certificate_renewal/">Short guide on Let&rsquo;s Encrypt Key
 renewal</a>. This includes
 guides to automating renewal.</li>
 </ul>
@@ -1828,16 +1828,16 @@ TLS</a> .</p>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1629998312"></script>
-    <script src="/js/perfect-scrollbar.min.js?1629998312"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1629998312"></script>
-    <script src="/js/jquery.sticky.js?1629998312"></script>
-    <script src="/js/featherlight.min.js?1629998312"></script>
-    <script src="/js/highlight.pack.js?1629998312"></script>
+    <script src="/js/clipboard.min.js?1630059336"></script>
+    <script src="/js/perfect-scrollbar.min.js?1630059336"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1630059336"></script>
+    <script src="/js/jquery.sticky.js?1630059336"></script>
+    <script src="/js/featherlight.min.js?1630059336"></script>
+    <script src="/js/highlight.pack.js?1630059336"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1629998312"></script>
-    <script src="/js/learn.js?1629998312"></script>
-    <script src="/js/hugo-learn.js?1629998312"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1630059336"></script>
+    <script src="/js/learn.js?1630059336"></script>
+    <script src="/js/hugo-learn.js?1630059336"></script>
     
     
 
