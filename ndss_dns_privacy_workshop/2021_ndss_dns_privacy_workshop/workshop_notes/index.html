@@ -1,0 +1,3132 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.86.0" />
+    <meta name="description" content="">
+
+
+    <link rel="icon" href="/images/favicon.png" type="image/png">
+
+    <title>Workshop Notes :: dnsprivacy.org</title>
+
+    
+    <link href="/css/nucleus.css?1630338988" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1630338988" rel="stylesheet">
+    <link href="/css/hybrid.css?1630338988" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1630338988" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1630338988" rel="stylesheet">
+    <link href="/css/auto-complete.css?1630338988" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1630338988" rel="stylesheet">
+    <link href="/css/theme.css?1630338988" rel="stylesheet">
+    <link href="/css/tabs.css?1630338988" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1630338988" rel="stylesheet">
+    
+    <link href="/css/theme-blue.css?1630338988" rel="stylesheet">
+    
+    
+
+    <script src="/js/jquery-3.3.1.min.js?1630338988"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/ndss_dns_privacy_workshop/2021_ndss_dns_privacy_workshop/workshop_notes/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href='/'>
+  <p style="color: #fafafa;font-size:34px;font-weight: 400;" style = "font-family:helvetica neue, arial, courier;"><strong>DNS Privacy Project</strong></p>
+</a>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1630338988"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1630338988"></script>
+<script type="text/javascript">
+    
+        var baseurl = "http:\/\/dnsprivacy.org\/";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1630338988"></script>
+
+    
+  </div>
+  
+    <section id="homelinks">
+      <ul>
+        <li>
+            <a class="padding" href='/'><i class='fas fa-home'></i> Home</a>
+        </li>
+      </ul>
+    </section>
+  
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/the_problem/" title="The Problem" class="dd-item
+        
+        
+        
+        ">
+      <a href="/the_problem/">
+          1. The Problem
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/the_solutions/" title="The Solutions" class="dd-item
+        
+        
+        
+        ">
+      <a href="/the_solutions/">
+          2. The Solutions
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/current_work/" title="Current Work" class="dd-item
+        
+        
+        
+        ">
+      <a href="/current_work/">
+          3. Current Work
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/ietf_dns_privacy_tutorial/" title="IETF DNS Privacy Tutorial" class="dd-item
+        
+        
+        
+        ">
+      <a href="/ietf_dns_privacy_tutorial/">
+          4. IETF DNS Privacy Tutorial
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/public_resolvers/" title="Public Resolvers" class="dd-item
+        
+        
+        
+        ">
+      <a href="/public_resolvers/">
+          5. Public Resolvers
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/test_servers/" title="Test Servers" class="dd-item
+        
+        
+        
+        ">
+      <a href="/test_servers/">
+          6. Test Servers
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/test_servers/map_of_test_server_locations/" title="Map of test server locations" class="dd-item ">
+        <a href="/test_servers/map_of_test_server_locations/">
+        6.1. Map of test server locations
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/test_servers/monitoring/" title="dnsprivacy Monitoring" class="dd-item ">
+        <a href="/test_servers/monitoring/">
+        6.2. dnsprivacy Monitoring
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/test_servers/live_traffic_levels/" title="Live Traffic Levels" class="dd-item ">
+        <a href="/test_servers/live_traffic_levels/">
+        6.2. Live Traffic Levels
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/dns_privacy_clients/" title="DNS Privacy Clients" class="dd-item
+        
+        
+        
+        ">
+      <a href="/dns_privacy_clients/">
+          7. DNS Privacy Clients
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/dns_privacy_daemon_-_stubby/" title="DNS Privacy Daemon - Stubby" class="dd-item
+        
+        
+        
+        ">
+      <a href="/dns_privacy_daemon_-_stubby/">
+          8. DNS Privacy Daemon - Stubby
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/dns_privacy_daemon_-_stubby/about_stubby/" title="About Stubby" class="dd-item ">
+        <a href="/dns_privacy_daemon_-_stubby/about_stubby/">
+        8.1. About Stubby
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/dns_privacy_daemon_-_stubby/configuring_stubby/" title="Configuring Stubby" class="dd-item ">
+        <a href="/dns_privacy_daemon_-_stubby/configuring_stubby/">
+        8.2. Configuring Stubby
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/dns_privacy_daemon_-_stubby/stubby_manager_gui/" title="Stubby Manager GUI" class="dd-item ">
+        <a href="/dns_privacy_daemon_-_stubby/stubby_manager_gui/">
+        8.3. Stubby Manager GUI
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/dns_privacy_daemon_-_stubby/installation/" title="Installation" class="dd-item
+        
+        
+        
+        ">
+      <a href="/dns_privacy_daemon_-_stubby/installation/">
+          8.4. Installation
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/dns_privacy_daemon_-_stubby/installation/linux_from_source/" title="Linux From Source" class="dd-item ">
+        <a href="/dns_privacy_daemon_-_stubby/installation/linux_from_source/">
+        8.4.1. Linux From Source
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/dns_privacy_daemon_-_stubby/installation/running_as_a_service_on_nix/" title="Running as a service on *nix" class="dd-item ">
+        <a href="/dns_privacy_daemon_-_stubby/installation/running_as_a_service_on_nix/">
+        8.4.2. Running as a service on *nix
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/dns_privacy_daemon_-_stubby/installation/macos_homebrew/" title="MacOS Homebrew" class="dd-item ">
+        <a href="/dns_privacy_daemon_-_stubby/installation/macos_homebrew/">
+        8.4.3. MacOS Homebrew
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/dns_privacy_daemon_-_stubby/installation/stubby_gui_for_macos/" title="Stubby GUI for macOS" class="dd-item ">
+        <a href="/dns_privacy_daemon_-_stubby/installation/stubby_gui_for_macos/">
+        8.4.4. Stubby GUI for macOS
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/dns_privacy_daemon_-_stubby/installation/windows_installer_for_stubby/" title="Windows installer for Stubby" class="dd-item ">
+        <a href="/dns_privacy_daemon_-_stubby/installation/windows_installer_for_stubby/">
+        8.4.5. Windows installer for Stubby
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/implementation_status/" title="Implementation Status" class="dd-item
+        
+        
+        
+        ">
+      <a href="/implementation_status/">
+          9. Implementation Status
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/running_a_dns_privacy_server/" title="Running a DNS Privacy server" class="dd-item
+        
+        
+        
+        ">
+      <a href="/running_a_dns_privacy_server/">
+          10. Running a DNS Privacy server
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/running_a_dns_privacy_server/using_unbound/" title="Using Unbound" class="dd-item ">
+        <a href="/running_a_dns_privacy_server/using_unbound/">
+        10.1. Using Unbound
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/running_a_dns_privacy_server/using_knot_resolver/" title="Using Knot Resolver" class="dd-item ">
+        <a href="/running_a_dns_privacy_server/using_knot_resolver/">
+        10.2. Using Knot Resolver
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/running_a_dns_privacy_server/using_dnsdist/" title="Using dnsdist" class="dd-item ">
+        <a href="/running_a_dns_privacy_server/using_dnsdist/">
+        10.3. Using dnsdist
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/running_a_dns_privacy_server/using_a_tls_proxy/" title="Using a TLS proxy" class="dd-item
+        
+        
+        
+        ">
+      <a href="/running_a_dns_privacy_server/using_a_tls_proxy/">
+          10.4. Using a TLS proxy
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/running_a_dns_privacy_server/using_a_tls_proxy/building_haproxy_using_tlsv1_3/" title="Building HAProxy using TLSv1.3" class="dd-item ">
+        <a href="/running_a_dns_privacy_server/using_a_tls_proxy/building_haproxy_using_tlsv1_3/">
+        10.4.1. Building HAProxy using TLSv1.3
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/running_a_dns_privacy_server/lets_encrypt_certificate_renewal/" title="Let&#39;s Encrypt Certificate renewal" class="dd-item
+        
+        
+        
+        ">
+      <a href="/running_a_dns_privacy_server/lets_encrypt_certificate_renewal/">
+          10.5. Let&#39;s Encrypt Certificate renewal
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/running_a_dns_privacy_server/lets_encrypt_certificate_renewal/automated_certificate_management_1/" title="Certificate management Method 1" class="dd-item ">
+        <a href="/running_a_dns_privacy_server/lets_encrypt_certificate_renewal/automated_certificate_management_1/">
+        10.5.1. Certificate management Method 1
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/running_a_dns_privacy_server/lets_encrypt_certificate_renewal/automated_certificate_management_2/" title="Certificate management method 2" class="dd-item ">
+        <a href="/running_a_dns_privacy_server/lets_encrypt_certificate_renewal/automated_certificate_management_2/">
+        10.5.2. Certificate management method 2
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/running_a_dns_privacy_server/monitoring_privacy_servers/" title="Monitoring Privacy servers" class="dd-item ">
+        <a href="/running_a_dns_privacy_server/monitoring_privacy_servers/">
+        10.6. Monitoring Privacy servers
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/running_a_dns_privacy_server/best_current_practices/" title="Best Current Practices" class="dd-item
+        
+        
+        
+        ">
+      <a href="/running_a_dns_privacy_server/best_current_practices/">
+          10.7. Best Current Practices
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/running_a_dns_privacy_server/best_current_practices/comparison_of_policy_and_privacy_statements_2019/" title="Comparison of policy and privacy statements 2019" class="dd-item ">
+        <a href="/running_a_dns_privacy_server/best_current_practices/comparison_of_policy_and_privacy_statements_2019/">
+        10.7.1. Comparison of policy and privacy statements 2019
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/running_a_dns_privacy_server/best_current_practices/data_minimisation_of_dns_traffic/" title="Data minimisation of DNS traffic" class="dd-item ">
+        <a href="/running_a_dns_privacy_server/best_current_practices/data_minimisation_of_dns_traffic/">
+        10.7.2. Data minimisation of DNS traffic
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/dns_privacy_reference_material/" title="DNS Privacy Reference Material" class="dd-item
+        
+        
+        
+        ">
+      <a href="/dns_privacy_reference_material/">
+          11. DNS Privacy Reference Material
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/performance_measurements/" title="Performance Measurements" class="dd-item
+        
+        
+        
+        ">
+      <a href="/performance_measurements/">
+          12. Performance Measurements
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/performance_measurements/initial_performance_measurements_q1_2018/" title="Initial Performance Measurements (Q1 2018)" class="dd-item ">
+        <a href="/performance_measurements/initial_performance_measurements_q1_2018/">
+        12.1. Initial Performance Measurements (Q1 2018)
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/performance_measurements/follow-up_performance_measurements_q4_2108/" title="Follow-Up Performance Measurements (Q4 2108)" class="dd-item ">
+        <a href="/performance_measurements/follow-up_performance_measurements_q4_2108/">
+        12.2. Follow-Up Performance Measurements (Q4 2108)
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/performance_measurements/review_of_dns_and_http_pm_tools/" title="Review of DNS and HTTP PM Tools" class="dd-item ">
+        <a href="/performance_measurements/review_of_dns_and_http_pm_tools/">
+        12.3. Review of DNS and HTTP PM Tools
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/performance_measurements/proposal_for_new_performance_tool/" title="Proposal for New Performance Tool" class="dd-item ">
+        <a href="/performance_measurements/proposal_for_new_performance_tool/">
+        12.4. Proposal for New Performance Tool
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/ndss_dns_privacy_workshop/" title="NDSS DNS Privacy Workshop" class="dd-item
+        parent
+        
+        
+        ">
+      <a href="/ndss_dns_privacy_workshop/">
+          14. NDSS DNS Privacy Workshop
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/ndss_dns_privacy_workshop/2021_ndss_dns_privacy_workshop/" title="2021 NDSS DNS Privacy Workshop" class="dd-item
+        parent
+        
+        
+        ">
+      <a href="/ndss_dns_privacy_workshop/2021_ndss_dns_privacy_workshop/">
+          14.1. 2021 NDSS DNS Privacy Workshop
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/ndss_dns_privacy_workshop/2021_ndss_dns_privacy_workshop/call_for_papers/" title="Call for Papers" class="dd-item ">
+        <a href="/ndss_dns_privacy_workshop/2021_ndss_dns_privacy_workshop/call_for_papers/">
+        14.1.1. Call for Papers
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/ndss_dns_privacy_workshop/2021_ndss_dns_privacy_workshop/workshop_notes/" title="Workshop Notes" class="dd-item
+        parent
+        active
+        
+        ">
+      <a href="/ndss_dns_privacy_workshop/2021_ndss_dns_privacy_workshop/workshop_notes/">
+          14.1.2. Workshop Notes
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/ndss_dns_privacy_workshop/2021_ndss_dns_privacy_workshop/workshop_notes/breakout_room_1/" title="Zoom Breakout Room 1: Measurement of Encrypted DNS" class="dd-item ">
+        <a href="/ndss_dns_privacy_workshop/2021_ndss_dns_privacy_workshop/workshop_notes/breakout_room_1/">
+        14.1.2.1. Zoom Breakout Room 1: Measurement of Encrypted DNS
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/ndss_dns_privacy_workshop/2021_ndss_dns_privacy_workshop/workshop_notes/breakout_room_2/" title="Zoom Breakout Room 2: Civil Society, Usability and DNS" class="dd-item ">
+        <a href="/ndss_dns_privacy_workshop/2021_ndss_dns_privacy_workshop/workshop_notes/breakout_room_2/">
+        14.1.2.2. Zoom Breakout Room 2: Civil Society, Usability and DNS
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/ndss_dns_privacy_workshop/2021_ndss_dns_privacy_workshop/workshop_notes/breakout_room_3/" title="Zoom Breakout Room 3: Novel Work, ADoT and Future Research" class="dd-item ">
+        <a href="/ndss_dns_privacy_workshop/2021_ndss_dns_privacy_workshop/workshop_notes/breakout_room_3/">
+        14.1.2.3. Zoom Breakout Room 3: Novel Work, ADoT and Future Research
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/ndss_dns_privacy_workshop/2018_ndss_dns_privacy_workshop/" title="2018 NDSS DNS Privacy Workshop" class="dd-item ">
+        <a href="/ndss_dns_privacy_workshop/2018_ndss_dns_privacy_workshop/">
+        14.2. 2018 NDSS DNS Privacy Workshop
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/ndss_dns_privacy_workshop/2017_ndss_dns_privacy_workshop/" title="2017 NDSS DNS Privacy Workshop" class="dd-item ">
+        <a href="/ndss_dns_privacy_workshop/2017_ndss_dns_privacy_workshop/">
+        14.3. 2017 NDSS DNS Privacy Workshop
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+        
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>More</h3>
+        <ul>
+          
+              <li>
+                  <a class="padding" href="https://github.com/dnsprivacy"><i class='fab fa-github'></i> Github repo</a>
+              </li>
+          
+              <li>
+                  <a class="padding" href="https://twitter.com/DNSPrivacyProj"><i class='fab fa-twitter'></i> Twitter</a>
+              </li>
+          
+              <li>
+                  <a class="padding" href="https://www.youtube.com/channel/UCaJWMY-m9ktZIbUNMi0Eh9g/playlists"><i class='fab fa-youtube'></i> YouTube</a>
+              </li>
+          
+              <li>
+                  <a class="padding" href="https://sinodun.com"><i class='fas fa-bookmark'></i> Sinodun IT</a>
+              </li>
+          
+              <li>
+                  <a class="padding" href="https://www.nlnetlabs.nl/"><i class='fas fa-bookmark'></i> NLnetLabs</a>
+              </li>
+          
+              <li>
+                  <a class="padding" href="http://dnsprivacy.org/ndss_dns_privacy_workshop"><i class='fas fa-bookmark'></i> NDSS DNS Privacy Workshop</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="footer">
+      <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn">Hugo Theme Learn</a> and <a href="https://gohugo.io/">Hugo</a></p>
+<p>Built by <a href="sinodun.com">Sinodun Internet Technologies.</a></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>DNS Privacy Project</a> > <a href='/ndss_dns_privacy_workshop/'>NDSS DNS Privacy Workshop</a> > <a href='/ndss_dns_privacy_workshop/2021_ndss_dns_privacy_workshop/'>2021 NDSS DNS Privacy Workshop</a> > Workshop Notes
+          
+        
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+          <div id="chapter">
+        
+        <div id="body-inner">
+          
+
+        
+
+
+
+	<h1 id="session-1-measurement-of-encrypted-dns">Session 1: Measurement of Encrypted DNS</h1>
+<h3 id="oblivious-dns-over-https-odoh">Oblivious DNS over HTTPS (ODoH)</h3>
+<ul>
+<li>Plaintext, traditional DNS (Do53) is the most widely used variant of
+the DNS protocol (92% of traffic seen at 1.1.1.1)</li>
+<li>However, Do53 leaks information about user traffic on the network</li>
+<li>DoH encrypts stub-to-resolver traffic. However, resolver operators
+can still associate queries with clients, enabling them to profile
+clients</li>
+<li>There are a number of additional problems in DoH today:
+centralization, privacy by policy, and regulatory concerns</li>
+<li>Key goals of ODoH: address association of queries to clients, and
+privacy by policy</li>
+<li>Key insight of ODoH: de-couple client IP addresses from the DoH
+queries they issue</li>
+<li>ODoH protocol (simplified)
+<ul>
+<li>Client encrypts query name, wraps it in a DoH query and sends it
+to a proxy node, which terminates an HTTPS connection with the
+client</li>
+<li>The proxy node then forwards this query to a DoH resolver or
+Oblivious target on behalf of the client</li>
+<li>Once the proxy node receives the response, it sends the response
+back to the client</li>
+</ul>
+</li>
+<li>Important considerations
+<ul>
+<li>Clients need to choose proxy nodes and target resolvers that are
+not operated by the same entity</li>
+<li>Clients need to have some level of certainty that proxy nodes
+and target resolvers are not colluding</li>
+</ul>
+</li>
+<li>Proxy nodes can see client&rsquo;s IP address, but not the contents of the
+query</li>
+<li>Target resolver can see query contents, but not the client&rsquo;s IP
+address</li>
+<li>Performance measurement setup
+<ul>
+<li>Three public resolvers: 1.1.1.1, 8.8.8.8, and 9.9.9.9</li>
+<li>90 client stub resolvers, 10 per vantage point
+<ul>
+<li>7 Google Cloud datacenters in the western/central/eastern
+United States, 1 datacenter in Montreal, and 1 datacenter in
+San Paulo</li>
+</ul>
+</li>
+<li>Experiment: 21,000 DNS requests per day (15 per minute)</li>
+</ul>
+</li>
+<li>DNS response time measurements
+<ul>
+<li>Takeaway 1: important to choose low latency proxy/target
+resolver pair</li>
+<li>Takeaway 2: re-use connections
+<ul>
+<li>Connection re-use improves median DNS response time
+performance by 48%</li>
+</ul>
+</li>
+<li>Takeaway 3: co-location between proxy/target resolver results in
+better performance</li>
+<li>Takeaway 4: compared to DoH, average query response times
+increase by 100% without co-location, and 50% with co-location</li>
+</ul>
+</li>
+<li>In-browser measurements (page load times)
+<ul>
+<li>PLTs increase by ~20% compared to Do53 without co-location, and
+13% with co-location</li>
+</ul>
+</li>
+</ul>
+<h3 id="measuring-dotdoh-blocking-using-ooni-probe">Measuring DoT/DoH Blocking Using OONI Probe</h3>
+<ul>
+<li>OONI is a platform for measuring Internet censorship. Measurements
+performed from more than 200 countries.</li>
+<li>The platform is collaborative in that users install a tool called
+OONI Probe to run measurements (desktop app, mobile app, CLI)</li>
+<li>Motivation for measuring DoT/DoH blocking
+<ul>
+<li>States are increasingly asserting their power of sections of the
+Internet that they control</li>
+<li>If I&rsquo;m a user querying a domain name that I &ldquo;should not be&rdquo; with
+an ISP resolver, then I may not get the correct response</li>
+<li>DoT and DoH should help avoid this DNS-based censorship in
+theory, so it&rsquo;s important to see whether or not DoT/DoH are
+getting blocked in practice</li>
+</ul>
+</li>
+<li>DNSCheck experiment
+<ul>
+<li>Step 1: Bootstrap a DoT/DoH service. If the resolver URL
+contains a domain name (not something like 127.0.0.1), resolve
+the domain name using the client&rsquo;s system resolver, and see if
+you get an IP address or an NXDOMAIN. Add the result to the set
+of known IP addresses.</li>
+<li>Step 2: Lookups. For every IP address we discover (plus ones we
+knew from beginning), try to connect to this IP address, do TLS
+handshake. If everything is successful, send a query and record
+a reply.</li>
+</ul>
+</li>
+<li>Measurements
+<ul>
+<li>Dec 15th, 2020 - Jan 10th, 2021</li>
+<li>123 DoT/DoH services measured. This presentation focuses on DoH
+over TCP only</li>
+<li>Used an experimental CLI client (miniooni)</li>
+<li>Presentation focuses on three vantage points: Kazakhstan
+(AS48716), Iran (AS197207), China (AS45090)</li>
+</ul>
+</li>
+<li>Main findings
+<ul>
+<li>dns.adquard.com resolved to 10.10.34.36 in IR</li>
+<li>Most endpoints fail or succeed with lookups consistently</li>
+<li>1.1.1.1:853 and 1.0.0.1:853 were blocked and unblocked
+frequently in KZ
+<ul>
+<li>Same for 1.1.1.1:853 in IR</li>
+</ul>
+</li>
+<li>dot://dot-jp.blahdns.com was unblocked in CN around Jan 1st,
+2021</li>
+<li>[Presentation included success/failure rates by vantage point
+in a table]</li>
+</ul>
+</li>
+<li>In KZ, most blocked resolver was Cloudflare (91% DoT, 88% DoH)</li>
+<li>Most common cause of failure in KZ was timeout after TLS handskae</li>
+<li>Most common cause of failure in IR was timeout during TLS handshake</li>
+<li>Most common cause of failure in CN was TCP connection timeout</li>
+<li>SNI-based blocking occurred in KZ for DoH
+<ul>
+<li>cloudflare-dns.com: 99% failure via timeout after TLS handshake</li>
+<li>mozilla.cloudflare-dns.com: 100% success</li>
+</ul>
+</li>
+<li>Future work
+<ul>
+<li>Make DNSCheck available to all OONI Probe users, rather than
+just miniooni users</li>
+<li>Study DoH over QUIC blocking</li>
+<li>Study whether Encrypted Client Hello reduces blocking</li>
+<li>Study the fingerprints of popular TLS implementations</li>
+</ul>
+</li>
+</ul>
+<h3 id="no-port-53-who-dis-a-year-of-dns-over-https-over-tor">&ldquo;No Port 53, Who Dis?&quot;; a year of DNS over HTTPS over Tor</h3>
+<ul>
+<li>Alec and his partner have exclusively used DNS over HTTPS over Tor
+for over a year. It worked marvelously, and he forgot that he set it
+up.</li>
+<li>It&rsquo;s a system that is meant to provide additional privacy guarantees
+to your DNS queries.</li>
+<li>Concern: latency is going to be terrible.
+<ul>
+<li>Median latency for Alec: 262 ms. Goes up to 464 ms if you
+disable caching.</li>
+<li>Some people live with worse performance, day-in, day-out.</li>
+</ul>
+</li>
+<li>Some people are willing to trade off latency for other values, e.g.
+privacy.</li>
+<li>Arguing about 5 ms vs. 50 ms vs 500 ms is an act of tech privilege.
+Minimum latency isn&rsquo;t everything.</li>
+<li>If you accept this persepective, you may instead think about latency
+in terms of a budget.</li>
+<li>DoHoT was designed to address a privacy-invasive threat model based
+around actors who..
+<ul>
+<li>May surveil network links</li>
+<li>Block queries</li>
+<li>Tamper with queries</li>
+<li>Learn that my identity was/is associated with certain queries</li>
+<li>etc..</li>
+</ul>
+</li>
+<li>Traditional DNS (Do53) risks all of these threats.</li>
+<li>DoT, DoH, ODNS, ODoH risk some of these.</li>
+<li>DoHoT risks arguably none of these, unless Tor relays become severly
+compromised.</li>
+<li>Setup
+<ul>
+<li>Copy of dnscrypt-proxy configured as stub</li>
+<li>Presented to the LAN as a DHCP Do53 service</li>
+<li>Configured to make all resolution requests over Tor via SOCKS</li>
+<li>Used a load-balanced pool of public DoH servers</li>
+</ul>
+</li>
+<li>Takeaway: please stop thinking of latency as cost. Please consider
+it a budget to offer value.</li>
+</ul>
+<h3 id="qa--buffer-time-discussion">Q/A / buffer time discussion</h3>
+<ul>
+<li>
+<p>Oblivious DNS over HTTPS (ODoH)</p>
+<ul>
+<li>Q (Paul Hoffman): Who are the users of this protocol, given that
+it is a larger and more fragile protocol than Do53/DoT/DoH? Who
+would not trust their immediate upstream resolver to profile but
+would trust them to collude with their resolver?
+<ul>
+<li>A (Sudheesh Singanamalla): One way to ensure that entities
+don&rsquo;t collude is to have some Mozilla-like organization that
+vets resolvers (logging resolvers, non-logging resolvers,
+etc) so that users can make informed decisions.</li>
+<li>A (Chris Wood): Anyone who is interested in adopting DoH
+also consider the resolver to be malicious. ODoH in a way
+fills in the gap that DoH left.</li>
+</ul>
+</li>
+<li>Q ([?]): How do you limit the metadata leakage of DoH, e.g. a
+rogue resolver wanting to associate clients with queries?
+<ul>
+<li>A (Sudheesh): If there was a rogue resolver that wanted to
+identify what the client was doing, they could send a unique
+IP address and see who connects to that IP address. However,
+that&rsquo;s outside the security/privacy guarantees of the
+protocol itself.</li>
+</ul>
+</li>
+<li>Q ([?]): Would it be better to use proxy nodes in a
+round-robin fashion to limit any concerns related to associating
+a user (or set of users) with a proxy?
+<ul>
+<li>A (Sudheesh): This issue should not occur is many users are
+using a proxy. However, if there are very few users using a
+proxy, it could be indirectly possible to associate a proxy
+to a user.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Measuring DoT/DoH Blocking Using OONI Probe</p>
+<ul>
+<li>Q (Allison Mankin): Are you generally using TLS 1.2 for
+measurements? You mentioned TLS 1.3 specifically on one data
+point.
+<ul>
+<li>A: We manually ran some measurements with TLS 1.3 to see
+whether outcome changed, and it did not change the outcome.</li>
+</ul>
+</li>
+<li>Q (Sara Dickinson): Am I correct in thinking that you ran some
+measurements in India that produced slightly different results?
+<ul>
+<li>A: We did some measurements in India. IIRC, there was no
+blocking in India.</li>
+</ul>
+</li>
+<li>Q (Ulrich Wisser): There was so much blocking w/ Cloudflare. Is
+that because the IP is allocated from a research network?
+<ul>
+<li>A: QUIC for 1.1.1.1, which means it was possible to route to
+this address.</li>
+</ul>
+</li>
+<li>Q (Puneet S.): I represent Google DNS. It was surprising that
+8.8.4.4 worked but 8.8.8.8 didn&rsquo;t work. Do you have any thoughts
+on that?
+<ul>
+<li>A: Censorship is not consistent. Every network has its own
+set of rules.</li>
+</ul>
+</li>
+<li>Q ([?]): Did you only use one VPS in KZ? Is the blocking
+specific to certain ASes or country-wide?
+<ul>
+<li>A: In KZ, we used two networks. One was a VPN and another
+was a VPS, but we stopped measuring with the VPN because
+nothing seemed to be blocked. Thus, it was unclear whether
+or not the VPN was actually located in KZ. Anecdotally, the
+structure of blocking is centralized, though.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>&ldquo;No Port 53, Who Dis?&quot;; a year of DNS over HTTPS over Tor</p>
+<ul>
+<li>Q (dkg): Can you characterize the typical workflow for people on
+the network that this was deployed on? When you say this is
+liveable, what does that mean? Presumably due to lockdown
+there&rsquo;s not very many people in your house.
+<ul>
+<li>A: Domestic environment for me and my partner. They connect
+to DHCP who gives the IP address of the resolver. The
+resolver runs on a Raspberry Pi. Not sure whether you would
+roll this out in a coffee shop or have everyone run this on
+their laptop independently.</li>
+</ul>
+</li>
+<li>Q (Chris Wood): I want to drill in on the threat model. You&rsquo;re
+assuming an NSA-inspired actor that can use endless compute to
+track down what a client is doing. However, this threat model
+doesn&rsquo;t seem to scale. If every client was using something like
+ODoH, do we think there is enough resources available to track
+down what every client is doing?
+<ul>
+<li>A: I&rsquo;m skeptical of this, too. However, there is a waterhole
+attack for DoH/ODoH, in which you log everything, throw it
+into an Oracle bin, and perform an analysis when you need
+to.</li>
+</ul>
+</li>
+<li>Q (Paul Syverson): My understanding is that Tor browser does not
+currently support DoH. This raises a learning curve/usability
+issue. How steep of a learning curve do you think is setting up
+DoHoT, and are you working on this?
+<ul>
+<li>A: I am not working on this because it&rsquo;s a home setup thing
+right now. It&rsquo;s hardly like I&rsquo;m investing in it right now. I
+greatly encourage people to work on this and experiment on
+their own accord. However, because we have something like
+DHCP which literally tells people which resolver to use, the
+only additional thing I had to do was setup a firewall to
+ensure that no Do53 queries get leaked. You could easily
+turn a DoHoT service into an appliance.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Misc questions</p>
+<ul>
+<li>Q (Paul Hoffman): It seems like everything discussed so far
+requires users to have a certain level of understanding about
+privacy/latency tradeoffs. Doesn&rsquo;t that go against everything we
+know so far about users? Who are we designing these protocols
+for?
+<ul>
+<li>A (Alec Muffett): I&rsquo;ll turn that around: are we designing
+protocols only for speed demons, or people who want to
+achieve some other goal? Some people use Tor browser because
+they want some level of privacy. They are willing to accept
+latency tradeoffs. I don&rsquo;t see that as elitist or
+discriminatory; it is offering value for people that are
+trying to solve a particular issue.</li>
+<li>A (Sudheesh Singanamalla): It may seem like these protocols
+are designed for people who know exactly what they&rsquo;re doing,
+but that&rsquo;s how protocols like HTTPS came into place. Most
+people don&rsquo;t even know that HTTPS is in place right now, due
+to the big push that was made by the
+[networking/privacy/security] community. I suspect
+something similar will happen with DNS. I don&rsquo;t think users
+are dumb; they clearly know what they want and what they&rsquo;re
+doing.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="session-2-civil-society-usability-and-dns">Session 2: Civil Society, Usability and DNS</h2>
+<h3 id="dns-privacy-vs">DNS Privacy Vs</h3>
+<p>based on a paper</p>
+<ul>
+<li>
+<p>4 Goals: confront tensisons between privacy protest, tradeoffs
+between privacy and other considerarions, a lot of researches are
+needed.</p>
+</li>
+<li>
+<p>Abstract:</p>
+<ul>
+<li>make DNS lookup more private for the user affects internet
+mearsurements</li>
+<li>DNS cencership</li>
+</ul>
+</li>
+<li>
+<p>DNS privacy is a big win as a public interest. Two fondational docs:
+RFC 6973, RFC 8280.</p>
+</li>
+<li>
+<p>Measurement:</p>
+<ul>
+<li>Public interest benefits: 1) knowlede of network perf and op are
+inportant 2) empower users as consumers, 3) monitor bad
+behacvious. However, it comes at the cost of user pvivacy and 2)
+M is harder when user data is private (e.g., DoT, DoH)</li>
+<li>The research question is Which resrarch methods will work and
+not work with private DNS. Does user choise have impact, e.g,
+DoT, DoH?</li>
+</ul>
+</li>
+<li>
+<p>Consolidation</p>
+<ul>
+<li>public interest concern 1) eco detrimental 2) degrades quality
+of services 3) slows innovations 4) single points of failure 5)
+facilitates mass surveillance 6) complicates regulatory
+jurisdiction. But there is huge market like browsers to adopt
+private DNS and the early adopator have better business model</li>
+<li>The key question is does ubiquitous adoption of private DNS
+resolve consolidation?</li>
+</ul>
+</li>
+<li>
+<p>Abuse</p>
+<ul>
+<li>public interest benefit: mitiagte abusive behavior and
+lemitigate restrictions at the content layer</li>
+<li>But more private, more hard to mitigate</li>
+</ul>
+</li>
+<li>
+<p>Shutdowns</p>
+<ul>
+<li>public interest concern: internet shutdowns violate the rights
+to free expression, access to information, and assembly.</li>
+</ul>
+</li>
+<li>
+<p>Next steps:</p>
+<ul>
+<li>adk for feedbacks in GitHub</li>
+<li>inlcude &ldquo;Vs Usability and Accessibility&rdquo;</li>
+<li>Make more distinctions between DoH, DoT and others</li>
+<li>find publication</li>
+</ul>
+</li>
+</ul>
+<h3 id="censored-planet">Censored Planet</h3>
+<ul>
+<li>From a paper published in CCS 2020</li>
+<li>Internet censorship (e.g., certain web sites are blocked) is
+pervasaive and evaolving</li>
+<li>The measure is very complex, cen mathos variance, geo and network
+variance, logtitudual varians</li>
+<li>previous studies, few contries</li>
+<li>Direct cen mesurement platform (direct measurement), limitatiaons:
+scales, coverage, continuity, syn, ethics</li>
+<li>Remot cen measurement
+<ul>
+<li>techs: Augur, Iris, Satellite, Quack, etc</li>
+</ul>
+</li>
+<li>Iris, Satellite are used to measure DNS manipulate, compare answers
+from control resolvers and test resolvers</li>
+<li>Satellite Scals (8.2.M OpenDNS resolvers in 232 countries). To
+reduce risk, only use infra resolvers (30k resolvers in 175
+coutries)</li>
+<li>To resolve the Limitations of remote, Censored Planet was introduced
+<ul>
+<li>launched in 8/2018</li>
+<li>95,000 vp in 221 countried</li>
+<li>21.8b meausremnts in 20 months</li>
+<li>8 ASes/ country</li>
+</ul>
+</li>
+<li>Modular Design
+<ul>
+<li>Input scanner selects vantange point, test list</li>
+<li>Interference scanner: scheduler, health monitoring</li>
+<li>Data Pre-propessing: aggreate data, false positive</li>
+</ul>
+</li>
+<li>Censorship analysis
+<ul>
+<li>censorship values vary within coutries</li>
+</ul>
+</li>
+<li>Time series analysis: anolmoly detection , trend analysis</li>
+<li>Findings
+<ul>
+<li>15 event, 4 reported, 10 unreported.</li>
+<li>Trends DNS censorship in more than 100 countries</li>
+</ul>
+</li>
+<li>Some countries DNS filter of COVID-19 related websites (e.g., China,
+Iran), but most websites are not malicious.</li>
+<li>Data is publicly available</li>
+</ul>
+<h3 id="when-dns-goes-dark-understanding-privacy-and-shaping-policy-of-an-evolving-protocol">When DNS Goes Dark: Understanding Privacy and Shaping Policy of an Evolving Protocol</h3>
+<ul>
+<li>based on a TPRC paper</li>
+<li>The question is as the protocol evoles, do the privacy preserving
+extentions enhance user privacy?
+<ul>
+<li>between clients and ISPs</li>
+<li>browsers</li>
+<li>public DNS operators (google, cloudflare, 75% of the resolver
+market): more orgs don&rsquo;t want to maintain their own DNS
+resolvers</li>
+<li>EFF, cdt, (NGO)</li>
+<li>Who are looking our for the user privacy?</li>
+</ul>
+</li>
+<li>despite DoH, DoT, ODoT, someonce has access to a users&rsquo;a DNS lookups</li>
+<li>DNS and PII:
+<ul>
+<li>Is IP addess PII? most legal regulations in EU, US: IP by itself
+may not be PII, but if the IP can be linked be linked to a
+household, then it&rsquo;s PII</li>
+</ul>
+</li>
+<li>examined 12 DNS providers (e.t., google, dclouforce)
+<ul>
+<li>9 had privacy polies (6 has DNS policies), other 3 do not have
+privacy policies</li>
+<li>examine the 6 providers under the GDPR articles - legalally read
+(10-30minutes)
+<ul>
+<li>GDPR Article 5(b): Purpose limititations, not clear that
+whether it&rsquo;s ok to share data for profit.</li>
+<li>5(c): Data minimization. The generak policies are too board,
+cover all sevices, not specific to DNS</li>
+<li>5(e): Storage limitations: DNS only privacy policies are far
+more stringent than general privacy policies.</li>
+<li>Artical 7: Conditions for consent: consent is a gray area.
+The question is what does the content mean?</li>
+<li>Article 45: Data transfers on the basis of adequacy:</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="user-expectations-and-understanding-of-encrypted-dns-settings">User Expectations and Understanding of Encrypted DNS Settings</h3>
+<ul>
+<li>encrypted DNS is not often &ldquo;on by default&rdquo;. And trustes recursive is
+also selected by default.
+<ul>
+<li>What are the defualt settings?</li>
+<li>Do the users understand it? Do the users lnow how to change?</li>
+</ul>
+</li>
+<li>Different web browsers have different UIs to enable DNS-over-HTTPS.
+Hard to find.</li>
+<li>Choosing a trusted recursice also differs by web browsers</li>
+<li>pilot survey:
+<ul>
+<li>do users unstead what DNS setting options do?</li>
+<li>How do users interact with current DNS setting options?</li>
+<li>Why do users choose the seeting that they do?</li>
+<li>findings:
+<ul>
+<li>people do change the default setting if they knew how</li>
+<li>people had limited knowledge of DNS privacy</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>preliminary: 15 users in survey via prolific, plan for larger survey</li>
+<li>changing setting in Firefox
+<ul>
+<li>some are not willing to change</li>
+</ul>
+</li>
+<li>choised of encrypoted DNS setting? Automatic?
+<ul>
+<li>People make different decisions if they know more about the
+encyrpted DNS</li>
+</ul>
+</li>
+<li>People more ISP, but most do not know NextDNS cloudflare, Quad9</li>
+<li>Main findings:
+<ul>
+<li>stick with defualt settings</li>
+<li>don&rsquo;t understand differene options</li>
+<li>some peiple change options when they have more info</li>
+</ul>
+</li>
+<li>Future steps:
+<ul>
+<li>larger sample size</li>
+<li>more extensive interface testing</li>
+</ul>
+</li>
+</ul>
+<h3 id="qa--buffer-time-discussion-1">Q/A / buffer time discussion</h3>
+<p>Talk 1:</p>
+<ul>
+<li>Paul Hoffman: good research, DNS privacy introduces some problems.
+Benefit the entire DNS community.
+<ul>
+<li>A: present the public interests. Needs to be acceptable bu
+non-tech peeple, but the it needs to tech reasonable</li>
+</ul>
+</li>
+<li>Ram: Shutdown, 2019, Iran blocked internet. had their own internet.
+intranet?
+<ul>
+<li>A:</li>
+</ul>
+</li>
+<li>Vijay: just a comment: where to publish, (regulation, law): TPRC
+could be a good fit, legal comm (e.g., senatros), technitians</li>
+<li>paul Syversion: anybody designs the protocol in an overall
+<ul>
+<li>A: please contribute to the paper on GitHub</li>
+</ul>
+</li>
+</ul>
+<p>Talk 2</p>
+<ul>
+<li>
+<p>Do your DNS measurements cover encrypted DNS protocols as well?</p>
+<ul>
+<li>A: not included, to add. DoH</li>
+</ul>
+</li>
+<li>
+<p>Vijay Gurbani :slide 25, russian is under estimated</p>
+<ul>
+<li>A: number of vp, limit selection: only select infra/org vp.
+throw some potential vp, all countre 10,000 vps</li>
+</ul>
+</li>
+<li>
+<p>Paul Syverson: Tricky questions: people trying to get good, e.g.,
+COVID information out there might be inclined to block anything that
+is known/validated. Horrible from a censorship general use
+perspective. Smart and good public protection in quick use of
+available resources perspective. Response?</p>
+</li>
+<li>
+<p>More speech is not better speech</p>
+<ul>
+<li>A: the covid ones are not malicious in various secrutiy
+categories. It might not be a good idea to block all the related
+covid-19 websites</li>
+</ul>
+</li>
+<li>
+<p>Pallavi: was any investigation done to determine if RPZ for some of
+the open resolvers might be a contributor to the censorship.</p>
+<ul>
+<li>Will be covered at the end of the day</li>
+</ul>
+</li>
+</ul>
+<p>Talk 3:</p>
+<ul>
+<li>Benno Overeinder: slide 14: did you look at 9.9.9.9? They don&rsquo;t
+collect IP, they transfer IPs to geo location.
+<ul>
+<li>A: didn&rsquo;t. but none of the provider listed in the slide had
+policy about data transfer. Although some providers said they no
+storage, they do have retention periods.</li>
+</ul>
+</li>
+</ul>
+<p>Talk 4:</p>
+<ul>
+<li>
+<p>Murtuza Jadliwala: I am assuming your study targets users who know
+what DNS is. A sizeable internet population doesn&rsquo;t know what DNS is
+or what it does. So how representative these results will be of the
+entire Internet user population?</p>
+<ul>
+<li>A: didn&rsquo;t assume people know DNS. The survey started with
+questions of DNS and encrypted DNS.</li>
+</ul>
+</li>
+<li>
+<p>DKG: similar thing about HTTP and HTTPs consolidation?</p>
+<ul>
+<li>A : a paper about cwarling the DNS. but not awrare of paper HTTP
+and HTTPs consolidation.</li>
+</ul>
+</li>
+<li>
+<p>Sandra Siby: additional info provider to users to make decision?</p>
+<ul>
+<li>A: not from specific provider, just text what is encrypted DNS,
+optunistic mode. A lot people chose to stay worring phone may
+not work if they change the mode.</li>
+</ul>
+</li>
+<li>
+<p>Sudheesh Singanamalla: Super interesting work. Do you think there’s
+an interesting opportunity towards the education aspect of privacy
+to have some sort of a landing page like the ones during browser
+updates to show users some explanations of what their settings could
+mean and suggestions to switch any settings if necessary?</p>
+<ul>
+<li>A: firefox has a popups when it changed to DoH defult. An
+education page can be very helpful. The firefox changed the
+popups during the survey - added more information.</li>
+</ul>
+</li>
+</ul>
+<h2 id="session-3-novel-work-adot-and-future-research">Session 3: Novel work, ADoT and Future Research</h2>
+<h3 id="programmable-in-network-obfuscation-of-dns-traffic">Programmable In-Network Obfuscation of DNS Traffic</h3>
+<p>Liang Wang about this in-progress paper Do53 traffic reveals sensitive
+information Encrypted DNS methods put trust in public DNS resolvers, use
+a strategy of keeping the IPs of the queriers away from the public DNS
+resolvers. One solution is to use proxy-based solutions such as Tor or
+ODNS - no party can see the query and the source IP at the same time.
+This adds some issues to the deployment - introduction of latency or
+performance bottleneck. Also, configuration and user effort may be
+needed - adds learning curve or possibility of error.<br>
+Suggestion: programmable network, upload a policy about the source IP
+into it. It has good performance properties. Do not need to make it do
+all the encryption work - which it may have some limits for - convert
+the source IPv4 to an IPv6 address. Encrypt the IPv4 address in the IPv6
+address. Do not need cooperation with clients etc.<br>
+PINOT sits at border of IPv4 network. PINOT encrypts the source IP in
+each packet individually. After encryption, the source IPs are
+meaningless to parties outside the network.<br>
+Challenges include limitations of the programmable switch in PINOT -
+need to not put a packet through the pipeline only once, otherwise this
+hits too hard on throughput and latency. Decided to use a crypto
+algorithm that allows for this restriction, two-round Evan-Mansour. Not
+as secure as AES, but it is hard to break, and they think it is
+sufficient for this application - see the paper for details. Using IPv6
+to allow the ciphertext to be put into the packet - use in the source IP
+address. Can&rsquo;t use another field due to routers modifying along path.
+PINOT stores the encryption keys only. It is stateless.<br>
+Reserved IPv6 prefix is used Deploy at multiple ingress and egress
+points in the network. DNS traffic can leave the network from any egress
+point. Good for connectionless protocols, but working on an approach to
+connection-oriented DNS. Extra layer of protection on the IP address
+without modifying anything else. PINOT: network operator can still
+inspect and filter DNS traffic because only the source is obscured for
+the operator. They tried it with 350+ public DNS resolvers that support
+IPv6 - they were fine with requesting A records from this IPv6.<br>
+They did find asymmetry but the performance was not affected by this.
+They also use PINOT to talk to public NTP and for a key-based source
+address encryption for third party scanners - keep the source addresses
+from these public or third parties</p>
+<p>Questions &ndash;</p>
+<p>Paul Syverson: Even if the acknowledged weaker encryption is sufficient
+for these purposes, there is a long history of such restricted security
+mechanisms resulting in insecurity via function creep. Why do you think
+that won&rsquo;t happen here? And what would be the cost of using AES
+instead?<br>
+A: the cost of using AES is very poor performance in the data plane,
+tradeoff between those Paul: have you got numbers of what the
+contribution of AES would be to be able to reason about the tradeoff? A:
+we didn&rsquo;t build this, but there are calculations about AES in another
+paper from the group Chris Wood: What is the threat model here? Given
+that the network is generally considered untrusted, how could clients
+reasonably ensure they benefit from PINOT? A: Value-added service. Make
+the network trusted in this case.</p>
+<p>Benno Overeinder: you used P4 switches, but did you consider XDP or eBPF
+which is easier to deploy?<br>
+A: Once the P4 network is deployed, no user involvement. Benno: could
+test the threat model and protocol with the other protocols.</p>
+<p>Talk offline Britta Hale: You state that you are using static,
+pre-installed keys. Considering that a proxy may be compromised or by
+oversight request have its keys given up, how do you propose your system
+maintaining or achieving security over time and at scale? A: it&rsquo;s not a
+static key. We do not record the key - just for a short-term. Generate
+new ones Britta: doing negotiation of keys from previous? A: just random
+keys</p>
+<p>Sudheesh Singanamalla: Is there a reason why in the campus network the
+communication between the end-host to PINOT switch isn’t necessarily
+secured (exception with DNSCrypt)? Does the organization
+(campus/enterprise) want to know DNS requests made by users locally
+within the network? A: we just want to show the usefulness of this
+potentially, but it&rsquo;s not tied to the organization model particularly</p>
+<h3 id="a-balanced-dns-information-protection-strategy">A Balanced DNS Information Protection Strategy</h3>
+<p>Scott Hollenbeck speaking for Verisign as TLD and Root operator Points
+out the number of TLS vulnerabilities surfaced every year. For some
+operators, the tradeoff to add encryption to the DNS stacks may be too
+risky Client information is not sent from recursive servers to
+authoritatives but the full FQDN is sent. We believe that Qname
+minimization is the best for this. It significantly reduces the risk of
+exposure. Maybe the risk is reduced enough versus encrypting with ADoT
+We do think that SLD (second level DNS servers)have a good case to do
+encryption with recursives.<br>
+But note that there is potential for operational impact on both parties.
+We encourage measurement studies to understand the impacts Other
+minimization techniques - NXDOMAIN/query cut, aggressive NSEC caching
+Minimize when possible, encrypt when needed elsewhere</p>
+<p>Questions</p>
+<p>Jim Reid: IETF has multiple WGs tackling this work in isolation from
+each other, should we take a holistic approach to the IETF and maybe
+stop some of the work on encryption?<br>
+A: the IETF has done a pretty good job that the various DNS WGs are
+sharing info. E.g. ADD and DPRIVE. IETF is traditionally challenged in
+operator involvement, need to get operators to this topic</p>
+<p>Wes Hardaker: concern about things that aren&rsquo;t sent on purpose, e.g. the
+keywords that turn into queries.<br>
+A: Verisign does publish a lot of info about the traffic we see at the
+root servers</p>
+<p>Paul Hoffman: this is not an official statement from ICANN but I don&rsquo;t
+believe that any root server or TLD operator shoud be prevented from
+offering better privacy with encryption. Let the operators decide
+themselves. In the absence of the resolvers adding the minmization
+features, it&rsquo;s better to let the operators make their decision on this<br>
+A: no disagreement. We take this decision very seriously. If you operate
+a TLD that isn&rsquo;t as big as COM, &ldquo;knock yourself out&rdquo;</p>
+<p>Alec Muffett: what are the risks you see of not being able to see the
+traffic. He leans to instrumentation at the endpoints to make sure users
+are going to the right server etc. He doesn&rsquo;t see this in the overall
+discussion. Is it part of the overall model A: just my opinion, I
+believe it is considered. Verisign blocks DOH on its corporate networks.</p>
+<h3 id="armor-for-the-back-half-of-the-camel-why-confidentiality-matters-for-recursive-dns-traffic">Armor for the back half of the camel: Why confidentiality matters for recursive DNS traffic</h3>
+<p>DKG - two humps of the camel are the Stub-to-Recursive and the
+Recursive-to-the-Authoritative Assumption of a network-based adversary
+(more or less powerful) - what we have &ldquo;solved&rdquo; with DOH and DOT, but of
+course raising other issues. Head of the camel - armor there still
+allows the adversary to see queries coming to recursive and leaving it.
+The recursive is acting as a steward of the end-user.<br>
+Timing analysis/side-analysis all remain possible and the stewardship by
+the resolver operator should include protecting the back half of the
+camel Previous talk characterized this as traffic to root, TLDs etc.
+Important to ack how problematic SLD are. Ex. of the New Yorker article
+about the Trump campaign contacts with a Russian bank - it could be done
+with just recursive to authoritative. DNS queries were coming from two
+orgs for a domain that nobody else looked up. Very revealing to see that
+those two were talking to each other because nobody else was looking up
+the domain. Problems with misconfigurations - the minimizations are
+risky to deploy, a SLD may be unreachable with issues of minimization A
+network monitor may not be able to pick out and target an individual
+from traffic above recursive. Who was visiting a site such as
+disruptj20.org? Get the ISPs from the data, then push on the ISPs by
+legal or extra-legal means. An resolver would do well to encrypt the
+back half for this. What does it mean to the authoritative if they are
+not offering encryption to the resolvers. The clients of an
+authoritative - the domain operator vs. the users of the domain.
+Resolver operators are stewards of both below and above. When might
+someone look up OpenPGP key for DKG at aclu.org. If the authoritative
+server doesn&rsquo;t encrypt this, they are leaking info about how often DKG
+gets encrypted email. Lots of other types of DNS info leaks info.
+Authoritative servers stewardship. All of the surveillance concerns
+raised earlier are also the precursors to censorship. You may not be
+able to modify responses, if DNSSEC in use, but you can block and deny
+service.<br>
+Authoritative servers can consider using authoritative. It still
+encrypts a bunch of traffic on the network. Still need to get the rest
+of this figured out. The latter is next-level and we need to learn from
+opportunistic and get to authenticated encrypted DNS by authoritatives
+eventually.</p>
+<p>Questions:</p>
+<p>Sara says the threat landscape is well covered in this talk. We had
+trouble getting DoT deployed. Firefox taking control of the client was
+the game-changer for all of the client-2-recursive. What first mover
+would drive authoritatives? A: I&rsquo;m not sure the analogy is super-precise
+here. We did see DOT adoption on Android before Firefox. People who
+could be first movers? Someone like Cloudflare probing toward
+authoritatives? Some authoritatives may decide it&rsquo;s a priority and then
+they probers will get some benefit. Room for a bunch of folks to be
+first movers in this space. If there are academics researchers looking
+at this, create a scorecard of the results from minimized or
+probed/opportunistically encrypted.</p>
+<p>Geoff Huston: do what extent to SVC queries add the potential “leakage”
+issue in terms of information leakage by a richer semantics of intention
+signalling? A: I wish I had a better metric of this. Another example is
+the ECH keying material. We need analysis of this topic.</p>
+<h3 id="qa--buffer-time-discussion-2">Q/A / buffer time discussion</h3>
+<p>Go straight to breakouts now rather than buffer time questions</p>
+<hr>
+<p>**Thanks a lot to our notetakers, Han Zhang and Austin Hounsel! **</p>
+
+
+
+
+
+<footer class=" footline" >
+	
+</footer>
+
+        
+            </div> 
+        
+        </div>
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+
+        
+
+
+	 
+	 
+    </div>
+
+    </section>
+
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1630338988"></script>
+    <script src="/js/perfect-scrollbar.min.js?1630338988"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1630338988"></script>
+    <script src="/js/jquery.sticky.js?1630338988"></script>
+    <script src="/js/featherlight.min.js?1630338988"></script>
+    <script src="/js/highlight.pack.js?1630338988"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom-3.6.0.js?1630338988"></script>
+    <script src="/js/learn.js?1630338988"></script>
+    <script src="/js/hugo-learn.js?1630338988"></script>
+    
+    
+
+  </body>
+</html>

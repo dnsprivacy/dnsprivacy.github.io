@@ -1,0 +1,2587 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.86.0" />
+    <meta name="description" content="">
+
+
+    <link rel="icon" href="/images/favicon.png" type="image/png">
+
+    <title>Follow-Up Performance Measurements (Q4 2108) :: dnsprivacy.org</title>
+
+    
+    <link href="/css/nucleus.css?1630338988" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1630338988" rel="stylesheet">
+    <link href="/css/hybrid.css?1630338988" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1630338988" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1630338988" rel="stylesheet">
+    <link href="/css/auto-complete.css?1630338988" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1630338988" rel="stylesheet">
+    <link href="/css/theme.css?1630338988" rel="stylesheet">
+    <link href="/css/tabs.css?1630338988" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1630338988" rel="stylesheet">
+    
+    <link href="/css/theme-blue.css?1630338988" rel="stylesheet">
+    
+    
+
+    <script src="/js/jquery-3.3.1.min.js?1630338988"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/performance_measurements/follow-up_performance_measurements_q4_2108/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href='/'>
+  <p style="color: #fafafa;font-size:34px;font-weight: 400;" style = "font-family:helvetica neue, arial, courier;"><strong>DNS Privacy Project</strong></p>
+</a>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1630338988"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1630338988"></script>
+<script type="text/javascript">
+    
+        var baseurl = "http:\/\/dnsprivacy.org\/";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1630338988"></script>
+
+    
+  </div>
+  
+    <section id="homelinks">
+      <ul>
+        <li>
+            <a class="padding" href='/'><i class='fas fa-home'></i> Home</a>
+        </li>
+      </ul>
+    </section>
+  
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/the_problem/" title="The Problem" class="dd-item
+        
+        
+        
+        ">
+      <a href="/the_problem/">
+          1. The Problem
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/the_solutions/" title="The Solutions" class="dd-item
+        
+        
+        
+        ">
+      <a href="/the_solutions/">
+          2. The Solutions
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/current_work/" title="Current Work" class="dd-item
+        
+        
+        
+        ">
+      <a href="/current_work/">
+          3. Current Work
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/ietf_dns_privacy_tutorial/" title="IETF DNS Privacy Tutorial" class="dd-item
+        
+        
+        
+        ">
+      <a href="/ietf_dns_privacy_tutorial/">
+          4. IETF DNS Privacy Tutorial
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/public_resolvers/" title="Public Resolvers" class="dd-item
+        
+        
+        
+        ">
+      <a href="/public_resolvers/">
+          5. Public Resolvers
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/test_servers/" title="Test Servers" class="dd-item
+        
+        
+        
+        ">
+      <a href="/test_servers/">
+          6. Test Servers
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/test_servers/map_of_test_server_locations/" title="Map of test server locations" class="dd-item ">
+        <a href="/test_servers/map_of_test_server_locations/">
+        6.1. Map of test server locations
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/test_servers/monitoring/" title="dnsprivacy Monitoring" class="dd-item ">
+        <a href="/test_servers/monitoring/">
+        6.2. dnsprivacy Monitoring
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/test_servers/live_traffic_levels/" title="Live Traffic Levels" class="dd-item ">
+        <a href="/test_servers/live_traffic_levels/">
+        6.2. Live Traffic Levels
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/dns_privacy_clients/" title="DNS Privacy Clients" class="dd-item
+        
+        
+        
+        ">
+      <a href="/dns_privacy_clients/">
+          7. DNS Privacy Clients
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/dns_privacy_daemon_-_stubby/" title="DNS Privacy Daemon - Stubby" class="dd-item
+        
+        
+        
+        ">
+      <a href="/dns_privacy_daemon_-_stubby/">
+          8. DNS Privacy Daemon - Stubby
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/dns_privacy_daemon_-_stubby/about_stubby/" title="About Stubby" class="dd-item ">
+        <a href="/dns_privacy_daemon_-_stubby/about_stubby/">
+        8.1. About Stubby
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/dns_privacy_daemon_-_stubby/configuring_stubby/" title="Configuring Stubby" class="dd-item ">
+        <a href="/dns_privacy_daemon_-_stubby/configuring_stubby/">
+        8.2. Configuring Stubby
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/dns_privacy_daemon_-_stubby/stubby_manager_gui/" title="Stubby Manager GUI" class="dd-item ">
+        <a href="/dns_privacy_daemon_-_stubby/stubby_manager_gui/">
+        8.3. Stubby Manager GUI
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/dns_privacy_daemon_-_stubby/installation/" title="Installation" class="dd-item
+        
+        
+        
+        ">
+      <a href="/dns_privacy_daemon_-_stubby/installation/">
+          8.4. Installation
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/dns_privacy_daemon_-_stubby/installation/linux_from_source/" title="Linux From Source" class="dd-item ">
+        <a href="/dns_privacy_daemon_-_stubby/installation/linux_from_source/">
+        8.4.1. Linux From Source
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/dns_privacy_daemon_-_stubby/installation/running_as_a_service_on_nix/" title="Running as a service on *nix" class="dd-item ">
+        <a href="/dns_privacy_daemon_-_stubby/installation/running_as_a_service_on_nix/">
+        8.4.2. Running as a service on *nix
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/dns_privacy_daemon_-_stubby/installation/macos_homebrew/" title="MacOS Homebrew" class="dd-item ">
+        <a href="/dns_privacy_daemon_-_stubby/installation/macos_homebrew/">
+        8.4.3. MacOS Homebrew
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/dns_privacy_daemon_-_stubby/installation/stubby_gui_for_macos/" title="Stubby GUI for macOS" class="dd-item ">
+        <a href="/dns_privacy_daemon_-_stubby/installation/stubby_gui_for_macos/">
+        8.4.4. Stubby GUI for macOS
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/dns_privacy_daemon_-_stubby/installation/windows_installer_for_stubby/" title="Windows installer for Stubby" class="dd-item ">
+        <a href="/dns_privacy_daemon_-_stubby/installation/windows_installer_for_stubby/">
+        8.4.5. Windows installer for Stubby
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/implementation_status/" title="Implementation Status" class="dd-item
+        
+        
+        
+        ">
+      <a href="/implementation_status/">
+          9. Implementation Status
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/running_a_dns_privacy_server/" title="Running a DNS Privacy server" class="dd-item
+        
+        
+        
+        ">
+      <a href="/running_a_dns_privacy_server/">
+          10. Running a DNS Privacy server
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/running_a_dns_privacy_server/using_unbound/" title="Using Unbound" class="dd-item ">
+        <a href="/running_a_dns_privacy_server/using_unbound/">
+        10.1. Using Unbound
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/running_a_dns_privacy_server/using_knot_resolver/" title="Using Knot Resolver" class="dd-item ">
+        <a href="/running_a_dns_privacy_server/using_knot_resolver/">
+        10.2. Using Knot Resolver
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/running_a_dns_privacy_server/using_dnsdist/" title="Using dnsdist" class="dd-item ">
+        <a href="/running_a_dns_privacy_server/using_dnsdist/">
+        10.3. Using dnsdist
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/running_a_dns_privacy_server/using_a_tls_proxy/" title="Using a TLS proxy" class="dd-item
+        
+        
+        
+        ">
+      <a href="/running_a_dns_privacy_server/using_a_tls_proxy/">
+          10.4. Using a TLS proxy
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/running_a_dns_privacy_server/using_a_tls_proxy/building_haproxy_using_tlsv1_3/" title="Building HAProxy using TLSv1.3" class="dd-item ">
+        <a href="/running_a_dns_privacy_server/using_a_tls_proxy/building_haproxy_using_tlsv1_3/">
+        10.4.1. Building HAProxy using TLSv1.3
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/running_a_dns_privacy_server/lets_encrypt_certificate_renewal/" title="Let&#39;s Encrypt Certificate renewal" class="dd-item
+        
+        
+        
+        ">
+      <a href="/running_a_dns_privacy_server/lets_encrypt_certificate_renewal/">
+          10.5. Let&#39;s Encrypt Certificate renewal
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/running_a_dns_privacy_server/lets_encrypt_certificate_renewal/automated_certificate_management_1/" title="Certificate management Method 1" class="dd-item ">
+        <a href="/running_a_dns_privacy_server/lets_encrypt_certificate_renewal/automated_certificate_management_1/">
+        10.5.1. Certificate management Method 1
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/running_a_dns_privacy_server/lets_encrypt_certificate_renewal/automated_certificate_management_2/" title="Certificate management method 2" class="dd-item ">
+        <a href="/running_a_dns_privacy_server/lets_encrypt_certificate_renewal/automated_certificate_management_2/">
+        10.5.2. Certificate management method 2
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/running_a_dns_privacy_server/monitoring_privacy_servers/" title="Monitoring Privacy servers" class="dd-item ">
+        <a href="/running_a_dns_privacy_server/monitoring_privacy_servers/">
+        10.6. Monitoring Privacy servers
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/running_a_dns_privacy_server/best_current_practices/" title="Best Current Practices" class="dd-item
+        
+        
+        
+        ">
+      <a href="/running_a_dns_privacy_server/best_current_practices/">
+          10.7. Best Current Practices
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/running_a_dns_privacy_server/best_current_practices/comparison_of_policy_and_privacy_statements_2019/" title="Comparison of policy and privacy statements 2019" class="dd-item ">
+        <a href="/running_a_dns_privacy_server/best_current_practices/comparison_of_policy_and_privacy_statements_2019/">
+        10.7.1. Comparison of policy and privacy statements 2019
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/running_a_dns_privacy_server/best_current_practices/data_minimisation_of_dns_traffic/" title="Data minimisation of DNS traffic" class="dd-item ">
+        <a href="/running_a_dns_privacy_server/best_current_practices/data_minimisation_of_dns_traffic/">
+        10.7.2. Data minimisation of DNS traffic
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/dns_privacy_reference_material/" title="DNS Privacy Reference Material" class="dd-item
+        
+        
+        
+        ">
+      <a href="/dns_privacy_reference_material/">
+          11. DNS Privacy Reference Material
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/performance_measurements/" title="Performance Measurements" class="dd-item
+        parent
+        
+        
+        ">
+      <a href="/performance_measurements/">
+          12. Performance Measurements
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/performance_measurements/initial_performance_measurements_q1_2018/" title="Initial Performance Measurements (Q1 2018)" class="dd-item ">
+        <a href="/performance_measurements/initial_performance_measurements_q1_2018/">
+        12.1. Initial Performance Measurements (Q1 2018)
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/performance_measurements/follow-up_performance_measurements_q4_2108/" title="Follow-Up Performance Measurements (Q4 2108)" class="dd-item active">
+        <a href="/performance_measurements/follow-up_performance_measurements_q4_2108/">
+        12.2. Follow-Up Performance Measurements (Q4 2108)
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/performance_measurements/review_of_dns_and_http_pm_tools/" title="Review of DNS and HTTP PM Tools" class="dd-item ">
+        <a href="/performance_measurements/review_of_dns_and_http_pm_tools/">
+        12.3. Review of DNS and HTTP PM Tools
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/performance_measurements/proposal_for_new_performance_tool/" title="Proposal for New Performance Tool" class="dd-item ">
+        <a href="/performance_measurements/proposal_for_new_performance_tool/">
+        12.4. Proposal for New Performance Tool
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/ndss_dns_privacy_workshop/" title="NDSS DNS Privacy Workshop" class="dd-item
+        
+        
+        
+        ">
+      <a href="/ndss_dns_privacy_workshop/">
+          14. NDSS DNS Privacy Workshop
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/ndss_dns_privacy_workshop/2021_ndss_dns_privacy_workshop/" title="2021 NDSS DNS Privacy Workshop" class="dd-item
+        
+        
+        
+        ">
+      <a href="/ndss_dns_privacy_workshop/2021_ndss_dns_privacy_workshop/">
+          14.1. 2021 NDSS DNS Privacy Workshop
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/ndss_dns_privacy_workshop/2021_ndss_dns_privacy_workshop/call_for_papers/" title="Call for Papers" class="dd-item ">
+        <a href="/ndss_dns_privacy_workshop/2021_ndss_dns_privacy_workshop/call_for_papers/">
+        14.1.1. Call for Papers
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/ndss_dns_privacy_workshop/2021_ndss_dns_privacy_workshop/workshop_notes/" title="Workshop Notes" class="dd-item
+        
+        
+        
+        ">
+      <a href="/ndss_dns_privacy_workshop/2021_ndss_dns_privacy_workshop/workshop_notes/">
+          14.1.2. Workshop Notes
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/ndss_dns_privacy_workshop/2021_ndss_dns_privacy_workshop/workshop_notes/breakout_room_1/" title="Zoom Breakout Room 1: Measurement of Encrypted DNS" class="dd-item ">
+        <a href="/ndss_dns_privacy_workshop/2021_ndss_dns_privacy_workshop/workshop_notes/breakout_room_1/">
+        14.1.2.1. Zoom Breakout Room 1: Measurement of Encrypted DNS
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/ndss_dns_privacy_workshop/2021_ndss_dns_privacy_workshop/workshop_notes/breakout_room_2/" title="Zoom Breakout Room 2: Civil Society, Usability and DNS" class="dd-item ">
+        <a href="/ndss_dns_privacy_workshop/2021_ndss_dns_privacy_workshop/workshop_notes/breakout_room_2/">
+        14.1.2.2. Zoom Breakout Room 2: Civil Society, Usability and DNS
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/ndss_dns_privacy_workshop/2021_ndss_dns_privacy_workshop/workshop_notes/breakout_room_3/" title="Zoom Breakout Room 3: Novel Work, ADoT and Future Research" class="dd-item ">
+        <a href="/ndss_dns_privacy_workshop/2021_ndss_dns_privacy_workshop/workshop_notes/breakout_room_3/">
+        14.1.2.3. Zoom Breakout Room 3: Novel Work, ADoT and Future Research
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/ndss_dns_privacy_workshop/2018_ndss_dns_privacy_workshop/" title="2018 NDSS DNS Privacy Workshop" class="dd-item ">
+        <a href="/ndss_dns_privacy_workshop/2018_ndss_dns_privacy_workshop/">
+        14.2. 2018 NDSS DNS Privacy Workshop
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/ndss_dns_privacy_workshop/2017_ndss_dns_privacy_workshop/" title="2017 NDSS DNS Privacy Workshop" class="dd-item ">
+        <a href="/ndss_dns_privacy_workshop/2017_ndss_dns_privacy_workshop/">
+        14.3. 2017 NDSS DNS Privacy Workshop
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+        
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>More</h3>
+        <ul>
+          
+              <li>
+                  <a class="padding" href="https://github.com/dnsprivacy"><i class='fab fa-github'></i> Github repo</a>
+              </li>
+          
+              <li>
+                  <a class="padding" href="https://twitter.com/DNSPrivacyProj"><i class='fab fa-twitter'></i> Twitter</a>
+              </li>
+          
+              <li>
+                  <a class="padding" href="https://www.youtube.com/channel/UCaJWMY-m9ktZIbUNMi0Eh9g/playlists"><i class='fab fa-youtube'></i> YouTube</a>
+              </li>
+          
+              <li>
+                  <a class="padding" href="https://sinodun.com"><i class='fas fa-bookmark'></i> Sinodun IT</a>
+              </li>
+          
+              <li>
+                  <a class="padding" href="https://www.nlnetlabs.nl/"><i class='fas fa-bookmark'></i> NLnetLabs</a>
+              </li>
+          
+              <li>
+                  <a class="padding" href="http://dnsprivacy.org/ndss_dns_privacy_workshop"><i class='fas fa-bookmark'></i> NDSS DNS Privacy Workshop</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="footer">
+      <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn">Hugo Theme Learn</a> and <a href="https://gohugo.io/">Hugo</a></p>
+<p>Built by <a href="sinodun.com">Sinodun Internet Technologies.</a></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>DNS Privacy Project</a> > <a href='/performance_measurements/'>Performance Measurements</a> > Follow-Up Performance Measurements (Q4 2108)
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#previous-work">Previous work</a></li>
+    <li><a href="#goals-of-this-work">Goals of this work</a></li>
+    <li><a href="#results---tcp-vs-udp">Results - TCP vs UDP</a>
+      <ul>
+        <li><a href="#unbound-measurements">Unbound measurements</a></li>
+        <li><a href="#knot-resolver-and-bind">Knot Resolver and BIND</a></li>
+        <li><a href="#dnsdist">dnsdist</a></li>
+      </ul>
+    </li>
+    <li><a href="#results---tls-proxy-vs-native-tls">Results - TLS proxy vs native TLS</a>
+      <ul>
+        <li><a href="#ha-proxy-fronting-unbound">HA-Proxy fronting Unbound</a></li>
+      </ul>
+    </li>
+    <li><a href="#limitations-of-these-measurements">Limitations of these measurements</a>
+      <ul>
+        <li><a href="#real-dns-traffic-data">Real DNS traffic data</a></li>
+        <li><a href="#http-like-client-population-modelling">HTTP-like client population modelling?</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              Follow-Up Performance Measurements (Q4 2108)
+            </h1>
+          
+
+        
+
+
+<p>Thanks to funding from the Open Technology Fund we have continued work
+on some performance measurements for various DNS Privacy
+implementations. We report our new results below.</p>
+<div class="toc">
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#previous-work">Previous work</a></li>
+    <li><a href="#goals-of-this-work">Goals of this work</a></li>
+    <li><a href="#results---tcp-vs-udp">Results - TCP vs UDP</a>
+      <ul>
+        <li><a href="#unbound-measurements">Unbound measurements</a></li>
+        <li><a href="#knot-resolver-and-bind">Knot Resolver and BIND</a></li>
+        <li><a href="#dnsdist">dnsdist</a></li>
+      </ul>
+    </li>
+    <li><a href="#results---tls-proxy-vs-native-tls">Results - TLS proxy vs native TLS</a>
+      <ul>
+        <li><a href="#ha-proxy-fronting-unbound">HA-Proxy fronting Unbound</a></li>
+      </ul>
+    </li>
+    <li><a href="#limitations-of-these-measurements">Limitations of these measurements</a>
+      <ul>
+        <li><a href="#real-dns-traffic-data">Real DNS traffic data</a></li>
+        <li><a href="#http-like-client-population-modelling">HTTP-like client population modelling?</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div>
+<h2 id="previous-work">Previous work</h2>
+<ol>
+<li>
+<p> Our initial work on performance measurements can be found
+here: <a href="/performance_measurements/initial_performance_measurements_q1_2018/">Initial Performance Measurements
+(Q1 2018)</a>. This work was
+presented at RIPE
+76: <a href="https://ripe76.ripe.net/presentations/92-RIPE76_DNS_Privacy_measurements.pdf">Slides</a>, <a href="https://ripe76.ripe.net/archives/video/64">Video</a>.
+Key results from this work were:</p>
+<ul>
+<li><em>Setup</em>: Used modified <code>dnsperf</code> with UDP/TCP/TLS on 2 bare
+metal machines</li>
+<li>Comparisons of 4 nameservers for small number of clients (10s)
+<ul>
+<li>Typically saw TCP was 40-50% of UDP throughput (except
+<code>dnsdist</code>, which uses a different threading model and
+performed better)</li>
+<li>TLS was 30-40% of UDP throughput</li>
+</ul>
+</li>
+<li>Varying the number of queries per connection (including low
+numbers) shows amortisation of setup occurs between 100 or
+~2000 q/conn depending on the nameserver</li>
+</ul>
+</li>
+</ol>
+<p>
+
+<img src="/attachments/17629326/17629333.png?width=35pc"/>
+
+
+
+<img src="/attachments/17629326/17629332.png?width=40pc"/>
+</p>
+<ol start="2">
+<li>
+<p>We also note some complimentary related work: <em><a href="https://labs.ripe.net/Members/baptiste_jonglez_1/persistent-dns-connections-for-reliability-and-performance">High-Performance DNS
+over
+TCP</a></em> by Baptiste
+Jonglez, University Grenoble Alpes who also presented at RIPE 76:
+Slides, Video. Key results from this work were:</p>
+<ul>
+<li><em>Setup</em>: Measured just <code>Unbound</code> nameserver but used thousands
+of cloud VM clients. Measured just UDP/TCP (not TLS) and used a
+simple tcpscaler tool where TCP connections were never closed</li>
+<li>Determined that for <code>Unbound</code> TCP throughput for 25,000 clients
+was 25% of the UDP throughput and this decreased as the number
+of clients increased (see graph below)</li>
+<li>Eventually scaled to 6.5 million clients as a POC</li>
+</ul>
+</li>
+</ol>
+
+
+<img src="/attachments/17629326/17629331.png?width=45pc"/>
+
+<h2 id="goals-of-this-work">Goals of this work</h2>
+<p>We had always intended to extend our work to tens of thousands of
+clients and were particularly intrigued by Baptiste&rsquo;s results which
+showed a poorer TCP through put than we expected and an unexpected drop
+in throughput between 10 and 10,000 clients. However when we looked at
+the details of his work it became clear that the above graph was for the
+case where Unbound was restricted to a single thread (our work above had
+used 4 threads).</p>
+<p>So we wanted to explore the performance across the *nameservers for
+24,000 clients where the nameserver could effectively use all the
+resources of our test machine. *</p>
+<p>This work used the same lab set up as the previous work, except that we
+used up to 24 separate dnsperf instances running in parallel, each
+spawning 1000 TCP connections to reach a total of 24,000 clients. In
+each test 5000 queries per connection were used to ensure the
+connections cycled during the test but that the handshake setup had been
+fully amortised. </p>
+<p>The following work has also been presented at RIPE
+77: <a href="https://ripe77.ripe.net/presentations/112-RIPE77_DNSWG_DNSPrivacy_Meas.pdf">Slides</a>, <a href="https://ripe77.ripe.net/archives/video/2297">Video</a></p>
+<h2 id="results---tcp-vs-udp">Results - TCP vs UDP</h2>
+
+<div class="notices infoblock" ><p>In the
+following graphs blue lines are UDP, reds lines are TCP</p>
+</div>
+
+<h3 id="unbound-measurements">Unbound measurements</h3>
+<p>Our findings are shown below for measuring <code>Unbound</code> using 1 thread and
+then 32 threads (on a 16 core machine with hyper threading enabled).</p>
+<p>
+
+<img src="/attachments/17629326/17629334.png?width=55pc" />
+
+For a single thread we see a similar profile the above graph
+from <em><a href="https://labs.ripe.net/Members/baptiste_jonglez_1/persistent-dns-connections-for-reliability-and-performance">High-Performance DNS over
+TCP</a></em> by Baptiste
+Jonglez, however:</p>
+<ul>
+<li>with a slightly lower throughput and less dramatic decline as the
+number of clients increases</li>
+<li>and we observe that <strong>TCP is 32% of UDP throughput for 24,000 clients.</strong></li>
+</ul>
+
+
+<img src="/attachments/17629326/17629338.png?width=55pc" />
+
+<ul>
+<li>For 32 threads we see a quite different profile: a significantly
+higher throughput and TCP is 67% of UDP throughput for 24,000
+clients. </li>
+<li>We also note is is almost the same for 5000 clients and suspect the
+decrease above that might be related to IRQ handling. </li>
+</ul>
+<p><strong>Conclusion:</strong> When Unbound has sufficient resources the performance
+throughput of TCP is 2/3 of that of UDP even at large numbers of
+clients.</p>
+<h3 id="knot-resolver-and-bind">Knot Resolver and BIND</h3>
+<p>We repeated the test runs for both Knot Resolver and BIND for many
+clients - the results are below.</p>
+<p>
+
+<img src="/attachments/17629326/17629339.png?width=55pc" />
+
+
+
+<img src="/attachments/17629326/17629340.png?width=55pc" />
+</p>
+<ul>
+<li>
+<p>Knot Resolver</p>
+<ul>
+<li><strong>TCP is 50% of UDP at 24,000 clients</strong></li>
+<li>Similar profile and throughput to <code>Unbound</code></li>
+</ul>
+</li>
+<li>
+<p>BIND</p>
+<ul>
+<li><strong>TCP is 25% of UDP at 24,000 clients</strong></li>
+<li>Lower UDP throughput than the other name servers and a strange
+flat profile for TCP</li>
+</ul>
+</li>
+</ul>
+<h3 id="dnsdist">dnsdist</h3>
+<p>We were unable to scale the number of simultaneous clients that
+<code>dnsdist</code> would accept over TCP past 1000. The reason for this, we have
+confirmed with PowerDNS, is due to the fundamental architecture of
+<code>dnsdist</code> when dealing with TCP connections - the number of simultaneous
+connections that can be processed is entirely dependent on the size of
+the thread pool. Increasing this takes system resources, and is not
+practicable beyond a point dependent on the server hardware.</p>
+<p><strong>Conclusion:</strong><br>
+We have had to conclude that <code>dnsdist</code> is currently optimised for only a
+moderate number of client connections. We believe recent work in dnsdist
+is changing this model for the DoH implementation. </p>
+<h2 id="results---tls-proxy-vs-native-tls">Results - TLS proxy vs native TLS</h2>
+<h3 id="ha-proxy-fronting-unbound">HA-Proxy fronting Unbound</h3>
+<p>Finally, we also investigated the performance of native nameserver TLS
+support vs a TLS-TCP proxy/TCP nameserver setup (no &lsquo;traditional&rsquo; TLS
+proxy that we know of can receive DNS-over-TLS and forward over UDP).</p>
+<p>To do this we configured <code>Unbound</code> to use 32 threads, and configured
+<code>HAProxy</code> to use 32 single-threaded processes (the recommended
+configuration for HAProxy in the TLS-TCP proxy use case). Note that with
+fewer threads available to <code>HA proxy</code> it appeared that that the
+encryption/decryption process was the main performance bottleneck. </p>
+
+
+<img src="/attachments/17629326/17629344.png" width="782" />
+
+<ul>
+<li>Performance of the proxy/nameserver combination is slightly below
+that of the native nameserver - unsurprising given that the proxy
+introduces an extra connection into the end to end processing chain</li>
+<li>However the overhead of using a proxy is at worst in the region of
+20% of peak throughput. </li>
+<li>Adding DNS-over-TLS service to an existing nameserver when native
+nameserver TLS support is not available is, potentially, a realistic
+performance option for operators.</li>
+</ul>
+<p><strong>Conclusion</strong>: <br>
+These results show that use of a TLS-TCP proxy versus native nameserver
+TLS support performs as might be expected.</p>
+<h2 id="limitations-of-these-measurements">Limitations of these measurements</h2>
+<p>These measurements use a modified version of <code>dnsperf</code>, a widely used
+DNS UDP benchmarking tool.  UDP benchmarking is rather simplistic and is
+only concerned with throughput and latency and has the luxury of
+treating the client population as heterogeneous. </p>
+<p>Session based benchmarking can’t do this:</p>
+<ul>
+<li>Consider individual client experience (throughput &amp; latency) </li>
+<li>Clients behave differently: must simulate client population with
+varying profiles (qps, idle timeouts)</li>
+</ul>
+<p>For example, taking our measurements of Unbound (32 threads) and
+converting the data to represent the <strong>average queries per second per
+client</strong> gives the following graph:</p>
+
+
+<img src="/attachments/17629326/17629350.png" width="782" />
+
+<ul>
+<li>With 24,000 clients, each client is making ~20 queries per second.</li>
+</ul>
+<h3 id="real-dns-traffic-data">Real DNS traffic data</h3>
+<p>Very little real world data for DNS client populations is available that
+can describe the behaviour of individual clients. Some recently shared
+data (courtesy of Bert Hubert at PowerDNS) show how much variation there
+can be even in a small traffic sample. The following data was collected
+in in a 7 minute window observing traffic on a recursive resolver. We
+estimate the number of individual client (addresses) is in the region of
+250k.</p>
+
+
+<img src="/attachments/17629326/17629354.png?width=55pc" />
+
+<ul>
+<li>It can be easily observed that only a handful of clients are
+reaching a query rate of 20 q per second, and these are likely to be
+either forwarding resolvers or many devices behind e.g. a NAT</li>
+<li>The distribution is smooth apart from 2 peaks, which correspond to 1
+query of ~35s and 1 query ever ~5s. </li>
+<li>We see a significant number of clients performing only a single
+query  during the measurement window.</li>
+</ul>
+<p>It must be noted that this data is from a UDP client population and UDP
+clients use a different name serve selection algorithm to that specified
+for session based DNS (RFC7766). So there may be many reasons for the
+overall distribution including:</p>
+<ul>
+<li>Client resolver choice algorithm </li>
+<li>Service provider load balancing </li>
+<li>Client software performing periodic network probing </li>
+<li>Bursty traffic and device idle behaviour</li>
+<li>Routers with many devices </li>
+<li>Forwarding resolvers</li>
+</ul>
+
+<div class="notices note" ><p>We believe we need to gather real world (anonymised) data from operators
+of DNS Privacy servers to correctly understand the client profiles of
+<strong>session</strong> <strong>based</strong> DNS to aid with further benchmarking.</p>
+</div>
+
+<h3 id="http-like-client-population-modelling">HTTP-like client population modelling?</h3>
+<p>We suggest that further useful work on DNS benchmarking for session
+based protocols (DoT, DoH or DoQ) would require a new approach. In
+addition to gathering real world data we believe a new benchmarking tool
+is required.</p>
+<p>We have investigated a number of tools designed for HTTP benchmarking
+that are capable of generating traffic with different percentages of
+client behaviour - <a href="/performance_measurements/review_of_dns_and_http_pm_tools/">our report is
+here</a>. However we did not find any that
+could be easily modified to become useful DNS benchmarking tools. </p>
+<p>We suggest a new, hybrid tool will be required with a high DNS query
+throughput but with HTTP tester-like scripting capabilities to model a
+diverse client populate. <a href="/performance_measurements/proposal_for_new_performance_tool/">We have sketched out some initial
+requirements</a> for such a tool and are
+happy to hear feedback on this proposal. </p>
+
+
+<footer class="footline">
+	
+</footer>
+
+        
+        </div>
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+
+        
+
+
+	 
+	 
+    </div>
+
+    </section>
+
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1630338988"></script>
+    <script src="/js/perfect-scrollbar.min.js?1630338988"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1630338988"></script>
+    <script src="/js/jquery.sticky.js?1630338988"></script>
+    <script src="/js/featherlight.min.js?1630338988"></script>
+    <script src="/js/highlight.pack.js?1630338988"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom-3.6.0.js?1630338988"></script>
+    <script src="/js/learn.js?1630338988"></script>
+    <script src="/js/hugo-learn.js?1630338988"></script>
+    
+    
+
+  </body>
+</html>
+

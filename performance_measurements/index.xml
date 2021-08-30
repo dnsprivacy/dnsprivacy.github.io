@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Performance Measurements on dnsprivacy.org</title>
+    <link>http://dnsprivacy.org/performance_measurements/</link>
+    <description>Recent content in Performance Measurements on dnsprivacy.org</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 22 Jul 2021 15:59:30 +0100</lastBuildDate><atom:link href="http://dnsprivacy.org/performance_measurements/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Initial Performance Measurements (Q1 2018)</title>
+      <link>http://dnsprivacy.org/performance_measurements/initial_performance_measurements_q1_2018/</link>
+      <pubDate>Thu, 22 Jul 2021 16:03:20 +0100</pubDate>
+      
+      <guid>http://dnsprivacy.org/performance_measurements/initial_performance_measurements_q1_2018/</guid>
+      <description>Initial work Nameservers Test setup  Software  Test parameters   Hardware OS tuning Nameserver configuration   Results  Increasing load  UDP only UDP vs TCP TCP vs TLS TCP and TLS as a percentage of UDP   Vary queries per connection  Less than 60,000 queries per connection Less than 10,000 queries per connection Less than 500 queries per connection     Key conclusions TODO list Comments on test stability    Thanks to funding from the Open Technology Fund we have started work on some performance measurements for various DNS Privacy implementations.</description>
+    </item>
+    
+    <item>
+      <title>Follow-Up Performance Measurements (Q4 2108)</title>
+      <link>http://dnsprivacy.org/performance_measurements/follow-up_performance_measurements_q4_2108/</link>
+      <pubDate>Thu, 22 Jul 2021 16:06:33 +0100</pubDate>
+      
+      <guid>http://dnsprivacy.org/performance_measurements/follow-up_performance_measurements_q4_2108/</guid>
+      <description>Thanks to funding from the Open Technology Fund we have continued work on some performance measurements for various DNS Privacy implementations. We report our new results below.
+ Previous work Goals of this work Results - TCP vs UDP  Unbound measurements Knot Resolver and BIND dnsdist   Results - TLS proxy vs native TLS  HA-Proxy fronting Unbound   Limitations of these measurements  Real DNS traffic data HTTP-like client population modelling?</description>
+    </item>
+    
+    <item>
+      <title>Review of DNS and HTTP PM Tools</title>
+      <link>http://dnsprivacy.org/performance_measurements/review_of_dns_and_http_pm_tools/</link>
+      <pubDate>Thu, 22 Jul 2021 16:09:40 +0100</pubDate>
+      
+      <guid>http://dnsprivacy.org/performance_measurements/review_of_dns_and_http_pm_tools/</guid>
+      <description>Survey of existing DNS tools Investigation of HTTP benchmarking tools  Survey Work on Tsung      Survey of existing DNS tools    Tool UDP TCP TLS Pipelining Uses query file Replay pcaps Comments  dnsperf from DNS-OARC Y N N N Y N https://github.com/DNS-OARC/dnsperf  resperf from DNS-OARC Y N N N Y N For testing resolvers
+https://github.com/DNS-OARC/dnsperf
+  dnsperf-tcp Y Y N Y Y N https://github.</description>
+    </item>
+    
+    <item>
+      <title>Proposal for New Performance Tool</title>
+      <link>http://dnsprivacy.org/performance_measurements/proposal_for_new_performance_tool/</link>
+      <pubDate>Thu, 22 Jul 2021 16:12:21 +0100</pubDate>
+      
+      <guid>http://dnsprivacy.org/performance_measurements/proposal_for_new_performance_tool/</guid>
+      <description>Tool requirements High level   Support multiple protocols by design including session based protocols. (Initial wish list is UDP, TCP, TLS, HTTPS and QUIC)
+  Support emulating ~30,000 clients on a single server/VM
+  Support configuration to describe client populations e.g.
+ 10% of clients send at maximum rate the connection can sustain 50% send at X qps and use 2s idle timeout 40% send at Y qps use 10s idle timeout    Read query names from a file or autogenerate them based on a simple algorithm</description>
+    </item>
+    
+  </channel>
+</rss>
