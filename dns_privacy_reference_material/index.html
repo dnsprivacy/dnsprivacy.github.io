@@ -12,22 +12,22 @@
     <title>DNS Privacy Reference Material :: dnsprivacy.org</title>
 
     
-    <link href="/css/nucleus.css?1634898361" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1634898361" rel="stylesheet">
-    <link href="/css/hybrid.css?1634898361" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1634898361" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1634898361" rel="stylesheet">
-    <link href="/css/auto-complete.css?1634898361" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1634898361" rel="stylesheet">
-    <link href="/css/theme.css?1634898361" rel="stylesheet">
-    <link href="/css/tabs.css?1634898361" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1634898361" rel="stylesheet">
+    <link href="/css/nucleus.css?1635173710" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1635173710" rel="stylesheet">
+    <link href="/css/hybrid.css?1635173710" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1635173710" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1635173710" rel="stylesheet">
+    <link href="/css/auto-complete.css?1635173710" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1635173710" rel="stylesheet">
+    <link href="/css/theme.css?1635173710" rel="stylesheet">
+    <link href="/css/tabs.css?1635173710" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1635173710" rel="stylesheet">
     
-    <link href="/css/theme-blue.css?1634898361" rel="stylesheet">
+    <link href="/css/theme-blue.css?1635173710" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1634898361"></script>
+    <script src="/js/jquery-3.3.1.min.js?1635173710"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1634898361"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1634898361"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1635173710"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1635173710"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/dnsprivacy.org\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1634898361"></script>
+<script type="text/javascript" src="/js/search.js?1635173710"></script>
 
     
   </div>
@@ -1400,152 +1400,219 @@
 	<div class="toc">
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#relevant-internet-drafts-and-rfcs">Relevant Internet Drafts and RFCs</a></li>
+    <li><a href="#relevant-internet-drafts-and-rfcs">Relevant Internet Drafts and RFCs</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#dprive">DPRIVE</a></li>
+            <li><a href="#add">ADD</a></li>
+            <li><a href="#doh">DOH</a></li>
+            <li><a href="#dnsop">DNSOP</a></li>
+            <li><a href="#other">Other</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
     <li><a href="#selection-of-presentations">Selection of Presentations</a></li>
     <li><a href="#technical-reports">Technical reports</a></li>
   </ul>
 </nav>
 </div>
 <h2 id="relevant-internet-drafts-and-rfcs">Relevant Internet Drafts and RFCs</h2>
-<p><strong>DPRIVE - <a href="https://datatracker.ietf.org/wg/dprive/documents/">see the DPRIVE document
-website</a></strong></p>
+<h4 id="dprive">DPRIVE</h4>
+<p>The DNS PRIVate Exchange (DPRIVE) Working Group develops mechanisms
+to provide confidentiality to DNS transactions in order to address
+concerns surrounding pervasive monitoring (RFC 7258).</p>
+<p><a href="https://datatracker.ietf.org/wg/dprive/documents/">Also see the DPRIVE document website</a></p>
 
 
 <div class="table-wrap">
 
 <table class="wrapped confluenceTable">
+<colgroup>
+   <col span="1" style="width: 15%;">
+   <col span="1" style="width: 30%;">
+   <col span="1" style="width: 55%;">
+</colgroup>
 <tbody>
 <tr class="header">
-<th class="confluenceTh"><br />
-</th>
-<th class="confluenceTh"><br />
-</th>
-<th class="confluenceTh"><br />
-</th>
+<th ><br /></th>
+<th ><br /></th>
+<th ><br /></th>
+</tr>
+
+<tr class="even">
+<td ><a href="https://datatracker.ietf.org/doc/draft-ietf-dprive-dnsoquic/">draft-ietf-dprive-dnsoquic</a></td>
+<td ><strong>DNS over Dedicated QUIC connections</strong></td>
+<td >This document describes the use of QUIC to provide transport privacy
+for DNS (DoQ). </td>
+
+<tr class="even">
+<td ><a href="https://datatracker.ietf.org/doc/draft-ietf-dprive-unauth-to-authoritative/">draft-ietf-dprive-unauth-to-authoritative</a></td>
+<td ><strong>Recursive to Authoritative DNS with Unauthenticated Encryption</strong></td>
+<td >This document describes a use case and a method for a DNS recursive
+   resolver to use unauthenticated encryption when communicating with
+   authoritative servers. </p></td>
+
+
+<tr class="even">
+<td ><a href="https://datatracker.ietf.org/doc/rfc9103/">RFC9103</a></td>
+<td ><strong>DNS Zone Transfer over TLS</strong></td>
+<td >This document specifies the use of TLS, rather than cleartext, to prevent
+zone content collection via passive monitoring of zone transfers: XFR
+over TLS (XoT).</td>
+
+<tr class="even">
+<td ><a href="https://datatracker.ietf.org/doc/rfc9076/">RFC9076</a></td>
+<td ><strong>DNS Privacy Considerations</strong></td>
+<td >This document describes the privacy issues associated with the use
+of the DNS by Internet users. It is intended to be an analysis of the
+present situation and does not prescribe solutions.</td>
+
+<tr class="odd">
+<td ><a href="https://datatracker.ietf.org/doc/rfc8932/">RFC8932</a></td>
+<td ><strong>Recommendations for DNS Privacy Service Operators</strong></td>
+<td >Describes Best Current Practices for operators of DoT and DoH servers
+in terms of protocol, service and privacy policy considerations.</td>
+</tr>
+
+
+<tr class="even">
+<td ><a href="https://tools.ietf.org/html/rfc8310">RFC8310</a></td>
+<td ><strong>Usage Profiles for DNS over TLS and DNS over DTLS</strong></td>
+<td >This document describes how a DNS client can use a domain name to authenticate a DNS server that uses Transport Layer Security (TLS) and Datagram TLS (DTLS). Additionally, it defines (D)TLS profiles for DNS clients and servers implementing DNS-over-TLS and DNS-over- DTLS</td>
+</tr>
+
+</tr>
+<tr class="odd">
+<td ><a href="https://datatracker.ietf.org/doc/rfc7858/">RFC7858</a></td>
+<td ><strong>Specification for DNS over TLS</strong></td>
+<td >This document describes the use of TLS to provide privacy for DNS.</td>
 </tr>
 
 <tr class="odd">
-<td class="confluenceTd"><a href="https://datatracker.ietf.org/doc/draft-ietf-dprive-bcp-op/">draft-ietf-dprive-bcp-op-00</a></td>
-<td class="confluenceTd"><strong>Recommendations for DNS Privacy Service Operators</strong></td>
-<td class="confluenceTd">Describes Best Current Practices for operators of DoT and DoH servers<br />
-in terms of protocol, service and privacy policy considerations.</td>
+<td ><a href="https://tools.ietf.org/html/rfc8467">RFC8467</a></td>
+<td ><strong>Padding Policy for EDNS(0)</strong></td>
+<td >Specifies the preferred algorithm for padding with the option defined in RFC7830</td>
 </tr>
 <tr class="even">
-<td class="confluenceTd"><a href="https://datatracker.ietf.org/doc/rfc7626/">RFC7626</a></td>
-<td class="confluenceTd"><strong>DNS Privacy Considerations</strong></td>
-<td class="confluenceTd"><p>This document describes the privacy issues associated with the use<br />
-of the DNS by Internet users. It is intended to be an analysis of the<br />
-present situation and does not prescribe solutions.</p></td>
-</tr>
-<tr class="odd">
-<td class="confluenceTd"><a href="https://datatracker.ietf.org/doc/draft-ietf-dprive-dns-over-tls/">R</a><a href="https://datatracker.ietf.org/doc/rfc7858/">FC7858</a></td>
-<td class="confluenceTd"><strong>Specification for DNS over TLS</strong></td>
-<td class="confluenceTd"><p>This document describes the use of TLS to provide privacy for DNS.</p></td>
-</tr>
-<tr class="even">
-<td class="confluenceTd"><a href="https://datatracker.ietf.org/doc/draft-mayrhofer-edns0-padding/">R</a><a href="https://datatracker.ietf.org/doc/rfc7830/">FC7830</a></td>
-<td class="confluenceTd"><strong>The EDNS(0) Padding Option</strong></td>
-<td class="confluenceTd"><p>his document specifies the EDNS(0) 'Padding' option, which allows<br />
-DNS clients and servers to pad request and response messages by a<br />
-variable number of octets.</p></td>
-</tr>
-<tr class="odd">
-<td class="confluenceTd"><a href="https://tools.ietf.org/html/rfc8467">RFC8467</a></td>
-<td class="confluenceTd"><strong>Padding Policy for EDNS(0)</strong></td>
-<td class="confluenceTd">Specifies the preferred algorithm for padding with the option defined in RFC7830</td>
-</tr>
-<tr class="even">
-<td class="confluenceTd"><a href="https://tools.ietf.org/html/rfc8310">RFC8310</a></td>
-<td class="confluenceTd"><strong>Usage Profiles for DNS over TLS and DNS over DTLS</strong></td>
-<td class="confluenceTd">This document describes how a DNS client can use a domain name to authenticate a DNS server that uses Transport Layer Security (TLS) and Datagram TLS (DTLS). Additionally, it defines (D)TLS profiles for DNS clients and servers implementing DNS-over-TLS and DNS-over- DTLS</td>
-</tr>
-<tr class="odd">
-<td class="confluenceTd"><a href="https://datatracker.ietf.org/doc/rfc8094/">RFC8094</a></td>
-<td class="confluenceTd"><strong>Specification for DNS over Datagram Transport Layer Security (DTLS)</strong></td>
-<td class="confluenceTd"><br />
-</td>
-</tr>
-<tr class="even">
-<td class="confluenceTd"><a href="https://datatracker.ietf.org/doc/draft-ietf-dprive-eval/">draft-ietf-dprive-eval</a></td>
-<td class="confluenceTd"><strong>Evaluation of Privacy for DNS Private Exchange (expired)</strong></td>
-<td class="confluenceTd"><p>This document describes methods for measuring the<br />
-performance of DNS privacy mechanisms, particularly it provides<br />
-methods for measuring effectiveness in the face of pervasive<br />
-monitoring as defined in RFC7258.</p></td>
+<td ><a href="https://datatracker.ietf.org/doc/draft-mayrhofer-edns0-padding/">R</a><a href="https://datatracker.ietf.org/doc/rfc7830/">FC7830</a></td>
+<td ><strong>The EDNS(0) Padding Option</strong></td>
+<td >This document specifies the EDNS(0) 'Padding' option, which allows DNS clients and servers to pad request and response messages by a
+variable number of octets.</td>
 </tr>
 </tbody>
 </table>
 
 </div>
 
-<p><strong>DNSOP</strong>
+<h4 id="add">ADD</h4>
+<p>The <a href="https://datatracker.ietf.org/wg/add/about/">Adaptive DNS Discovery</a> focusses on discovery and selection of DNS resolvers
+by DNS clients in a variety of networking environments, including public
+networks, private networks, and VPNs, supporting both encrypted and
+unencrypted resolvers.</p>
+<p>ADD is still developing work but has adopted the following drafts</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://datatracker.ietf.org/doc/draft-ietf-add-ddr/">Discovery of Designated Resolvers</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://datatracker.ietf.org/doc/draft-ietf-add-dnr/">DHCP and Router Advertisement Options for the Discovery of Network-designated Resolvers (DNR)</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="doh">DOH</h4>
+<p>DOH has been concluded but worked to standardize encodings for DNS queries and responses
+that are suitable for use in HTTPS.</p>
 
 
 <div class="table-wrap">
 
 <table class="wrapped confluenceTable">
+<colgroup>
+   <col span="1" style="width: 15%;">
+   <col span="1" style="width: 30%;">
+   <col span="1" style="width: 55%;">
+</colgroup>
 <tbody>
 <tr class="header">
-<th class="confluenceTh"><br />
+<th ><br />
 </th>
-<th class="confluenceTh"><br />
+<th ><br />
 </th>
-<th class="confluenceTh"><br />
+<th ><br />
 </th>
 </tr>
 
 <tr class="odd">
-<td class="confluenceTd"><a href="https://datatracker.ietf.org/doc/rfc7766/">RFC7766</a></td>
-<td class="confluenceTd"><strong>DNS Transport over TCP - Implementation Requirements</strong></td>
-<td class="confluenceTd"><p>This document specifies the requirement for support of TCP as a transport<br />
-protocol for DNS implementations and provides guidelines towards<br />
-DNS-over-TCP performance on par with that of DNS-over-UDP.</p></td>
+<td ><a href="https://tools.ietf.org/html/rfc8484">RFC8484</a></td>
+<td ><strong>DNS Queries over HTTPS (DoH)</strong></td>
+<td >Document describing the protocol aspects of running DNS over HTTPS.</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+<h4 id="dnsop">DNSOP</h4>
+<p>The <a href="https://datatracker.ietf.org/wg/dnsop/about/">DNS Operations Working Group</a> will develop guidelines for the
+operation of DNS software and services and for the administration
+of DNS zones.</p>
+
+
+<div class="table-wrap">
+
+<table class="wrapped confluenceTable">
+<colgroup>
+   <col span="1" style="width: 15%;">
+   <col span="1" style="width: 30%;">
+   <col span="1" style="width: 55%;">
+</colgroup>
+<tbody>
+<tr class="header">
+<th ><br />
+</th>
+<th ><br />
+</th>
+<th ><br />
+</th>
+</tr>
+
+<tr class="odd">
+<td ><a href="https://datatracker.ietf.org/doc/rfc7766/">RFC7766</a></td>
+<td ><strong>DNS Transport over TCP - Implementation Requirements</strong></td>
+<td >This document specifies the requirement for support of TCP as a transport
+protocol for DNS implementations and provides guidelines towards
+DNS-over-TCP performance on par with that of DNS-over-UDP.</td>
 </tr>
 <tr class="even">
-<td class="confluenceTd"><a href="https://datatracker.ietf.org/doc/rfc7816/">RFC7816</a></td>
-<td class="confluenceTd"><strong>DNS Query Name Minimisation to Improve Privacy</strong></td>
-<td class="confluenceTd"><br />
+<td ><a href="https://datatracker.ietf.org/doc/rfc7816/">RFC7816</a></td>
+<td ><strong>DNS Query Name Minimisation to Improve Privacy</strong></td>
+<td >(Note work is in progress on an [update](https://datatracker.ietf.org/doc/draft-ietf-dnsop-rfc7816bis/))
 </td>
 </tr>
 <tr class="odd">
-<td class="confluenceTd"><a href="https://datatracker.ietf.org/doc/rfc7828/">RFC7828</a></td>
-<td class="confluenceTd"><strong>The edns-tcp-keepalive EDNS0 Option</strong></td>
-<td class="confluenceTd">This document defines an EDNS0 option ("edns-tcp-keepalive")<br />
-that allows DNS clients and servers to signal their respective<br />
+<td ><a href="https://datatracker.ietf.org/doc/rfc7828/">RFC7828</a></td>
+<td ><strong>The edns-tcp-keepalive EDNS0 Option</strong></td>
+<td >This document defines an EDNS0 option ("edns-tcp-keepalive")
+that allows DNS clients and servers to signal their respective
 readiness to conduct multiple DNS transactions over individual TCP sessions. </td>
 </tr>
 </tbody>
 </table>
 
 </div>
-</p>
-<p>DOH
 
-
-<div class="table-wrap">
-
-<table class="wrapped confluenceTable">
-<tbody>
-<tr class="header">
-<th class="confluenceTh"><br />
-</th>
-<th class="confluenceTh"><br />
-</th>
-<th class="confluenceTh"><br />
-</th>
-</tr>
-
-<tr class="odd">
-<td class="confluenceTd"><a href="https://tools.ietf.org/html/rfc8484">RFC8484</a></td>
-<td class="confluenceTd"><strong>DNS Queries over HTTPS (DoH)</strong></td>
-<td class="confluenceTd">Document describing the protocol aspects of running DNS over HTTPS.</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</p>
-<p><strong>Other</strong></p>
+<h4 id="other">Other</h4>
 <table>
 <thead>
 <tr>
@@ -1565,6 +1632,10 @@ readiness to conduct multiple DNS transactions over individual TCP sessions. </
 <tr>
 <td><a href="https://tools.ietf.org/html/rfc7413">RFC7413</a></td>
 <td><strong>TCP Fastopen</strong></td>
+</tr>
+<tr>
+<td><a href="https://datatracker.ietf.org/doc/rfc8094/">RFC8094 - Experimental</a></td>
+<td><strong>Specification for DNS over Datagram Transport Layer Security (DTLS)</strong></td>
 </tr>
 </tbody>
 </table>
@@ -1589,8 +1660,7 @@ It - <a href="https://ripe77.ripe.net/presentations/13-RIPE77_Plenary_Its_DNS_
 <li><strong>ICANN DNS Symposium 2018</strong>
 <ul>
 <li> <a href="https://dnsprivacy.org/wiki/download/attachments/1278017/IDS2_where%27s_my_DNS.pdf?version=1&amp;modificationDate=1531754389989&amp;api=v2">&lsquo;Where&rsquo;s my
-DNS?&rsquo; </a>(<a href="https://participate.icann.org/p3okm7zhl55/">video</a>)**<br>
-**</li>
+DNS?&rsquo; </a>(<a href="https://participate.icann.org/p3okm7zhl55/">video</a>)</li>
 </ul>
 </li>
 <li><strong>RIPE 76</strong>
@@ -1606,9 +1676,8 @@ PCP</a></li>
 </li>
 <li><strong>FOSDEM 2018</strong>
 <ul>
-<li>** <strong><a href="https://video.fosdem.org/2018/AW1.121/dns_living_on_the_edge.mp4">Willem Toorop on Stub
-resolvers</a></strong><br>
-**</li>
+<li><a href="https://video.fosdem.org/2018/AW1.121/dns_living_on_the_edge.mp4">Willem Toorop on Stub
+resolvers</a></li>
 </ul>
 </li>
 <li><strong>OARC 27</strong>
@@ -1630,7 +1699,7 @@ getdns</a></li>
 Dickinson, Daniel Kahn Gillmor)</li>
 </ul>
 </li>
-<li>**RIPE  72 **
+<li><strong>RIPE 72</strong>
 <ul>
 <li><a href="https://ripe72.ripe.net/archives/video/229/">DNS Privacy Public Resolver
 discussion</a> (Sara
@@ -1677,16 +1746,12 @@ Security</a>
 </li>
 <li><strong>DNS-OARC Spring workshop 2014</strong>:
 <ul>
-<li>
-<p><a href="https://indico.dns-oarc.net//contributionDisplay.py?contribId=11&amp;confId=19">T-DNS: Connection-Oriented DNS to Improve Privacy and
+<li><a href="https://indico.dns-oarc.net//contributionDisplay.py?contribId=11&amp;confId=19">T-DNS: Connection-Oriented DNS to Improve Privacy and
 Security</a>
-(John Heidemann) </p>
-</li>
-<li>
-<p><a href="https://indico.dns-oarc.net//contributionDisplay.py?contribId=4&amp;confId=19">getdns-api
+(John Heidemann) </li>
+<li><a href="https://indico.dns-oarc.net//contributionDisplay.py?contribId=4&amp;confId=19">getdns-api
 implementation</a>
-(Willen Toorop)</p>
-</li>
+(Willen Toorop)</li>
 </ul>
 </li>
 </ul>
@@ -1694,7 +1759,7 @@ implementation</a>
 <ul>
 <li>
 <p><strong>T-DNS: Connection-Oriented DNS to Improve Privacy and Security</strong> 
-(<a href="http://www.isi.edu/publications/trpublic/files/tr-693.pdf">http://www.isi.edu/publications/trpublic/files/tr-693.pdf</a>)</p>
+<a href="http://www.isi.edu/publications/trpublic/files/tr-693.pdf">http://www.isi.edu/publications/trpublic/files/tr-693.pdf</a></p>
 </li>
 <li>
 <p><a href="http://googlecode.blogspot.co.uk/2012/01/lets-make-tcp-faster.html">http://googlecode.blogspot.co.uk/2012/01/lets-make-tcp-faster.html</a></p>
@@ -2551,16 +2616,16 @@ implementation</a>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1634898361"></script>
-    <script src="/js/perfect-scrollbar.min.js?1634898361"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1634898361"></script>
-    <script src="/js/jquery.sticky.js?1634898361"></script>
-    <script src="/js/featherlight.min.js?1634898361"></script>
-    <script src="/js/highlight.pack.js?1634898361"></script>
+    <script src="/js/clipboard.min.js?1635173710"></script>
+    <script src="/js/perfect-scrollbar.min.js?1635173710"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1635173710"></script>
+    <script src="/js/jquery.sticky.js?1635173710"></script>
+    <script src="/js/featherlight.min.js?1635173710"></script>
+    <script src="/js/highlight.pack.js?1635173710"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1634898361"></script>
-    <script src="/js/learn.js?1634898361"></script>
-    <script src="/js/hugo-learn.js?1634898361"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1635173710"></script>
+    <script src="/js/learn.js?1635173710"></script>
+    <script src="/js/hugo-learn.js?1635173710"></script>
     
     
 

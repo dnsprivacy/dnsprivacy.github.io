@@ -12,22 +12,22 @@
     <title>The Solutions :: dnsprivacy.org</title>
 
     
-    <link href="/css/nucleus.css?1634898361" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1634898361" rel="stylesheet">
-    <link href="/css/hybrid.css?1634898361" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1634898361" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1634898361" rel="stylesheet">
-    <link href="/css/auto-complete.css?1634898361" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1634898361" rel="stylesheet">
-    <link href="/css/theme.css?1634898361" rel="stylesheet">
-    <link href="/css/tabs.css?1634898361" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1634898361" rel="stylesheet">
+    <link href="/css/nucleus.css?1635173710" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1635173710" rel="stylesheet">
+    <link href="/css/hybrid.css?1635173710" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1635173710" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1635173710" rel="stylesheet">
+    <link href="/css/auto-complete.css?1635173710" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1635173710" rel="stylesheet">
+    <link href="/css/theme.css?1635173710" rel="stylesheet">
+    <link href="/css/tabs.css?1635173710" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1635173710" rel="stylesheet">
     
-    <link href="/css/theme-blue.css?1634898361" rel="stylesheet">
+    <link href="/css/theme-blue.css?1635173710" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1634898361"></script>
+    <script src="/js/jquery-3.3.1.min.js?1635173710"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1634898361"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1634898361"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1635173710"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1635173710"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/dnsprivacy.org\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1634898361"></script>
+<script type="text/javascript" src="/js/search.js?1635173710"></script>
 
     
   </div>
@@ -1401,14 +1401,14 @@
 <div class="toc">
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#ietf-standards-track-options">IETF Standards Track options</a>
+    <li><a href="#ietf-standards-track-protocol-options">IETF Standards Track protocol options</a>
       <ul>
         <li><a href="#dns-over-tls-dot">DNS-over-TLS (DoT)</a></li>
         <li><a href="#dns-over-http-doh">DNS-over-HTTP (DoH)</a></li>
         <li><a href="#dns-over-quic-doq">DNS-over-QUIC (DoQ)</a></li>
       </ul>
     </li>
-    <li><a href="#non-standards-track-options">Non Standards Track options</a>
+    <li><a href="#non-standards-track-protocol-options">Non Standards Track protocol options</a>
       <ul>
         <li><a href="#dns-over-dtls">DNS-over-DTLS</a></li>
         <li><a href="#dnscrypt">DNSCrypt</a></li>
@@ -1416,17 +1416,23 @@
         <li><a href="#dns-over-https">DNS-over-HTTPS</a></li>
       </ul>
     </li>
+    <li><a href="#the-discovery-problem">The Discovery Problem</a>
+      <ul>
+        <li><a href="#stub-to-recursive-discovery">Stub to recursive discovery</a></li>
+        <li><a href="#recursive-to-authoritative-discovery">Recursive to authoritative discovery</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 </div>
-<p>This site is mainly focussed on following the development and deployment
+<p>This page is mainly focussed on following the development and deployment
 of <a href="https://tools.ietf.org/html/rfc7858">DNS-over-TLS</a> (DoT) and
 <a href="https://datatracker.ietf.org/wg/doh/about/">DNS-over-HTTPS</a> (DoH) as
 the leading solutions for DNS Privacy because they are the only
 protocols currently standardized by the IETF.</p>
 <p>Some history and background on other alternatives are outlined below and
 we intend to follow other solutions as they evolve.</p>
-<h2 id="ietf-standards-track-options">IETF Standards Track options</h2>
+<h2 id="ietf-standards-track-protocol-options">IETF Standards Track protocol options</h2>
 <h3 id="dns-over-tls-dot">DNS-over-TLS (DoT)</h3>
 <p><a href="https://tools.ietf.org/html/rfc7858">RFC7858</a> specified DNS-over-TLS as
 a Standards Track protocol in May 2016 with a port assignment of 853
@@ -1452,7 +1458,7 @@ opportunistically (it must be configured).</p>
 <h3 id="dns-over-quic-doq">DNS-over-QUIC (DoQ)</h3>
 <p>A draft was submitted in April 2017 to the IETF QUIC Working group on
 <a href="https://datatracker.ietf.org/doc/draft-ietf-dprive-dnsoquic/">DNS-over-QUIC</a></p>
-<h2 id="non-standards-track-options">Non Standards Track options</h2>
+<h2 id="non-standards-track-protocol-options">Non Standards Track protocol options</h2>
 <h3 id="dns-over-dtls">DNS-over-DTLS</h3>
 <p><a href="https://tools.ietf.org/html/rfc8094">RFC8094</a> specified DNS-over-DTLS
 as an Experimental Standard in Feb 2017. To our knowledge that are no
@@ -1488,6 +1494,25 @@ communications in mind. It was not standardized by the IETF.</p>
 <p>Google offers a <a href="https://developers.google.com/speed/public-dns/docs/dns-over-https">proprietary DNS-over-HTTPS
 service</a>
 using a JSON format for DNS queries.</p>
+<h2 id="the-discovery-problem">The Discovery Problem</h2>
+<p>Historically, only an IP address was required to discover a DNS resolver for
+queries to be sent over clear text. Encrypted protocols require the client has
+more information so it can trust the server. This problem space is very different between stub and recursive resolver.</p>
+<h3 id="stub-to-recursive-discovery">Stub to recursive discovery</h3>
+<ul>
+<li>Early solutions require hard-coding information of trusted servers in
+different ways e.g. Firefox&rsquo;s TRR list or Stubby&rsquo;s config file</li>
+<li>More
+recently work has been done in the ADD Working Group at IETF to find
+automated solutions to the variety of situations that clients have</li>
+</ul>
+<h3 id="recursive-to-authoritative-discovery">Recursive to authoritative discovery</h3>
+<ul>
+<li>Efforts in this space have been hampered by the lack of a natural technical
+solution to encode the authentication information directly within the DNS.
+Various alternatives (including an Opportunistic model have been proposed in
+the DPRIVE Working Group at IETF)</li>
+</ul>
 
 
 
@@ -2339,16 +2364,16 @@ using a JSON format for DNS queries.</p>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1634898361"></script>
-    <script src="/js/perfect-scrollbar.min.js?1634898361"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1634898361"></script>
-    <script src="/js/jquery.sticky.js?1634898361"></script>
-    <script src="/js/featherlight.min.js?1634898361"></script>
-    <script src="/js/highlight.pack.js?1634898361"></script>
+    <script src="/js/clipboard.min.js?1635173710"></script>
+    <script src="/js/perfect-scrollbar.min.js?1635173710"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1635173710"></script>
+    <script src="/js/jquery.sticky.js?1635173710"></script>
+    <script src="/js/featherlight.min.js?1635173710"></script>
+    <script src="/js/highlight.pack.js?1635173710"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1634898361"></script>
-    <script src="/js/learn.js?1634898361"></script>
-    <script src="/js/hugo-learn.js?1634898361"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1635173710"></script>
+    <script src="/js/learn.js?1635173710"></script>
+    <script src="/js/hugo-learn.js?1635173710"></script>
     
     
 
