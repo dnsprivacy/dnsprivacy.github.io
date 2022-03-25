@@ -12,22 +12,22 @@
     <title>Implementation Status :: dnsprivacy.org</title>
 
     
-    <link href="/css/nucleus.css?1647954791" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1647954791" rel="stylesheet">
-    <link href="/css/hybrid.css?1647954791" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1647954791" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1647954791" rel="stylesheet">
-    <link href="/css/auto-complete.css?1647954791" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1647954791" rel="stylesheet">
-    <link href="/css/theme.css?1647954791" rel="stylesheet">
-    <link href="/css/tabs.css?1647954791" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1647954791" rel="stylesheet">
+    <link href="/css/nucleus.css?1648213164" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1648213164" rel="stylesheet">
+    <link href="/css/hybrid.css?1648213164" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1648213164" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1648213164" rel="stylesheet">
+    <link href="/css/auto-complete.css?1648213164" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1648213164" rel="stylesheet">
+    <link href="/css/theme.css?1648213164" rel="stylesheet">
+    <link href="/css/tabs.css?1648213164" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1648213164" rel="stylesheet">
     
-    <link href="/css/theme-blue.css?1647954791" rel="stylesheet">
+    <link href="/css/theme-blue.css?1648213164" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1647954791"></script>
+    <script src="/js/jquery-3.3.1.min.js?1648213164"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1647954791"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1647954791"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1648213164"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1648213164"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/dnsprivacy.org\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1647954791"></script>
+<script type="text/javascript" src="/js/search.js?1648213164"></script>
 
     
   </div>
@@ -1851,7 +1851,38 @@ open-source DNS recursive resolvers/load-balancers</li>
 </tbody>
 </table>
 <h2 id="doq-implementation-status">DoQ Implementation status</h2>
-<p>AdGuard provide client and server side tools. For a full list of implementations see: <a href="https://datatracker.ietf.org/doc/html/draft-ietf-dprive-dnsoquic-02#page-14">Implementation status</a>.</p>
+<p>DoQ implementations are still in the early stages, the list below is an overview of the current status.</p>
+<p>A matrix of the interoperability of various QUIC libraries is available here: <a href="https://interop.seemann.io">https://interop.seemann.io</a></p>
+<ol>
+<li>AdGuard launched a DoQ recursive resolver service in December 2020. They have
+released a suite of open source tools that support DoQ:
+<ol>
+<li><a href="https://github.com/AdguardTeam/DnsLibs">AdGuard C++ DNS libraries</a> A
+DNS proxy library that supports all existing DNS protocols including
+DNS-over-TLS, DNS-over-HTTPS, DNSCrypt and DNS-over-QUIC (experimental).</li>
+<li><a href="https://github.com/AdguardTeam/dnsproxy">DNS Proxy</a> A simple DNS proxy
+server that supports all existing DNS protocols including DNS-over-TLS,
+DNS-over-HTTPS, DNSCrypt, and DNS-over-QUIC. Moreover, it can work as a
+DNS-over-HTTPS, DNS-over-TLS or DNS-over-QUIC server.</li>
+<li><a href="https://github.com/AdguardTeam/coredns">CoreDNS fork for AdGuard DNS</a>
+Includes DNS-over-QUIC server-side support.</li>
+<li><a href="https://github.com/ameshkov/dnslookup">dnslookup</a> Simple command line
+utility to make DNS lookups. Supports all known DNS protocols: plain DNS,
+DoH, DoT, DoQ, DNSCrypt.</li>
+</ol>
+</li>
+<li><a href="https://github.com/private-octopus/quicdoq">Quicdoq</a> Quicdoq is a simple
+open source implementation of DoQ. It is written in C, based on
+<a href="https://github.com/private-octopus/picoquic">Picoquic</a>.</li>
+<li><a href="https://github.com/DNS-OARC/flamethrower/tree/dns-over-quic">Flamethrower</a>
+is an open source DNS performance and functional testing utility written in
+C++ that has an experimental implementation of DoQ.</li>
+<li><a href="https://github.com/aiortc/aioquic">aioquic</a> is an implementation of QUIC in
+Python. It includes example client and server for DoQ.</li>
+<li><a href="https://github.com/ns1labs/doq-proxy">doq-proxy</a> is a lightweight Go implementaion
+of a simple client and server side proxy.</li>
+</ol>
+<p>Note that as of March 2022 there is early, experimental support for QUIC as a base transport protocol (i.e. without HTTP/3) in both <code>nginx</code> and <code>HAProxy</code> but that during work at the IETF 113 Hackathon neither could be configured to be useable for DoQ.</p>
 <h2 id="xfrxot-implementation-status">XFR/XoT Implementation status</h2>
 
 <div class="notices info" ><p>This table is a work in progress - please notify us it
@@ -3048,16 +3079,16 @@ was added in development release 9.17.10</p>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1647954791"></script>
-    <script src="/js/perfect-scrollbar.min.js?1647954791"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1647954791"></script>
-    <script src="/js/jquery.sticky.js?1647954791"></script>
-    <script src="/js/featherlight.min.js?1647954791"></script>
-    <script src="/js/highlight.pack.js?1647954791"></script>
+    <script src="/js/clipboard.min.js?1648213164"></script>
+    <script src="/js/perfect-scrollbar.min.js?1648213164"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1648213164"></script>
+    <script src="/js/jquery.sticky.js?1648213164"></script>
+    <script src="/js/featherlight.min.js?1648213164"></script>
+    <script src="/js/highlight.pack.js?1648213164"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1647954791"></script>
-    <script src="/js/learn.js?1647954791"></script>
-    <script src="/js/hugo-learn.js?1647954791"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1648213164"></script>
+    <script src="/js/learn.js?1648213164"></script>
+    <script src="/js/hugo-learn.js?1648213164"></script>
     
     
 
