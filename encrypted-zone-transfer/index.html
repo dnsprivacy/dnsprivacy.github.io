@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Configuring Stubby :: dnsprivacy.org</title>
+    <title>Encrypted Zone Transfer :: dnsprivacy.org</title>
 
     
     <link href="/css/nucleus.css?1653669550" rel="stylesheet">
@@ -37,7 +37,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/dns_privacy_daemon_-_stubby/configuring_stubby/">
+  <body class="" data-url="/encrypted-zone-transfer/">
     <nav id="sidebar" class="">
 
 
@@ -332,7 +332,7 @@
   
     
     <li data-nav-id="/dns_privacy_daemon_-_stubby/" title="DNS Privacy Daemon - Stubby" class="dd-item
-        parent
+        
         
         
         ">
@@ -381,7 +381,7 @@
  
   
     
-      <li data-nav-id="/dns_privacy_daemon_-_stubby/configuring_stubby/" title="Configuring Stubby" class="dd-item active">
+      <li data-nav-id="/dns_privacy_daemon_-_stubby/configuring_stubby/" title="Configuring Stubby" class="dd-item ">
         <a href="/dns_privacy_daemon_-_stubby/configuring_stubby/">
         8.2. Configuring Stubby
         
@@ -929,8 +929,8 @@
   
     
     <li data-nav-id="/encrypted-zone-transfer/" title="Encrypted Zone Transfer" class="dd-item
-        
-        
+        parent
+        active
         
         ">
       <a href="/encrypted-zone-transfer/">
@@ -1386,8 +1386,6 @@
                         </a>
                     </span>
                   
-                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
-                  
                   <span class="links">
                  
                  
@@ -1398,13 +1396,7 @@
             
           
           
-            
-            
-          
-          
-            <a href='/'>DNS Privacy Project</a> > <a href='/dns_privacy_daemon_-_stubby/'>DNS Privacy Daemon - Stubby</a> > Configuring Stubby
-          
-        
+            <a href='/'>DNS Privacy Project</a> > Encrypted Zone Transfer
           
         
           
@@ -1413,27 +1405,6 @@
                   </span>
                 </div>
                 
-                    <div class="progress">
-    <div class="wrapper">
-<nav id="TableOfContents">
-  <ul>
-    <li><a href="#create-custom-configuration-file">Create Custom Configuration File</a>
-      <ul>
-        <li><a href="#dnssec">DNSSEC</a>
-          <ul>
-            <li><a href="#storage-of-zero-config-trust-anchor">Storage of Zero-config Trust anchor</a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-    <li><a href="#opportunistic-dot-to-your-local-resolver">Opportunistic DoT to your local resolver</a></li>
-    <li><a href="#runtime-logging">Runtime logging</a></li>
-  </ul>
-</nav>
-    </div>
-</div>
-
-                
               </div>
             </div>
             
@@ -1441,209 +1412,167 @@
         
         </div>
         
+          <div id="chapter">
+        
         <div id="body-inner">
-          
-            <h1>
-              
-              Configuring Stubby
-            </h1>
           
 
         
 
 
+
+	<h2 id="encrypted-zone-transfers">Encrypted Zone Transfers</h2>
 <div class="toc">
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#create-custom-configuration-file">Create Custom Configuration File</a>
+    <li><a href="#encrypted-zone-transfers">Encrypted Zone Transfers</a></li>
+    <li><a href="#why-encrypt-zone-transfer">Why Encrypt Zone Transfer?</a></li>
+    <li><a href="#specifications">Specifications</a></li>
+    <li><a href="#implementations">Implementations</a></li>
+    <li><a href="#configuration">Configuration</a>
       <ul>
-        <li><a href="#dnssec">DNSSEC</a>
-          <ul>
-            <li><a href="#storage-of-zero-config-trust-anchor">Storage of Zero-config Trust anchor</a></li>
-          </ul>
-        </li>
+        <li><a href="#bind">BIND</a></li>
+        <li><a href="#nsd">NSD</a></li>
       </ul>
     </li>
-    <li><a href="#opportunistic-dot-to-your-local-resolver">Opportunistic DoT to your local resolver</a></li>
-    <li><a href="#runtime-logging">Runtime logging</a></li>
   </ul>
 </nav>
 </div>
 
-<div class="notices infoblock" ><p>It is recommended to use the default configuration file provided which
-will use &lsquo;Strict&rsquo; privacy mode and spread the DNS queries among several
-of the current DNS Privacy test servers. Note that this file contains
-both IPv4 and IPv6 addresses.</p>
-<p>Note also that this file only enables a small subset of the available
-servers by default. Users can choose to use additional servers by
-uncommenting the relevant sections in the file. See <a href="/test_servers">DNS Privacy Test
-Servers</a> for details of the available servers.</p>
+<div class="notices infoblock" ></div>
+
+<h2 id="why-encrypt-zone-transfer">Why Encrypt Zone Transfer?</h2>
+<p>The contents of the zone could include information such as names of persons
+used in names of hosts. Best practice is not to use personal information for
+domain names, but many such domain names exist. The contents of the zone could
+also include references to locations that allow inference about location
+information of the individuals associated with the zone&rsquo;s organization. It
+could also include references to other organizations. Examples of this could be:</p>
+<ul>
+<li>Person-laptop.example.org</li>
+<li>MX-for-Location.example.org</li>
+<li>Service-tenant-from-another-org.example.org</li>
+</ul>
+<p>Additionally, the full zone contents expose all the IP addresses of endpoints
+held in the DNS records, which can make reconnaissance and attack targeting
+easier, particularly for IPv6 addresses or private networks. There may also be
+regulatory, policy, or other reasons why the zone contents in full must be
+treated as private.</p>
+<h2 id="specifications">Specifications</h2>
+<p><a href="https://www.ietf.org/rfc/rfc9103.html">RFC 9103 - Zone Transfer over TLS
+(XoT)</a> was standardized by the IETF in
+2021. I describes how to use DNS over TLS to secure zone transfers in combination with
+TSIG, ACLs and certificate authentication of the server.</p>
+<p><a href="https://www.ietf.org/rfc/rfc9250.html">RFC 9250 - DNS over Dedicated QUIC connections
+(DoQ)</a> additionally defines how to use
+DoQ for encrypted zone transfer in an entirely analogous way to using DNS over
+TLS.</p>
+<h2 id="implementations">Implementations</h2>
+<p>Both BIND (from 9.18) and NSD (from 4.3.7) support zone transfer of TLS (XoT). See
+<a href="/implementation_status/#xfrxot-implementation-status">this table</a> for more
+details.</p>
+<h2 id="configuration">Configuration</h2>
+<h3 id="bind">BIND</h3>
+<p>To configure a BIND primary for XoT (secured by client ACL and TSIG key) use something like the following:</p>
+<pre><code class="language-base" data-lang="base">options {
+    ...
+    listen-on port 8853 tls &quot;xot&quot; {any;};
+    ...
+}
+
+tls &quot;xot&quot; {
+    cert-file &quot;&lt;cert-file-path&gt;&quot;;
+    key-file  &quot;&lt;key-file-path&gt;&quot;;
+    protocols { TLSv1.3; };
+    session-tickets yes;
+};
+
+acl xot-secondaries {b.b.b.b;};
+
+key &quot;xot-key&quot; {
+    algorithm hmac-md5;
+    secret &quot;&quot;;
+};
+
+acl xot-acl { !{ !xot-secondaries; any; }; key xot-key ;};
+
+zone {
+  type primary;
+  ...
+  allow-transfer transport tls { xot-acl; };
+  ...
+}
+</code></pre><p>To configure a BIND seconday for XoT (secured by authenticating the server certificate and TSIG key) use something like the following:</p>
+<pre><code class="language-base" data-lang="base">tls &quot;xot&quot; {
+    remote-hostname &quot;my-xot-primary.org&quot;;
+    protocols { TLSv1.3; };
+    session-tickets yes;
+};
+
+key &quot;xot-key&quot; {
+    algorithm hmac-md5;
+    secret &quot;&quot;;
+};
+
+zone {
+  type secondary;
+  ...
+  primaries { a.a.a.a port 853 key xot-key tls &quot;xot&quot; ;};
+  ...
+}
+</code></pre>
+<div class="notices info" ><p>To help with testing there is the option to use a transient per <code>named</code> process key/cert on the
+BIND primary. For this option, use
+<code>listen-on port 8853 tls ephemeral {any;};</code>
+in the primary config
+and remove the <code>remote-hostname</code> from the secondary config. While this is
+convenient for testing is is NOT secure enough to use in a production
+environment!</p>
 </div>
 
-<h2 id="create-custom-configuration-file">Create Custom Configuration File</h2>
-<p>Alternatively the configuration file location can be specified on the
-command line using the <code>-C</code> flag. Changes to the configuration file
-require a restart of Stubby.</p>
+<h3 id="nsd">NSD</h3>
+<p>To configure an NSD primary for XoT (secured by client ACL and TSIG key) use something like the following:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ini" data-lang="ini"><span style="color:#a6e22e">zone:</span>
+    <span style="color:#a6e22e">...</span>
+    <span style="color:#a6e22e">tls-service-key: &#34;&lt;path_to_private_key&gt;&#34;</span>
+    <span style="color:#a6e22e">tls-service-pem: &#34;&lt;path_to_certifcate_file&gt;&#34;</span>
+    <span style="color:#a6e22e">tls-port: 853</span>
+    <span style="color:#a6e22e">provide-xfr: b.b.b.b@853 &#34;xot-key&#34;</span>
 
-<div class="notices tip" ><p>From release 0.1.3 of stubby (using the 1.2 release of getdns) the
-configuration file format is a YAML like format, which contains detailed
-comments of the options. <a href="https://github.com/getdnsapi/stubby/blob/develop/stubby.yml.example">See here for an
-example</a>
-or keep reading for a short description. <em>To be backwards compatible a
-file using the YAML format <strong>must</strong> have a .yml or .yaml extension.</em>
-The previously used <a href="https://getdnsapi.net/doxygen/group__Ustring2getdns__data.html">JSON like format used internally in
-getdns</a>
-is still supported but only when the configuration file is specified via
-the command line using the -C flag. This format is the same as the
-output returned by <code>stubby -i</code>. For example, this output can be used as
-a configuration file directly, but a less verbose form is also accepted.</p>
+<span style="color:#a6e22e">key:</span>
+     <span style="color:#a6e22e">name: &#34;xot-key&#34;</span>
+     <span style="color:#a6e22e">algorithm: hmac-md5</span>
+     <span style="color:#a6e22e">secret: &#34;&#34;</span>
+<span style="color:#a6e22e">};</span>
+</code></pre></div><p>To configure an NSD secondary for XoT (secured by authenticating the server certificate and TSIG key) use something like the following:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ini" data-lang="ini"><span style="color:#a6e22e">zone:</span>
+    <span style="color:#a6e22e">...</span>
+    <span style="color:#a6e22e">request-xfr: a.a.a.a &#34;xot-key&#34; &#34;xot&#34;</span>
+
+<span style="color:#a6e22e">tls-auth:</span>
+    <span style="color:#a6e22e">name: &#34;xot&#34;</span>
+    <span style="color:#a6e22e">auth-domain-name: &#34;my-xot-primary.org&#34;</span>
+
+<span style="color:#a6e22e">key:</span>
+     <span style="color:#a6e22e">name: &#34;xot-key&#34;</span>
+     <span style="color:#a6e22e">algorithm: hmac-md5</span>
+     <span style="color:#a6e22e">secret: &#34;&#34;</span>
+<span style="color:#a6e22e">};</span>
+</code></pre></div>
+<div class="notices info" ><p>NSD also supports mutual TLS authentication, see <a href="https://nsd.docs.nlnetlabs.nl/en/latest/manpages/nsd.conf.html#tls-auth-declarations">TLS Auth Declarations</a></p>
 </div>
 
-<p>Essentially the options available are the same as the options that can
-be set on a getdns <strong><code>context.</code></strong> </p>
-<ul>
-<li>Doxygen documentation for the <strong><code>context</code></strong> options is
-available <a href="https://getdnsapi.net/doxygen/group__getdns__context.html">here</a>. </li>
-<li>A detailed description of the <a href="https://getdnsapi.net/documentation/spec/#8-dns-contexts">context settings is in the
-API</a></li>
-<li>A detailed description of <a href="https://getdnsapi.net/documentation/spec/#3-extensions">all the extensions than can also be used
-is also in the
-API</a>.</li>
-</ul>
-<p>To aid with creating a custom configuration file, an example is given
-below. The config file below will configure Stubby in the following ways:</p>
-<ul>
-<li><strong><code>resolution_type</code>:</strong> Work in stub mode only (not recursive mode) -
-required for Stubby operation.</li>
-<li><strong><code>dns_transport_list</code>:</strong> Use TLS only as a transport (no fallback
-to UDP or TCP).</li>
-<li><strong><code>tls_authentication</code>:</strong> Use Strict Privacy i.e. require a TLS
-connection and authentication of the upstream
-<ul>
-<li>If Opportunistic mode is desired,  remove
-the <em>tls_authentication: GETDNS_AUTHENTICATION_REQUIRED</em> field
-and add additional transports to the <em>dns_transport_list</em> (e.g.
-UDP, TCP) . In Opportunistic mode authentication of the
-nameserver is not required and fallback to clear text transports
-is permitted <strong>if</strong> they are in the dns_transport_list.</li>
-</ul>
-</li>
-<li><strong><code>tls_query_padding_blocksize</code>:</strong> Use the EDNS0 padding option to
-pad DNS queries to hide their size</li>
-<li><strong><code>edns_client_subnet_private</code>:</strong> Use EDNS0 Client Subnet privacy so
-the client subnet is not sent to authoritative servers</li>
-<li><strong><code>listen_address</code>:</strong> have the Stubbby daemon listen on IPv4 and
-IPv6 on port 53 on the loopback address</li>
-<li><strong><code>idle_timeout</code>:</strong> Use an EDNS0 Keepalive idle timeout of 10s
-unless overridden by the server. This keeps idle TLS connections
-open to avoid the overhead of opening a new connection for every
-query.</li>
-<li><strong><code>round_robin_upstreams</code>:</strong> Round robin queries across all the
-configured upstream servers. Without this option Stubby will use
-each upstream server sequentially until it becomes unavailable and
-then move on to use the next.</li>
-<li><strong><code>upstream_recursive_servers</code>:</strong> Use the NLnet labs test DNS
-Privacy Server for outgoing queries. In Strict Privacy mode, at
-least one of the following is required for each nameserver:
-<ul>
-<li><strong><code>tls_auth_name</code>:</strong> This is the authentication domain name that
-will be verified against the presented certificate.</li>
-<li><strong><code>tls_pubkey_pinset</code>:</strong> The sha256 SPKI pinset for the server.
-This is also verified against the presented certificate.</li>
-</ul>
-</li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">resolution_type</span>: <span style="color:#ae81ff">GETDNS_RESOLUTION_STUB</span>
-<span style="color:#f92672">dns_transport_list</span>: 
-  - <span style="color:#ae81ff">GETDNS_TRANSPORT_TLS</span>
-<span style="color:#f92672">tls_authentication</span>: <span style="color:#ae81ff">GETDNS_AUTHENTICATION_REQUIRED</span>
-<span style="color:#f92672">tls_query_padding_blocksize</span>: <span style="color:#ae81ff">256</span>
-<span style="color:#f92672">edns_client_subnet_private </span>: <span style="color:#ae81ff">1</span>
-<span style="color:#f92672">idle_timeout</span>: <span style="color:#ae81ff">10000</span>
-<span style="color:#f92672">listen_addresses</span>:
-  - <span style="color:#ae81ff">127.0.0.1</span>
-  -  <span style="color:#ae81ff">0</span>::<span style="color:#ae81ff">1</span>
-<span style="color:#f92672">round_robin_upstreams</span>: <span style="color:#ae81ff">1</span>
-<span style="color:#f92672">upstream_recursive_servers</span>:
-  - <span style="color:#f92672">address_data</span>: <span style="color:#ae81ff">185.49.141.38</span>
-    <span style="color:#f92672">tls_auth_name</span>: <span style="color:#e6db74">&#34;getdnsapi.net&#34;</span>
-    <span style="color:#f92672">tls_pubkey_pinset</span>:
-      <span style="color:#f92672">digest</span>: <span style="color:#e6db74">&#34;sha256&#34;</span>
-       <span style="color:#f92672">value</span>: <span style="color:#ae81ff">foxZRnIh9gZpWnl+zEiKa0EJ2rdCGroMWm02gaxSc9Q=</span>
-</code></pre></div><p>Additional privacy servers can be specified by adding more entries to
-the <code>upstream_recursive_servers</code> list above (note a separate entry must
-be made for the IPv4 and IPv6 addresses of a given server. More DNS
-Privacy test servers are
-listed <a href="https://dnsprivacy.org/wiki/x/E4AT">here</a>.</p>
-<p>A custom port can be specified by adding the <code>tls_port:</code> attribute to
-the <code>upstream_recursive_server</code> in the config file.</p>
-<p>A custom listen address port can be configured by using the
-&lt;IP_address&gt;@&lt;port&gt; syntax</p>
-<h3 id="dnssec">DNSSEC</h3>
-<p>To enable DNSSEC validation when using Stubby add the following option
-to the configuration file</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">dnssec_return_status</span>: <span style="color:#ae81ff">GETDNS_EXTENSION_TRUE</span>
-</code></pre></div><p>A trust anchor is also required for DNSSEC validation. </p>
-<p><em>getdns</em> version 1.2 and later include support for automatic trust
-anchor management - which will automatically fetch a trust anchor if
-none is present on the system. See &lsquo;<a href="https://dnsprivacy.org/wiki/display/DP/Configuring+Stubby#ConfiguringStubby-DNSSEC">Zero configuration
-DNSSEC</a>&rsquo;  (and
-below) for the specific details of key management for DNSSEC for this
-case. 
-If using a version of <em>getdns</em> earlier than 1.2 then a trust anchor must
-be <strong>manually</strong> installed and managed on the system. <a href="https://getdnsapi.net/documentation/readme/#dnssec-dependencies">We recommend
-using <em>unbound-anchor</em></a>.</p>
-<h4 id="storage-of-zero-config-trust-anchor">Storage of Zero-config Trust anchor</h4>
-<p>When the system-level user does have a home directory, stubby will store
-the for Zero configuration DNSSEC dynamically acquired root trust anchor
-in a subdirectory called &ldquo;.getdns&rdquo; of that home directory (or in &ldquo;%AppData%\getdns&rdquo; on Windows). If the
-system-level user does not have a home directory or the home directory
-is not writeable or readable, stubby will fallback to the current
-working directory.</p>
-<p>This can be overruled by supplying a &ldquo;<code>appdata_dir</code>&rdquo; in the <code>stubby.yml</code>
-configuration file. When a &ldquo;<code>appdata_dir</code>&rdquo; was specified, that directory
-will be used for storing data related to Zero configuration DNSSEC
-immediately, without the other paths being tried. It is recommended for
-systemd setups using the provided systemd.service file(s) to have a
-&ldquo;<code>appdata_dir</code>&rdquo; directive set to &ldquo;<code>/var/cache/stubby</code>&rdquo; in the stubby.yml
-configuration file.</p>
-<p>Note that using DNSSEC can add a small performance overhead because it
-increases the number of queries required to resolve a DNS request.</p>
-<h2 id="opportunistic-dot-to-your-local-resolver">Opportunistic DoT to your local resolver</h2>
-<p>Some users may want to have a configuration for Stubby that will always
-use the resolver from the system configuration (most likely but not
-always on the local network), but with encryption used where possible.
-This is an <strong>Opportunistic</strong> mode which does not authenticate the DoT
-server. To configure Stubby in this mode:</p>
-<ol>
-<li>
-<p>Set the transport list and authentication parameter in the
-configuration to:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">dns_transport_list</span>: 
- - <span style="color:#ae81ff">GETDNS_TRANSPORT_TLS</span>
- - <span style="color:#ae81ff">GETDNS_TRANSPORT_UDP</span>
- - <span style="color:#ae81ff">GETDNS_TRANSPORT_TCP</span>
-<span style="color:#f92672">tls_authentication</span>: <span style="color:#ae81ff">GETDNS_AUTHENTICATION_NONE</span>
-</code></pre></div></li>
-<li>
-<p>Remove (or comment out) all the upstream_resolvers. This will cause
-Stubby to fallback to using the system resolvers only.</p>
-</li>
-</ol>
-<p>Note: a future version of Stubby will most likely support a mixed mode
-of system resolvers and configured resolvers. </p>
-<h2 id="runtime-logging">Runtime logging</h2>
-<p>In the 0.1.2 release of stubby there is runtime logging, which can be
-turned on by using the &lsquo;-l&rsquo; flag.</p>
-<p>In the 0.1.3 release the logging level is be controlled by specifying a
-logging level via the &lsquo;-v&rsquo; flag. See stubby help (&lsquo;stubby -h&rsquo;) for more
-details. </p>
 
 
-<footer class="footline">
+
+
+
+<footer class=" footline" >
 	
 </footer>
 
+        
+            </div> 
         
         </div>
         
@@ -1838,7 +1767,6 @@ details. </p>
             
                 
                     
-                    
                 
                 
 
@@ -1853,9 +1781,6 @@ details. </p>
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -1873,7 +1798,6 @@ details. </p>
             
                 
                     
-                    
                 
                 
 
@@ -1889,9 +1813,6 @@ details. </p>
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -2234,6 +2155,7 @@ details. </p>
             
                 
                     
+                    
                 
                 
 
@@ -2249,6 +2171,9 @@ details. </p>
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -2519,4 +2444,3 @@ details. </p>
 
   </body>
 </html>
-
