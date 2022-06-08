@@ -12,22 +12,22 @@
     <title>Test Servers :: dnsprivacy.org</title>
 
     
-    <link href="/css/nucleus.css?1653669550" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1653669550" rel="stylesheet">
-    <link href="/css/hybrid.css?1653669550" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1653669550" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1653669550" rel="stylesheet">
-    <link href="/css/auto-complete.css?1653669550" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1653669550" rel="stylesheet">
-    <link href="/css/theme.css?1653669550" rel="stylesheet">
-    <link href="/css/tabs.css?1653669550" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1653669550" rel="stylesheet">
+    <link href="/css/nucleus.css?1654682365" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1654682365" rel="stylesheet">
+    <link href="/css/hybrid.css?1654682365" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1654682365" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1654682365" rel="stylesheet">
+    <link href="/css/auto-complete.css?1654682365" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1654682365" rel="stylesheet">
+    <link href="/css/theme.css?1654682365" rel="stylesheet">
+    <link href="/css/tabs.css?1654682365" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1654682365" rel="stylesheet">
     
-    <link href="/css/theme-blue.css?1653669550" rel="stylesheet">
+    <link href="/css/theme-blue.css?1654682365" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1653669550"></script>
+    <script src="/js/jquery-3.3.1.min.js?1654682365"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1653669550"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1653669550"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1654682365"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1654682365"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/dnsprivacy.org\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1653669550"></script>
+<script type="text/javascript" src="/js/search.js?1654682365"></script>
 
     
   </div>
@@ -1433,8 +1433,8 @@
           <ul>
             <li><a href="#stubby-configuration">Stubby configuration</a></li>
             <li><a href="#servers-run-by-the-stubby-developers">Servers run by the Stubby developers</a></li>
-            <li><a href="#other-servers-with-a-no-logging-policy">Other servers with a &lsquo;no logging&rsquo; policy</a></li>
-            <li><a href="#servers-with-minimal-logginglimitations">Servers with minimal logging/limitations</a></li>
+            <li><a href="#other-servers">Other servers</a></li>
+            <li><a href="#other-servers-1">Other servers</a></li>
           </ul>
         </li>
       </ul>
@@ -1444,7 +1444,7 @@
 </div>
 <h2 id="public-resolvers">Public resolvers</h2>
 
-<div class="notices infoblock" ><p><strong>Public Resolvers:</strong> <strong>Several large organisations opereate DNS
+<div class="notices infoblock" ><p><strong>Public Resolvers:</strong> <strong>Several large organizations operate DNS
 Privacy Servers - see <strong><a href="/public_resolvers">DNS Privacy Public
 Resolvers</a></strong></strong></p>
 <p><strong>DOH servers are also currently listed on that page</strong></p>
@@ -1452,12 +1452,7 @@ Resolvers</a></strong></strong></p>
 
 <h2 id="experimental-dns-privacy-recursive-servers">Experimental DNS Privacy Recursive Servers</h2>
 <p><a href="https://monitor.dnsprivacy.org/jenkins/job/dnsprivacy-monitoring/">Live Monitoring
-Dashboard</a><br>
-<a href="https://dnsprivacy.org/wiki/display/DP/Live+Traffic+Levels">Live Traffic
-Graphs</a><br>
-<a href="https://dnsprivacy.org/wiki/display/DP/Map+of+test+server+locations">Map
-of server
-locations</a></p>
+Dashboard</a></p>
 <h3 id="doh-servers">DoH servers</h3>
 <p>These are currently listed on the <a href="/public_resolvers">DNS Privacy Public
 Resolvers</a> page and also the list
@@ -1478,14 +1473,19 @@ Certificate renewal) and should be used with care!!</p>
 </div>
 
 <h4 id="stubby-configuration">Stubby configuration</h4>
-<p>A YAML configuration file for Stubby containing a the details of these
-servers is provided with Stubby and <a href="https://raw.githubusercontent.com/getdnsapi/stubby/develop/stubby.yml.example">can be found
-here</a>.
-This file enables only the subset of servers operated by the
-stubby/getdns developers by default, users can choose to enable any of
-the other servers by uncommenting the relevant section (occasionally the
-file lags this page).</p>
+<p>A YAML configuration file for Stubby containing the main public DNS privacy
+resolvers and also details of a subset of these test servers is provided with
+Stubby and <a href="https://raw.githubusercontent.com/getdnsapi/stubby/develop/stubby.yml.example">can be found here</a>.
+This file enables only the server operated by the stubby/getdns
+developers by default, users SHOULD actively choose additional or alternate
+servers for robustness. Enable any of the other servers by uncommenting the
+relevant section in the config file.</p>
 <h4 id="servers-run-by-the-stubby-developers">Servers run by the Stubby developers</h4>
+
+<div class="notices info" ><p>The <code>dnsovertls*.sinodun.com</code> servers are no longer present in the Stubby config
+file as of release 0.4.1 and are being decommissioned.</p>
+</div>
+
 
 
 <div class="table-wrap">
@@ -1518,29 +1518,6 @@ file lags this page).</p>
 </tr>
 
 <tr class="odd">
-<td colspan="9" class="highlight-blue confluenceTd" data-highlight-colour="blue"><strong>1) The following are currently enabled in the <a href="https://raw.githubusercontent.com/getdnsapi/stubby/develop/stubby.yml.example">default Stubby config file</a> because they are run by the stubby/getdns developers and have no known issues.</strong></td>
-</tr>
-<tr class="even">
-<td class="confluenceTd">Sinodun/Surfnet</td>
-<td class="confluenceTd">145.100.185.15<br /> 2001:610:1:40ba:145:100:185:15</td>
-<td class="confluenceTd">853 443</td>
-<td class="confluenceTd">dnsovertls.sinodun.com</td>
-<td class="confluenceTd">62lKu9HsDVbyiPenApnc4sfmSYTHOVfFgL3pyB+cBL4=</td>
-<td class="confluenceTd">Y</td>
-<td class="confluenceTd">Traffic volume only</td>
-<td class="confluenceTd">HAProxy + BIND 9.12</td>
-<td class="confluenceTd">See <a href="https://www.sinodun.com/recursive-operator-privacy-statement-rps/">https://www.sinodun.com/recursive-operator-privacy-statement-rps/</a></td>
-</tr>
-<tr class="odd">
-<td class="confluenceTd">Sinodun1/Surfnet</td>
-<td class="confluenceTd">145.100.185.16<br /> 2001:610:1:40ba:145:100:185:16</td>
-<td class="confluenceTd">853 443</td>
-<td class="confluenceTd">dnsovertls1.sinodun.com</td>
-<td class="confluenceTd">cE2ecALeE5B+urJhDrJlVFmf38cJLAvqekONvjvpqUA=</td>
-<td class="confluenceTd">Y</td>
-<td class="confluenceTd">Traffic volume only</td>
-<td class="confluenceTd">Nginx + BIND 9.12</td>
-<td class="confluenceTd">See <a href="https://www.sinodun.com/recursive-operator-privacy-statement-rps/">https://www.sinodun.com/recursive-operator-privacy-statement-rps/</a></td>
 </tr>
 <tr class="even">
 <td class="confluenceTd"><a href="http://getdnsapi.net">getdnsapi.net</a></td>
@@ -1562,13 +1539,14 @@ file lags this page).</p>
 
 </div>
 
-<h4 id="other-servers-with-a-no-logging-policy">Other servers with a &lsquo;no logging&rsquo; policy</h4>
+<h4 id="other-servers">Other servers</h4>
 
 
 <div class="table-wrap">
 
 <table class="relative-table wrapped confluenceTable" style="width: 95.7915%;">
 <tbody>
+  
 <tr class="odd">
 <td class="highlight-grey confluenceTd" data-highlight-colour="grey"><strong>Hosted by</strong></td>
 <td class="highlight-grey confluenceTd" data-highlight-colour="grey"><strong>IP addresses</strong></td>
@@ -1582,6 +1560,7 @@ file lags this page).</p>
 <td class="highlight-grey confluenceTd" data-highlight-colour="grey"><strong>Software</strong></td>
 <td class="highlight-grey confluenceTd" data-highlight-colour="grey"><strong>Notes</strong></td>
 </tr>
+
 <tr class="even">
 <td class="confluenceTd">UncensoredDNS</td>
 <td class="confluenceTd">89.233.43.71 <br />
@@ -1595,6 +1574,7 @@ file lags this page).</p>
 </td>
 <td class="confluenceTd">See <a href="https://blog.uncensoreddns.org/">https://blog.uncensoreddns.org/</a></td>
 </tr>
+
 <tr class="odd">
 <td class="confluenceTd"><p>Fondation RESTENA<br />
 (NREN for Luxemburg)</p></td>
@@ -1611,57 +1591,7 @@ file lags this page).</p>
 <p>prefetch, harden-below-nxdomain and the newest auth-zone for local root<br />
 zone caching.</p></td>
 </tr>
-<tr class="even">
-<td class="confluenceTd">Sinodun3/Surfnet</td>
-<td class="confluenceTd">145.100.185.18<br />2001:610:1:40ba:145:100:185:18</td>
-<td class="confluenceTd">853</td>
-<td class="confluenceTd">dnsovertls3.sinodun.com</td>
-<td class="confluenceTd">5SpFz7JEPzF71hditH1v2dBhSErPUMcLPJx1uk2svT8=</td>
-<td class="confluenceTd">Y</td>
-<td class="confluenceTd">Traffic volume only</td>
-<td class="confluenceTd">HAProxy + BIND 9.12</td>
-<td class="confluenceTd">See <a href="https://www.sinodun.com/recursive-operator-privacy-statement-rps/">https://www.sinodun.com/recursive-operator-privacy-statement-rps/</a></td>
-</tr>
-<tr class="odd">
-<td class="confluenceTd">Sinodun4/Surfnet</td>
-<td class="confluenceTd">145.100.185.17<br />2001:610:1:40ba:145:100:185:17</td>
-<td class="confluenceTd">853</td>
-<td class="confluenceTd">dnsovertls2.sinodun.com</td>
-<td class="confluenceTd">NAXBESvpjZMnPWQcrxa2KFIkHV/pDEIjRkA3hLWogSg=</td>
-<td class="confluenceTd">Y</td>
-<td class="confluenceTd">Traffic volume only</td>
-<td class="confluenceTd">Knot Resolver</td>
-<td class="confluenceTd">See <a href="https://www.sinodun.com/recursive-operator-privacy-statement-rps/">https://www.sinodun.com/recursive-operator-privacy-statement-rps/</a></td>
-</tr>
-<tr class="even">
-<td class="confluenceTd">dkg</td>
-<td class="confluenceTd">199.58.81.218<br />
-2001:470:1c:76d::53</td>
-<td class="confluenceTd">853 443</td>
-<td class="confluenceTd">dns.cmrg.net</td>
-<td class="confluenceTd">3IOHSS48KOc/zlkKGtI46a9TY9PPKDVGhE3W2ZS4JZo=<br />
-5zFN3smRPuHIlM/8L+hANt99LW26T97RFHqHv90awjo=</td>
-<td class="confluenceTd"><br />
-</td>
-<td class="confluenceTd">None</td>
-<td class="confluenceTd">Knot Resolver</td>
-<td class="confluenceTd">See <a href="https://dns.cmrg.net/">https://dns.cmrg.net/</a> Note that on port 443 this server can serve both HTTP 1.1 traffic (to securely access the nameserver credentials) on TLS connections <em><strong>and</strong></em> DNS-over-TLS on separate TLS connections due to some <a href="https://tools.ietf.org/html/draft-dkg-dprive-demux-dns-http">nifty, experimental demultiplexing of traffic, described here</a>.Has some issues with DNSSEC responses - this is under investigation.</td>
-</tr>
-<tr class="odd">
-<td class="confluenceTd">Lorraine Data Network</td>
-<td class="confluenceTd">80.67.188.188<br />2001:913::8</td>
-<td class="confluenceTd">853<br />
-443</td>
-<td class="confluenceTd"><br />
-</td>
-<td class="confluenceTd">WaG0kHUS5N/ny0labz85HZg+v+f0b/UQ73IZjFep0nM=</td>
-<td class="confluenceTd"><br />
-</td>
-<td class="confluenceTd">Traffic volume only</td>
-<td class="confluenceTd">stunnel 4 + BIND</td>
-<td class="confluenceTd"><strong>UPDATED OCT 2021: These servers are being decommissioned and will be removed from the stubby config in the next release. </strong>. See <a href="https://ldn-fai.net/serveur-dns-recursif-ouvert/">https://ldn-fai.net/serveur-dns-recursif-ouvert/</a> (note, logging of IP address at stunnel no longer performed).<br />
-<strong>A self-signed certificate is used, so SPKI pinning is must be used.</strong></td>
-</tr>
+
 <tr class="even">
 <td class="confluenceTd">dns.neutopia.org</td>
 <td class="confluenceTd">89.234.186.112<br />2a00:5884:8209::2</td>
@@ -1676,6 +1606,24 @@ zone caching.</p></td>
 <td class="confluenceTd"><br />
 </td>
 </tr>
+
+<tr class="odd">
+<td class="confluenceTd">Foundation for Applied Privacy</td>
+<td class="confluenceTd">146.255.56.98<br />
+2a01:4f8:c0c:83ed::1</td>
+<td class="confluenceTd"><p>853<br />
+443</p></td>
+<td class="confluenceTd">dot1<strong>.</strong>applied-privacy.net</td>
+<td class="confluenceTd"><br />
+</td>
+<td class="confluenceTd">Y</td>
+<td class="confluenceTd">Only aggregated logging, no PII</td>
+<td class="confluenceTd">unbound</td>
+<td class="confluenceTd"><p>DETAILS UPDATED 14th Sep 2020</p>
+<p><a href="https://appliedprivacy.net/services/dns/">https://appliedprivacy.net/services/dns/</a></p>
+<p>NOTE: Also does DoH and has an .onion endpoint</p></td>
+</tr>
+
 <tr class="odd">
 <td class="confluenceTd">BlahDNS</td>
 <td class="confluenceTd">108.61.201.119<br />
@@ -1695,6 +1643,7 @@ zone caching.</p></td>
 NOTE2: Note that port 443 REQUIRES an authentication name</p>
 <p>UPDATED 22nd JAN 2018: note the authentication name has changed</p></td>
 </tr>
+
 <tr class="even">
 <td class="confluenceTd">BlahDNS</td>
 <td class="confluenceTd">159.69.198.101<br />
@@ -1712,50 +1661,7 @@ NOTE2: Note that port 443 REQUIRES an authentication name</p>
 <td class="confluenceTd"><p><a href="https://blahdns.com/">https://blahdns.com/</a></p>
 <p>NOTE1: Located in Frankfurt. Also does DoH.NOTE2: Note that port 443 REQUIRES an authentication name</p></td>
 </tr>
-<tr class="odd">
-<td class="confluenceTd">Go6Lab</td>
-<td class="confluenceTd">2001:67c:27e4::35</td>
-<td class="confluenceTd">853</td>
-<td class="confluenceTd">privacydns.go6lab.si</td>
-<td class="confluenceTd">g5lqtwHia/plKqWU/Fe2Woh4+7MO3d0JYqYJpj/iYAw=</td>
-<td class="confluenceTd"><br />
-</td>
-<td class="confluenceTd">No logging</td>
-<td class="confluenceTd">Unbound</td>
-<td class="confluenceTd"><br />
-</td>
-</tr>
-<tr class="even">
-<td class="confluenceTd">Secure DNS Project by PumpleX</td>
-<td class="confluenceTd">51.38.83.141<br />2001:41d0:801:2000::d64</td>
-<td class="confluenceTd">853</td>
-<td class="confluenceTd">dns.oszx.co</td>
-<td class="confluenceTd">P/Auj1pm8MiUpeIxGcrEuMJOQV+pgPY0MR4awpclvT4=</td>
-<td class="confluenceTd"><br />
-</td>
-<td class="confluenceTd">No logging</td>
-<td class="confluenceTd"><br />
-</td>
-<td class="confluenceTd"><a href="https://dns.oszx.co">https://dns.oszx.co</a><br />
-NOTE1: Also does DoH and dnscrypt<br />
-NOTE2: Performs ad blocking</td>
-</tr>
-<tr class="odd">
-<td class="confluenceTd">Foundation for Applied Privacy</td>
-<td class="confluenceTd">146.255.56.98<br />
-2a01:4f8:c0c:83ed::1</td>
-<td class="confluenceTd"><p>853<br />
-443</p></td>
-<td class="confluenceTd">dot1<strong>.</strong>applied-privacy.net</td>
-<td class="confluenceTd"><br />
-</td>
-<td class="confluenceTd">Y</td>
-<td class="confluenceTd">Only aggregated logging, no PII</td>
-<td class="confluenceTd">unbound</td>
-<td class="confluenceTd"><p>DETAILS UPDATED 14th Sep 2020</p>
-<p><a href="https://appliedprivacy.net/services/dns/">https://appliedprivacy.net/services/dns/</a></p>
-<p>NOTE: Also does DoH and has an .onion endpoint</p></td>
-</tr>
+
 <tr class="even">
 <td class="confluenceTd">ibksturm.synology.me</td>
 <td class="confluenceTd"><p>178.82.102.190</p></td>
@@ -1771,6 +1677,7 @@ NOTE2: Performs ad blocking</td>
 <p>NOTE: Also does DoH and dnscrypt<br />
 no filters, opennic root copy</p></td>
 </tr>
+
 <tr class="odd">
 <td class="confluenceTd">dismail.de</td>
 <td class="confluenceTd"><p>159.69.114.157<br />2a01:4f8:c17:739a::2 </p></td>
@@ -1784,6 +1691,7 @@ no filters, opennic root copy</p></td>
 </td>
 <td class="confluenceTd"><a href="https://dismail.de/info.html#dns">https://dismail.de/info.html#dns</a></td>
 </tr>
+
 <tr class="even">
 <td class="confluenceTd">dismail.de</td>
 <td class="confluenceTd">80.241.218.68<br />2a02:c205:3001:4558::1</td>
@@ -1797,46 +1705,6 @@ no filters, opennic root copy</p></td>
 </td>
 <td class="confluenceTd"><a href="https://dismail.de/info.html#dns">https://dismail.de/info.html#dns</a></td>
 </tr>
-</tbody>
-</table>
-
-</div>
-
-
-<h4 id="servers-with-minimal-logginglimitations">Servers with minimal logging/limitations</h4>
-<p>These servers use some logging, self-signed certs or no support for
-Strict mode.
-
-
-
-<div class="table-wrap">
-
-<table class="relative-table wrapped confluenceTable" style="width: 96.549835%;">
-<colgroup>
-<col style="width: 5%" />
-<col style="width: 11%" />
-<col style="width: 3%" />
-<col style="width: 7%" />
-<col style="width: 23%" />
-<col style="width: 4%" />
-<col style="width: 9%" />
-<col style="width: 4%" />
-<col style="width: 30%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td class="highlight-grey confluenceTd" data-highlight-colour="grey"><strong>Hosted by</strong></td>
-<td class="highlight-grey confluenceTd" data-highlight-colour="grey"><strong>IP addresses</strong></td>
-<td class="highlight-grey confluenceTd" data-highlight-colour="grey"><strong>TLS Ports</strong></td>
-<td class="highlight-grey confluenceTd" data-highlight-colour="grey"><strong>Hostname for TLS</strong><br />
-<strong>authentication</strong></td>
-<td class="highlight-grey confluenceTd" data-highlight-colour="grey"><strong>Base 64 encoded form of SPKI pin(s) for TLS</strong><br />
-<strong>authentication (RFC7858)</strong></td>
-<td class="highlight-grey confluenceTd" data-highlight-colour="grey">TLSA record published</td>
-<td class="highlight-grey confluenceTd" data-highlight-colour="grey"><strong>Logging</strong></td>
-<td class="highlight-grey confluenceTd" data-highlight-colour="grey"><strong>Software</strong></td>
-<td class="highlight-grey confluenceTd" data-highlight-colour="grey"><strong>Notes</strong></td>
-</tr>
 <tr class="even">
 <td class="confluenceTd">NIC Chile<br />
 <br />
@@ -1849,14 +1717,31 @@ Strict mode.
 <td class="confluenceTd">Y</td>
 <td class="confluenceTd">Yes, for research purposes</td>
 <td class="confluenceTd">Unbound</td>
-<td class="confluenceTd"><strong>Details updated 18th Sept - now uses Let's encrypt cert</strong></td>
+<td class="confluenceTd"><strong></strong></td>
 </tr>
 </tbody>
 </table>
 
 </div>
 
-</p>
+
+<h4 id="other-servers-1">Other servers</h4>
+<p>This is a list of other servers we have been made aware that users may want to investigate. Most are monitored here: <a href="https://monitor.dnsprivacy.org/jenkins/job/dnsprivacy-monitoring-other/">Live Monitoring
+Dashboard - Other</a></p>
+<ul>
+<li>dns.digitale-gesellschaft.ch</li>
+<li>dns.switch.ch</li>
+<li>dot.ffmuc.net</li>
+<li><a href="https://dns.sb/dot/">https://dns.sb/dot/</a></li>
+<li>OpenNIC DNS non-profit and volunteer network, with additionally alternative no-ICANN domains. At the moment the network is made up of just over twenty independent servers, three of which provide DoT. <a href="https://servers.opennicproject.org/">https://servers.opennicproject.org/</a>
+<ul>
+<li>ns29.de.dns.opennic.glue</li>
+<li>ns4.fi.dns.opennic.glue</li>
+<li>ns4.ru.dns.opennic.glue</li>
+</ul>
+</li>
+<li>Tenta. A service of the antivirus company Avast. It supports ICANN and also OpenNIC. <a href="https://tenta.com/dns-setup-guides">https://tenta.com/dns-setup-guides</a></li>
+</ul>
 
 
 
@@ -2724,16 +2609,16 @@ Strict mode.
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1653669550"></script>
-    <script src="/js/perfect-scrollbar.min.js?1653669550"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1653669550"></script>
-    <script src="/js/jquery.sticky.js?1653669550"></script>
-    <script src="/js/featherlight.min.js?1653669550"></script>
-    <script src="/js/highlight.pack.js?1653669550"></script>
+    <script src="/js/clipboard.min.js?1654682365"></script>
+    <script src="/js/perfect-scrollbar.min.js?1654682365"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1654682365"></script>
+    <script src="/js/jquery.sticky.js?1654682365"></script>
+    <script src="/js/featherlight.min.js?1654682365"></script>
+    <script src="/js/highlight.pack.js?1654682365"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1653669550"></script>
-    <script src="/js/learn.js?1653669550"></script>
-    <script src="/js/hugo-learn.js?1653669550"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1654682365"></script>
+    <script src="/js/learn.js?1654682365"></script>
+    <script src="/js/hugo-learn.js?1654682365"></script>
     
     
 
