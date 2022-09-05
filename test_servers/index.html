@@ -12,22 +12,22 @@
     <title>Test Servers :: dnsprivacy.org</title>
 
     
-    <link href="/css/nucleus.css?1662375512" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1662375512" rel="stylesheet">
-    <link href="/css/hybrid.css?1662375512" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1662375512" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1662375512" rel="stylesheet">
-    <link href="/css/auto-complete.css?1662375512" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1662375512" rel="stylesheet">
-    <link href="/css/theme.css?1662375512" rel="stylesheet">
-    <link href="/css/tabs.css?1662375512" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1662375512" rel="stylesheet">
+    <link href="/css/nucleus.css?1662383927" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1662383927" rel="stylesheet">
+    <link href="/css/hybrid.css?1662383927" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1662383927" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1662383927" rel="stylesheet">
+    <link href="/css/auto-complete.css?1662383927" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1662383927" rel="stylesheet">
+    <link href="/css/theme.css?1662383927" rel="stylesheet">
+    <link href="/css/tabs.css?1662383927" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1662383927" rel="stylesheet">
     
-    <link href="/css/theme-blue.css?1662375512" rel="stylesheet">
+    <link href="/css/theme-blue.css?1662383927" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1662375512"></script>
+    <script src="/js/jquery-3.3.1.min.js?1662383927"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1662375512"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1662375512"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1662383927"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1662383927"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/dnsprivacy.org\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1662375512"></script>
+<script type="text/javascript" src="/js/search.js?1662383927"></script>
 
     
   </div>
@@ -1491,17 +1491,7 @@ file as of release 0.4.1 and are being decommissioned.</p>
 <div class="table-wrap">
 
 <table class="relative-table wrapped confluenceTable" style="width: 95.7915%;">
-<colgroup>
-<col style="width: 9%" />
-<col style="width: 16%" />
-<col style="width: 4%" />
-<col style="width: 11%" />
-<col style="width: 25%" />
-<col style="width: 5%" />
-<col style="width: 5%" />
-<col style="width: 5%" />
-<col style="width: 14%" />
-</colgroup>
+
 <tbody>
 <tr class="header">
 <th class="confluenceTh"><strong>Hosted by</strong></th>
@@ -1522,7 +1512,7 @@ file as of release 0.4.1 and are being decommissioned.</p>
 <tr class="even">
 <td class="confluenceTd"><a href="http://getdnsapi.net">getdnsapi.net</a></td>
 <td class="confluenceTd">185.49.141.37<br />
-2a04:b900:0:100::37</td>
+2a04:b900:0:100::38</td>
 <td class="confluenceTd">853</td>
 <td class="confluenceTd">getdnsapi.net</td>
 <td class="confluenceTd">foxZRnIh9gZpWnl+zEiKa0EJ2rdCGroMWm02gaxSc9Q=<br />
@@ -1531,10 +1521,27 @@ file as of release 0.4.1 and are being decommissioned.</p>
 <td class="confluenceTd">Y</td>
 <td class="confluenceTd">Traffic volume only</td>
 <td class="confluenceTd">Unbound</td>
-<td class="confluenceTd"><br />
+<td class="confluenceTd">NOTE: This service listens on port 853 and the authentication name `getdnsapi.net` resolves to these addresses
 </td>
 </tr>
-</tbody>
+
+<tr class="even">
+<td class="confluenceTd"><a href="http://getdnsapi.net">getdnsapi.net</a></td>
+<td class="confluenceTd">185.49.141.38<br />
+2a04:b900:0:100::37</td>
+<td class="confluenceTd">443</td>
+<td class="confluenceTd">getdnsapi.net</td>
+<td class="confluenceTd">foxZRnIh9gZpWnl+zEiKa0EJ2rdCGroMWm02gaxSc9Q=<br />
+<br />
+</td>
+<td class="confluenceTd">Y</td>
+<td class="confluenceTd">Traffic volume only</td>
+<td class="confluenceTd">Unbound</td>
+<td class="confluenceTd">NOTE: This service listens on port 443 and uses <strong>DIFFERENT IP addresses</strong> to the service listening on port 443
+</td>
+</tr>
+
+<tbody>
 </table>
 
 </div>
@@ -1588,8 +1595,8 @@ file as of release 0.4.1 and are being decommissioned.</p>
 <td class="confluenceTd">Traffic volume only</td>
 <td class="confluenceTd">Unbound</td>
 <td class="confluenceTd">Configured with qname-minimisation, use-caps-for-id, aggressive-nsec,
-<p>prefetch, harden-below-nxdomain and the newest auth-zone for local root<br />
-zone caching.</p></td>
+prefetch, harden-below-nxdomain and the newest auth-zone for local root<br />
+zone caching.</td>
 </tr>
 
 <tr class="even">
@@ -1619,9 +1626,9 @@ zone caching.</p></td>
 <td class="confluenceTd">Y</td>
 <td class="confluenceTd">Only aggregated logging, no PII</td>
 <td class="confluenceTd">unbound</td>
-<td class="confluenceTd"><p>DETAILS UPDATED 14th Sep 2020</p>
-<p><a href="https://appliedprivacy.net/services/dns/">https://appliedprivacy.net/services/dns/</a></p>
-<p>NOTE: Also does DoH and has an .onion endpoint</p></td>
+<td class="confluenceTd">DETAILS UPDATED 14th Sep 2020</br>
+<a href="https://appliedprivacy.net/services/dns/">https://appliedprivacy.net/services/dns/</a></br>
+NOTE: Also does DoH and has an .onion endpoint</td>
 </tr>
 
 <tr class="odd">
@@ -1638,10 +1645,9 @@ zone caching.</p></td>
 <td class="confluenceTd">No logging</td>
 <td class="confluenceTd"><br />
 </td>
-<td class="confluenceTd"><p><a href="https://blahdns.com/">https://blahdns.com/</a></p>
-<p>NOTE1: Located in Japan. <a href="https://github.com/curl/curl/wiki/DNS-over-HTTPS#publicly-available-servers">Also does DoH.</a><br />
-NOTE2: Note that port 443 REQUIRES an authentication name</p>
-<p>UPDATED 22nd JAN 2018: note the authentication name has changed</p></td>
+<td class="confluenceTd"><a href="https://blahdns.com/">https://blahdns.com/</a></br>
+NOTE1: Located in Japan. <a href="https://github.com/curl/curl/wiki/DNS-over-HTTPS#publicly-available-servers">Also does DoH.</a><br />
+NOTE2: Note that port 443 REQUIRES an authentication name</td>
 </tr>
 
 <tr class="even">
@@ -1658,8 +1664,7 @@ NOTE2: Note that port 443 REQUIRES an authentication name</p>
 <td class="confluenceTd">No logging</td>
 <td class="confluenceTd"><br />
 </td>
-<td class="confluenceTd"><p><a href="https://blahdns.com/">https://blahdns.com/</a></p>
-<p>NOTE1: Located in Frankfurt. Also does DoH.NOTE2: Note that port 443 REQUIRES an authentication name</p></td>
+<td class="confluenceTd"><a href="https://blahdns.com/">https://blahdns.com/</a></br>NOTE1: Located in Frankfurt. Also does DoH.</br>NOTE2: Note that port 443 REQUIRES an authentication name/td>
 </tr>
 
 <tr class="even">
@@ -1673,9 +1678,9 @@ NOTE2: Note that port 443 REQUIRES an authentication name</p>
 </td>
 <td class="confluenceTd">No logging</td>
 <td class="confluenceTd">nginx + unbound</td>
-<td class="confluenceTd"><p><a href="https://github.com/ibksturm/dnscrypt-switzerland">https://github.com/ibksturm/dnscrypt-switzerland</a></p>
-<p>NOTE: Also does DoH and dnscrypt<br />
-no filters, opennic root copy</p></td>
+<td class="confluenceTd"><a href="https://github.com/ibksturm/dnscrypt-switzerland">https://github.com/ibksturm/dnscrypt-switzerland</a>
+NOTE: Also does DoH and dnscrypt
+no filters, opennic root copy</td>
 </tr>
 
 <tr class="odd">
@@ -2609,16 +2614,16 @@ Dashboard - Other</a></p>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1662375512"></script>
-    <script src="/js/perfect-scrollbar.min.js?1662375512"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1662375512"></script>
-    <script src="/js/jquery.sticky.js?1662375512"></script>
-    <script src="/js/featherlight.min.js?1662375512"></script>
-    <script src="/js/highlight.pack.js?1662375512"></script>
+    <script src="/js/clipboard.min.js?1662383927"></script>
+    <script src="/js/perfect-scrollbar.min.js?1662383927"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1662383927"></script>
+    <script src="/js/jquery.sticky.js?1662383927"></script>
+    <script src="/js/featherlight.min.js?1662383927"></script>
+    <script src="/js/highlight.pack.js?1662383927"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1662375512"></script>
-    <script src="/js/learn.js?1662375512"></script>
-    <script src="/js/hugo-learn.js?1662375512"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1662383927"></script>
+    <script src="/js/learn.js?1662383927"></script>
+    <script src="/js/hugo-learn.js?1662383927"></script>
     
     
 
