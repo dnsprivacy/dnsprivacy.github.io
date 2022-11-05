@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.86.0" />
+    <meta name="generator" content="Hugo 0.83.1" />
     <meta name="description" content="">
 
 
@@ -12,22 +12,22 @@
     <title>Certificate management method 2 :: dnsprivacy.org</title>
 
     
-    <link href="/css/nucleus.css?1665132942" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1665132942" rel="stylesheet">
-    <link href="/css/hybrid.css?1665132942" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1665132942" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1665132942" rel="stylesheet">
-    <link href="/css/auto-complete.css?1665132942" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1665132942" rel="stylesheet">
-    <link href="/css/theme.css?1665132942" rel="stylesheet">
-    <link href="/css/tabs.css?1665132942" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1665132942" rel="stylesheet">
+    <link href="/css/nucleus.css?1667669163" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1667669163" rel="stylesheet">
+    <link href="/css/hybrid.css?1667669163" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1667669163" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1667669163" rel="stylesheet">
+    <link href="/css/auto-complete.css?1667669163" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1667669163" rel="stylesheet">
+    <link href="/css/theme.css?1667669163" rel="stylesheet">
+    <link href="/css/tabs.css?1667669163" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1667669163" rel="stylesheet">
     
-    <link href="/css/theme-blue.css?1665132942" rel="stylesheet">
+    <link href="/css/theme-blue.css?1667669163" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1665132942"></script>
+    <script src="/js/jquery-3.3.1.min.js?1667669163"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1665132942"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1665132942"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1667669163"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1667669163"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/dnsprivacy.org\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1665132942"></script>
+<script type="text/javascript" src="/js/search.js?1667669163"></script>
 
     
   </div>
@@ -1450,7 +1450,7 @@ solution!</p>
 <ul>
 <li>
 <p>An example configuration file is:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">CA=&#34;https://acme-v01.api.letsencrypt.org/directory&#34;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">CA=&#34;https://acme-v01.api.letsencrypt.org/directory&#34;
 #CA=&#34;https://acme-staging.api.letsencrypt.org/directory&#34;
 LICENSE=&#34;https://letsencrypt.org/documents/LE-SA-v1.1.1-August-1-2016.pdf&#34;
 CERTDIR=/usr/local/etc/dehydrated/certs
@@ -1462,21 +1462,21 @@ CONTACT_EMAIL=alice@example.com
 </code></pre></div></li>
 <li>
 <p>Private keys are then stored in</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/usr/local/etc/dehydrated/certs/&lt;domain&gt;/privkey.pem
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/usr/local/etc/dehydrated/certs/&lt;domain&gt;/privkey.pem
 
 </code></pre></div></li>
 <li>
 <p>The SubjectAltNames are then enumerated in the file</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/usr/local/etc/dehydrated/domains.txt
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/usr/local/etc/dehydrated/domains.txt
 </code></pre></div><p>Add one line in this for each &lsquo;group&rsquo; of names that should share a
 certificate e.g</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">example.com www.example.com example.org
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">example.com www.example.com example.org
 example1.com www.example1.com example1.net
 </code></pre></div></li>
 <li>
 <p>Then the challenge record needs to be provisioned in the
 corresponding zone in a record of the form</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">_acme-challenge.&lt;domain name&gt;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">_acme-challenge.&lt;domain name&gt;
 </code></pre></div></li>
 <li>
 <p>If you have many zones it can be helpful to use CNAMES to redirect
@@ -1495,7 +1495,7 @@ hosted <strong>only</strong> on the server that also runs dehydrated. </p>
 domain. An example script is included below</p>
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/sh
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/sh
 </span><span style="color:#75715e"></span>
 zonefile<span style="color:#f92672">=</span>/usr/local/etc/dehydrated/acmezone
 
@@ -2409,16 +2409,16 @@ HANDLER<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</sp
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1665132942"></script>
-    <script src="/js/perfect-scrollbar.min.js?1665132942"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1665132942"></script>
-    <script src="/js/jquery.sticky.js?1665132942"></script>
-    <script src="/js/featherlight.min.js?1665132942"></script>
-    <script src="/js/highlight.pack.js?1665132942"></script>
+    <script src="/js/clipboard.min.js?1667669163"></script>
+    <script src="/js/perfect-scrollbar.min.js?1667669163"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1667669163"></script>
+    <script src="/js/jquery.sticky.js?1667669163"></script>
+    <script src="/js/featherlight.min.js?1667669163"></script>
+    <script src="/js/highlight.pack.js?1667669163"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1665132942"></script>
-    <script src="/js/learn.js?1665132942"></script>
-    <script src="/js/hugo-learn.js?1665132942"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1667669163"></script>
+    <script src="/js/learn.js?1667669163"></script>
+    <script src="/js/hugo-learn.js?1667669163"></script>
     
     
 

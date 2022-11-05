@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.86.0" />
+    <meta name="generator" content="Hugo 0.83.1" />
     <meta name="description" content="">
 
 
@@ -12,22 +12,22 @@
     <title>Building HAProxy using TLSv1.3 :: dnsprivacy.org</title>
 
     
-    <link href="/css/nucleus.css?1665132942" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1665132942" rel="stylesheet">
-    <link href="/css/hybrid.css?1665132942" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1665132942" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1665132942" rel="stylesheet">
-    <link href="/css/auto-complete.css?1665132942" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1665132942" rel="stylesheet">
-    <link href="/css/theme.css?1665132942" rel="stylesheet">
-    <link href="/css/tabs.css?1665132942" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1665132942" rel="stylesheet">
+    <link href="/css/nucleus.css?1667669163" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1667669163" rel="stylesheet">
+    <link href="/css/hybrid.css?1667669163" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1667669163" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1667669163" rel="stylesheet">
+    <link href="/css/auto-complete.css?1667669163" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1667669163" rel="stylesheet">
+    <link href="/css/theme.css?1667669163" rel="stylesheet">
+    <link href="/css/tabs.css?1667669163" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1667669163" rel="stylesheet">
     
-    <link href="/css/theme-blue.css?1665132942" rel="stylesheet">
+    <link href="/css/theme-blue.css?1667669163" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1665132942"></script>
+    <script src="/js/jquery-3.3.1.min.js?1667669163"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1665132942"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1665132942"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1667669163"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1667669163"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/dnsprivacy.org\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1665132942"></script>
+<script type="text/javascript" src="/js/search.js?1667669163"></script>
 
     
   </div>
@@ -1441,7 +1441,7 @@ OpenSSL.</p>
 <p>These instructions build OpenSSL into a directory <code>/opt/openssl-1.1.1</code>
 to ensure that it&rsquo;s separate to any other OpenSSL installs on the
 machine.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">wget https://www.openssl.org/source/openssl-1.1.1.tar.gz
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">wget https://www.openssl.org/source/openssl-1.1.1.tar.gz
 tar -xzf openssl-1.1.1.tar.gz
 cd openssl-1.1.1
 ./config --prefix<span style="color:#f92672">=</span>/opt/openssl-1.1.1 shared
@@ -1450,7 +1450,7 @@ sudo make install
 </code></pre></div><h3 id="build-haproxy">Build HAProxy</h3>
 <p>You need HAProxy 1.8.1 or later to enable TLS 1.3 support. We are using
 1.8.13.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo apt install build-essential libpcre2-dev zlib1g-dev
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo apt install build-essential libpcre2-dev zlib1g-dev
 
 
 wget https://www.haproxy.org/download/1.8/src/haproxy-1.8.13.tar.gz
@@ -1468,7 +1468,7 @@ Environment<span style="color:#f92672">=</span>LD_LIBRARY_PATH<span style="color
 updating any paths as required.</p>
 <p>If you only want TLSv1.3 with no fallback to TLSv1.2 then set
 <em>ssl-default-bind-options</em> to <em>force-tlsv13</em></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">global
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">global
         log /dev/log    local0
         chroot /usr/local/var/lib/haproxy
         user haproxy
@@ -1503,7 +1503,7 @@ and key into one file which is what HAProxy requires.</p>
 <code>/usr/local/var/lib/haproxy</code>. It&rsquo;s necessary to create this directory.
 OpenSSL also needs access to <code>/dev/urandom</code> and <code>/dev/random</code> in the
 chroot.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">&gt; mkdir -p /usr/local/var/lib/haproxy/dev
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">&gt; mkdir -p /usr/local/var/lib/haproxy/dev
 &gt; cd /usr/local/var/lib/haproxy/dev
 &gt; mknod urandom c <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">9</span>
 &gt; mknod random c <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">8</span>
@@ -2376,16 +2376,16 @@ chroot.</p>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1665132942"></script>
-    <script src="/js/perfect-scrollbar.min.js?1665132942"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1665132942"></script>
-    <script src="/js/jquery.sticky.js?1665132942"></script>
-    <script src="/js/featherlight.min.js?1665132942"></script>
-    <script src="/js/highlight.pack.js?1665132942"></script>
+    <script src="/js/clipboard.min.js?1667669163"></script>
+    <script src="/js/perfect-scrollbar.min.js?1667669163"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1667669163"></script>
+    <script src="/js/jquery.sticky.js?1667669163"></script>
+    <script src="/js/featherlight.min.js?1667669163"></script>
+    <script src="/js/highlight.pack.js?1667669163"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1665132942"></script>
-    <script src="/js/learn.js?1665132942"></script>
-    <script src="/js/hugo-learn.js?1665132942"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1667669163"></script>
+    <script src="/js/learn.js?1667669163"></script>
+    <script src="/js/hugo-learn.js?1667669163"></script>
     
     
 
