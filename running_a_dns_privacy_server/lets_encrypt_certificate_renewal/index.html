@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.83.1" />
+    <meta name="generator" content="Hugo 0.86.0" />
     <meta name="description" content="">
 
 
@@ -12,22 +12,22 @@
     <title>Let&#39;s Encrypt Certificate renewal :: dnsprivacy.org</title>
 
     
-    <link href="/css/nucleus.css?1667669163" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1667669163" rel="stylesheet">
-    <link href="/css/hybrid.css?1667669163" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1667669163" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1667669163" rel="stylesheet">
-    <link href="/css/auto-complete.css?1667669163" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1667669163" rel="stylesheet">
-    <link href="/css/theme.css?1667669163" rel="stylesheet">
-    <link href="/css/tabs.css?1667669163" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1667669163" rel="stylesheet">
+    <link href="/css/nucleus.css?1669828798" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1669828798" rel="stylesheet">
+    <link href="/css/hybrid.css?1669828798" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1669828798" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1669828798" rel="stylesheet">
+    <link href="/css/auto-complete.css?1669828798" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1669828798" rel="stylesheet">
+    <link href="/css/theme.css?1669828798" rel="stylesheet">
+    <link href="/css/tabs.css?1669828798" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1669828798" rel="stylesheet">
     
-    <link href="/css/theme-blue.css?1667669163" rel="stylesheet">
+    <link href="/css/theme-blue.css?1669828798" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1667669163"></script>
+    <script src="/js/jquery-3.3.1.min.js?1669828798"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1667669163"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1667669163"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1669828798"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1669828798"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/dnsprivacy.org\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1667669163"></script>
+<script type="text/javascript" src="/js/search.js?1669828798"></script>
 
     
   </div>
@@ -1476,20 +1476,20 @@ generating your first certificate).</p>
 <li>
 <p>Create your new CSR <strong>from your existing private key</strong> using
 &lsquo;openssl req&rsquo;</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">openssl req -key &lt;my_key_file&gt; -new -out &lt;my_csr_file&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">openssl req -key &lt;my_key_file&gt; -new -out &lt;my_csr_file&gt;
 </code></pre></div></li>
 <li>
 <p>Use the certbot interface to renew the cert using the same key, for
 example using web authenticaiton </p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">certbot certonly -d &lt;my_authentication_name&gt; --csr &lt;my_csr_file&gt; --webroot -w /home/website/public
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">certbot certonly -d &lt;my_authentication_name&gt; --csr &lt;my_csr_file&gt; --webroot -w /home/website/public
 </code></pre></div><p>or using dns challenge</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">certbot certonly -d &lt;my_authentication_name&gt; --csr &lt;my_csr_file&gt; --preferred-challenges dns --manual
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">certbot certonly -d &lt;my_authentication_name&gt; --csr &lt;my_csr_file&gt; --preferred-challenges dns --manual
 </code></pre></div></li>
 <li>
 <p>For the <strong>dns challenge mode</strong>, step 2 outputs a TXT file that must
 be added to the corresponding zone &lt;my_authentication_name&gt; before
 the certificate can be issued and instructs something like:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Please deploy a DNS TXT record under the name
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Please deploy a DNS TXT record under the name
 _acme-challenge.&lt;my_authentication_domain_name&gt; with the following value:
 
 &lt;TXT value&gt;
@@ -1528,12 +1528,12 @@ the SPKI pin if you want to publish this (so clients can configure this
 for authenticating your server).</p>
 <ul>
 <li>GnuTLS:
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gnutls-cli --print-cert -p <span style="color:#ae81ff">853</span> &lt;IP_address&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gnutls-cli --print-cert -p <span style="color:#ae81ff">853</span> &lt;IP_address&gt;
 </code></pre></div><p>The pin for each certificate is displayed at the end of the output
 line beginning ' Certificate[0] info:'</p>
 </li>
 <li>OpenSSL: 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo | openssl s_client -connect <span style="color:#e6db74">&#39;[2001:67c:27e4::35]:853&#39;</span> 2&gt;/dev/null <span style="color:#ae81ff">\
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">echo | openssl s_client -connect <span style="color:#e6db74">&#39;[2001:67c:27e4::35]:853&#39;</span> 2&gt;/dev/null <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span> | openssl x509 -pubkey -noout | openssl pkey -pubin -outform der | <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span> openssl dgst -sha256 -binary | openssl enc -base64
 </code></pre></div></li>
@@ -2408,16 +2408,16 @@ line beginning ' Certificate[0] info:'</p>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1667669163"></script>
-    <script src="/js/perfect-scrollbar.min.js?1667669163"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1667669163"></script>
-    <script src="/js/jquery.sticky.js?1667669163"></script>
-    <script src="/js/featherlight.min.js?1667669163"></script>
-    <script src="/js/highlight.pack.js?1667669163"></script>
+    <script src="/js/clipboard.min.js?1669828798"></script>
+    <script src="/js/perfect-scrollbar.min.js?1669828798"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1669828798"></script>
+    <script src="/js/jquery.sticky.js?1669828798"></script>
+    <script src="/js/featherlight.min.js?1669828798"></script>
+    <script src="/js/highlight.pack.js?1669828798"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1667669163"></script>
-    <script src="/js/learn.js?1667669163"></script>
-    <script src="/js/hugo-learn.js?1667669163"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1669828798"></script>
+    <script src="/js/learn.js?1669828798"></script>
+    <script src="/js/hugo-learn.js?1669828798"></script>
     
     
 

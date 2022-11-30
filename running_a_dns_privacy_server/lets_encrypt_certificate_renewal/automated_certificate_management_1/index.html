@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.83.1" />
+    <meta name="generator" content="Hugo 0.86.0" />
     <meta name="description" content="">
 
 
@@ -12,22 +12,22 @@
     <title>Certificate management Method 1 :: dnsprivacy.org</title>
 
     
-    <link href="/css/nucleus.css?1667669163" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1667669163" rel="stylesheet">
-    <link href="/css/hybrid.css?1667669163" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1667669163" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1667669163" rel="stylesheet">
-    <link href="/css/auto-complete.css?1667669163" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1667669163" rel="stylesheet">
-    <link href="/css/theme.css?1667669163" rel="stylesheet">
-    <link href="/css/tabs.css?1667669163" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1667669163" rel="stylesheet">
+    <link href="/css/nucleus.css?1669828798" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1669828798" rel="stylesheet">
+    <link href="/css/hybrid.css?1669828798" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1669828798" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1669828798" rel="stylesheet">
+    <link href="/css/auto-complete.css?1669828798" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1669828798" rel="stylesheet">
+    <link href="/css/theme.css?1669828798" rel="stylesheet">
+    <link href="/css/tabs.css?1669828798" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1669828798" rel="stylesheet">
     
-    <link href="/css/theme-blue.css?1667669163" rel="stylesheet">
+    <link href="/css/theme-blue.css?1669828798" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1667669163"></script>
+    <script src="/js/jquery-3.3.1.min.js?1669828798"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1667669163"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1667669163"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1669828798"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1669828798"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/dnsprivacy.org\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1667669163"></script>
+<script type="text/javascript" src="/js/search.js?1669828798"></script>
 
     
   </div>
@@ -1509,14 +1509,14 @@ dnsovertls1.&lt;YOURDOMAIN&gt;. and dnsovertls.&lt;YOURDOMAIN&gt;.</p>
 <p>Add CNAME RRs to the &lt;YOURDOMAIN&gt; zone like these. These will redirect
 queries for the dns-01 challenge to a dedicated zone which can exist on
 and be served by a dedicated certificate management server</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">_acme-challenge.dnsovertls1.&lt;YOURDOMAIN&gt;. <span style="color:#ae81ff">300</span> CNAME dnsovertls1.&lt;YOURDOMAIN&gt;.acme.&lt;YOURDOMAIN&gt;.
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">_acme-challenge.dnsovertls1.&lt;YOURDOMAIN&gt;. <span style="color:#ae81ff">300</span> CNAME dnsovertls1.&lt;YOURDOMAIN&gt;.acme.&lt;YOURDOMAIN&gt;.
 _acme-challenge.dnsovertls.&lt;YOURDOMAIN&gt;. <span style="color:#ae81ff">300</span> CNAME dnsovertls.&lt;YOURDOMAIN&gt;.acme.&lt;YOURDOMAIN&gt;.
 </code></pre></div><p>Delegate acme.&lt;YOURDOMAIN&gt; to the certificate management server by
 adding NS and DS RRs to the &lt;YOURDOMAIN&gt; zone. Lets assume the server
 is called ns1.acme.&lt;YOURDOMAIN&gt;</p>
 <p>Create an empty zone for acme.&lt;YOURDOMAIN&gt; (SOA and NS and A/AAAA RRs).
 Configure knot to sign the domain</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ini" data-lang="ini"><span style="color:#a6e22e">server:</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ini" data-lang="ini"><span style="color:#a6e22e">server:</span>
   <span style="color:#a6e22e">listen: &lt;YOURIP4&gt;@53</span>
   <span style="color:#a6e22e">listen: &lt;YOURIP6&gt;@53</span>
   <span style="color:#a6e22e">user: knot:knot</span>
@@ -1534,7 +1534,7 @@ Configure knot to sign the domain</p>
     <span style="color:#a6e22e">file: &#34;acme.&lt;YOURDOMAIN&gt;.zone&#34;</span>
     <span style="color:#a6e22e">dnssec-signing: on</span>
     <span style="color:#a6e22e">dnssec-policy: dnssec</span>
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">acme.&lt;YOURDOMAIN&gt;.       <span style="color:#ae81ff">3600</span>    SOA     ns1.acme.&lt;YOURDOMAIN&gt;. user.&lt;YOURDOMAIN&gt;. <span style="color:#ae81ff">2016120927</span> <span style="color:#ae81ff">30000</span> <span style="color:#ae81ff">300</span> <span style="color:#ae81ff">604800</span> <span style="color:#ae81ff">300</span>
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">acme.&lt;YOURDOMAIN&gt;.       <span style="color:#ae81ff">3600</span>    SOA     ns1.acme.&lt;YOURDOMAIN&gt;. user.&lt;YOURDOMAIN&gt;. <span style="color:#ae81ff">2016120927</span> <span style="color:#ae81ff">30000</span> <span style="color:#ae81ff">300</span> <span style="color:#ae81ff">604800</span> <span style="color:#ae81ff">300</span>
 acme.&lt;YOURDOMAIN&gt;.       <span style="color:#ae81ff">3600</span>    NS      ns1.acme.&lt;YOURDOMAIN&gt;.
 ns1.acme.&lt;YOURDOMAIN&gt;.   <span style="color:#ae81ff">3600</span>    A       &lt;YOURIP4&gt;
 ns1.acme.&lt;YOURDOMAIN&gt;.   <span style="color:#ae81ff">3600</span>    AAAA    &lt;YOURIP6&gt;
@@ -1547,7 +1547,7 @@ This will allow you to run the scripts for debugging without exceeding
 the production Let&rsquo;s Encrypt limits</p>
 </div>
 </p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">## CA=&#34;https://acme-staging.api.letsencrypt.org/directory&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">## CA=&#34;https://acme-staging.api.letsencrypt.org/directory&#34;</span>
 <span style="color:#75715e">## CA_TERMS=&#34;https://acme-staging.api.letsencrypt.org/terms&#34;</span>
 LICENSE<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://letsencrypt.org/documents/LE-SA-v1.1.1-August-1-2016.pdf&#34;</span>
 CERTDIR<span style="color:#f92672">=</span>/&lt;PATH&gt;/dehydrated/certs
@@ -1562,11 +1562,11 @@ SPKI pinning will work.</p>
 <h3 id="create-a-domains-file">Create a domains file</h3>
 <p>Create a dehydrated.domains file
 (<em>/&lt;PATH&gt;/dehydrated/dehydrated.domains</em>)</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">dnsovertls.&lt;YOURDOMAIN&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">dnsovertls.&lt;YOURDOMAIN&gt;
 dnsovertls1.&lt;YOURDOMAIN&gt;
 </code></pre></div><h3 id="write-a-hook-script">Write a hook script</h3>
 <p>Create a hook.sh script (<em>/&lt;PATH&gt;/dehydrated/hook.sh</em>). </p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/usr/bin/env bash
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/usr/bin/env bash
 </span><span style="color:#75715e"></span>
 set -e
 set -u
@@ -1700,7 +1700,7 @@ HANDLER<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</sp
 </code></pre></div><h2 id="write-a-script-to-download-the-certificates-to-your-dns-servers">Write a script to download the certificates to your DNS servers</h2>
 <p>Do something like the following on each servers to download the
 certificates from your main certificate server. </p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/usr/bin/env bash
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/usr/bin/env bash
 </span><span style="color:#75715e"></span>
 set -e
 set -u
@@ -2656,16 +2656,16 @@ systemctl reload-or-restart <span style="color:#e6db74">${</span>INITNAME<span s
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1667669163"></script>
-    <script src="/js/perfect-scrollbar.min.js?1667669163"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1667669163"></script>
-    <script src="/js/jquery.sticky.js?1667669163"></script>
-    <script src="/js/featherlight.min.js?1667669163"></script>
-    <script src="/js/highlight.pack.js?1667669163"></script>
+    <script src="/js/clipboard.min.js?1669828798"></script>
+    <script src="/js/perfect-scrollbar.min.js?1669828798"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1669828798"></script>
+    <script src="/js/jquery.sticky.js?1669828798"></script>
+    <script src="/js/featherlight.min.js?1669828798"></script>
+    <script src="/js/highlight.pack.js?1669828798"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1667669163"></script>
-    <script src="/js/learn.js?1667669163"></script>
-    <script src="/js/hugo-learn.js?1667669163"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1669828798"></script>
+    <script src="/js/learn.js?1669828798"></script>
+    <script src="/js/hugo-learn.js?1669828798"></script>
     
     
 

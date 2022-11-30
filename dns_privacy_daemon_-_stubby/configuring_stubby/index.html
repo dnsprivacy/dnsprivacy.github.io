@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.83.1" />
+    <meta name="generator" content="Hugo 0.86.0" />
     <meta name="description" content="">
 
 
@@ -12,22 +12,22 @@
     <title>Configuring Stubby :: dnsprivacy.org</title>
 
     
-    <link href="/css/nucleus.css?1667669163" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1667669163" rel="stylesheet">
-    <link href="/css/hybrid.css?1667669163" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1667669163" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1667669163" rel="stylesheet">
-    <link href="/css/auto-complete.css?1667669163" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1667669163" rel="stylesheet">
-    <link href="/css/theme.css?1667669163" rel="stylesheet">
-    <link href="/css/tabs.css?1667669163" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1667669163" rel="stylesheet">
+    <link href="/css/nucleus.css?1669828798" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1669828798" rel="stylesheet">
+    <link href="/css/hybrid.css?1669828798" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1669828798" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1669828798" rel="stylesheet">
+    <link href="/css/auto-complete.css?1669828798" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1669828798" rel="stylesheet">
+    <link href="/css/theme.css?1669828798" rel="stylesheet">
+    <link href="/css/tabs.css?1669828798" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1669828798" rel="stylesheet">
     
-    <link href="/css/theme-blue.css?1667669163" rel="stylesheet">
+    <link href="/css/theme-blue.css?1669828798" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1667669163"></script>
+    <script src="/js/jquery-3.3.1.min.js?1669828798"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1667669163"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1667669163"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1669828798"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1669828798"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/dnsprivacy.org\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1667669163"></script>
+<script type="text/javascript" src="/js/search.js?1669828798"></script>
 
     
   </div>
@@ -1557,7 +1557,7 @@ This is also verified against the presented certificate.</li>
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">resolution_type</span>: <span style="color:#ae81ff">GETDNS_RESOLUTION_STUB</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">resolution_type</span>: <span style="color:#ae81ff">GETDNS_RESOLUTION_STUB</span>
 <span style="color:#f92672">dns_transport_list</span>: 
   - <span style="color:#ae81ff">GETDNS_TRANSPORT_TLS</span>
 <span style="color:#f92672">tls_authentication</span>: <span style="color:#ae81ff">GETDNS_AUTHENTICATION_REQUIRED</span>
@@ -1586,7 +1586,7 @@ the <code>upstream_recursive_server</code> in the config file.</p>
 <h3 id="dnssec">DNSSEC</h3>
 <p>To enable DNSSEC validation when using Stubby add the following option
 to the configuration file</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">dnssec_return_status</span>: <span style="color:#ae81ff">GETDNS_EXTENSION_TRUE</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">dnssec_return_status</span>: <span style="color:#ae81ff">GETDNS_EXTENSION_TRUE</span>
 </code></pre></div><p>A trust anchor is also required for DNSSEC validation. </p>
 <p><em>getdns</em> version 1.2 and later include support for automatic trust
 anchor management - which will automatically fetch a trust anchor if
@@ -1623,7 +1623,7 @@ server. To configure Stubby in this mode:</p>
 <li>
 <p>Set the transport list and authentication parameter in the
 configuration to:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">dns_transport_list</span>: 
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">dns_transport_list</span>: 
  - <span style="color:#ae81ff">GETDNS_TRANSPORT_TLS</span>
  - <span style="color:#ae81ff">GETDNS_TRANSPORT_UDP</span>
  - <span style="color:#ae81ff">GETDNS_TRANSPORT_TCP</span>
@@ -2508,16 +2508,16 @@ details. </p>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1667669163"></script>
-    <script src="/js/perfect-scrollbar.min.js?1667669163"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1667669163"></script>
-    <script src="/js/jquery.sticky.js?1667669163"></script>
-    <script src="/js/featherlight.min.js?1667669163"></script>
-    <script src="/js/highlight.pack.js?1667669163"></script>
+    <script src="/js/clipboard.min.js?1669828798"></script>
+    <script src="/js/perfect-scrollbar.min.js?1669828798"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1669828798"></script>
+    <script src="/js/jquery.sticky.js?1669828798"></script>
+    <script src="/js/featherlight.min.js?1669828798"></script>
+    <script src="/js/highlight.pack.js?1669828798"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1667669163"></script>
-    <script src="/js/learn.js?1667669163"></script>
-    <script src="/js/hugo-learn.js?1667669163"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1669828798"></script>
+    <script src="/js/learn.js?1669828798"></script>
+    <script src="/js/hugo-learn.js?1669828798"></script>
     
     
 

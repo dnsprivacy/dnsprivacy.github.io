@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.83.1" />
+    <meta name="generator" content="Hugo 0.86.0" />
     <meta name="description" content="">
 
 
@@ -12,22 +12,22 @@
     <title>MacOS Homebrew :: dnsprivacy.org</title>
 
     
-    <link href="/css/nucleus.css?1667669163" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1667669163" rel="stylesheet">
-    <link href="/css/hybrid.css?1667669163" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1667669163" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1667669163" rel="stylesheet">
-    <link href="/css/auto-complete.css?1667669163" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1667669163" rel="stylesheet">
-    <link href="/css/theme.css?1667669163" rel="stylesheet">
-    <link href="/css/tabs.css?1667669163" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1667669163" rel="stylesheet">
+    <link href="/css/nucleus.css?1669828798" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1669828798" rel="stylesheet">
+    <link href="/css/hybrid.css?1669828798" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1669828798" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1669828798" rel="stylesheet">
+    <link href="/css/auto-complete.css?1669828798" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1669828798" rel="stylesheet">
+    <link href="/css/theme.css?1669828798" rel="stylesheet">
+    <link href="/css/tabs.css?1669828798" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1669828798" rel="stylesheet">
     
-    <link href="/css/theme-blue.css?1667669163" rel="stylesheet">
+    <link href="/css/theme-blue.css?1669828798" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1667669163"></script>
+    <script src="/js/jquery-3.3.1.min.js?1669828798"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1667669163"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1667669163"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1669828798"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1669828798"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/dnsprivacy.org\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1667669163"></script>
+<script type="text/javascript" src="/js/search.js?1669828798"></script>
 
     
   </div>
@@ -1482,25 +1482,25 @@ BigSur: <a href="https://github.com/getdnsapi/stubby/issues/272#issuecomment-73
 
 <h2 id="installation">Installation</h2>
 <p>1. Install Homebrew if you don&rsquo;t aleady have it:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/usr/bin/ruby -e <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/usr/bin/ruby -e <span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
 </code></pre></div><p>2. Install stubby</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">brew install stubby
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">brew install stubby
 </code></pre></div><h2 id="running-stubby-on-the-command-line">Running Stubby on the command line</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo /usr/local/opt/bin/stubby -C /usr/local/etc/stubby/stubby.yml -l
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo /usr/local/opt/bin/stubby -C /usr/local/etc/stubby/stubby.yml -l
 </code></pre></div><ul>
 <li>The <code>-l</code> flag enables logging</li>
 </ul>
 <h3 id="logging-from-the-stubby-service">Logging from the stubby service</h3>
 <p>The logging is currently crude and simply writes to a file. (We are
 working on making this better!) To see the logs</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo tail -f /usr/local/var/log/stubby/stubby.log
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo tail -f /usr/local/var/log/stubby/stubby.log
 </code></pre></div><h2 id="test-stubby">Test Stubby</h2>
 <p>A quick test can be done by using dig (or your favourite DNS tool) on
 the loopback address</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">&gt; dig @127.0.0.1 www.example.com
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">&gt; dig @127.0.0.1 www.example.com
 </code></pre></div><h2 id="running-stubby-as-a-service">Running Stubby as a service</h2>
 <p>Running stubby like this will mean it runs continually in the background</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo brew services start stubby
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo brew services start stubby
 </code></pre></div><h2 id="modify-your-upstream-resolvers">Modify your upstream resolvers</h2>
 
 <div class="notices info" ><p>Once this change is made your DNS queries will be re-directed to Stubby
@@ -1513,15 +1513,15 @@ network settings).</p>
 resolvers configured on your machine must be changed to send all the
 local queries to the loopback interface on which Stubby is listening.</p>
 <p>To switch to use Stubby for DNS resolution run:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo /usr/local/opt/stubby/sbin/stubby-setdns-macos.sh
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo /usr/local/opt/stubby/sbin/stubby-setdns-macos.sh
 </code></pre></div><p>To switch back to your default DNS config (no privacy) use:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo /usr/local/opt/stubby/sbin/stubby-setdns-macos.sh -r
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo /usr/local/opt/stubby/sbin/stubby-setdns-macos.sh -r
 </code></pre></div><h2 id="configuring-stubby">Configuring stubby</h2>
 <p>It is recommended to use the default configuration file provided which
 will use &lsquo;Strict&rsquo; privacy mode and spread the DNS queries among several
 of the current DNS Privacy test servers. Note that this file contains
 both IPv4 and IPv6 addresses. The file is installed in:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/usr/local/etc/stubby/stubby.yml
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">/usr/local/etc/stubby/stubby.yml
 </code></pre></div><p>More information on how to customise the configuration <a href="https://dnsprivacy.org/wiki/display/DP/Configuring+Stubby">can be found
 here</a>.</p>
 
@@ -2394,16 +2394,16 @@ here</a>.</p>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1667669163"></script>
-    <script src="/js/perfect-scrollbar.min.js?1667669163"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1667669163"></script>
-    <script src="/js/jquery.sticky.js?1667669163"></script>
-    <script src="/js/featherlight.min.js?1667669163"></script>
-    <script src="/js/highlight.pack.js?1667669163"></script>
+    <script src="/js/clipboard.min.js?1669828798"></script>
+    <script src="/js/perfect-scrollbar.min.js?1669828798"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1669828798"></script>
+    <script src="/js/jquery.sticky.js?1669828798"></script>
+    <script src="/js/featherlight.min.js?1669828798"></script>
+    <script src="/js/highlight.pack.js?1669828798"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1667669163"></script>
-    <script src="/js/learn.js?1667669163"></script>
-    <script src="/js/hugo-learn.js?1667669163"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1669828798"></script>
+    <script src="/js/learn.js?1669828798"></script>
+    <script src="/js/hugo-learn.js?1669828798"></script>
     
     
 
