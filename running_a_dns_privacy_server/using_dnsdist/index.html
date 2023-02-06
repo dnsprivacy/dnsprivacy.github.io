@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.86.0" />
+    <meta name="generator" content="Hugo 0.109.0">
     <meta name="description" content="">
 
 
@@ -12,22 +12,22 @@
     <title>Using dnsdist :: dnsprivacy.org</title>
 
     
-    <link href="/css/nucleus.css?1673349166" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1673349166" rel="stylesheet">
-    <link href="/css/hybrid.css?1673349166" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1673349166" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1673349166" rel="stylesheet">
-    <link href="/css/auto-complete.css?1673349166" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1673349166" rel="stylesheet">
-    <link href="/css/theme.css?1673349166" rel="stylesheet">
-    <link href="/css/tabs.css?1673349166" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1673349166" rel="stylesheet">
+    <link href="/css/nucleus.css?1675680668" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1675680668" rel="stylesheet">
+    <link href="/css/hybrid.css?1675680668" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1675680668" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1675680668" rel="stylesheet">
+    <link href="/css/auto-complete.css?1675680668" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1675680668" rel="stylesheet">
+    <link href="/css/theme.css?1675680668" rel="stylesheet">
+    <link href="/css/tabs.css?1675680668" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1675680668" rel="stylesheet">
     
-    <link href="/css/theme-blue.css?1673349166" rel="stylesheet">
+    <link href="/css/theme-blue.css?1675680668" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1673349166"></script>
+    <script src="/js/jquery-3.3.1.min.js?1675680668"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1673349166"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1673349166"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1675680668"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1675680668"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/dnsprivacy.org\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1673349166"></script>
+<script type="text/javascript" src="/js/search.js?1675680668"></script>
 
     
   </div>
@@ -1440,36 +1440,36 @@
 
 <p>Below is a simple configuration for setting up dnsdist as a server
 offering both DoT and DoH</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-lua" data-lang="lua">addACL(<span style="color:#e6db74">&#39;0.0.0.0/0&#39;</span>)
-addACL(<span style="color:#e6db74">&#39;::/0&#39;</span>)
-
-addLocal(<span style="color:#e6db74">&#39;0.0.0.0:53&#39;</span>,{doTCP<span style="color:#f92672">=</span><span style="color:#66d9ef">true</span>, reusePort<span style="color:#f92672">=</span><span style="color:#66d9ef">true</span>, tcpFastOpenSize<span style="color:#f92672">=</span>X})        <span style="color:#75715e">-- for dns over port 53 ipv4 , set X(int) for tcp fast open queue size</span>
-addLocal(<span style="color:#e6db74">&#39;[::]:53&#39;</span>,   {doTCP<span style="color:#f92672">=</span><span style="color:#66d9ef">true</span>, reusePort<span style="color:#f92672">=</span><span style="color:#66d9ef">true</span>, tcpFastOpenSize<span style="color:#f92672">=</span>X})        <span style="color:#75715e">-- for dns over port 53 ipv6 , set X(int) for tcp fast open queue size</span>
-
-addTLSLocal(<span style="color:#e6db74">&#34;0.0.0.0&#34;</span>, <span style="color:#e6db74">&#34;/Path/fullchain.pem&#34;</span>, <span style="color:#e6db74">&#34;/Path/privkey.pem&#34;</span>,{ doTCP<span style="color:#f92672">=</span><span style="color:#66d9ef">true</span>, reusePort<span style="color:#f92672">=</span><span style="color:#66d9ef">true</span>, tcpFastOpenSize<span style="color:#f92672">=</span>X })      
-<span style="color:#75715e">-- path for certs and listen address for DoT ipv4 , by default listens on port 853. Set X(int) for tcp fast open queue size.</span>
-addTLSLocal(<span style="color:#e6db74">&#34;[::]&#34;</span>, <span style="color:#e6db74">&#34;/Path/fullchain.pem&#34;</span>, <span style="color:#e6db74">&#34;/Path/privkey.pem&#34;</span>,{ doTCP<span style="color:#f92672">=</span><span style="color:#66d9ef">true</span>, reusePort<span style="color:#f92672">=</span><span style="color:#66d9ef">true</span>, tcpFastOpenSize<span style="color:#f92672">=</span>X })         
-<span style="color:#75715e">-- path for certs and listen address for DoT ipv6 , by default listens on port 853. Set X(int) for tcp fast open queue size.</span>
-
-addDOHLocal(<span style="color:#e6db74">&#34;[::]:443&#34;</span>, <span style="color:#e6db74">&#34;/Path/fullchain.pem&#34;</span>, <span style="color:#e6db74">&#34;/Path/privkey.pem&#34;</span>, <span style="color:#e6db74">&#34;/dns-query&#34;</span>, { doTCP<span style="color:#f92672">=</span><span style="color:#66d9ef">true</span>, reusePort<span style="color:#f92672">=</span><span style="color:#66d9ef">true</span>, tcpFastOpenSize<span style="color:#f92672">=</span>X })        
-<span style="color:#75715e">-- path for certs and listen address for DoH. Set X(int) for tcp fast open queue size.</span>
-
-addAction(MaxQPSIPRule(X), DropAction())    <span style="color:#75715e">-- set X(int) number of queries to be allowed per second from a IP</span>
-addAction(AndRule({QTypeRule(dnsdist.ANY), TCPRule(<span style="color:#66d9ef">false</span>)}), DropAction())  <span style="color:#75715e">-- drop ANY queries sent over udp , not useful for DoT and DoH only servers.</span>
-
-pc <span style="color:#f92672">=</span> newPacketCache(X, <span style="color:#ae81ff">86400</span>, <span style="color:#ae81ff">600</span>)      <span style="color:#75715e">-- set X number of entries to be in dnsdist cache by default , memory will be preallocated based on the X number</span>
-getPool(<span style="color:#e6db74">&#34;&#34;</span>):setCache(pc)              <span style="color:#75715e">-- deafult cache</span>
-setServerPolicy(leastOutstanding)       <span style="color:#75715e">-- server policy to choose the downstream servers for recursion</span>
-
-newServer({address<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;127.0.0.1:1111&#34;</span>, name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;resolver1&#34;</span>})     <span style="color:#75715e">-- downstream servers for recursion</span>
-newServer({address<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;127.0.0.1:2222&#34;</span>, name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;resolver2&#34;</span>})     <span style="color:#75715e">-- downstream servers for recursion</span>
-
-setMaxUDPOutstanding(<span style="color:#ae81ff">65535</span>)
-setMaxTCPClientThreads(X)           <span style="color:#75715e">-- set X(int) to handle number of maximum tcp clients</span>
-setMaxTCPConnectionDuration(X)      <span style="color:#75715e">-- set X(int) for tcp connection duaration from a connected client. X is number of seconds.</span>
-setMaxTCPConnectionsPerClient(X)    <span style="color:#75715e">-- set X(int) for number of tcp connections from a single client. Useful for rate limiting the concurrent connections.</span>
-setMaxTCPQueriesPerConnection(X)    <span style="color:#75715e">-- set X(int) , similiar to addAction(MaxQPSIPRule(X), DropAction())</span>
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span>addACL(<span style="color:#e6db74">&#39;0.0.0.0/0&#39;</span>)
+</span></span><span style="display:flex;"><span>addACL(<span style="color:#e6db74">&#39;::/0&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>addLocal(<span style="color:#e6db74">&#39;0.0.0.0:53&#39;</span>,{doTCP<span style="color:#f92672">=</span><span style="color:#66d9ef">true</span>, reusePort<span style="color:#f92672">=</span><span style="color:#66d9ef">true</span>, tcpFastOpenSize<span style="color:#f92672">=</span>X})        <span style="color:#75715e">-- for dns over port 53 ipv4 , set X(int) for tcp fast open queue size</span>
+</span></span><span style="display:flex;"><span>addLocal(<span style="color:#e6db74">&#39;[::]:53&#39;</span>,   {doTCP<span style="color:#f92672">=</span><span style="color:#66d9ef">true</span>, reusePort<span style="color:#f92672">=</span><span style="color:#66d9ef">true</span>, tcpFastOpenSize<span style="color:#f92672">=</span>X})        <span style="color:#75715e">-- for dns over port 53 ipv6 , set X(int) for tcp fast open queue size</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>addTLSLocal(<span style="color:#e6db74">&#34;0.0.0.0&#34;</span>, <span style="color:#e6db74">&#34;/Path/fullchain.pem&#34;</span>, <span style="color:#e6db74">&#34;/Path/privkey.pem&#34;</span>,{ doTCP<span style="color:#f92672">=</span><span style="color:#66d9ef">true</span>, reusePort<span style="color:#f92672">=</span><span style="color:#66d9ef">true</span>, tcpFastOpenSize<span style="color:#f92672">=</span>X })      
+</span></span><span style="display:flex;"><span><span style="color:#75715e">-- path for certs and listen address for DoT ipv4 , by default listens on port 853. Set X(int) for tcp fast open queue size.</span>
+</span></span><span style="display:flex;"><span>addTLSLocal(<span style="color:#e6db74">&#34;[::]&#34;</span>, <span style="color:#e6db74">&#34;/Path/fullchain.pem&#34;</span>, <span style="color:#e6db74">&#34;/Path/privkey.pem&#34;</span>,{ doTCP<span style="color:#f92672">=</span><span style="color:#66d9ef">true</span>, reusePort<span style="color:#f92672">=</span><span style="color:#66d9ef">true</span>, tcpFastOpenSize<span style="color:#f92672">=</span>X })         
+</span></span><span style="display:flex;"><span><span style="color:#75715e">-- path for certs and listen address for DoT ipv6 , by default listens on port 853. Set X(int) for tcp fast open queue size.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>addDOHLocal(<span style="color:#e6db74">&#34;[::]:443&#34;</span>, <span style="color:#e6db74">&#34;/Path/fullchain.pem&#34;</span>, <span style="color:#e6db74">&#34;/Path/privkey.pem&#34;</span>, <span style="color:#e6db74">&#34;/dns-query&#34;</span>, { doTCP<span style="color:#f92672">=</span><span style="color:#66d9ef">true</span>, reusePort<span style="color:#f92672">=</span><span style="color:#66d9ef">true</span>, tcpFastOpenSize<span style="color:#f92672">=</span>X })        
+</span></span><span style="display:flex;"><span><span style="color:#75715e">-- path for certs and listen address for DoH. Set X(int) for tcp fast open queue size.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>addAction(MaxQPSIPRule(X), DropAction())    <span style="color:#75715e">-- set X(int) number of queries to be allowed per second from a IP</span>
+</span></span><span style="display:flex;"><span>addAction(AndRule({QTypeRule(dnsdist.ANY), TCPRule(<span style="color:#66d9ef">false</span>)}), DropAction())  <span style="color:#75715e">-- drop ANY queries sent over udp , not useful for DoT and DoH only servers.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>pc <span style="color:#f92672">=</span> newPacketCache(X, <span style="color:#ae81ff">86400</span>, <span style="color:#ae81ff">600</span>)      <span style="color:#75715e">-- set X number of entries to be in dnsdist cache by default , memory will be preallocated based on the X number</span>
+</span></span><span style="display:flex;"><span>getPool(<span style="color:#e6db74">&#34;&#34;</span>):setCache(pc)              <span style="color:#75715e">-- deafult cache</span>
+</span></span><span style="display:flex;"><span>setServerPolicy(leastOutstanding)       <span style="color:#75715e">-- server policy to choose the downstream servers for recursion</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>newServer({address<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;127.0.0.1:1111&#34;</span>, name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;resolver1&#34;</span>})     <span style="color:#75715e">-- downstream servers for recursion</span>
+</span></span><span style="display:flex;"><span>newServer({address<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;127.0.0.1:2222&#34;</span>, name<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;resolver2&#34;</span>})     <span style="color:#75715e">-- downstream servers for recursion</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>setMaxUDPOutstanding(<span style="color:#ae81ff">65535</span>)
+</span></span><span style="display:flex;"><span>setMaxTCPClientThreads(X)           <span style="color:#75715e">-- set X(int) to handle number of maximum tcp clients</span>
+</span></span><span style="display:flex;"><span>setMaxTCPConnectionDuration(X)      <span style="color:#75715e">-- set X(int) for tcp connection duaration from a connected client. X is number of seconds.</span>
+</span></span><span style="display:flex;"><span>setMaxTCPConnectionsPerClient(X)    <span style="color:#75715e">-- set X(int) for number of tcp connections from a single client. Useful for rate limiting the concurrent connections.</span>
+</span></span><span style="display:flex;"><span>setMaxTCPQueriesPerConnection(X)    <span style="color:#75715e">-- set X(int) , similiar to addAction(MaxQPSIPRule(X), DropAction())</span>
+</span></span></code></pre></div>
 
 <footer class="footline">
 	
@@ -2335,16 +2335,16 @@ setMaxTCPQueriesPerConnection(X)    <span style="color:#75715e">-- set X(int) , 
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1673349166"></script>
-    <script src="/js/perfect-scrollbar.min.js?1673349166"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1673349166"></script>
-    <script src="/js/jquery.sticky.js?1673349166"></script>
-    <script src="/js/featherlight.min.js?1673349166"></script>
-    <script src="/js/highlight.pack.js?1673349166"></script>
+    <script src="/js/clipboard.min.js?1675680668"></script>
+    <script src="/js/perfect-scrollbar.min.js?1675680668"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1675680668"></script>
+    <script src="/js/jquery.sticky.js?1675680668"></script>
+    <script src="/js/featherlight.min.js?1675680668"></script>
+    <script src="/js/highlight.pack.js?1675680668"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1673349166"></script>
-    <script src="/js/learn.js?1673349166"></script>
-    <script src="/js/hugo-learn.js?1673349166"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1675680668"></script>
+    <script src="/js/learn.js?1675680668"></script>
+    <script src="/js/hugo-learn.js?1675680668"></script>
     
     
 

@@ -15,7 +15,7 @@
       <guid>http://dnsprivacy.org/dns_privacy_daemon_-_stubby/about_stubby/</guid>
       <description>&amp;lsquo;Stubby&amp;rsquo; is an application that acts as a local DNS Privacy stub resolver (using DNS-over-TLS). Stubby encrypts DNS queries sent from a client machine (desktop or laptop) to a DNS Privacy resolver increasing end user privacy.
 Stubby is developed by the getdns project, has it&amp;rsquo;s own github repo and issue tracker but dnsprivacy.org currently hosts the online documentation for Stubby .
-FAQ   What is Stubby?
+FAQ What is Stubby?
 ANSWER: Stubby runs as a daemon on the local machine sending DNS queries to resolvers over an encrypted TLS connections providing increased privacy for the user.</description>
     </item>
     
@@ -25,7 +25,7 @@ ANSWER: Stubby runs as a daemon on the local machine sending DNS queries to reso
       <pubDate>Wed, 21 Jul 2021 12:47:39 +0100</pubDate>
       
       <guid>http://dnsprivacy.org/dns_privacy_daemon_-_stubby/configuring_stubby/</guid>
-      <description>Create Custom Configuration File  DNSSEC  Storage of Zero-config Trust anchor     Opportunistic DoT to your local resolver Runtime logging    It is recommended to use the default configuration file provided which will use &amp;lsquo;Strict&amp;rsquo; privacy mode and spread the DNS queries among several of the current DNS Privacy test servers. Note that this file contains both IPv4 and IPv6 addresses.
+      <description>Create Custom Configuration File DNSSEC Storage of Zero-config Trust anchor Opportunistic DoT to your local resolver Runtime logging It is recommended to use the default configuration file provided which will use &amp;lsquo;Strict&amp;rsquo; privacy mode and spread the DNS queries among several of the current DNS Privacy test servers. Note that this file contains both IPv4 and IPv6 addresses.
 Note also that this file only enables a small subset of the available servers by default.</description>
     </item>
     
@@ -35,7 +35,7 @@ Note also that this file only enables a small subset of the available servers by
       <pubDate>Wed, 21 Jul 2021 12:50:54 +0100</pubDate>
       
       <guid>http://dnsprivacy.org/dns_privacy_daemon_-_stubby/stubby_manager_gui/</guid>
-      <description>Latest release is 0.4.0-a2 (11-Dec 2020) Background Status Installation Overview  Welcome page On/Off button Network Profiles  Untrusted Trusted Hostile   Networks Utilities Logs   Code Bug reports and feature requests Future features    Latest release is 0.4.0-a2 (11-Dec 2020) Background The Stubby Manager project is designed to provide a Graphical User Interface to manage Stubby aimed at both non-technical and advanced users. It will initially be supported on Windows only, macOS support will be added later.</description>
+      <description>Latest release is 0.4.0-a2 (11-Dec 2020) Background Status Installation Overview Welcome page On/Off button Network Profiles Untrusted Trusted Hostile Networks Utilities Logs Code Bug reports and feature requests Future features Latest release is 0.4.0-a2 (11-Dec 2020) Background The Stubby Manager project is designed to provide a Graphical User Interface to manage Stubby aimed at both non-technical and advanced users. It will initially be supported on Windows only, macOS support will be added later.</description>
     </item>
     
   </channel>

@@ -13,7 +13,7 @@
       <pubDate>Thu, 22 Jul 2021 16:03:20 +0100</pubDate>
       
       <guid>http://dnsprivacy.org/performance_measurements/initial_performance_measurements_q1_2018/</guid>
-      <description>Initial work Nameservers Test setup  Software  Test parameters   Hardware OS tuning Nameserver configuration   Results  Increasing load  UDP only UDP vs TCP TCP vs TLS TCP and TLS as a percentage of UDP   Vary queries per connection  Less than 60,000 queries per connection Less than 10,000 queries per connection Less than 500 queries per connection     Key conclusions TODO list Comments on test stability    Thanks to funding from the Open Technology Fund we have started work on some performance measurements for various DNS Privacy implementations.</description>
+      <description>Initial work Nameservers Test setup Software Test parameters Hardware OS tuning Nameserver configuration Results Increasing load UDP only UDP vs TCP TCP vs TLS TCP and TLS as a percentage of UDP Vary queries per connection Less than 60,000 queries per connection Less than 10,000 queries per connection Less than 500 queries per connection Key conclusions TODO list Comments on test stability Thanks to funding from the Open Technology Fund we have started work on some performance measurements for various DNS Privacy implementations.</description>
     </item>
     
     <item>
@@ -23,7 +23,7 @@
       
       <guid>http://dnsprivacy.org/performance_measurements/follow-up_performance_measurements_q4_2108/</guid>
       <description>Thanks to funding from the Open Technology Fund we have continued work on some performance measurements for various DNS Privacy implementations. We report our new results below.
- Previous work Goals of this work Results - TCP vs UDP  Unbound measurements Knot Resolver and BIND dnsdist   Results - TLS proxy vs native TLS  HA-Proxy fronting Unbound   Limitations of these measurements  Real DNS traffic data HTTP-like client population modelling?</description>
+Previous work Goals of this work Results - TCP vs UDP Unbound measurements Knot Resolver and BIND dnsdist Results - TLS proxy vs native TLS HA-Proxy fronting Unbound Limitations of these measurements Real DNS traffic data HTTP-like client population modelling? Previous work Our initial work on performance measurements can be found here: Initial Performance Measurements (Q1 2018).</description>
     </item>
     
     <item>
@@ -32,9 +32,9 @@
       <pubDate>Thu, 22 Jul 2021 16:09:40 +0100</pubDate>
       
       <guid>http://dnsprivacy.org/performance_measurements/review_of_dns_and_http_pm_tools/</guid>
-      <description>Survey of existing DNS tools Investigation of HTTP benchmarking tools  Survey Work on Tsung      Survey of existing DNS tools    Tool UDP TCP TLS Pipelining Uses query file Replay pcaps Comments  dnsperf from DNS-OARC Y N N N Y N https://github.com/DNS-OARC/dnsperf  resperf from DNS-OARC Y N N N Y N For testing resolvers
+      <description>Survey of existing DNS tools Investigation of HTTP benchmarking tools Survey Work on Tsung Survey of existing DNS tools Tool UDP TCP TLS Pipelining Uses query file Replay pcaps Comments dnsperf from DNS-OARC Y N N N Y N https://github.com/DNS-OARC/dnsperf resperf from DNS-OARC Y N N N Y N For testing resolvers
 https://github.com/DNS-OARC/dnsperf
-  dnsperf-tcp Y Y N Y Y N https://github.</description>
+dnsperf-tcp Y Y N Y Y N https://github.com/Sinodun/dnsperf-tcp dnsperf-tls Y Y Y Y Y N https://github.com/Sinodun/dnsperf-tcp/tree/feature/tls_openssl. A re-factor was required to accomodate TLS usage within the threading model used here and we believe this introduces a performance overhead at very low queries per connection (below 500).</description>
     </item>
     
     <item>
@@ -43,10 +43,10 @@ https://github.com/DNS-OARC/dnsperf
       <pubDate>Thu, 22 Jul 2021 16:12:21 +0100</pubDate>
       
       <guid>http://dnsprivacy.org/performance_measurements/proposal_for_new_performance_tool/</guid>
-      <description>Tool requirements High level   Support multiple protocols by design including session based protocols. (Initial wish list is UDP, TCP, TLS, HTTPS and QUIC)
-  Support emulating ~30,000 clients on a single server/VM
-  Support configuration to describe client populations e.g.
- 10% of clients send at maximum rate the connection can sustain 50% send at X qps and use 2s idle timeout 40% send at Y qps use 10s idle timeout    Read query names from a file or autogenerate them based on a simple algorithm</description>
+      <description>Tool requirements High level Support multiple protocols by design including session based protocols. (Initial wish list is UDP, TCP, TLS, HTTPS and QUIC)
+Support emulating ~30,000 clients on a single server/VM
+Support configuration to describe client populations e.g.
+10% of clients send at maximum rate the connection can sustain 50% send at X qps and use 2s idle timeout 40% send at Y qps use 10s idle timeout Read query names from a file or autogenerate them based on a simple algorithm</description>
     </item>
     
   </channel>

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.86.0" />
+    <meta name="generator" content="Hugo 0.109.0">
     <meta name="description" content="">
 
 
@@ -12,22 +12,22 @@
     <title>The Solutions :: dnsprivacy.org</title>
 
     
-    <link href="/css/nucleus.css?1673349166" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1673349166" rel="stylesheet">
-    <link href="/css/hybrid.css?1673349166" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1673349166" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1673349166" rel="stylesheet">
-    <link href="/css/auto-complete.css?1673349166" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1673349166" rel="stylesheet">
-    <link href="/css/theme.css?1673349166" rel="stylesheet">
-    <link href="/css/tabs.css?1673349166" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1673349166" rel="stylesheet">
+    <link href="/css/nucleus.css?1675680669" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1675680669" rel="stylesheet">
+    <link href="/css/hybrid.css?1675680669" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1675680669" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1675680669" rel="stylesheet">
+    <link href="/css/auto-complete.css?1675680669" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1675680669" rel="stylesheet">
+    <link href="/css/theme.css?1675680669" rel="stylesheet">
+    <link href="/css/tabs.css?1675680669" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1675680669" rel="stylesheet">
     
-    <link href="/css/theme-blue.css?1673349166" rel="stylesheet">
+    <link href="/css/theme-blue.css?1675680669" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1673349166"></script>
+    <script src="/js/jquery-3.3.1.min.js?1675680669"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1673349166"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1673349166"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1675680669"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1675680669"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/dnsprivacy.org\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1673349166"></script>
+<script type="text/javascript" src="/js/search.js?1675680669"></script>
 
     
   </div>
@@ -115,7 +115,7 @@
   
     
     <li data-nav-id="/the_solutions/" title="The Solutions" class="dd-item
-        parent
+        
         active
         
         ">
@@ -1430,6 +1430,7 @@
         <li><a href="#dns-over-tls-dot">DNS-over-TLS (DoT)</a></li>
         <li><a href="#dns-over-http-doh">DNS-over-HTTP (DoH)</a></li>
         <li><a href="#dns-over-quic-doq">DNS-over-QUIC (DoQ)</a></li>
+        <li><a href="#xfr-over-tls-xot">XFR-over-TLS (XoT)</a></li>
       </ul>
     </li>
     <li><a href="#non-standards-track-protocol-options">Non Standards Track protocol options</a>
@@ -1443,7 +1444,11 @@
     <li><a href="#the-discovery-problem">The Discovery Problem</a>
       <ul>
         <li><a href="#stub-to-recursive-discovery">Stub to recursive discovery</a></li>
-        <li><a href="#recursive-to-authoritative-discovery">Recursive to authoritative discovery</a></li>
+      </ul>
+    </li>
+    <li><a href="#the-recursive-to-authoritative-problem">The Recursive to Authoritative Problem</a>
+      <ul>
+        <li><a href="#unilateral-probing">Unilateral Probing</a></li>
       </ul>
     </li>
   </ul>
@@ -1456,6 +1461,7 @@ the leading solutions for DNS Privacy because they are the only
 protocols currently standardized by the IETF.</p>
 <p>Some history and background on other alternatives are outlined below and
 we intend to follow other solutions as they evolve.</p>
+<p>See our <a href="/implementation_status/">Implementation Status page</a> to see the current status of each solution.</p>
 <h2 id="ietf-standards-track-protocol-options">IETF Standards Track protocol options</h2>
 <h3 id="dns-over-tls-dot">DNS-over-TLS (DoT)</h3>
 <p><a href="https://tools.ietf.org/html/rfc7858">RFC7858</a> specified DNS-over-TLS as
@@ -1483,6 +1489,9 @@ opportunistically (it must be configured).</p>
 <p>A draft was submitted in April 2017 to the IETF QUIC Working group on
 <a href="https://datatracker.ietf.org/doc/draft-ietf-dprive-dnsoquic/">DNS-over-QUIC</a>.</p>
 <p>QUIC is a particularly good fit for encrypted DNS and this specification defines it as a &lsquo;genearl-purpose&rsquo; transport, in other words it explicitly includes using DoQ for recursive to authoritative queries.</p>
+<h3 id="xfr-over-tls-xot">XFR-over-TLS (XoT)</h3>
+<p><a href="https://www.rfc-editor.org/rfc/rfc9103.html">RFC9103</a> specifies how to
+encrypt zone transfers to prevent zone content collection via passive monitoring. The above DoQ RFC also specifies that DoQ can be used for zone transfer encryption.</p>
 <h2 id="non-standards-track-protocol-options">Non Standards Track protocol options</h2>
 <h3 id="dns-over-dtls">DNS-over-DTLS</h3>
 <p><a href="https://tools.ietf.org/html/rfc8094">RFC8094</a> specified DNS-over-DTLS
@@ -1531,13 +1540,10 @@ different ways e.g. Firefox&rsquo;s TRR list or Stubby&rsquo;s config file</li>
 recently work has been done in the ADD Working Group at IETF to find
 automated solutions to the variety of situations that clients have</li>
 </ul>
-<h3 id="recursive-to-authoritative-discovery">Recursive to authoritative discovery</h3>
-<ul>
-<li>Efforts in this space have been hampered by the lack of a natural technical
-solution to encode the authentication information directly within the DNS.
-Various alternatives (including an Opportunistic model have been proposed in
-the DPRIVE Working Group at IETF)</li>
-</ul>
+<h2 id="the-recursive-to-authoritative-problem">The Recursive to Authoritative Problem</h2>
+<p>After much discussion in DPRIVE, the attempts to provide an authenticated mechanism for encryption of transport between recursives and authoritatives was but on hold. There are fundamental technical issues blocking this path related to limitations of the parent-child relationship as currently defined in DNS zone data, and also significant deployment hurdles to modification in this specifications.</p>
+<h3 id="unilateral-probing">Unilateral Probing</h3>
+<p>As an interim solution the concept of &lsquo;Unilateral Probing&rsquo; has been introduced in draft <a href="https://datatracker.ietf.org/doc/draft-ietf-dprive-unilateral-probing/">https://datatracker.ietf.org/doc/draft-ietf-dprive-unilateral-probing/</a> and as of Jan 2023 various experimental implementations are in progress.</p>
 
 
 
@@ -2405,16 +2411,16 @@ the DPRIVE Working Group at IETF)</li>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1673349166"></script>
-    <script src="/js/perfect-scrollbar.min.js?1673349166"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1673349166"></script>
-    <script src="/js/jquery.sticky.js?1673349166"></script>
-    <script src="/js/featherlight.min.js?1673349166"></script>
-    <script src="/js/highlight.pack.js?1673349166"></script>
+    <script src="/js/clipboard.min.js?1675680669"></script>
+    <script src="/js/perfect-scrollbar.min.js?1675680669"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1675680669"></script>
+    <script src="/js/jquery.sticky.js?1675680669"></script>
+    <script src="/js/featherlight.min.js?1675680669"></script>
+    <script src="/js/highlight.pack.js?1675680669"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1673349166"></script>
-    <script src="/js/learn.js?1673349166"></script>
-    <script src="/js/hugo-learn.js?1673349166"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1675680669"></script>
+    <script src="/js/learn.js?1675680669"></script>
+    <script src="/js/hugo-learn.js?1675680669"></script>
     
     
 

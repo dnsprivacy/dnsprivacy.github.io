@@ -13,7 +13,7 @@
       <pubDate>Fri, 23 Jul 2021 10:41:57 +0100</pubDate>
       
       <guid>http://dnsprivacy.org/ndss_dns_privacy_workshop/2021_ndss_dns_privacy_workshop/workshop_notes/breakout_room_1/</guid>
-      <description>Zoom Breakout Room 1: Measurement of Encrypted DNS  Kick-off question from Sandra: Who are we designing encrypted DNS protocols for?  Idea from Benno (who couldn&amp;rsquo;t be present in the session): these protocols need to be designed to work for everybody. Alec: I don&amp;rsquo;t think &amp;ldquo;designing for everybody&amp;rdquo; would go well. DNS is a distributed protocol; it is a distributed database. It is very presumpuous of us to designate threat models onto third parties.</description>
+      <description>Zoom Breakout Room 1: Measurement of Encrypted DNS Kick-off question from Sandra: Who are we designing encrypted DNS protocols for? Idea from Benno (who couldn&amp;rsquo;t be present in the session): these protocols need to be designed to work for everybody. Alec: I don&amp;rsquo;t think &amp;ldquo;designing for everybody&amp;rdquo; would go well. DNS is a distributed protocol; it is a distributed database. It is very presumpuous of us to designate threat models onto third parties.</description>
     </item>
     
     <item>
@@ -22,9 +22,9 @@
       <pubDate>Fri, 23 Jul 2021 10:17:40 +0100</pubDate>
       
       <guid>http://dnsprivacy.org/ndss_dns_privacy_workshop/2021_ndss_dns_privacy_workshop/call_for_papers/</guid>
-      <description>2021: NDSS DNS Privacy Workshop - Call for Papers The 2021 workshop was a virtual online conference held on 21st February 2021.   Workshop on DNS Privacy: Measuring deployment and effectiveness of encrypted DNS. Submission link: https://dnspriv21.hotcrp.com/
+      <description>2021: NDSS DNS Privacy Workshop - Call for Papers The 2021 workshop was a virtual online conference held on 21st February 2021. Workshop on DNS Privacy: Measuring deployment and effectiveness of encrypted DNS. Submission link: https://dnspriv21.hotcrp.com/
 Background The landscape around DNS Privacy has changed dramatically in the last few years, with tremendous developments in multiple areas. These include
-  Many new Internet Standards from the IETF primarily focussed on stub-to-recursive resolution privacy</description>
+Many new Internet Standards from the IETF primarily focussed on stub-to-recursive resolution privacy</description>
     </item>
     
     <item>
@@ -33,7 +33,7 @@ Background The landscape around DNS Privacy has changed dramatically in the last
       <pubDate>Thu, 22 Jul 2021 16:03:20 +0100</pubDate>
       
       <guid>http://dnsprivacy.org/performance_measurements/initial_performance_measurements_q1_2018/</guid>
-      <description>Initial work Nameservers Test setup  Software  Test parameters   Hardware OS tuning Nameserver configuration   Results  Increasing load  UDP only UDP vs TCP TCP vs TLS TCP and TLS as a percentage of UDP   Vary queries per connection  Less than 60,000 queries per connection Less than 10,000 queries per connection Less than 500 queries per connection     Key conclusions TODO list Comments on test stability    Thanks to funding from the Open Technology Fund we have started work on some performance measurements for various DNS Privacy implementations.</description>
+      <description>Initial work Nameservers Test setup Software Test parameters Hardware OS tuning Nameserver configuration Results Increasing load UDP only UDP vs TCP TCP vs TLS TCP and TLS as a percentage of UDP Vary queries per connection Less than 60,000 queries per connection Less than 10,000 queries per connection Less than 500 queries per connection Key conclusions TODO list Comments on test stability Thanks to funding from the Open Technology Fund we have started work on some performance measurements for various DNS Privacy implementations.</description>
     </item>
     
     <item>
@@ -43,7 +43,7 @@ Background The landscape around DNS Privacy has changed dramatically in the last
       
       <guid>http://dnsprivacy.org/running_a_dns_privacy_server/best_current_practices/comparison_of_policy_and_privacy_statements_2019/</guid>
       <description>The goal of this page is to provide a high level overview of the operations and privacy policies and practices (as published in 2019) of some of the larger DNS Privacy service offerings. NOTE: An analysis of privacy statements by operators will clearly only provide a snapshot at the time of writing. The page content was last reviewed on 18th Dec 2019. Please email any corrections to sara@sinodun.com
-Operators  Operators  Quad9 Cloudflare Google OpenDNS   Comparison  Policy Practice      Quad9 UDP/TCP and TLS (port 853) service provided on two addresses:</description>
+Operators Operators Quad9 Cloudflare Google OpenDNS Comparison Policy Practice Quad9 UDP/TCP and TLS (port 853) service provided on two addresses:</description>
     </item>
     
     <item>
@@ -52,7 +52,7 @@ Operators  Operators  Quad9 Cloudflare Google OpenDNS   Comparison  Policy Pract
       <pubDate>Wed, 21 Jul 2021 17:02:51 +0100</pubDate>
       
       <guid>http://dnsprivacy.org/running_a_dns_privacy_server/lets_encrypt_certificate_renewal/automated_certificate_management_1/</guid>
-      <description>Background DNS setup  CNAMES   Configure dehydrated  Create a domains file Write a hook script   Write a script to download the certificates to your DNS servers    Background At Sinodun we use dehydrated https://github.com/lukas2511/dehydrated to manage our certificates. Also we use the dns-01 challenge to renew them.
+      <description>Background DNS setup CNAMES Configure dehydrated Create a domains file Write a hook script Write a script to download the certificates to your DNS servers Background At Sinodun we use dehydrated https://github.com/lukas2511/dehydrated to manage our certificates. Also we use the dns-01 challenge to renew them.
 Since we run multiple DNS-over-TLS servers, the method used here employs a single &amp;lsquo;certificate management&amp;rsquo; server to renew the certificates, update the zone with the dns-01 challenge and make the renewed certificates available via ftp.</description>
     </item>
     
@@ -74,7 +74,7 @@ These instructions build OpenSSL into a directory /opt/openssl-1.1.1 to ensure t
       <guid>http://dnsprivacy.org/running_a_dns_privacy_server/using_unbound/</guid>
       <description>Use at least version 1.5.5 of Unbound if you want to configure your server with a certificate (as support for intermediate certificates was introduced in this version).
 Version 1.6.7 or later is recommended.
- Config file An example configuration file for Unbound that runs DNS-over-TLS on port 853 is below.
+Config file An example configuration file for Unbound that runs DNS-over-TLS on port 853 is below.
 server: directory: &amp;#34;/etc/unbound&amp;#34; username: unbound chroot: &amp;#34;/etc/unbound&amp;#34; # logfile: &amp;#34;/etc/unbound/unbound.log&amp;#34; #uncomment to use logfile. pidfile: &amp;#34;/etc/unbound/unbound.pid&amp;#34; # verbosity: 1 # uncomment and increase to get more logging.</description>
     </item>
     
@@ -84,8 +84,9 @@ server: directory: &amp;#34;/etc/unbound&amp;#34; username: unbound chroot: &amp
       <pubDate>Wed, 21 Jul 2021 13:00:49 +0100</pubDate>
       
       <guid>http://dnsprivacy.org/dns_privacy_daemon_-_stubby/installation/linux_from_source/</guid>
-      <description>Build options Dependencies Download the getdns source Build the code Configuration Run Stubby from the command line    Logging     Test Stubby Modify your upstream resolvers    Build options The Stubby code can be built either
- as a submodule of getdns (see below) or  standalone with libgetdns as a dependancy. Instructions for this are in the Stubby github repo https://github.com/getdnsapi/stubby  Dependencies For the most minimal Stubby build, the dependencies are</description>
+      <description>Build options Dependencies Download the getdns source Build the code Configuration Run Stubby from the command line Logging Test Stubby Modify your upstream resolvers Build options The Stubby code can be built either
+as a submodule of getdns (see below) or standalone with libgetdns as a dependancy. Instructions for this are in the Stubby github repo https://github.com/getdnsapi/stubby Dependencies For the most minimal Stubby build, the dependencies are
+libssl and libcrypto from the OpenSSL Project.</description>
     </item>
     
     <item>
@@ -96,7 +97,7 @@ server: directory: &amp;#34;/etc/unbound&amp;#34; username: unbound chroot: &amp
       <guid>http://dnsprivacy.org/dns_privacy_daemon_-_stubby/about_stubby/</guid>
       <description>&amp;lsquo;Stubby&amp;rsquo; is an application that acts as a local DNS Privacy stub resolver (using DNS-over-TLS). Stubby encrypts DNS queries sent from a client machine (desktop or laptop) to a DNS Privacy resolver increasing end user privacy.
 Stubby is developed by the getdns project, has it&amp;rsquo;s own github repo and issue tracker but dnsprivacy.org currently hosts the online documentation for Stubby .
-FAQ   What is Stubby?
+FAQ What is Stubby?
 ANSWER: Stubby runs as a daemon on the local machine sending DNS queries to resolvers over an encrypted TLS connections providing increased privacy for the user.</description>
     </item>
     
@@ -108,7 +109,7 @@ ANSWER: Stubby runs as a daemon on the local machine sending DNS queries to reso
       <guid>http://dnsprivacy.org/test_servers/map_of_test_server_locations/</guid>
       <description>The map below is an static image of the current DNS-over-TLS test server locations. We don&amp;rsquo;t show Quad9 on here because they run an anycast service (see their website for details).
 The icons reflect the software being used:
- Green pin: Unbound Pink pin: Knot Resolver Blue pin: TLS proxy in front of a nameserver Blue flag: Unknown  </description>
+Green pin: Unbound Pink pin: Knot Resolver Blue pin: TLS proxy in front of a nameserver Blue flag: Unknown </description>
     </item>
     
     <item>
@@ -131,10 +132,11 @@ Q: Paul Syverson: what can be done to make balkanization itself costly at an eco
       <pubDate>Fri, 23 Jul 2021 10:01:56 +0100</pubDate>
       
       <guid>http://dnsprivacy.org/ndss_dns_privacy_workshop/2018_ndss_dns_privacy_workshop/</guid>
-      <description>2018 Topic: Increasing Usability and Decreasing Traceability   2018 Topic: Increasing Usability and Decreasing Traceability  Location and Important Dates Agenda Technical Programme Committee  Contact        Location and Important Dates Workshop Location: San Diego, CA, USA
+      <description>2018 Topic: Increasing Usability and Decreasing Traceability 2018 Topic: Increasing Usability and Decreasing Traceability Location and Important Dates Agenda Technical Programme Committee Contact Location and Important Dates Workshop Location: San Diego, CA, USA
 Workshop date: 18th Feb 2018 (co-located with NDSS 2018)
 Submission deadline: 15th Dec 2017 anywhere-on-earth.
-The Call for papers for the 2018 workshop has now closed.</description>
+The Call for papers for the 2018 workshop has now closed.
+Notifications and invitations to present at the workshop: 13th Jan 2018</description>
     </item>
     
     <item>
@@ -144,7 +146,7 @@ The Call for papers for the 2018 workshop has now closed.</description>
       
       <guid>http://dnsprivacy.org/performance_measurements/follow-up_performance_measurements_q4_2108/</guid>
       <description>Thanks to funding from the Open Technology Fund we have continued work on some performance measurements for various DNS Privacy implementations. We report our new results below.
- Previous work Goals of this work Results - TCP vs UDP  Unbound measurements Knot Resolver and BIND dnsdist   Results - TLS proxy vs native TLS  HA-Proxy fronting Unbound   Limitations of these measurements  Real DNS traffic data HTTP-like client population modelling?</description>
+Previous work Goals of this work Results - TCP vs UDP Unbound measurements Knot Resolver and BIND dnsdist Results - TLS proxy vs native TLS HA-Proxy fronting Unbound Limitations of these measurements Real DNS traffic data HTTP-like client population modelling? Previous work Our initial work on performance measurements can be found here: Initial Performance Measurements (Q1 2018).</description>
     </item>
     
     <item>
@@ -153,7 +155,7 @@ The Call for papers for the 2018 workshop has now closed.</description>
       <pubDate>Wed, 21 Jul 2021 17:34:05 +0100</pubDate>
       
       <guid>http://dnsprivacy.org/running_a_dns_privacy_server/best_current_practices/data_minimisation_of_dns_traffic/</guid>
-      <description>Terminology History Notable pseudonymising techniques  Google Analytics non-prefix filtering dnswasher Prefix-preserving map Cryptographic Prefix-Preserving Pseudonymisation Top-hash Subtree-replicated Anonymisation ipcipher Bloom filters   Other data minimisation considerations References    The DNS Privacy solutions presented here ensure that DNS queries made by an individual end user can&amp;rsquo;t be observed by eavesdroppers as they pass across the Internet. Only the operators of DNS privacy servers have access to the details of the queries.</description>
+      <description>Terminology History Notable pseudonymising techniques Google Analytics non-prefix filtering dnswasher Prefix-preserving map Cryptographic Prefix-Preserving Pseudonymisation Top-hash Subtree-replicated Anonymisation ipcipher Bloom filters Other data minimisation considerations References The DNS Privacy solutions presented here ensure that DNS queries made by an individual end user can&amp;rsquo;t be observed by eavesdroppers as they pass across the Internet. Only the operators of DNS privacy servers have access to the details of the queries. For operational reasons such as monitoring server performance or detecting and mitigating attacks operators need to keep logs of the DNS queries they see; in some circumstances they may need to share those logs with other operators.</description>
     </item>
     
     <item>
@@ -163,10 +165,10 @@ The Call for papers for the 2018 workshop has now closed.</description>
       
       <guid>http://dnsprivacy.org/running_a_dns_privacy_server/lets_encrypt_certificate_renewal/automated_certificate_management_2/</guid>
       <description>This page is assumes using OpenDNSSEC to sign zones. Thanks to Willem Toorop and Ralph Dolmans at NLnet Labs for developing this automated solution!
-  An example configuration file is:
-CA=&amp;#34;https://acme-v01.api.letsencrypt.org/directory&amp;#34; #CA=&amp;#34;https://acme-staging.api.letsencrypt.org/directory&amp;#34; LICENSE=&amp;#34;https://letsencrypt.org/documents/LE-SA-v1.1.1-August-1-2016.pdf&amp;#34; CERTDIR=/usr/local/etc/dehydrated/certs CHALLENGETYPE=&amp;#34;dns-01&amp;#34; HOOK=/usr/local/etc/dehydrated/dnshook.sh PRIVATE_KEY_RENEW=&amp;#34;no&amp;#34; PRIVATE_KEY_ROLLOVER=&amp;#34;no&amp;#34; CONTACT_EMAIL=alice@example.com   Private keys are then stored in
-/usr/local/etc/dehydrated/certs/&amp;lt;domain&amp;gt;/privkey.pem   The SubjectAltNames are then enumerated in the file
-/usr/local/etc/dehydrated/domains.txt Add one line in this for each &amp;lsquo;group&amp;rsquo; of names that should share a certificate e.</description>
+An example configuration file is:
+CA=&amp;#34;https://acme-v01.api.letsencrypt.org/directory&amp;#34; #CA=&amp;#34;https://acme-staging.api.letsencrypt.org/directory&amp;#34; LICENSE=&amp;#34;https://letsencrypt.org/documents/LE-SA-v1.1.1-August-1-2016.pdf&amp;#34; CERTDIR=/usr/local/etc/dehydrated/certs CHALLENGETYPE=&amp;#34;dns-01&amp;#34; HOOK=/usr/local/etc/dehydrated/dnshook.sh PRIVATE_KEY_RENEW=&amp;#34;no&amp;#34; PRIVATE_KEY_ROLLOVER=&amp;#34;no&amp;#34; CONTACT_EMAIL=alice@example.com Private keys are then stored in
+/usr/local/etc/dehydrated/certs/&amp;lt;domain&amp;gt;/privkey.pem The SubjectAltNames are then enumerated in the file
+/usr/local/etc/dehydrated/domains.txt Add one line in this for each &amp;lsquo;group&amp;rsquo; of names that should share a certificate e.g</description>
     </item>
     
     <item>
@@ -176,7 +178,7 @@ CA=&amp;#34;https://acme-v01.api.letsencrypt.org/directory&amp;#34; #CA=&amp;#34
       
       <guid>http://dnsprivacy.org/running_a_dns_privacy_server/using_knot_resolver/</guid>
       <description>Config file An example configuration file for Knot that runs DNS-over-TLS on port 853 is below.
--- Default empty Knot DNS Resolver configuration in -*- lua -*- -- Bind ports as privileged user (root) -- -- net = { &amp;#39;127.0.0.1&amp;#39;, &amp;#39;::1&amp;#39;, net.ens160 } net.tls(&amp;#39;/etc/sinodun/certs/fullchain.pem&amp;#39;,&amp;#39;/etc/sinodun/certs/privkey.pem&amp;#39;) net.listen(&amp;#39;::&amp;#39;, 853) net.listen(&amp;#39;145.100.185.17&amp;#39;, 853) -- Switch to unprivileged user -- user(&amp;#39;knot-resolver&amp;#39;,&amp;#39;knot-resolver&amp;#39;) -- Unprivileged -- cache.size = 100*MB -- verbose(true)  If you are using systemd with socket-based activation you need to remove the net.</description>
+-- Default empty Knot DNS Resolver configuration in -*- lua -*- -- Bind ports as privileged user (root) -- -- net = { &amp;#39;127.0.0.1&amp;#39;, &amp;#39;::1&amp;#39;, net.ens160 } net.tls(&amp;#39;/etc/sinodun/certs/fullchain.pem&amp;#39;,&amp;#39;/etc/sinodun/certs/privkey.pem&amp;#39;) net.listen(&amp;#39;::&amp;#39;, 853) net.listen(&amp;#39;145.100.185.17&amp;#39;, 853) -- Switch to unprivileged user -- user(&amp;#39;knot-resolver&amp;#39;,&amp;#39;knot-resolver&amp;#39;) -- Unprivileged -- cache.size = 100*MB -- verbose(true) If you are using systemd with socket-based activation you need to remove the net.</description>
     </item>
     
     <item>
@@ -185,10 +187,9 @@ CA=&amp;#34;https://acme-v01.api.letsencrypt.org/directory&amp;#34; #CA=&amp;#34
       <pubDate>Wed, 21 Jul 2021 13:06:18 +0100</pubDate>
       
       <guid>http://dnsprivacy.org/dns_privacy_daemon_-_stubby/installation/running_as_a_service_on_nix/</guid>
-      <description> systemd upstart rc    systemd There is basic support for using stubby with systemd. See the systemd directory. Also see the discussion on this issue.
+      <description>systemd upstart rc systemd There is basic support for using stubby with systemd. See the systemd directory. Also see the discussion on this issue.
 upstart We have a contributed upstart script here.
-rc There is an issue open requesting an rc.d script.
- </description>
+rc There is an issue open requesting an rc.d script.</description>
     </item>
     
     <item>
@@ -197,7 +198,7 @@ rc There is an issue open requesting an rc.d script.
       <pubDate>Wed, 21 Jul 2021 12:47:39 +0100</pubDate>
       
       <guid>http://dnsprivacy.org/dns_privacy_daemon_-_stubby/configuring_stubby/</guid>
-      <description>Create Custom Configuration File  DNSSEC  Storage of Zero-config Trust anchor     Opportunistic DoT to your local resolver Runtime logging    It is recommended to use the default configuration file provided which will use &amp;lsquo;Strict&amp;rsquo; privacy mode and spread the DNS queries among several of the current DNS Privacy test servers. Note that this file contains both IPv4 and IPv6 addresses.
+      <description>Create Custom Configuration File DNSSEC Storage of Zero-config Trust anchor Opportunistic DoT to your local resolver Runtime logging It is recommended to use the default configuration file provided which will use &amp;lsquo;Strict&amp;rsquo; privacy mode and spread the DNS queries among several of the current DNS Privacy test servers. Note that this file contains both IPv4 and IPv6 addresses.
 Note also that this file only enables a small subset of the available servers by default.</description>
     </item>
     
@@ -240,9 +241,9 @@ Scott&amp;rsquo;s talk and DKG&amp;rsquo;s talk - there&amp;rsquo;s information 
       <description>Programme The official programme and remote participation details can be found on the conference website:
 https://www.ndss-symposium.org/ndss2017/dns-privacy-workshop-2017-programme/
 Agenda All times are PST.
- Session (Time) Speaker Paper  1: Privacy Protocols
+Session (Time) Speaker Paper 1: Privacy Protocols
 (9:00-10:15)
- Laura M. Roberts Invited Talk: How DNS Works in Tor &amp;amp; Its Anonymity Implications (slides) (paper)   Christian Huitema DNS Privacy through Mixnets and Micropayment (slides)  Christian Grothoff Towards Secure Name Resolution on the Internet (slides) (paper)   2: The Leaky DNS Boat</description>
+Laura M. Roberts Invited Talk: How DNS Works in Tor &amp;amp; Its Anonymity Implications (slides) (paper) Christian Huitema DNS Privacy through Mixnets and Micropayment (slides) Christian Grothoff Towards Secure Name Resolution on the Internet (slides) (paper) 2: The Leaky DNS Boat</description>
     </item>
     
     <item>
@@ -251,9 +252,9 @@ Agenda All times are PST.
       <pubDate>Thu, 22 Jul 2021 16:09:40 +0100</pubDate>
       
       <guid>http://dnsprivacy.org/performance_measurements/review_of_dns_and_http_pm_tools/</guid>
-      <description>Survey of existing DNS tools Investigation of HTTP benchmarking tools  Survey Work on Tsung      Survey of existing DNS tools    Tool UDP TCP TLS Pipelining Uses query file Replay pcaps Comments  dnsperf from DNS-OARC Y N N N Y N https://github.com/DNS-OARC/dnsperf  resperf from DNS-OARC Y N N N Y N For testing resolvers
+      <description>Survey of existing DNS tools Investigation of HTTP benchmarking tools Survey Work on Tsung Survey of existing DNS tools Tool UDP TCP TLS Pipelining Uses query file Replay pcaps Comments dnsperf from DNS-OARC Y N N N Y N https://github.com/DNS-OARC/dnsperf resperf from DNS-OARC Y N N N Y N For testing resolvers
 https://github.com/DNS-OARC/dnsperf
-  dnsperf-tcp Y Y N Y Y N https://github.</description>
+dnsperf-tcp Y Y N Y Y N https://github.com/Sinodun/dnsperf-tcp dnsperf-tls Y Y Y Y Y N https://github.com/Sinodun/dnsperf-tcp/tree/feature/tls_openssl. A re-factor was required to accomodate TLS usage within the threading model used here and we believe this introduces a performance overhead at very low queries per connection (below 500).</description>
     </item>
     
     <item>
@@ -272,10 +273,10 @@ addACL(&amp;#39;0.0.0.0/0&amp;#39;) addACL(&amp;#39;::/0&amp;#39;) addLocal(&amp
       <pubDate>Wed, 21 Jul 2021 13:09:29 +0100</pubDate>
       
       <guid>http://dnsprivacy.org/dns_privacy_daemon_-_stubby/installation/macos_homebrew/</guid>
-      <description>Installation Running Stubby on the command line  Logging from the stubby service   Test Stubby Running Stubby as a service Modify your upstream resolvers Configuring stubby    The Homebrew formula currently installs the 0.4.0 version of stubby, based on libgetdns 1.6.1
+      <description>Installation Running Stubby on the command line Logging from the stubby service Test Stubby Running Stubby as a service Modify your upstream resolvers Configuring stubby The Homebrew formula currently installs the 0.4.0 version of stubby, based on libgetdns 1.6.1
 See this issue for details of problems with homebrew on BigSur: https://github.com/getdnsapi/stubby/issues/272#issuecomment-738622312
- Installation 1. Install Homebrew if you don&amp;rsquo;t aleady have it:
-/usr/bin/ruby -e &amp;#34;$(curl -fsSL https://raw.</description>
+Installation 1. Install Homebrew if you don&amp;rsquo;t aleady have it:
+/usr/bin/ruby -e &amp;#34;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&amp;#34; 2. Install stubby</description>
     </item>
     
     <item>
@@ -284,7 +285,7 @@ See this issue for details of problems with homebrew on BigSur: https://github.
       <pubDate>Wed, 21 Jul 2021 12:50:54 +0100</pubDate>
       
       <guid>http://dnsprivacy.org/dns_privacy_daemon_-_stubby/stubby_manager_gui/</guid>
-      <description>Latest release is 0.4.0-a2 (11-Dec 2020) Background Status Installation Overview  Welcome page On/Off button Network Profiles  Untrusted Trusted Hostile   Networks Utilities Logs   Code Bug reports and feature requests Future features    Latest release is 0.4.0-a2 (11-Dec 2020) Background The Stubby Manager project is designed to provide a Graphical User Interface to manage Stubby aimed at both non-technical and advanced users. It will initially be supported on Windows only, macOS support will be added later.</description>
+      <description>Latest release is 0.4.0-a2 (11-Dec 2020) Background Status Installation Overview Welcome page On/Off button Network Profiles Untrusted Trusted Hostile Networks Utilities Logs Code Bug reports and feature requests Future features Latest release is 0.4.0-a2 (11-Dec 2020) Background The Stubby Manager project is designed to provide a Graphical User Interface to manage Stubby aimed at both non-technical and advanced users. It will initially be supported on Windows only, macOS support will be added later.</description>
     </item>
     
     <item>
@@ -293,10 +294,10 @@ See this issue for details of problems with homebrew on BigSur: https://github.
       <pubDate>Thu, 22 Jul 2021 16:12:21 +0100</pubDate>
       
       <guid>http://dnsprivacy.org/performance_measurements/proposal_for_new_performance_tool/</guid>
-      <description>Tool requirements High level   Support multiple protocols by design including session based protocols. (Initial wish list is UDP, TCP, TLS, HTTPS and QUIC)
-  Support emulating ~30,000 clients on a single server/VM
-  Support configuration to describe client populations e.g.
- 10% of clients send at maximum rate the connection can sustain 50% send at X qps and use 2s idle timeout 40% send at Y qps use 10s idle timeout    Read query names from a file or autogenerate them based on a simple algorithm</description>
+      <description>Tool requirements High level Support multiple protocols by design including session based protocols. (Initial wish list is UDP, TCP, TLS, HTTPS and QUIC)
+Support emulating ~30,000 clients on a single server/VM
+Support configuration to describe client populations e.g.
+10% of clients send at maximum rate the connection can sustain 50% send at X qps and use 2s idle timeout 40% send at Y qps use 10s idle timeout Read query names from a file or autogenerate them based on a simple algorithm</description>
     </item>
     
     <item>
@@ -315,7 +316,8 @@ This is the 0.2.6 of the prototype Stubby GUI. It is still very much a work in p
       <pubDate>Wed, 21 Jul 2021 13:41:48 +0100</pubDate>
       
       <guid>http://dnsprivacy.org/dns_privacy_daemon_-_stubby/installation/windows_installer_for_stubby/</guid>
-      <description>Overview Installation  Latest stable msi and zip installers: Latest development msi and zip installers: Release notes  Version 0.4.0-a2 Version 0.4.0-a1 Version 0.3.0 Version 0.2.6 Version 0.2.5   Installer contents   Configuration Run Stubby Test Stubby Modify your upstream resolvers    Modify your upstream resolvers (Windows 7)     Install Stubby as Windows service Create a Scheduled Task Known Issues Manual update of system revolvers on Windows  Opportunistic mode      Overview Stubby can be installed</description>
+      <description>Overview Installation Latest stable msi and zip installers: Latest development msi and zip installers: Release notes Version 0.4.0-a2 Version 0.4.0-a1 Version 0.3.0 Version 0.2.6 Version 0.2.5 Installer contents Configuration Run Stubby Test Stubby Modify your upstream resolvers Modify your upstream resolvers (Windows 7) Install Stubby as Windows service Create a Scheduled Task Known Issues Manual update of system revolvers on Windows Opportunistic mode Overview Stubby can be installed
+either via the install/zip packages available on this page or by using chocolatey: https://chocolatey.</description>
     </item>
     
     <item>
@@ -325,7 +327,7 @@ This is the 0.2.6 of the prototype Stubby GUI. It is still very much a work in p
       
       <guid>http://dnsprivacy.org/running_a_dns_privacy_server/monitoring_privacy_servers/</guid>
       <description>DNS-over-TLS If you want to monitor the TLS specific or DNS Privacy specific features of a recursive server then there are a couple of options:
- A new tool getdns_server_mon is being developed which will provide output in both human readable and Nagios API compatible form. This tool was included in the 1.4.0 release of getdns.  This tool is used on the dnsprivacy.org test server monitoring page.The xml configuration for the Jenkins job is available here.</description>
+A new tool getdns_server_mon is being developed which will provide output in both human readable and Nagios API compatible form. This tool was included in the 1.4.0 release of getdns. This tool is used on the dnsprivacy.org test server monitoring page.The xml configuration for the Jenkins job is available here.</description>
     </item>
     
   </channel>

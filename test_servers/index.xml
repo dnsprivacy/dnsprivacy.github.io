@@ -15,7 +15,7 @@
       <guid>http://dnsprivacy.org/test_servers/map_of_test_server_locations/</guid>
       <description>The map below is an static image of the current DNS-over-TLS test server locations. We don&amp;rsquo;t show Quad9 on here because they run an anycast service (see their website for details).
 The icons reflect the software being used:
- Green pin: Unbound Pink pin: Knot Resolver Blue pin: TLS proxy in front of a nameserver Blue flag: Unknown  </description>
+Green pin: Unbound Pink pin: Knot Resolver Blue pin: TLS proxy in front of a nameserver Blue flag: Unknown </description>
     </item>
     
     <item>

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.86.0" />
+    <meta name="generator" content="Hugo 0.109.0">
     <meta name="description" content="">
 
 
@@ -12,22 +12,22 @@
     <title>Linux From Source :: dnsprivacy.org</title>
 
     
-    <link href="/css/nucleus.css?1673349166" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1673349166" rel="stylesheet">
-    <link href="/css/hybrid.css?1673349166" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1673349166" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1673349166" rel="stylesheet">
-    <link href="/css/auto-complete.css?1673349166" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1673349166" rel="stylesheet">
-    <link href="/css/theme.css?1673349166" rel="stylesheet">
-    <link href="/css/tabs.css?1673349166" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1673349166" rel="stylesheet">
+    <link href="/css/nucleus.css?1675680668" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1675680668" rel="stylesheet">
+    <link href="/css/hybrid.css?1675680668" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1675680668" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1675680668" rel="stylesheet">
+    <link href="/css/auto-complete.css?1675680668" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1675680668" rel="stylesheet">
+    <link href="/css/theme.css?1675680668" rel="stylesheet">
+    <link href="/css/tabs.css?1675680668" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1675680668" rel="stylesheet">
     
-    <link href="/css/theme-blue.css?1673349166" rel="stylesheet">
+    <link href="/css/theme-blue.css?1675680668" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1673349166"></script>
+    <script src="/js/jquery-3.3.1.min.js?1675680668"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1673349166"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1673349166"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1675680668"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1675680668"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/dnsprivacy.org\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1673349166"></script>
+<script type="text/javascript" src="/js/search.js?1675680668"></script>
 
     
   </div>
@@ -1510,22 +1510,22 @@ should be omitted below! See getdns
 <a href="https://getdnsapi.net/documentation/readme/#building-and-external-dependencies">README</a>.</p>
 <h2 id="download-the-getdns-source">Download the getdns source</h2>
 <p>Either clone the code:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">&gt; git clone https://github.com/getdnsapi/getdns.git
-&gt; cd getdns
-&gt; git checkout master
-</code></pre></div><p>to use the very latest stable version of getdns, or grab a release
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>&gt; git clone https://github.com/getdnsapi/getdns.git
+</span></span><span style="display:flex;"><span>&gt; cd getdns
+</span></span><span style="display:flex;"><span>&gt; git checkout master
+</span></span></code></pre></div><p>to use the very latest stable version of getdns, or grab a release
 tarball from this page: <a href="https://getdnsapi.net/releases/">Latest getdns
 releases</a>. </p>
 <h2 id="build-the-code">Build the code</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">&gt; git submodule update --init
-&gt; libtoolize -ci
-&gt; autoreconf -fi
-&gt; mkdir build
-&gt; cd build
-&gt; ../configure --prefix<span style="color:#f92672">=</span>&lt;install_location&gt; --without-libidn --without-libidn2 --enable-stub-only --with-ssl<span style="color:#f92672">=</span>&lt;openssl_location&gt; --with-stubby
-&gt; make
-&gt; sudo make install
-</code></pre></div><p>NOTE: Only use the <code>--enable-stub-only</code> flag with configure IF you want
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>&gt; git submodule update --init
+</span></span><span style="display:flex;"><span>&gt; libtoolize -ci
+</span></span><span style="display:flex;"><span>&gt; autoreconf -fi
+</span></span><span style="display:flex;"><span>&gt; mkdir build
+</span></span><span style="display:flex;"><span>&gt; cd build
+</span></span><span style="display:flex;"><span>&gt; ../configure --prefix<span style="color:#f92672">=</span>&lt;install_location&gt; --without-libidn --without-libidn2 --enable-stub-only --with-ssl<span style="color:#f92672">=</span>&lt;openssl_location&gt; --with-stubby
+</span></span><span style="display:flex;"><span>&gt; make
+</span></span><span style="display:flex;"><span>&gt; sudo make install
+</span></span></code></pre></div><p>NOTE: Only use the <code>--enable-stub-only</code> flag with configure IF you want
 remove the dependancy on libunbound for getdns for some reason (Stubby
 works fine when getdns is built like this but beware this limits the
 functions of the getdns library as a generic system component and should
@@ -1547,8 +1547,8 @@ format was used - this is still supported but the file name must be
 specified on the command line using the <code>-C</code> flag. In versions prior to
 1.1.3 the file was not installed automatically but can be manually
 copied to a convenient location by simply running something like:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">&gt; sudo cp ../src/tools/stubby.yml /etc/stubby.yml
-</code></pre></div><p>More information on how to customise the configuration <a href="/dns_privacy_daemon_-_stubby/configuring_stubby/">can be found
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>&gt; sudo cp ../src/tools/stubby.yml /etc/stubby.yml
+</span></span></code></pre></div><p>More information on how to customise the configuration <a href="/dns_privacy_daemon_-_stubby/configuring_stubby/">can be found
 here</a>.</p>
 <h2 id="run-stubby-from-the-command-line">Run Stubby from the command line</h2>
 <p>Simply invoke Stubby on the command line.</p>
@@ -1558,8 +1558,8 @@ background. The pid file is in <code>/usr/local/var/run/stubby.pid</code> by
 default or can the <code>piddir</code> can be specified on the configure using
 an configure option.)</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">&gt; sudo stubby -l
-</code></pre></div><h4 id="logging">Logging</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>&gt; sudo stubby -l
+</span></span></code></pre></div><h4 id="logging">Logging</h4>
 <p>The logging currently simply writes to stderr. In releases 1.2 and later
 runtime logging is controlled using the -l (enable full logging) and -v
 (choose logging level) flags.</p>
@@ -1576,8 +1576,8 @@ distro you are using.</p>
 <h2 id="test-stubby">Test Stubby</h2>
 <p>A quick test can be done by using dig (or your favourite DNS tool) on
 the loopback address</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">&gt; dig @127.0.0.1 www.example.com
-</code></pre></div><h2 id="modify-your-upstream-resolvers">Modify your upstream resolvers</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>&gt; dig @127.0.0.1 www.example.com
+</span></span></code></pre></div><h2 id="modify-your-upstream-resolvers">Modify your upstream resolvers</h2>
 
 <div class="notices info" ><p>Once this change is made your DNS queries will be re-directed to Stubby
 and sent over TLS! <br>
@@ -1601,9 +1601,9 @@ systemd</p>
 </li>
 <li>
 <p>Add the following (only add the IPv4 address if you don&rsquo;t have IPv6)</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">nameserver 127.0.0.1
-nameserver ::1
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nameserver 127.0.0.1
+</span></span><span style="display:flex;"><span>nameserver ::1
+</span></span></code></pre></div></li>
 <li>
 <p>You most likely need to restart the DNS resolver service</p>
 </li>
@@ -2478,16 +2478,16 @@ settings (no DNS Privacy).</strong></p>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1673349166"></script>
-    <script src="/js/perfect-scrollbar.min.js?1673349166"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1673349166"></script>
-    <script src="/js/jquery.sticky.js?1673349166"></script>
-    <script src="/js/featherlight.min.js?1673349166"></script>
-    <script src="/js/highlight.pack.js?1673349166"></script>
+    <script src="/js/clipboard.min.js?1675680668"></script>
+    <script src="/js/perfect-scrollbar.min.js?1675680668"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1675680668"></script>
+    <script src="/js/jquery.sticky.js?1675680668"></script>
+    <script src="/js/featherlight.min.js?1675680668"></script>
+    <script src="/js/highlight.pack.js?1675680668"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1673349166"></script>
-    <script src="/js/learn.js?1673349166"></script>
-    <script src="/js/hugo-learn.js?1673349166"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1675680668"></script>
+    <script src="/js/learn.js?1675680668"></script>
+    <script src="/js/hugo-learn.js?1675680668"></script>
     
     
 

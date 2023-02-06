@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.86.0" />
+    <meta name="generator" content="Hugo 0.109.0">
     <meta name="description" content="">
 
 
@@ -12,22 +12,22 @@
     <title>Implementation Status :: dnsprivacy.org</title>
 
     
-    <link href="/css/nucleus.css?1673349166" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1673349166" rel="stylesheet">
-    <link href="/css/hybrid.css?1673349166" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1673349166" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1673349166" rel="stylesheet">
-    <link href="/css/auto-complete.css?1673349166" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1673349166" rel="stylesheet">
-    <link href="/css/theme.css?1673349166" rel="stylesheet">
-    <link href="/css/tabs.css?1673349166" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1673349166" rel="stylesheet">
+    <link href="/css/nucleus.css?1675680668" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1675680668" rel="stylesheet">
+    <link href="/css/hybrid.css?1675680668" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1675680668" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1675680668" rel="stylesheet">
+    <link href="/css/auto-complete.css?1675680668" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1675680668" rel="stylesheet">
+    <link href="/css/theme.css?1675680668" rel="stylesheet">
+    <link href="/css/tabs.css?1675680668" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1675680668" rel="stylesheet">
     
-    <link href="/css/theme-blue.css?1673349166" rel="stylesheet">
+    <link href="/css/theme-blue.css?1675680668" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1673349166"></script>
+    <script src="/js/jquery-3.3.1.min.js?1675680668"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1673349166"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1673349166"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1675680668"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1675680668"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/dnsprivacy.org\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1673349166"></script>
+<script type="text/javascript" src="/js/search.js?1675680668"></script>
 
     
   </div>
@@ -572,7 +572,7 @@
   
     
     <li data-nav-id="/implementation_status/" title="Implementation Status" class="dd-item
-        parent
+        
         active
         
         ">
@@ -1432,9 +1432,18 @@
         <li><a href="#other-implementation-work">Other implementation work</a></li>
       </ul>
     </li>
-    <li><a href="#recursive-to-authoritative-dot">Recursive to Authoritative DoT</a></li>
     <li><a href="#doh-implementation-status">DoH Implementation status</a></li>
     <li><a href="#doq-implementation-status">DoQ Implementation status</a></li>
+    <li><a href="#recursive-to-authoritative-dotdoq">Recursive to Authoritative DoT/DoQ</a>
+      <ul>
+        <li><a href="#unilateral-probing-implementation-status">Unilateral Probing Implementation status</a>
+          <ul>
+            <li><a href="#recursive-resolvers">Recursive Resolvers</a></li>
+            <li><a href="#authoritatives">Authoritatives</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
     <li><a href="#xfrxot-implementation-status">XFR/XoT Implementation status</a></li>
   </ul>
 </nav>
@@ -1828,8 +1837,6 @@ project</a> project (supports DoT and
 DoT), source code is on
 <a href="https://github.com/TechnitiumSoftware/DnsServer">Github</a>).</li>
 </ul>
-<h2 id="recursive-to-authoritative-dot">Recursive to Authoritative DoT</h2>
-<p>PowerDNS Recursor has experimental code to test recursive to authoritative DoT (see the dot-to-auth-names/dot-to-port-853 options)</p>
 <h2 id="doh-implementation-status">DoH Implementation status</h2>
 
 <div class="notices infoblock" ><p>See the list of implementations maintained on the curl github site: <br>
@@ -1907,6 +1914,20 @@ Python. It includes example client and server for DoQ.</li>
 of a simple client and server side proxy.</li>
 </ol>
 <p>Note that as of March 2022 there is early, experimental support for QUIC as a base transport protocol (i.e. without HTTP/3) in both <code>nginx</code> and <code>HAProxy</code> but that during work at the IETF 113 Hackathon neither could be configured to be useable for DoQ.</p>
+<h2 id="recursive-to-authoritative-dotdoq">Recursive to Authoritative DoT/DoQ</h2>
+<h3 id="unilateral-probing-implementation-status">Unilateral Probing Implementation status</h3>
+<p>The DPRIVE working group is progressing draft <a href="https://datatracker.ietf.org/doc/draft-ietf-dprive-unilateral-probing/">Unilateral Opportunistic Deployment of Encrypted Recursive-to-Authoritative DNS</a>.</p>
+<p>There are some experimental implementation of this draft, a brief summary is given below.</p>
+<h4 id="recursive-resolvers">Recursive Resolvers</h4>
+<ul>
+<li><a href="https://blog.powerdns.com/2022/05/30/powerdns-recursor-4-7-0-released/">PowerDNS 4.7.0</a> supports an experimental version of this &ldquo;The implementation does not follow the existing draft to the letter, but was strongly inspired by it.&rdquo; <a href="https://blog.powerdns.com/2022/06/13/probing-dot-support-of-authoritative-servers-just-try-it/">More here.</a></li>
+<li>Google Public DNS have said they are looking at an experimental version although nothing is official.</li>
+<li>NLnet Labs plan to implement this in Unbound at the IETF 116 hackathon (March 2023)</li>
+</ul>
+<h4 id="authoritatives">Authoritatives</h4>
+<ul>
+<li>deSEC announced on the <a href="https://www.ietf.org/mailman/listinfo/dns-privacy">DPRIVE mailing list</a> that they have support for DoT and DoQ on our authoritative anycast deployments.</li>
+</ul>
 <h2 id="xfrxot-implementation-status">XFR/XoT Implementation status</h2>
 
 <div class="notices info" ><p>This table is a work in progress - please notify us it
@@ -1915,7 +1936,7 @@ updates/corrections are needed</p>
 
 <p>This table reflects some of the current behaviour on implementations and
 also some features proposed
-in <a href="https://www.rfc-editor.org/rfc/authors/rfc9103.html">RFC9103</a>.
+in <a href="https://www.rfc-editor.org/rfc/rfc9103.html">RFC9103</a>.
 It is noted that some name servers will behave differently when starting
 up and first loading zones to steady state behaviour. </p>
 
@@ -3119,16 +3140,16 @@ was added in development release 9.17.10</p>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1673349166"></script>
-    <script src="/js/perfect-scrollbar.min.js?1673349166"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1673349166"></script>
-    <script src="/js/jquery.sticky.js?1673349166"></script>
-    <script src="/js/featherlight.min.js?1673349166"></script>
-    <script src="/js/highlight.pack.js?1673349166"></script>
+    <script src="/js/clipboard.min.js?1675680668"></script>
+    <script src="/js/perfect-scrollbar.min.js?1675680668"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1675680668"></script>
+    <script src="/js/jquery.sticky.js?1675680668"></script>
+    <script src="/js/featherlight.min.js?1675680668"></script>
+    <script src="/js/highlight.pack.js?1675680668"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1673349166"></script>
-    <script src="/js/learn.js?1673349166"></script>
-    <script src="/js/hugo-learn.js?1673349166"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1675680668"></script>
+    <script src="/js/learn.js?1675680668"></script>
+    <script src="/js/hugo-learn.js?1675680668"></script>
     
     
 

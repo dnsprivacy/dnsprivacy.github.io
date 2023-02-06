@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.86.0" />
+    <meta name="generator" content="Hugo 0.109.0">
     <meta name="description" content="">
 
 
@@ -12,22 +12,22 @@
     <title>Using a TLS proxy :: dnsprivacy.org</title>
 
     
-    <link href="/css/nucleus.css?1673349166" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1673349166" rel="stylesheet">
-    <link href="/css/hybrid.css?1673349166" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1673349166" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1673349166" rel="stylesheet">
-    <link href="/css/auto-complete.css?1673349166" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1673349166" rel="stylesheet">
-    <link href="/css/theme.css?1673349166" rel="stylesheet">
-    <link href="/css/tabs.css?1673349166" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1673349166" rel="stylesheet">
+    <link href="/css/nucleus.css?1675680668" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1675680668" rel="stylesheet">
+    <link href="/css/hybrid.css?1675680668" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1675680668" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1675680668" rel="stylesheet">
+    <link href="/css/auto-complete.css?1675680668" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1675680668" rel="stylesheet">
+    <link href="/css/theme.css?1675680668" rel="stylesheet">
+    <link href="/css/tabs.css?1675680668" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1675680668" rel="stylesheet">
     
-    <link href="/css/theme-blue.css?1673349166" rel="stylesheet">
+    <link href="/css/theme-blue.css?1675680668" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1673349166"></script>
+    <script src="/js/jquery-3.3.1.min.js?1675680668"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1673349166"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1673349166"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1675680668"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1675680668"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/dnsprivacy.org\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1673349166"></script>
+<script type="text/javascript" src="/js/search.js?1675680668"></script>
 
     
   </div>
@@ -688,7 +688,7 @@
   
     
     <li data-nav-id="/running_a_dns_privacy_server/using_a_tls_proxy/" title="Using a TLS proxy" class="dd-item
-        parent
+        
         active
         
         ">
@@ -1456,25 +1456,25 @@ line out if you are using an earlier version)</li>
 stats - statistics can be dumped periodically with the &lsquo;rndc stats&rsquo;
 command</li>
 </ul>
-<pre><code class="language-base" data-lang="base">options {
-    directory &quot;/home/sinodun&quot;;
+<pre tabindex="0"><code class="language-base" data-lang="base">options {
+    directory &#34;/home/sinodun&#34;;
     listen-on port 9999 { 127.0.0.1; };
     allow-query { 127.0.0.1; };
     tcp-clients 4000;
-    statistics-file &quot;/tmp/bind-stats&quot;;
+    statistics-file &#34;/tmp/bind-stats&#34;;
     dnssec-enable yes;
     dnssec-validation auto;
     response-padding { any; } block-size 468;
 };
 </code></pre><p>Use with the following in named.conf, adjusting the allow list as needed:</p>
-<pre><code class="language-base" data-lang="base">key &quot;rndc-key&quot; {
+<pre tabindex="0"><code class="language-base" data-lang="base">key &#34;rndc-key&#34; {
     algorithm hmac-md5;
-    secret &quot;BIGSECRET&quot;;
+    secret &#34;BIGSECRET&#34;;
 };
  
 controls {
     inet 127.0.0.1 port 9953
-        allow { 127.0.0.1; } keys { &quot;rndc-key&quot;; };
+        allow { 127.0.0.1; } keys { &#34;rndc-key&#34;; };
 };
 
 logging {
@@ -1484,7 +1484,7 @@ logging {
 </code></pre><!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
 <h2 id="nginxconf">nginx.conf</h2>
-<pre><code class="language-base" data-lang="base">user www-data;
+<pre tabindex="0"><code class="language-base" data-lang="base">user www-data;
 worker_processes auto;
 pid /run/nginx.pid;
 
@@ -1513,7 +1513,7 @@ proxy_pass dns_tcp_servers;
 }
 }
 </code></pre><h2 id="haproxycfg">haproxy.cfg</h2>
-<pre><code class="language-base" data-lang="base">global
+<pre tabindex="0"><code class="language-base" data-lang="base">global
 log /dev/log local0
 chroot /var/lib/haproxy
 user haproxy
@@ -1553,8 +1553,8 @@ post</a>.</p>
 <p>If you use HAProxy and have generated your certificates from Let&rsquo;s
 Encrypt then you need to combine the certificate chain and key into one
 file using a command similar to:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cat  /etc/letsencrypt/certs/000&lt;N&gt;_chain.pem /etc/letsencrypt/keys/&lt;my_key&gt;.key &gt; /etc/letsencrypt/certs/&lt;cert&gt;.pem
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cat  /etc/letsencrypt/certs/000&lt;N&gt;_chain.pem /etc/letsencrypt/keys/&lt;my_key&gt;.key &gt; /etc/letsencrypt/certs/&lt;cert&gt;.pem
+</span></span></code></pre></div>
 
 
 
@@ -2425,16 +2425,16 @@ file using a command similar to:</p>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1673349166"></script>
-    <script src="/js/perfect-scrollbar.min.js?1673349166"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1673349166"></script>
-    <script src="/js/jquery.sticky.js?1673349166"></script>
-    <script src="/js/featherlight.min.js?1673349166"></script>
-    <script src="/js/highlight.pack.js?1673349166"></script>
+    <script src="/js/clipboard.min.js?1675680669"></script>
+    <script src="/js/perfect-scrollbar.min.js?1675680669"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1675680669"></script>
+    <script src="/js/jquery.sticky.js?1675680669"></script>
+    <script src="/js/featherlight.min.js?1675680669"></script>
+    <script src="/js/highlight.pack.js?1675680669"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1673349166"></script>
-    <script src="/js/learn.js?1673349166"></script>
-    <script src="/js/hugo-learn.js?1673349166"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1675680669"></script>
+    <script src="/js/learn.js?1675680669"></script>
+    <script src="/js/hugo-learn.js?1675680669"></script>
     
     
 

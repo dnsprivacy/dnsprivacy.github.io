@@ -13,7 +13,7 @@
       <pubDate>Fri, 23 Jul 2021 10:41:57 +0100</pubDate>
       
       <guid>http://dnsprivacy.org/ndss_dns_privacy_workshop/2021_ndss_dns_privacy_workshop/workshop_notes/breakout_room_1/</guid>
-      <description>Zoom Breakout Room 1: Measurement of Encrypted DNS  Kick-off question from Sandra: Who are we designing encrypted DNS protocols for?  Idea from Benno (who couldn&amp;rsquo;t be present in the session): these protocols need to be designed to work for everybody. Alec: I don&amp;rsquo;t think &amp;ldquo;designing for everybody&amp;rdquo; would go well. DNS is a distributed protocol; it is a distributed database. It is very presumpuous of us to designate threat models onto third parties.</description>
+      <description>Zoom Breakout Room 1: Measurement of Encrypted DNS Kick-off question from Sandra: Who are we designing encrypted DNS protocols for? Idea from Benno (who couldn&amp;rsquo;t be present in the session): these protocols need to be designed to work for everybody. Alec: I don&amp;rsquo;t think &amp;ldquo;designing for everybody&amp;rdquo; would go well. DNS is a distributed protocol; it is a distributed database. It is very presumpuous of us to designate threat models onto third parties.</description>
     </item>
     
     <item>
