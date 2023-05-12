@@ -12,22 +12,22 @@
     <title>DNS Privacy Reference Material :: dnsprivacy.org</title>
 
     
-    <link href="/css/nucleus.css?1681461890" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1681461890" rel="stylesheet">
-    <link href="/css/hybrid.css?1681461890" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1681461890" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1681461890" rel="stylesheet">
-    <link href="/css/auto-complete.css?1681461890" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1681461890" rel="stylesheet">
-    <link href="/css/theme.css?1681461890" rel="stylesheet">
-    <link href="/css/tabs.css?1681461890" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1681461890" rel="stylesheet">
+    <link href="/css/nucleus.css?1683882144" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1683882144" rel="stylesheet">
+    <link href="/css/hybrid.css?1683882144" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1683882144" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1683882144" rel="stylesheet">
+    <link href="/css/auto-complete.css?1683882144" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1683882144" rel="stylesheet">
+    <link href="/css/theme.css?1683882144" rel="stylesheet">
+    <link href="/css/tabs.css?1683882144" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1683882144" rel="stylesheet">
     
-    <link href="/css/theme-blue.css?1681461890" rel="stylesheet">
+    <link href="/css/theme-blue.css?1683882144" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1681461890"></script>
+    <script src="/js/jquery-3.3.1.min.js?1683882144"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1681461890"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1681461890"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1683882144"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1683882144"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/dnsprivacy.org\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1681461890"></script>
+<script type="text/javascript" src="/js/search.js?1683882144"></script>
 
     
   </div>
@@ -1466,18 +1466,15 @@ concerns surrounding pervasive monitoring (RFC 7258).</p>
 </tr>
 
 <tr class="even">
-<td ><a href="https://datatracker.ietf.org/doc/draft-ietf-dprive-dnsoquic/">draft-ietf-dprive-dnsoquic</a></td>
+<td ><a href="https://datatracker.ietf.org/doc/html/draft-ietf-dprive-unilateral-probing">draft-ietf-dprive-unilateral-probing</a></td>
+<td ><strong>Unilateral Opportunistic Deployment of Encrypted Recursive-to-Authoritative DNS</strong></td>
+<td >This document sets out steps that DNS servers (recursive resolvers and authoritative servers) can take unilaterally (without any coordination with other peers) to defend DNS query privacy against a passive network monitor. </p></td>
+
+<tr class="even">
+<td ><a href="https://datatracker.ietf.org/doc/html/rfc9250">RFC9250</a></td>
 <td ><strong>DNS over Dedicated QUIC connections</strong></td>
 <td >This document describes the use of QUIC to provide transport privacy
 for DNS (DoQ). </td>
-
-<tr class="even">
-<td ><a href="https://datatracker.ietf.org/doc/draft-ietf-dprive-unauth-to-authoritative/">draft-ietf-dprive-unauth-to-authoritative</a></td>
-<td ><strong>Recursive to Authoritative DNS with Unauthenticated Encryption</strong></td>
-<td >This document describes a use case and a method for a DNS recursive
-   resolver to use unauthenticated encryption when communicating with
-   authoritative servers. </p></td>
-
 
 <tr class="even">
 <td ><a href="https://datatracker.ietf.org/doc/rfc9103/">RFC9103</a></td>
@@ -1546,11 +1543,11 @@ unencrypted resolvers.</p>
 <tbody>
 <tr>
 <td><a href="https://datatracker.ietf.org/doc/draft-ietf-add-ddr/">Discovery of Designated Resolvers</a></td>
-<td></td>
+<td>This document defines Discovery of Designated Resolvers (DDR), a mechanism for DNS clients to use DNS records to discover a resolver&rsquo;s encrypted DNS configuration.</td>
 </tr>
 <tr>
 <td><a href="https://datatracker.ietf.org/doc/draft-ietf-add-dnr/">DHCP and Router Advertisement Options for the Discovery of Network-designated Resolvers (DNR)</a></td>
-<td></td>
+<td>The document specifies new DHCP and IPv6 Router Advertisement options to discover encrypted DNS resolvers (e.g., DNS-over-HTTPS, DNS-over-TLS, DNS-over-QUIC).</td>
 </tr>
 </tbody>
 </table>
@@ -1609,6 +1606,24 @@ of DNS zones.</p>
 </th>
 <th ><br />
 </th>
+</tr>
+
+<tr class="odd">
+<td ><a href="https://datatracker.ietf.org/doc/rfc9210/">RFC9210</a></td>
+<td ><strong>DNS Transport over TCP - Operational Requirements</strong></td>
+<td > This document requires the
+   operational practice of permitting DNS messages to be carried over
+   TCP on the Internet as a Best Current Practice.  </td>
+</tr>
+
+
+<tr class="odd">
+<td ><a href="https://datatracker.ietf.org/doc/rfc8806/">RFC8806</a></td>
+<td ><strong>Running a Root Server Local to a Resolver</strong></td>
+<td > This document shows how to start and
+   maintain such a copy of the root zone that does not cause problems
+   for other users of the DNS, at the cost of adding some operational
+   fragility for the operator.</td>
 </tr>
 
 <tr class="odd">
@@ -2656,16 +2671,16 @@ implementation</a>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1681461890"></script>
-    <script src="/js/perfect-scrollbar.min.js?1681461890"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1681461890"></script>
-    <script src="/js/jquery.sticky.js?1681461890"></script>
-    <script src="/js/featherlight.min.js?1681461890"></script>
-    <script src="/js/highlight.pack.js?1681461890"></script>
+    <script src="/js/clipboard.min.js?1683882144"></script>
+    <script src="/js/perfect-scrollbar.min.js?1683882144"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1683882144"></script>
+    <script src="/js/jquery.sticky.js?1683882144"></script>
+    <script src="/js/featherlight.min.js?1683882144"></script>
+    <script src="/js/highlight.pack.js?1683882144"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1681461890"></script>
-    <script src="/js/learn.js?1681461890"></script>
-    <script src="/js/hugo-learn.js?1681461890"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1683882144"></script>
+    <script src="/js/learn.js?1683882144"></script>
+    <script src="/js/hugo-learn.js?1683882144"></script>
     
     
 
