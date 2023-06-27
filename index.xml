@@ -316,8 +316,7 @@ This is the 0.2.6 of the prototype Stubby GUI. It is still very much a work in p
       <pubDate>Wed, 21 Jul 2021 13:41:48 +0100</pubDate>
       
       <guid>http://dnsprivacy.org/dns_privacy_daemon_-_stubby/installation/windows_installer_for_stubby/</guid>
-      <description>Overview Installation Latest stable msi and zip installers: Latest development msi and zip installers: Release notes Version 0.4.0-a2 Version 0.4.0-a1 Version 0.3.0 Version 0.2.6 Version 0.2.5 Installer contents Configuration Run Stubby Test Stubby Modify your upstream resolvers Modify your upstream resolvers (Windows 7) Install Stubby as Windows service Create a Scheduled Task Known Issues Manual update of system revolvers on Windows Opportunistic mode Overview Stubby can be installed
-either via the install/zip packages available on this page or by using chocolatey: https://chocolatey.</description>
+      <description>Overview Installation Latest stable msi and zip installers: Latest development msi and zip installers: Release notes Version 0.4.4-rc1 Version 0.4.0-a2 Version 0.4.0-a1 Version 0.3.0 Version 0.2.6 Version 0.2.5 Installer contents Configuration Run Stubby Test Stubby Modify your upstream resolvers Modify your upstream resolvers (Windows 7) Install Stubby as Windows service Create a Scheduled Task Known Issues Manual update of system revolvers on Windows Opportunistic mode Overview Stubby can be installed</description>
     </item>
     
     <item>
