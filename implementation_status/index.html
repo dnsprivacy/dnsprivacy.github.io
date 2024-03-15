@@ -12,22 +12,22 @@
     <title>Implementation Status :: dnsprivacy.org</title>
 
     
-    <link href="/css/nucleus.css?1702316190" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1702316190" rel="stylesheet">
-    <link href="/css/hybrid.css?1702316190" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1702316190" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1702316190" rel="stylesheet">
-    <link href="/css/auto-complete.css?1702316190" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1702316190" rel="stylesheet">
-    <link href="/css/theme.css?1702316190" rel="stylesheet">
-    <link href="/css/tabs.css?1702316190" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1702316190" rel="stylesheet">
+    <link href="/css/nucleus.css?1710500509" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1710500509" rel="stylesheet">
+    <link href="/css/hybrid.css?1710500509" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1710500509" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1710500509" rel="stylesheet">
+    <link href="/css/auto-complete.css?1710500509" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1710500509" rel="stylesheet">
+    <link href="/css/theme.css?1710500509" rel="stylesheet">
+    <link href="/css/tabs.css?1710500509" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1710500509" rel="stylesheet">
     
-    <link href="/css/theme-blue.css?1702316190" rel="stylesheet">
+    <link href="/css/theme-blue.css?1710500509" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1702316190"></script>
+    <script src="/js/jquery-3.3.1.min.js?1710500509"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1702316190"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1702316190"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1710500509"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1710500509"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/dnsprivacy.org\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1702316190"></script>
+<script type="text/javascript" src="/js/search.js?1710500509"></script>
 
     
   </div>
@@ -1886,6 +1886,7 @@ open-source DNS recursive resolvers/load-balancers</li>
 <p>DoQ implementations are still in the early stages, the list below is an overview of the current status.</p>
 <p>A matrix of the interoperability of various QUIC libraries is available here: <a href="https://interop.seemann.io">https://interop.seemann.io</a></p>
 <ol>
+<li><a href="https://dnsdist.org/guides/dns-over-quic.html">dnsdist</a> supports DNS-over-QUIC for incoming queries since 1.9.0.</li>
 <li>AdGuard launched a DoQ recursive resolver service in December 2020. They have
 released a suite of open source tools that support DoQ:
 <ol>
@@ -1918,7 +1919,7 @@ of a simple client and server side proxy.</li>
 <p>Note that as of March 2022 there is early, experimental support for QUIC as a base transport protocol (i.e. without HTTP/3) in both <code>nginx</code> and <code>HAProxy</code> but that during work at the IETF 113 Hackathon neither could be configured to be useable for DoQ.</p>
 <h2 id="recursive-to-authoritative-dotdoq">Recursive to Authoritative DoT/DoQ</h2>
 <h3 id="unilateral-probing-implementation-status">Unilateral Probing Implementation status</h3>
-<p>The DPRIVE working group is progressing draft <a href="https://datatracker.ietf.org/doc/draft-ietf-dprive-unilateral-probing/">Unilateral Opportunistic Deployment of Encrypted Recursive-to-Authoritative DNS</a>.</p>
+<p><a href="https://datatracker.ietf.org/doc/rfc9539/">RFC 9539 - Unilateral Opportunistic Deployment of Encrypted Recursive-to-Authoritative DNS is now published</a></p>
 <p>There are some experimental implementation of this draft, a brief summary is given below.</p>
 <h4 id="recursive-resolvers">Recursive Resolvers</h4>
 <ul>
@@ -3146,16 +3147,16 @@ was added in development release 9.17.10</p>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1702316190"></script>
-    <script src="/js/perfect-scrollbar.min.js?1702316190"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1702316190"></script>
-    <script src="/js/jquery.sticky.js?1702316190"></script>
-    <script src="/js/featherlight.min.js?1702316190"></script>
-    <script src="/js/highlight.pack.js?1702316190"></script>
+    <script src="/js/clipboard.min.js?1710500509"></script>
+    <script src="/js/perfect-scrollbar.min.js?1710500509"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1710500509"></script>
+    <script src="/js/jquery.sticky.js?1710500509"></script>
+    <script src="/js/featherlight.min.js?1710500509"></script>
+    <script src="/js/highlight.pack.js?1710500509"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1702316190"></script>
-    <script src="/js/learn.js?1702316190"></script>
-    <script src="/js/hugo-learn.js?1702316190"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1710500509"></script>
+    <script src="/js/learn.js?1710500509"></script>
+    <script src="/js/hugo-learn.js?1710500509"></script>
     
     
 
