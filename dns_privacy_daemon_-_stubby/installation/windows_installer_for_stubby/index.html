@@ -12,22 +12,22 @@
     <title>Windows installer for Stubby :: dnsprivacy.org</title>
 
     
-    <link href="/css/nucleus.css?1710500509" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1710500509" rel="stylesheet">
-    <link href="/css/hybrid.css?1710500509" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1710500509" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1710500509" rel="stylesheet">
-    <link href="/css/auto-complete.css?1710500509" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1710500509" rel="stylesheet">
-    <link href="/css/theme.css?1710500509" rel="stylesheet">
-    <link href="/css/tabs.css?1710500509" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1710500509" rel="stylesheet">
+    <link href="/css/nucleus.css?1711451819" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1711451819" rel="stylesheet">
+    <link href="/css/hybrid.css?1711451819" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1711451819" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1711451819" rel="stylesheet">
+    <link href="/css/auto-complete.css?1711451819" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1711451819" rel="stylesheet">
+    <link href="/css/theme.css?1711451819" rel="stylesheet">
+    <link href="/css/tabs.css?1711451819" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1711451819" rel="stylesheet">
     
-    <link href="/css/theme-blue.css?1710500509" rel="stylesheet">
+    <link href="/css/theme-blue.css?1711451819" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1710500509"></script>
+    <script src="/js/jquery-3.3.1.min.js?1711451819"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1710500509"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1710500509"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1711451819"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1711451819"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/dnsprivacy.org\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1710500509"></script>
+<script type="text/javascript" src="/js/search.js?1711451819"></script>
 
     
   </div>
@@ -1770,19 +1770,8 @@ here</a>.</p>
 <p>Simply invoke Stubby on the command line from a command prompt window
 (To get a command prompt go to the Windows search box and type &lsquo;cmd&rsquo; and
 then choose the &lsquo;Command prompt&rsquo; option)</p>
-<table>
-<thead>
-<tr>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>&gt; &quot;C:\Program Files\Stubby\stubby.exe&quot;</code> <code>-l</code></td>
-</tr>
-</tbody>
-</table>
-<p>The <em>-l</em> flag enables full logging. Alternatively a specific logging
+<pre tabindex="0"><code>&#34;C:\Program Files\Stubby\stubby.exe&#34; -l
+</code></pre><p>The <em>-l</em> flag enables full logging. Alternatively a specific logging
 level can be controlled by using the -v flag
 (run <em>&rsquo;<code>&quot;C:\Program Files\Stubby\stubby.exe&quot;</code> <code>-</code> h&rsquo;</em>  for details of
 available levels).</p>
@@ -1792,19 +1781,8 @@ Instructions for setting up a Scheduled task are below.</p>
 <p>A quick test can be done by opening a separate Command prompt window and
 using <em>getdns_query</em> (or your favourite DNS tool) on the loopback
 address:</p>
-<table>
-<thead>
-<tr>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>&gt;  &quot;C:\Program Files\Stubby\</code>getdns_query&quot; -s <code>@127``.0.``0.1</code> <code>www.example.com</code></td>
-</tr>
-</tbody>
-</table>
-<p>You should see a <em>status</em> of GETDNS_RESPSTATUS_GOOD and and <em>rcode</em> of
+<pre tabindex="0"><code>&#34;C:\Program Files\Stubby\getdns_query&#34; -s @127.0.0.1 www.example.com
+</code></pre><p>You should see a <em>status</em> of GETDNS_RESPSTATUS_GOOD and and <em>rcode</em> of
 GETDNS_RCODE_NOERROR in the <em>getdns_query</em> output. You should also see a
 connection being made in the stubby logs.</p>
 <h2 id="modify-your-upstream-resolvers">Modify your upstream resolvers</h2>
@@ -1835,37 +1813,15 @@ option that appears right click and select &lsquo;run as Administrator&rsquo;</p
 </li>
 <li>
 <p>In the command prompt window that appears type the following to switch the system DNS resolvers to use Stubby.</p>
-<table>
-<thead>
-<tr>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>PowerShell -ExecutionPolicy bypass -``file</code>  <code>&quot;C:\Program Files\Stubby\stubby_setdns_windows.ps1&quot;</code></td>
-</tr>
-</tbody>
-</table>
 </li>
 </ul>
-<p>You can monitor the DNS traffic using Wireshark watching on port 853.</p>
+<pre tabindex="0"><code>PowerShell -ExecutionPolicy bypass -file &#34;C:\Program Files\Stubby\stubby_setdns_windows.ps1&#34;
+</code></pre><p>You can monitor the DNS traffic using Wireshark watching on port 853.</p>
 <p><strong>If you encounter problems or want to turn Stubby off for any reason
 then reverse this change to restore the default network settings (no DNS
 Privacy) by running</strong></p>
-<table>
-<thead>
-<tr>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>PowerShell -ExecutionPolicy bypass -``file</code>  <code>&quot;C:\Program Files\Stubby\stubby_resetdns_windows.ps1</code></td>
-</tr>
-</tbody>
-</table>
-<h4 id="modify-your-upstream-resolvers-windows-7">Modify your upstream resolvers (Windows 7)</h4>
+<pre tabindex="0"><code>PowerShell -ExecutionPolicy bypass -file &#34;C:\Program Files\Stubby\stubby_resetdns_windows.ps1
+</code></pre><h4 id="modify-your-upstream-resolvers-windows-7">Modify your upstream resolvers (Windows 7)</h4>
 <p>Follow the procedure above, but use the scripts:</p>
 <ul>
 <li>C:\Program Files\Stubby\stubby_setdns_windows7.ps1 and</li>
@@ -2800,16 +2756,16 @@ network).</p>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1710500509"></script>
-    <script src="/js/perfect-scrollbar.min.js?1710500509"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1710500509"></script>
-    <script src="/js/jquery.sticky.js?1710500509"></script>
-    <script src="/js/featherlight.min.js?1710500509"></script>
-    <script src="/js/highlight.pack.js?1710500509"></script>
+    <script src="/js/clipboard.min.js?1711451819"></script>
+    <script src="/js/perfect-scrollbar.min.js?1711451819"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1711451819"></script>
+    <script src="/js/jquery.sticky.js?1711451819"></script>
+    <script src="/js/featherlight.min.js?1711451819"></script>
+    <script src="/js/highlight.pack.js?1711451819"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1710500509"></script>
-    <script src="/js/learn.js?1710500509"></script>
-    <script src="/js/hugo-learn.js?1710500509"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1711451819"></script>
+    <script src="/js/learn.js?1711451819"></script>
+    <script src="/js/hugo-learn.js?1711451819"></script>
     
     
 
