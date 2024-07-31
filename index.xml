@@ -326,7 +326,7 @@ This is the 0.2.6 of the prototype Stubby GUI. It is still very much a work in p
       
       <guid>http://dnsprivacy.org/running_a_dns_privacy_server/monitoring_privacy_servers/</guid>
       <description>DNS-over-TLS If you want to monitor the TLS specific or DNS Privacy specific features of a recursive server then there are a couple of options:
-A new tool getdns_server_mon is being developed which will provide output in both human readable and Nagios API compatible form. This tool was included in the 1.4.0 release of getdns. This tool is used on the dnsprivacy.org test server monitoring page.The xml configuration for the Jenkins job is available here.</description>
+A new tool getdns_server_mon is being developed which will provide output in both human readable and Nagios API compatible form. This tool was included in the 1.4.0 release of getdns. This tool is used on the dnsprivacy.org test server monitoring page. Stephane Bortzmeyer developed a standalone plugin based on getdns which inspired the above tool.</description>
     </item>
     
   </channel>
