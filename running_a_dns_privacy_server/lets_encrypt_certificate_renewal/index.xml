@@ -4,31 +4,23 @@
     <title>Let&#39;s Encrypt Certificate renewal on dnsprivacy.org</title>
     <link>http://dnsprivacy.org/running_a_dns_privacy_server/lets_encrypt_certificate_renewal/</link>
     <description>Recent content in Let&#39;s Encrypt Certificate renewal on dnsprivacy.org</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 21 Jul 2021 14:28:05 +0100</lastBuildDate><atom:link href="http://dnsprivacy.org/running_a_dns_privacy_server/lets_encrypt_certificate_renewal/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 21 Jul 2021 17:06:39 +0100</lastBuildDate>
+    <atom:link href="http://dnsprivacy.org/running_a_dns_privacy_server/lets_encrypt_certificate_renewal/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Certificate management Method 1</title>
       <link>http://dnsprivacy.org/running_a_dns_privacy_server/lets_encrypt_certificate_renewal/automated_certificate_management_1/</link>
       <pubDate>Wed, 21 Jul 2021 17:02:51 +0100</pubDate>
-      
       <guid>http://dnsprivacy.org/running_a_dns_privacy_server/lets_encrypt_certificate_renewal/automated_certificate_management_1/</guid>
-      <description>Background DNS setup CNAMES Configure dehydrated Create a domains file Write a hook script Write a script to download the certificates to your DNS servers Background At Sinodun we use dehydrated https://github.com/lukas2511/dehydrated to manage our certificates. Also we use the dns-01 challenge to renew them.
-Since we run multiple DNS-over-TLS servers, the method used here employs a single &amp;lsquo;certificate management&amp;rsquo; server to renew the certificates, update the zone with the dns-01 challenge and make the renewed certificates available via ftp.</description>
+      <description>Background DNS setup CNAMES Configure dehydrated Create a domains file Write a hook script Write a script to download the certificates to your DNS servers Background At Sinodun we use dehydrated https://github.com/lukas2511/dehydrated to manage our certificates. Also we use the dns-01 challenge to renew them.&#xA;Since we run multiple DNS-over-TLS servers, the method used here employs a single &amp;lsquo;certificate management&amp;rsquo; server to renew the certificates, update the zone with the dns-01 challenge and make the renewed certificates available via ftp.</description>
     </item>
-    
     <item>
       <title>Certificate management method 2</title>
       <link>http://dnsprivacy.org/running_a_dns_privacy_server/lets_encrypt_certificate_renewal/automated_certificate_management_2/</link>
       <pubDate>Wed, 21 Jul 2021 17:06:39 +0100</pubDate>
-      
       <guid>http://dnsprivacy.org/running_a_dns_privacy_server/lets_encrypt_certificate_renewal/automated_certificate_management_2/</guid>
-      <description>This page is assumes using OpenDNSSEC to sign zones. Thanks to Willem Toorop and Ralph Dolmans at NLnet Labs for developing this automated solution!
-An example configuration file is:
-CA=&amp;#34;https://acme-v01.api.letsencrypt.org/directory&amp;#34; #CA=&amp;#34;https://acme-staging.api.letsencrypt.org/directory&amp;#34; LICENSE=&amp;#34;https://letsencrypt.org/documents/LE-SA-v1.1.1-August-1-2016.pdf&amp;#34; CERTDIR=/usr/local/etc/dehydrated/certs CHALLENGETYPE=&amp;#34;dns-01&amp;#34; HOOK=/usr/local/etc/dehydrated/dnshook.sh PRIVATE_KEY_RENEW=&amp;#34;no&amp;#34; PRIVATE_KEY_ROLLOVER=&amp;#34;no&amp;#34; CONTACT_EMAIL=alice@example.com Private keys are then stored in
-/usr/local/etc/dehydrated/certs/&amp;lt;domain&amp;gt;/privkey.pem The SubjectAltNames are then enumerated in the file
-/usr/local/etc/dehydrated/domains.txt Add one line in this for each &amp;lsquo;group&amp;rsquo; of names that should share a certificate e.g</description>
+      <description>This page is assumes using OpenDNSSEC to sign zones. Thanks to Willem Toorop and Ralph Dolmans at NLnet Labs for developing this automated solution!&#xA;An example configuration file is:&#xA;CA=&amp;#34;https://acme-v01.api.letsencrypt.org/directory&amp;#34; #CA=&amp;#34;https://acme-staging.api.letsencrypt.org/directory&amp;#34; LICENSE=&amp;#34;https://letsencrypt.org/documents/LE-SA-v1.1.1-August-1-2016.pdf&amp;#34; CERTDIR=/usr/local/etc/dehydrated/certs CHALLENGETYPE=&amp;#34;dns-01&amp;#34; HOOK=/usr/local/etc/dehydrated/dnshook.sh PRIVATE_KEY_RENEW=&amp;#34;no&amp;#34; PRIVATE_KEY_ROLLOVER=&amp;#34;no&amp;#34; CONTACT_EMAIL=alice@example.com Private keys are then stored in&#xA;/usr/local/etc/dehydrated/certs/&amp;lt;domain&amp;gt;/privkey.pem The SubjectAltNames are then enumerated in the file&#xA;/usr/local/etc/dehydrated/domains.txt Add one line in this for each &amp;lsquo;group&amp;rsquo; of names that should share a certificate e.g</description>
     </item>
-    
   </channel>
 </rss>

@@ -4,8 +4,9 @@
     <title>Public Resolvers on dnsprivacy.org</title>
     <link>http://dnsprivacy.org/public_resolvers/</link>
     <description>Recent content in Public Resolvers on dnsprivacy.org</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 21 Jul 2021 11:25:14 +0100</lastBuildDate><atom:link href="http://dnsprivacy.org/public_resolvers/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate></lastBuildDate>
+    <atom:link href="http://dnsprivacy.org/public_resolvers/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

@@ -4,8 +4,9 @@
     <title>DNS Privacy Clients on dnsprivacy.org</title>
     <link>http://dnsprivacy.org/dns_privacy_clients/</link>
     <description>Recent content in DNS Privacy Clients on dnsprivacy.org</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 21 Jul 2021 12:01:25 +0100</lastBuildDate><atom:link href="http://dnsprivacy.org/dns_privacy_clients/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate></lastBuildDate>
+    <atom:link href="http://dnsprivacy.org/dns_privacy_clients/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

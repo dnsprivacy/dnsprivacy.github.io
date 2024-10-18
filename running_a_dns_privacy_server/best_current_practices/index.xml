@@ -4,27 +4,23 @@
     <title>Best Current Practices on dnsprivacy.org</title>
     <link>http://dnsprivacy.org/running_a_dns_privacy_server/best_current_practices/</link>
     <description>Recent content in Best Current Practices on dnsprivacy.org</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 21 Jul 2021 17:17:02 +0100</lastBuildDate><atom:link href="http://dnsprivacy.org/running_a_dns_privacy_server/best_current_practices/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 21 Jul 2021 17:34:05 +0100</lastBuildDate>
+    <atom:link href="http://dnsprivacy.org/running_a_dns_privacy_server/best_current_practices/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Comparison of policy and privacy statements 2019</title>
       <link>http://dnsprivacy.org/running_a_dns_privacy_server/best_current_practices/comparison_of_policy_and_privacy_statements_2019/</link>
       <pubDate>Wed, 21 Jul 2021 17:27:41 +0100</pubDate>
-      
       <guid>http://dnsprivacy.org/running_a_dns_privacy_server/best_current_practices/comparison_of_policy_and_privacy_statements_2019/</guid>
-      <description>The goal of this page is to provide a high level overview of the operations and privacy policies and practices (as published in 2019) of some of the larger DNS Privacy service offerings. NOTE: An analysis of privacy statements by operators will clearly only provide a snapshot at the time of writing. The page content was last reviewed on 18th Dec 2019. Please email any corrections to sara@sinodun.com
-Operators Operators Quad9 Cloudflare Google OpenDNS Comparison Policy Practice Quad9 UDP/TCP and TLS (port 853) service provided on two addresses:</description>
+      <description>The goal of this page is to provide a high level overview of the operations and privacy policies and practices (as published in 2019) of some of the larger DNS Privacy service offerings. NOTE: An analysis of privacy statements by operators will clearly only provide a snapshot at the time of writing. The page content was last reviewed on 18th Dec 2019. Please email any corrections to sara@sinodun.com&#xA;Operators Operators Quad9 Cloudflare Google OpenDNS Comparison Policy Practice Quad9 UDP/TCP and TLS (port 853) service provided on two addresses:</description>
     </item>
-    
     <item>
       <title>Data minimisation of DNS traffic</title>
       <link>http://dnsprivacy.org/running_a_dns_privacy_server/best_current_practices/data_minimisation_of_dns_traffic/</link>
       <pubDate>Wed, 21 Jul 2021 17:34:05 +0100</pubDate>
-      
       <guid>http://dnsprivacy.org/running_a_dns_privacy_server/best_current_practices/data_minimisation_of_dns_traffic/</guid>
       <description>Terminology History Notable pseudonymising techniques Google Analytics non-prefix filtering dnswasher Prefix-preserving map Cryptographic Prefix-Preserving Pseudonymisation Top-hash Subtree-replicated Anonymisation ipcipher Bloom filters Other data minimisation considerations References The DNS Privacy solutions presented here ensure that DNS queries made by an individual end user can&amp;rsquo;t be observed by eavesdroppers as they pass across the Internet. Only the operators of DNS privacy servers have access to the details of the queries. For operational reasons such as monitoring server performance or detecting and mitigating attacks operators need to keep logs of the DNS queries they see; in some circumstances they may need to share those logs with other operators.</description>
     </item>
-    
   </channel>
 </rss>

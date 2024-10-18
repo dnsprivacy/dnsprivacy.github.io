@@ -1,0 +1,2603 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.130.0">
+    <meta name="description" content="">
+
+
+    <link rel="icon" href="/images/favicon.png" type="image/png">
+
+    <title>TCP Fast Open :: dnsprivacy.org</title>
+
+    
+    <link href="/css/nucleus.css?1729262165" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1729262165" rel="stylesheet">
+    <link href="/css/hybrid.css?1729262165" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1729262165" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1729262165" rel="stylesheet">
+    <link href="/css/auto-complete.css?1729262165" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1729262165" rel="stylesheet">
+    <link href="/css/theme.css?1729262165" rel="stylesheet">
+    <link href="/css/tabs.css?1729262165" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1729262165" rel="stylesheet">
+    
+    <link href="/css/theme-blue.css?1729262165" rel="stylesheet">
+    
+    
+
+    <script src="/js/jquery-3.3.1.min.js?1729262165"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/project_notes/tcp_fast_open/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href='/'>
+  <p style="color: #fafafa;font-size:34px;font-weight: 400; font-family:Helvetica Neue, arial, courier;"><strong>DNS Privacy Project</strong></p>
+</a>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1729262165"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1729262165"></script>
+<script type="text/javascript">
+    
+        var baseurl = "http:\/\/dnsprivacy.org\/";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1729262165"></script>
+
+    
+  </div>
+  
+    <section id="homelinks">
+      <ul>
+        <li>
+            <a class="padding" href='/'><i class='fas fa-home'></i> Home</a>
+        </li>
+      </ul>
+    </section>
+  
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/the_problem/" title="The Problem" class="dd-item
+        
+        
+        
+        ">
+      <a href="/the_problem/">
+          1. The Problem
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/the_solutions/" title="The Solutions" class="dd-item
+        
+        
+        
+        ">
+      <a href="/the_solutions/">
+          2. The Solutions
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/current_work/" title="Current Work" class="dd-item
+        
+        
+        
+        ">
+      <a href="/current_work/">
+          3. Current Work
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/ietf_dns_privacy_tutorial/" title="IETF DNS Privacy Tutorial" class="dd-item
+        
+        
+        
+        ">
+      <a href="/ietf_dns_privacy_tutorial/">
+          4. IETF DNS Privacy Tutorial
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/public_resolvers/" title="Public Resolvers" class="dd-item
+        
+        
+        
+        ">
+      <a href="/public_resolvers/">
+          5. Public Resolvers
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/test_servers/" title="Test Servers" class="dd-item
+        
+        
+        
+        ">
+      <a href="/test_servers/">
+          6. Test Servers
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/test_servers/map_of_test_server_locations/" title="Map of test server locations" class="dd-item ">
+        <a href="/test_servers/map_of_test_server_locations/">
+        6.1. Map of test server locations
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/test_servers/monitoring/" title="dnsprivacy Monitoring" class="dd-item ">
+        <a href="/test_servers/monitoring/">
+        6.2. dnsprivacy Monitoring
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/test_servers/live_traffic_levels/" title="Live Traffic Levels" class="dd-item ">
+        <a href="/test_servers/live_traffic_levels/">
+        6.2. Live Traffic Levels
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/dns_privacy_clients/" title="DNS Privacy Clients" class="dd-item
+        
+        
+        
+        ">
+      <a href="/dns_privacy_clients/">
+          7. DNS Privacy Clients
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/dns_privacy_daemon_-_stubby/" title="DNS Privacy Daemon - Stubby" class="dd-item
+        
+        
+        
+        ">
+      <a href="/dns_privacy_daemon_-_stubby/">
+          8. DNS Privacy Daemon - Stubby
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/dns_privacy_daemon_-_stubby/about_stubby/" title="About Stubby" class="dd-item ">
+        <a href="/dns_privacy_daemon_-_stubby/about_stubby/">
+        8.1. About Stubby
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/dns_privacy_daemon_-_stubby/configuring_stubby/" title="Configuring Stubby" class="dd-item ">
+        <a href="/dns_privacy_daemon_-_stubby/configuring_stubby/">
+        8.2. Configuring Stubby
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/dns_privacy_daemon_-_stubby/stubby_manager_gui/" title="Stubby Manager GUI" class="dd-item ">
+        <a href="/dns_privacy_daemon_-_stubby/stubby_manager_gui/">
+        8.3. Stubby Manager GUI
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/dns_privacy_daemon_-_stubby/installation/" title="Installation" class="dd-item
+        
+        
+        
+        ">
+      <a href="/dns_privacy_daemon_-_stubby/installation/">
+          8.4. Installation
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/dns_privacy_daemon_-_stubby/installation/linux_from_source/" title="Linux From Source" class="dd-item ">
+        <a href="/dns_privacy_daemon_-_stubby/installation/linux_from_source/">
+        8.4.1. Linux From Source
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/dns_privacy_daemon_-_stubby/installation/running_as_a_service_on_nix/" title="Running as a service on *nix" class="dd-item ">
+        <a href="/dns_privacy_daemon_-_stubby/installation/running_as_a_service_on_nix/">
+        8.4.2. Running as a service on *nix
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/dns_privacy_daemon_-_stubby/installation/macos_homebrew/" title="MacOS Homebrew" class="dd-item ">
+        <a href="/dns_privacy_daemon_-_stubby/installation/macos_homebrew/">
+        8.4.3. MacOS Homebrew
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/dns_privacy_daemon_-_stubby/installation/stubby_gui_for_macos/" title="Stubby GUI for macOS" class="dd-item ">
+        <a href="/dns_privacy_daemon_-_stubby/installation/stubby_gui_for_macos/">
+        8.4.4. Stubby GUI for macOS
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/dns_privacy_daemon_-_stubby/installation/windows_installer_for_stubby/" title="Windows installer for Stubby" class="dd-item ">
+        <a href="/dns_privacy_daemon_-_stubby/installation/windows_installer_for_stubby/">
+        8.4.5. Windows installer for Stubby
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/implementation_status/" title="Implementation Status" class="dd-item
+        
+        
+        
+        ">
+      <a href="/implementation_status/">
+          9. Implementation Status
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/running_a_dns_privacy_server/" title="Running a DNS Privacy server" class="dd-item
+        
+        
+        
+        ">
+      <a href="/running_a_dns_privacy_server/">
+          10. Running a DNS Privacy server
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/running_a_dns_privacy_server/using_unbound/" title="Using Unbound" class="dd-item ">
+        <a href="/running_a_dns_privacy_server/using_unbound/">
+        10.1. Using Unbound
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/running_a_dns_privacy_server/using_knot_resolver/" title="Using Knot Resolver" class="dd-item ">
+        <a href="/running_a_dns_privacy_server/using_knot_resolver/">
+        10.2. Using Knot Resolver
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/running_a_dns_privacy_server/using_dnsdist/" title="Using dnsdist" class="dd-item ">
+        <a href="/running_a_dns_privacy_server/using_dnsdist/">
+        10.3. Using dnsdist
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/running_a_dns_privacy_server/using_a_tls_proxy/" title="Using a TLS proxy" class="dd-item
+        
+        
+        
+        ">
+      <a href="/running_a_dns_privacy_server/using_a_tls_proxy/">
+          10.4. Using a TLS proxy
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/running_a_dns_privacy_server/using_a_tls_proxy/building_haproxy_using_tlsv1_3/" title="Building HAProxy using TLSv1.3" class="dd-item ">
+        <a href="/running_a_dns_privacy_server/using_a_tls_proxy/building_haproxy_using_tlsv1_3/">
+        10.4.1. Building HAProxy using TLSv1.3
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/running_a_dns_privacy_server/lets_encrypt_certificate_renewal/" title="Let&#39;s Encrypt Certificate renewal" class="dd-item
+        
+        
+        
+        ">
+      <a href="/running_a_dns_privacy_server/lets_encrypt_certificate_renewal/">
+          10.5. Let&#39;s Encrypt Certificate renewal
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/running_a_dns_privacy_server/lets_encrypt_certificate_renewal/automated_certificate_management_1/" title="Certificate management Method 1" class="dd-item ">
+        <a href="/running_a_dns_privacy_server/lets_encrypt_certificate_renewal/automated_certificate_management_1/">
+        10.5.1. Certificate management Method 1
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/running_a_dns_privacy_server/lets_encrypt_certificate_renewal/automated_certificate_management_2/" title="Certificate management method 2" class="dd-item ">
+        <a href="/running_a_dns_privacy_server/lets_encrypt_certificate_renewal/automated_certificate_management_2/">
+        10.5.2. Certificate management method 2
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/running_a_dns_privacy_server/monitoring_privacy_servers/" title="Monitoring Privacy servers" class="dd-item ">
+        <a href="/running_a_dns_privacy_server/monitoring_privacy_servers/">
+        10.6. Monitoring Privacy servers
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/running_a_dns_privacy_server/best_current_practices/" title="Best Current Practices" class="dd-item
+        
+        
+        
+        ">
+      <a href="/running_a_dns_privacy_server/best_current_practices/">
+          10.7. Best Current Practices
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/running_a_dns_privacy_server/best_current_practices/comparison_of_policy_and_privacy_statements_2019/" title="Comparison of policy and privacy statements 2019" class="dd-item ">
+        <a href="/running_a_dns_privacy_server/best_current_practices/comparison_of_policy_and_privacy_statements_2019/">
+        10.7.1. Comparison of policy and privacy statements 2019
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/running_a_dns_privacy_server/best_current_practices/data_minimisation_of_dns_traffic/" title="Data minimisation of DNS traffic" class="dd-item ">
+        <a href="/running_a_dns_privacy_server/best_current_practices/data_minimisation_of_dns_traffic/">
+        10.7.2. Data minimisation of DNS traffic
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/encrypted-zone-transfer/" title="Encrypted Zone Transfer" class="dd-item
+        
+        
+        
+        ">
+      <a href="/encrypted-zone-transfer/">
+          11. Encrypted Zone Transfer
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/dns_privacy_reference_material/" title="DNS Privacy Reference Material" class="dd-item
+        
+        
+        
+        ">
+      <a href="/dns_privacy_reference_material/">
+          12. DNS Privacy Reference Material
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/performance_measurements/" title="Performance Measurements" class="dd-item
+        
+        
+        
+        ">
+      <a href="/performance_measurements/">
+          13. Performance Measurements
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/performance_measurements/initial_performance_measurements_q1_2018/" title="Initial Performance Measurements (Q1 2018)" class="dd-item ">
+        <a href="/performance_measurements/initial_performance_measurements_q1_2018/">
+        12.1. Initial Performance Measurements (Q1 2018)
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/performance_measurements/follow-up_performance_measurements_q4_2108/" title="Follow-Up Performance Measurements (Q4 2108)" class="dd-item ">
+        <a href="/performance_measurements/follow-up_performance_measurements_q4_2108/">
+        12.2. Follow-Up Performance Measurements (Q4 2108)
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/performance_measurements/review_of_dns_and_http_pm_tools/" title="Review of DNS and HTTP PM Tools" class="dd-item ">
+        <a href="/performance_measurements/review_of_dns_and_http_pm_tools/">
+        12.3. Review of DNS and HTTP PM Tools
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/performance_measurements/proposal_for_new_performance_tool/" title="Proposal for New Performance Tool" class="dd-item ">
+        <a href="/performance_measurements/proposal_for_new_performance_tool/">
+        12.4. Proposal for New Performance Tool
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/ndss_dns_privacy_workshop/" title="NDSS DNS Privacy Workshop" class="dd-item
+        
+        
+        
+        ">
+      <a href="/ndss_dns_privacy_workshop/">
+          14. NDSS DNS Privacy Workshop
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/ndss_dns_privacy_workshop/2021_ndss_dns_privacy_workshop/" title="2021 NDSS DNS Privacy Workshop" class="dd-item
+        
+        
+        
+        ">
+      <a href="/ndss_dns_privacy_workshop/2021_ndss_dns_privacy_workshop/">
+          14.1. 2021 NDSS DNS Privacy Workshop
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/ndss_dns_privacy_workshop/2021_ndss_dns_privacy_workshop/call_for_papers/" title="Call for Papers" class="dd-item ">
+        <a href="/ndss_dns_privacy_workshop/2021_ndss_dns_privacy_workshop/call_for_papers/">
+        14.1.1. Call for Papers
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/ndss_dns_privacy_workshop/2021_ndss_dns_privacy_workshop/workshop_notes/" title="Workshop Notes" class="dd-item
+        
+        
+        
+        ">
+      <a href="/ndss_dns_privacy_workshop/2021_ndss_dns_privacy_workshop/workshop_notes/">
+          14.1.2. Workshop Notes
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/ndss_dns_privacy_workshop/2021_ndss_dns_privacy_workshop/workshop_notes/breakout_room_1/" title="Zoom Breakout Room 1: Measurement of Encrypted DNS" class="dd-item ">
+        <a href="/ndss_dns_privacy_workshop/2021_ndss_dns_privacy_workshop/workshop_notes/breakout_room_1/">
+        14.1.2.1. Zoom Breakout Room 1: Measurement of Encrypted DNS
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/ndss_dns_privacy_workshop/2021_ndss_dns_privacy_workshop/workshop_notes/breakout_room_2/" title="Zoom Breakout Room 2: Civil Society, Usability and DNS" class="dd-item ">
+        <a href="/ndss_dns_privacy_workshop/2021_ndss_dns_privacy_workshop/workshop_notes/breakout_room_2/">
+        14.1.2.2. Zoom Breakout Room 2: Civil Society, Usability and DNS
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/ndss_dns_privacy_workshop/2021_ndss_dns_privacy_workshop/workshop_notes/breakout_room_3/" title="Zoom Breakout Room 3: Novel Work, ADoT and Future Research" class="dd-item ">
+        <a href="/ndss_dns_privacy_workshop/2021_ndss_dns_privacy_workshop/workshop_notes/breakout_room_3/">
+        14.1.2.3. Zoom Breakout Room 3: Novel Work, ADoT and Future Research
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/ndss_dns_privacy_workshop/2018_ndss_dns_privacy_workshop/" title="2018 NDSS DNS Privacy Workshop" class="dd-item ">
+        <a href="/ndss_dns_privacy_workshop/2018_ndss_dns_privacy_workshop/">
+        14.2. 2018 NDSS DNS Privacy Workshop
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/ndss_dns_privacy_workshop/2017_ndss_dns_privacy_workshop/" title="2017 NDSS DNS Privacy Workshop" class="dd-item ">
+        <a href="/ndss_dns_privacy_workshop/2017_ndss_dns_privacy_workshop/">
+        14.3. 2017 NDSS DNS Privacy Workshop
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+        
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3>More</h3>
+        <ul>
+          
+              <li>
+                  <a class="padding" href="https://github.com/dnsprivacy"><i class='fab fa-github'></i> Github repo</a>
+              </li>
+          
+              <li>
+                  <a class="padding" href="https://twitter.com/DNSPrivacyProj"><i class='fab fa-twitter'></i> Twitter</a>
+              </li>
+          
+              <li>
+                  <a class="padding" href="https://www.youtube.com/channel/UCaJWMY-m9ktZIbUNMi0Eh9g/playlists"><i class='fab fa-youtube'></i> YouTube</a>
+              </li>
+          
+              <li>
+                  <a class="padding" href="https://sinodun.com"><i class='fas fa-bookmark'></i> Sinodun IT</a>
+              </li>
+          
+              <li>
+                  <a class="padding" href="https://www.nlnetlabs.nl/"><i class='fas fa-bookmark'></i> NLnetLabs</a>
+              </li>
+          
+              <li>
+                  <a class="padding" href="http://dnsprivacy.org/ndss_dns_privacy_workshop"><i class='fas fa-bookmark'></i> NDSS DNS Privacy Workshop</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="footer">
+      <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn">Hugo Theme Learn</a> and <a href="https://gohugo.io/">Hugo</a></p>
+<p>Built by <a href="sinodun.com">Sinodun Internet Technologies.</a></p>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/'>DNS Privacy Project</a> > <a href=''>Project Notes</a> > TCP Fast Open
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#message-flow">Message flow </a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#client-side-code-changes">Client side code changes</a>
+      <ul>
+        <li><a href="#linux-api">Linux API</a></li>
+        <li><a href="#os-x-api">OS X API</a></li>
+      </ul>
+    </li>
+    <li><a href="#server-side-code-changes">Server side code changes</a></li>
+    <li><a href="#kernel-parameters">Kernel Parameters</a>
+      <ul>
+        <li><a href="#linux">Linux</a></li>
+        <li><a href="#os-x">OS X</a></li>
+        <li><a href="#freebsd">FreeBSD</a></li>
+      </ul>
+    </li>
+    <li><a href="#on-the-wire">On-the-wire</a>
+      <ul>
+        <li><a href="#clients">Clients</a></li>
+        <li><a href="#servers">Servers</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              TCP Fast Open
+            </h1>
+          
+
+        
+
+
+<!-- raw HTML omitted -->
+<ul>
+<li></li>
+<li><a href="#TCPFastOpen-References">References</a></li>
+<li><a href="#TCPFastOpen-Patches">Patches </a></li>
+<li><a href="#TCPFastOpen-Quickguide">Quick guide</a>
+<ul>
+<li><a href="#TCPFastOpen-Messageflow">Message flow </a></li>
+</ul>
+</li>
+<li><a href="#TCPFastOpen-Implementationdetails">Implementation details</a>
+<ul>
+<li><a href="#TCPFastOpen-Clientsidecodechanges">Client side code changes</a>
+<ul>
+<li><a href="#TCPFastOpen-LinuxAPI">Linux API</a></li>
+<li><a href="#TCPFastOpen-OSXAPI">OS X API</a></li>
+</ul>
+</li>
+<li><a href="#TCPFastOpen-Serversidecodechanges">Server side code changes</a></li>
+<li><a href="#TCPFastOpen-KernelParameters">Kernel Parameters</a>
+<ul>
+<li><a href="#TCPFastOpen-Linux">Linux</a></li>
+<li><a href="#TCPFastOpen-OSX">OS X</a></li>
+<li><a href="#TCPFastOpen-FreeBSD">FreeBSD</a></li>
+</ul>
+</li>
+<li><a href="#TCPFastOpen-On-the-wire">On-the-wire</a>
+<ul>
+<li><a href="#TCPFastOpen-Clients">Clients</a></li>
+<li><a href="#TCPFastOpen-Servers">Servers</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<hr>
+<h1 id="references">References</h1>
+<p>TCP Fast Open (TFO) mechanism is described
+in <a href="https://tools.ietf.org/html/rfc7413">https://tools.ietf.org/html/rfc7413</a></p>
+<p>Other considerations can be found in this <a href="http://www.icsi.berkeley.edu/pubs/networking/ICSI_tcpfastopen11.pdf">white
+paper</a>.</p>
+<h1 id="patches">Patches </h1>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>TFO is currently available available on Linux (full implementation in
+4.1), OS X 10.12 and server side will be available for FreeBSd 10/11.
+There are differences between the implementations described below.</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>Patches for ldns, NSD and Unbound can be found in our Stash repo, which
+currently support TFO as implemented on Linux.</p>
+<p><a href="https://portal.sinodun.com/stash/projects/TDNS/repos/tcp_fast_open_patches/browse">https://portal.sinodun.com/stash/projects/TDNS/repos/tcp_fast_open_patches/browse</a></p>
+<p>Note that getdns 1.0 supports TFO on Linux and OS X.</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>To use these patches:</p>
+<ol>
+<li>
+<p>Download the source code from the relevant repository</p>
+</li>
+<li>
+<p>Apply the relevant patch</p>
+</li>
+<li>
+<p><strong>IMPORTANT</strong>! Run <em>autoreconf</em> </p>
+</li>
+<li>
+<p>Add <em>&ndash;enable-tcp-fastopen</em> to the <em>configure</em> options</p>
+</li>
+<li>
+<p><em>make &amp; make install</em> as normal</p>
+</li>
+</ol>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h1 id="quick-guide">Quick guide</h1>
+<p>TCP fastopen [I-D.ietf-tcpm-fastopen] (TFO) allows data to be
+carried in the SYN packet (and optionally in the SYN-ACK). It therefore
+saves up to one RTT compared to standard TCP. TFO clients request a
+server cookie in the initial SYN packet at the<br>
+start of a new connection. The server returns a cookie in its SYN-ACK.
+The client caches the cookie and reuses it when opening subsequent
+connections to the same server. The cookie is stored by the client&rsquo;s TCP
+stack (kernel) and persists if either the client or server processes are
+restarted. TFO also falls back to a regular TCP handshake gracefully. </p>
+<h3 id="message-flow">Message flow </h3>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Requesting Fast Open Cookie in connection 1: 
+</span></span><span style="display:flex;"><span>TCP A <span style="color:#f92672">(</span>Client<span style="color:#f92672">)</span>                                   TCP B<span style="color:#f92672">(</span>Server<span style="color:#f92672">)</span> 
+</span></span><span style="display:flex;"><span>______________                                   _____________  
+</span></span><span style="display:flex;"><span>CLOSED                                                  LISTEN 
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#1 SYN-SENT     ----- &lt;SYN,CookieOpt=NIL&gt; ----------&gt; SYN-RCVD </span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#2 ESTABLISHED &lt;---- &lt;SYN,ACK,CookieOpt=C&gt; ---------- SYN-RCVD </span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">(</span>caches cookie C<span style="color:#f92672">)</span> 
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>Performing TCP Fast Open in connection 2: 
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>TCP A <span style="color:#f92672">(</span>Client<span style="color:#f92672">)</span>                                   TCP B<span style="color:#f92672">(</span>Server<span style="color:#f92672">)</span> 
+</span></span><span style="display:flex;"><span>______________                                   _____________  
+</span></span><span style="display:flex;"><span>CLOSED                                                  LISTEN 
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#1 SYN-SENT    ----- &lt;SYN=x,CookieOpt=C,DATA_A&gt; ----&gt; SYN-RCVD </span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#2 ESTABLISHED &lt;---- &lt;SYN=y,ACK=x+len(DATA_A)+1&gt; ---- SYN-RCVD </span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#3 ESTABLISHED &lt;---- &lt;ACK=x+len(DATA_A)+1,DATA_B&gt;---- SYN-RCVD </span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#4 ESTABLISHED ----- &lt;ACK=y+1&gt;--------------------&gt;   ESTABLISHED </span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#5 ESTABLISHED --- &lt;ACK=y+len(DATA_B)+1&gt;----------&gt;   ESTABLISHED</span>
+</span></span></code></pre></div><!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p> </p>
+<h1 id="implementation-details">Implementation details</h1>
+<p>Adding support for this to existing name server implementations
+is relatively easy, but does require source code modifications. It is
+also controlled via various kernel parameters documented below.</p>
+<h2 id="client-side-code-changes">Client side code changes</h2>
+<h3 id="linux-api">Linux API</h3>
+<ul>
+<li>
+<p>On the client, the call to connect() is replaced with a call
+to sendmsg() or sendto() with the flags parameter set to
+MSG_FASTOPEN. </p>
+<ul>
+<li>For blocking sockets this performs both the handshake and sends
+the data before returning.</li>
+</ul>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<p>For non-blocking socket it returns the number of bytes buffered
+and sent in the SYN packet. </p>
+<ul>
+<li>
+<p>If the cookie is available it will send the data before
+returning.</p>
+</li>
+<li>
+<p>If the cookie is not available locally, it returns -1 with
+errno EINPROGRESS, and sends a SYN with TFO cookie request
+automatically. The caller needs to write the data again when
+the socket is connected with a call to send() or similar.</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Subsequent writes on this socket must also be done with send() or
+similar. A subsequent call with sendto() will return the error
+EISCONN.</p>
+</li>
+</ul>
+<h3 id="os-x-api">OS X API</h3>
+<ul>
+<li>The normal connect() call is replaced by connectx(), which requires
+2 OS X specific flags:</li>
+</ul>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>connectx<span style="color:#f92672">(</span>fd, &amp;endpoints, SAE_ASSOCID_ANY,  
+</span></span><span style="display:flex;"><span>         CONNECT_DATA_IDEMPOTENT | CONNECT_RESUME_ON_READ_WRITE,
+</span></span><span style="display:flex;"><span>          NULL, 0, NULL, NULL<span style="color:#f92672">)</span>
+</span></span></code></pre></div><!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<ul>
+<li>The the usual socket functions (e.g. write()) can be used to send
+data. Initiating the TCP handshake is delayed until the first data
+is actually send.</li>
+</ul>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>The Linux implementation follows the pattern suggested in the appendix
+of the RFC for maximum backwards compatibility, however the OS X API
+offers some advantages because TFO can be used in conjunction with
+libraries that require a &lsquo;connected&rsquo; file descriptor to be available
+(e.g. OpenSSL). The hope is the Linux API will be extended to offer both
+modes (no FreeBSD client implemented yet).</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h2 id="server-side-code-changes">Server side code changes</h2>
+<ul>
+<li>The server must simply set the TCP_FASTOPEN flag using setsockopt()
+on the listening socket. On linux/FreeBSD the qlen value passed in
+to the function limits the number of outstanding TFO requests as a
+simple defense against IP spoofing attacks (see RFC7413).
+<ul>
+<li>Note on OS X the socket MUST be listening already for this flag
+to be set, and the qlen MUST be 1 (the actual value is set via
+the net.inet.tcp.fastopen_backlog kernel parameter.</li>
+<li>On linux this call can be done after bind() is called.</li>
+</ul>
+</li>
+</ul>
+<h2 id="kernel-parameters">Kernel Parameters</h2>
+<h3 id="linux">Linux</h3>
+<ul>
+<li>
+<p> The kernel parameter net.ipv4.tcp_fastopen controls TFO and since
+4.1 has been set to 1 by default. This enables client mode but not
+server mode. To act in pure server mode set the integer value to 2.
+To enable both client and server mode, set it to 3, for example:</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sysctl -w net.ipv4.tcp_fastopen<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>
+</span></span></code></pre></div><!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+</li>
+</ul>
+<h3 id="os-x">OS X</h3>
+<ul>
+<li>
+<p>The analogous kernel parameter is net.inet.tcp.fastopen but is set
+to 3 by default. The fastopen backlog and fallback minimum can also
+be set via kernel parameter.</p>
+</li>
+<li>
+<p>The parameter <em>net.inet.tcp.clear_tfocache</em> can be used to reset the
+TFO back-off when problems are encountered (this can be helpful when
+testing).</p>
+</li>
+</ul>
+<h3 id="freebsd">FreeBSD</h3>
+<ul>
+<li>6 kernel parameters are available, TFO is controlled
+by net.inet.tcp.fastopen.enabled which is 0 by default and must be 1
+to enable TFO.</li>
+</ul>
+<h2 id="on-the-wire">On-the-wire</h2>
+<p>The implementations have slightly different behaviour on the wire.
+Observations from testing include:</p>
+<h3 id="clients">Clients</h3>
+<ul>
+<li>The current Linux client implementation (4.4 at the time of writing)
+does not currently support receiving data in the SYN-ACK (although
+it should to be compliant with the spec).  But a patch for this has
+been submitted. This can cause interop problems because the server
+must re-transmit the data. OS X does support this (no FreeBSD client
+implemented yet).</li>
+<li>The back-off algorithms also appear different. For example, the OS X
+implementation will fallback to normal TCP for a long period of time
+if it detects problems during cookie or TFO data exchange.</li>
+<li>Prior to 4.1 Linux used the experimental option code (254) and
+format for TFO, in 4.1 the default is to use the official option
+code (34) and format but fallback to the experimental code is still
+supported.</li>
+</ul>
+<h3 id="servers">Servers</h3>
+<ul>
+<li>Neither the Linux nor OS X servers send data in the SYN-ACK. The
+Linux server will send data after the SYN-ACK, without waiting for
+the ACK. My testing shows the OS X server always waits until after
+the handshake is complete, but the Apple folks tell me it should
+behave as Linux&hellip;.</li>
+<li>The FreeBSD server implementation does send data in the SYN-ACK if
+it is available quickly enough. </li>
+</ul>
+<p> </p>
+<p> </p>
+
+
+<footer class="footline">
+	
+</footer>
+
+        
+        </div>
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+
+        
+
+
+	 
+	 
+    </div>
+
+    </section>
+
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1729262165"></script>
+    <script src="/js/perfect-scrollbar.min.js?1729262165"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1729262165"></script>
+    <script src="/js/jquery.sticky.js?1729262165"></script>
+    <script src="/js/featherlight.min.js?1729262165"></script>
+    <script src="/js/highlight.pack.js?1729262165"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom-3.6.0.js?1729262165"></script>
+    <script src="/js/learn.js?1729262165"></script>
+    <script src="/js/hugo-learn.js?1729262165"></script>
+    
+    
+
+  </body>
+</html>
+

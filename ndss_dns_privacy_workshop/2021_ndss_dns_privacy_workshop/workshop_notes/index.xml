@@ -4,42 +4,30 @@
     <title>Workshop Notes on dnsprivacy.org</title>
     <link>http://dnsprivacy.org/ndss_dns_privacy_workshop/2021_ndss_dns_privacy_workshop/workshop_notes/</link>
     <description>Recent content in Workshop Notes on dnsprivacy.org</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 23 Jul 2021 10:29:03 +0100</lastBuildDate><atom:link href="http://dnsprivacy.org/ndss_dns_privacy_workshop/2021_ndss_dns_privacy_workshop/workshop_notes/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 23 Jul 2021 10:48:37 +0100</lastBuildDate>
+    <atom:link href="http://dnsprivacy.org/ndss_dns_privacy_workshop/2021_ndss_dns_privacy_workshop/workshop_notes/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Zoom Breakout Room 1: Measurement of Encrypted DNS</title>
       <link>http://dnsprivacy.org/ndss_dns_privacy_workshop/2021_ndss_dns_privacy_workshop/workshop_notes/breakout_room_1/</link>
       <pubDate>Fri, 23 Jul 2021 10:41:57 +0100</pubDate>
-      
       <guid>http://dnsprivacy.org/ndss_dns_privacy_workshop/2021_ndss_dns_privacy_workshop/workshop_notes/breakout_room_1/</guid>
       <description>Zoom Breakout Room 1: Measurement of Encrypted DNS Kick-off question from Sandra: Who are we designing encrypted DNS protocols for? Idea from Benno (who couldn&amp;rsquo;t be present in the session): these protocols need to be designed to work for everybody. Alec: I don&amp;rsquo;t think &amp;ldquo;designing for everybody&amp;rdquo; would go well. DNS is a distributed protocol; it is a distributed database. It is very presumpuous of us to designate threat models onto third parties.</description>
     </item>
-    
     <item>
       <title>Zoom Breakout Room 2: Civil Society, Usability and DNS</title>
       <link>http://dnsprivacy.org/ndss_dns_privacy_workshop/2021_ndss_dns_privacy_workshop/workshop_notes/breakout_room_2/</link>
       <pubDate>Fri, 23 Jul 2021 10:45:17 +0100</pubDate>
-      
       <guid>http://dnsprivacy.org/ndss_dns_privacy_workshop/2021_ndss_dns_privacy_workshop/workshop_notes/breakout_room_2/</guid>
-      <description>Zoom Breakout Room 2: Civil Society, Usability and DNS 9 people joined the breakroom of Session 2: Civil Society, Usability and DNS
-0-5 minutes: Gurshabad summarized the talks in the second session
-5-10 minutes to cover the questions to the talks: All the questions were covered during the talks, no questions asked.
-10-25 minutes: discussion
-Discussion:
-Q: Paul Syverson: what can be done to make balkanization itself costly at an ecosystem level, so protocols that might be resistant to being functional if set up for use in a private space?</description>
+      <description>Zoom Breakout Room 2: Civil Society, Usability and DNS 9 people joined the breakroom of Session 2: Civil Society, Usability and DNS&#xA;0-5 minutes: Gurshabad summarized the talks in the second session&#xA;5-10 minutes to cover the questions to the talks: All the questions were covered during the talks, no questions asked.&#xA;10-25 minutes: discussion&#xA;Discussion:&#xA;Q: Paul Syverson: what can be done to make balkanization itself costly at an ecosystem level, so protocols that might be resistant to being functional if set up for use in a private space?</description>
     </item>
-    
     <item>
       <title>Zoom Breakout Room 3: Novel Work, ADoT and Future Research</title>
       <link>http://dnsprivacy.org/ndss_dns_privacy_workshop/2021_ndss_dns_privacy_workshop/workshop_notes/breakout_room_3/</link>
       <pubDate>Fri, 23 Jul 2021 10:48:37 +0100</pubDate>
-      
       <guid>http://dnsprivacy.org/ndss_dns_privacy_workshop/2021_ndss_dns_privacy_workshop/workshop_notes/breakout_room_3/</guid>
-      <description>Zoom Breakout Room 3: Novel Work, ADoT and Future Research Benno&amp;rsquo;s summary
-Liang&amp;rsquo;s talk - IP address encryption as a complement to DOH or DOT, no change to DNS, no changes on endpoints. Can we get privacy benefit from this
-Scott&amp;rsquo;s talk and DKG&amp;rsquo;s talk - there&amp;rsquo;s information leaked above recursive, but Scott asks if it&amp;rsquo;s operationally feasible for the auth operator to do encryption, whereas DKG takes the view that it needs to be</description>
+      <description>Zoom Breakout Room 3: Novel Work, ADoT and Future Research Benno&amp;rsquo;s summary&#xA;Liang&amp;rsquo;s talk - IP address encryption as a complement to DOH or DOT, no change to DNS, no changes on endpoints. Can we get privacy benefit from this&#xA;Scott&amp;rsquo;s talk and DKG&amp;rsquo;s talk - there&amp;rsquo;s information leaked above recursive, but Scott asks if it&amp;rsquo;s operationally feasible for the auth operator to do encryption, whereas DKG takes the view that it needs to be</description>
     </item>
-    
   </channel>
 </rss>

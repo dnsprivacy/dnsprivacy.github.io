@@ -4,38 +4,30 @@
     <title>Test Servers on dnsprivacy.org</title>
     <link>http://dnsprivacy.org/test_servers/</link>
     <description>Recent content in Test Servers on dnsprivacy.org</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 21 Jul 2021 11:33:26 +0100</lastBuildDate><atom:link href="http://dnsprivacy.org/test_servers/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 21 Jul 2021 11:53:47 +0100</lastBuildDate>
+    <atom:link href="http://dnsprivacy.org/test_servers/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Map of test server locations</title>
       <link>http://dnsprivacy.org/test_servers/map_of_test_server_locations/</link>
       <pubDate>Wed, 21 Jul 2021 11:36:47 +0100</pubDate>
-      
       <guid>http://dnsprivacy.org/test_servers/map_of_test_server_locations/</guid>
-      <description>The map below is an static image of the current DNS-over-TLS test server locations. We don&amp;rsquo;t show Quad9 on here because they run an anycast service (see their website for details).
-The icons reflect the software being used:
-Green pin: Unbound Pink pin: Knot Resolver Blue pin: TLS proxy in front of a nameserver Blue flag: Unknown </description>
+      <description>The map below is an static image of the current DNS-over-TLS test server locations. We don&amp;rsquo;t show Quad9 on here because they run an anycast service (see their website for details).&#xA;The icons reflect the software being used:&#xA;Green pin: Unbound Pink pin: Knot Resolver Blue pin: TLS proxy in front of a nameserver Blue flag: Unknown </description>
     </item>
-    
     <item>
       <title>dnsprivacy Monitoring</title>
       <link>http://dnsprivacy.org/test_servers/monitoring/</link>
       <pubDate>Wed, 21 Jul 2021 11:53:47 +0100</pubDate>
-      
       <guid>http://dnsprivacy.org/test_servers/monitoring/</guid>
-      <description>The URL for the DNS Privacy monitoring has changed - please update your bookmarks!
-Visit the DNS Privacy Monitoring site</description>
+      <description>The URL for the DNS Privacy monitoring has changed - please update your bookmarks!&#xA;Visit the DNS Privacy Monitoring site</description>
     </item>
-    
     <item>
       <title>Live Traffic Levels</title>
       <link>http://dnsprivacy.org/test_servers/live_traffic_levels/</link>
       <pubDate>Wed, 21 Jul 2021 11:53:47 +0100</pubDate>
-      
       <guid>http://dnsprivacy.org/test_servers/live_traffic_levels/</guid>
       <description>This service is temporarily offline</description>
     </item>
-    
   </channel>
 </rss>

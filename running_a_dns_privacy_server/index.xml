@@ -4,50 +4,37 @@
     <title>Running a DNS Privacy server on dnsprivacy.org</title>
     <link>http://dnsprivacy.org/running_a_dns_privacy_server/</link>
     <description>Recent content in Running a DNS Privacy server on dnsprivacy.org</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 21 Jul 2021 13:54:12 +0100</lastBuildDate><atom:link href="http://dnsprivacy.org/running_a_dns_privacy_server/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 21 Jul 2021 17:12:19 +0100</lastBuildDate>
+    <atom:link href="http://dnsprivacy.org/running_a_dns_privacy_server/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Using Unbound</title>
       <link>http://dnsprivacy.org/running_a_dns_privacy_server/using_unbound/</link>
       <pubDate>Wed, 21 Jul 2021 13:57:34 +0100</pubDate>
-      
       <guid>http://dnsprivacy.org/running_a_dns_privacy_server/using_unbound/</guid>
-      <description>Use at least version 1.5.5 of Unbound if you want to configure your server with a certificate (as support for intermediate certificates was introduced in this version).
-Version 1.6.7 or later is recommended.
-Config file An example configuration file for Unbound that runs DNS-over-TLS on port 853 is below.
-server: directory: &amp;#34;/etc/unbound&amp;#34; username: unbound chroot: &amp;#34;/etc/unbound&amp;#34; # logfile: &amp;#34;/etc/unbound/unbound.log&amp;#34; #uncomment to use logfile. pidfile: &amp;#34;/etc/unbound/unbound.pid&amp;#34; # verbosity: 1 # uncomment and increase to get more logging.</description>
+      <description>Use at least version 1.5.5 of Unbound if you want to configure your server with a certificate (as support for intermediate certificates was introduced in this version).&#xA;Version 1.6.7 or later is recommended.&#xA;Config file An example configuration file for Unbound that runs DNS-over-TLS on port 853 is below.&#xA;server: directory: &amp;#34;/etc/unbound&amp;#34; username: unbound chroot: &amp;#34;/etc/unbound&amp;#34; # logfile: &amp;#34;/etc/unbound/unbound.log&amp;#34; #uncomment to use logfile. pidfile: &amp;#34;/etc/unbound/unbound.pid&amp;#34; # verbosity: 1 # uncomment and increase to get more logging.</description>
     </item>
-    
     <item>
       <title>Using Knot Resolver</title>
       <link>http://dnsprivacy.org/running_a_dns_privacy_server/using_knot_resolver/</link>
       <pubDate>Wed, 21 Jul 2021 14:01:03 +0100</pubDate>
-      
       <guid>http://dnsprivacy.org/running_a_dns_privacy_server/using_knot_resolver/</guid>
-      <description>Config file An example configuration file for Knot that runs DNS-over-TLS on port 853 is below.
--- Default empty Knot DNS Resolver configuration in -*- lua -*- -- Bind ports as privileged user (root) -- -- net = { &amp;#39;127.0.0.1&amp;#39;, &amp;#39;::1&amp;#39;, net.ens160 } net.tls(&amp;#39;/etc/sinodun/certs/fullchain.pem&amp;#39;,&amp;#39;/etc/sinodun/certs/privkey.pem&amp;#39;) net.listen(&amp;#39;::&amp;#39;, 853) net.listen(&amp;#39;145.100.185.17&amp;#39;, 853) -- Switch to unprivileged user -- user(&amp;#39;knot-resolver&amp;#39;,&amp;#39;knot-resolver&amp;#39;) -- Unprivileged -- cache.size = 100*MB -- verbose(true) If you are using systemd with socket-based activation you need to remove the net.</description>
+      <description>Config file An example configuration file for Knot that runs DNS-over-TLS on port 853 is below.&#xA;-- Default empty Knot DNS Resolver configuration in -*- lua -*- -- Bind ports as privileged user (root) -- -- net = { &amp;#39;127.0.0.1&amp;#39;, &amp;#39;::1&amp;#39;, net.ens160 } net.tls(&amp;#39;/etc/sinodun/certs/fullchain.pem&amp;#39;,&amp;#39;/etc/sinodun/certs/privkey.pem&amp;#39;) net.listen(&amp;#39;::&amp;#39;, 853) net.listen(&amp;#39;145.100.185.17&amp;#39;, 853) -- Switch to unprivileged user -- user(&amp;#39;knot-resolver&amp;#39;,&amp;#39;knot-resolver&amp;#39;) -- Unprivileged -- cache.size = 100*MB -- verbose(true) If you are using systemd with socket-based activation you need to remove the net.</description>
     </item>
-    
     <item>
       <title>Using dnsdist</title>
       <link>http://dnsprivacy.org/running_a_dns_privacy_server/using_dnsdist/</link>
       <pubDate>Wed, 21 Jul 2021 14:07:34 +0100</pubDate>
-      
       <guid>http://dnsprivacy.org/running_a_dns_privacy_server/using_dnsdist/</guid>
-      <description>Below is a simple configuration for setting up dnsdist as a server offering both DoT and DoH
-addACL(&amp;#39;0.0.0.0/0&amp;#39;) addACL(&amp;#39;::/0&amp;#39;) addLocal(&amp;#39;0.0.0.0:53&amp;#39;,{doTCP=true, reusePort=true, tcpFastOpenSize=X}) -- for dns over port 53 ipv4 , set X(int) for tcp fast open queue size addLocal(&amp;#39;[::]:53&amp;#39;, {doTCP=true, reusePort=true, tcpFastOpenSize=X}) -- for dns over port 53 ipv6 , set X(int) for tcp fast open queue size addTLSLocal(&amp;#34;0.0.0.0&amp;#34;, &amp;#34;/Path/fullchain.pem&amp;#34;, &amp;#34;/Path/privkey.pem&amp;#34;,{ doTCP=true, reusePort=true, tcpFastOpenSize=X }) -- path for certs and listen address for DoT ipv4 , by default listens on port 853.</description>
+      <description>Below is a simple configuration for setting up dnsdist as a server offering both DoT and DoH&#xA;addACL(&amp;#39;0.0.0.0/0&amp;#39;) addACL(&amp;#39;::/0&amp;#39;) addLocal(&amp;#39;0.0.0.0:53&amp;#39;,{doTCP=true, reusePort=true, tcpFastOpenSize=X}) -- for dns over port 53 ipv4 , set X(int) for tcp fast open queue size addLocal(&amp;#39;[::]:53&amp;#39;, {doTCP=true, reusePort=true, tcpFastOpenSize=X}) -- for dns over port 53 ipv6 , set X(int) for tcp fast open queue size addTLSLocal(&amp;#34;0.0.0.0&amp;#34;, &amp;#34;/Path/fullchain.pem&amp;#34;, &amp;#34;/Path/privkey.pem&amp;#34;,{ doTCP=true, reusePort=true, tcpFastOpenSize=X }) -- path for certs and listen address for DoT ipv4 , by default listens on port 853.</description>
     </item>
-    
     <item>
       <title>Monitoring Privacy servers</title>
       <link>http://dnsprivacy.org/running_a_dns_privacy_server/monitoring_privacy_servers/</link>
       <pubDate>Wed, 21 Jul 2021 17:12:19 +0100</pubDate>
-      
       <guid>http://dnsprivacy.org/running_a_dns_privacy_server/monitoring_privacy_servers/</guid>
-      <description>DNS-over-TLS If you want to monitor the TLS specific or DNS Privacy specific features of a recursive server then there are a couple of options:
-A new tool getdns_server_mon is being developed which will provide output in both human readable and Nagios API compatible form. This tool was included in the 1.4.0 release of getdns. This tool is used on the dnsprivacy.org test server monitoring page. Stephane Bortzmeyer developed a standalone plugin based on getdns which inspired the above tool.</description>
+      <description>DNS-over-TLS If you want to monitor the TLS specific or DNS Privacy specific features of a recursive server then there are a couple of options:&#xA;A new tool getdns_server_mon is being developed which will provide output in both human readable and Nagios API compatible form. This tool was included in the 1.4.0 release of getdns. This tool is used on the dnsprivacy.org test server monitoring page. Stephane Bortzmeyer developed a standalone plugin based on getdns which inspired the above tool.</description>
     </item>
-    
   </channel>
 </rss>

@@ -4,19 +4,16 @@
     <title>2021 NDSS DNS Privacy Workshop on dnsprivacy.org</title>
     <link>http://dnsprivacy.org/ndss_dns_privacy_workshop/2021_ndss_dns_privacy_workshop/</link>
     <description>Recent content in 2021 NDSS DNS Privacy Workshop on dnsprivacy.org</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 23 Jul 2021 10:11:41 +0100</lastBuildDate><atom:link href="http://dnsprivacy.org/ndss_dns_privacy_workshop/2021_ndss_dns_privacy_workshop/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 23 Jul 2021 10:17:40 +0100</lastBuildDate>
+    <atom:link href="http://dnsprivacy.org/ndss_dns_privacy_workshop/2021_ndss_dns_privacy_workshop/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Call for Papers</title>
       <link>http://dnsprivacy.org/ndss_dns_privacy_workshop/2021_ndss_dns_privacy_workshop/call_for_papers/</link>
       <pubDate>Fri, 23 Jul 2021 10:17:40 +0100</pubDate>
-      
       <guid>http://dnsprivacy.org/ndss_dns_privacy_workshop/2021_ndss_dns_privacy_workshop/call_for_papers/</guid>
-      <description>2021: NDSS DNS Privacy Workshop - Call for Papers The 2021 workshop was a virtual online conference held on 21st February 2021. Workshop on DNS Privacy: Measuring deployment and effectiveness of encrypted DNS. Submission link: https://dnspriv21.hotcrp.com/
-Background The landscape around DNS Privacy has changed dramatically in the last few years, with tremendous developments in multiple areas. These include
-Many new Internet Standards from the IETF primarily focussed on stub-to-recursive resolution privacy</description>
+      <description>2021: NDSS DNS Privacy Workshop - Call for Papers The 2021 workshop was a virtual online conference held on 21st February 2021. Workshop on DNS Privacy: Measuring deployment and effectiveness of encrypted DNS. Submission link: https://dnspriv21.hotcrp.com/&#xA;Background The landscape around DNS Privacy has changed dramatically in the last few years, with tremendous developments in multiple areas. These include&#xA;Many new Internet Standards from the IETF primarily focussed on stub-to-recursive resolution privacy</description>
     </item>
-    
   </channel>
 </rss>

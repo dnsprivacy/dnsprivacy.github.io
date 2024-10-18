@@ -14,6 +14,9 @@
     <loc>http://dnsprivacy.org/ndss_dns_privacy_workshop/2021_ndss_dns_privacy_workshop/</loc>
     <lastmod>2021-07-23T10:11:41+01:00</lastmod>
   </url><url>
+    <loc>http://dnsprivacy.org/project_notes/dns-over-tls_patches/</loc>
+    <lastmod>2021-07-22T16:27:24+01:00</lastmod>
+  </url><url>
     <loc>http://dnsprivacy.org/performance_measurements/initial_performance_measurements_q1_2018/</loc>
     <lastmod>2021-07-22T16:03:20+01:00</lastmod>
   </url><url>
@@ -50,6 +53,9 @@
     <loc>http://dnsprivacy.org/ndss_dns_privacy_workshop/2018_ndss_dns_privacy_workshop/</loc>
     <lastmod>2021-07-23T10:01:56+01:00</lastmod>
   </url><url>
+    <loc>http://dnsprivacy.org/project_notes/tcp_fast_open/</loc>
+    <lastmod>2021-07-22T16:35:51+01:00</lastmod>
+  </url><url>
     <loc>http://dnsprivacy.org/performance_measurements/follow-up_performance_measurements_q4_2108/</loc>
     <lastmod>2021-07-22T16:06:33+01:00</lastmod>
   </url><url>
@@ -83,6 +89,9 @@
     <loc>http://dnsprivacy.org/ndss_dns_privacy_workshop/2017_ndss_dns_privacy_workshop/</loc>
     <lastmod>2021-07-23T09:56:39+01:00</lastmod>
   </url><url>
+    <loc>http://dnsprivacy.org/project_notes/try_dns-over-tls/</loc>
+    <lastmod>2021-07-22T16:38:54+01:00</lastmod>
+  </url><url>
     <loc>http://dnsprivacy.org/performance_measurements/review_of_dns_and_http_pm_tools/</loc>
     <lastmod>2021-07-22T16:09:40+01:00</lastmod>
   </url><url>
@@ -98,6 +107,9 @@
     <loc>http://dnsprivacy.org/current_work/</loc>
     <lastmod>2021-07-21T11:03:17+01:00</lastmod>
   </url><url>
+    <loc>http://dnsprivacy.org/project_notes/dns_privacy_services/</loc>
+    <lastmod>2021-07-22T16:40:56+01:00</lastmod>
+  </url><url>
     <loc>http://dnsprivacy.org/performance_measurements/proposal_for_new_performance_tool/</loc>
     <lastmod>2021-07-22T16:12:21+01:00</lastmod>
   </url><url>
@@ -112,6 +124,9 @@
   </url><url>
     <loc>http://dnsprivacy.org/ietf_dns_privacy_tutorial/</loc>
     <lastmod>2021-07-21T11:16:02+01:00</lastmod>
+  </url><url>
+    <loc>http://dnsprivacy.org/project_notes/googles_public_dns-over-https/</loc>
+    <lastmod>2021-07-22T16:43:16+01:00</lastmod>
   </url><url>
     <loc>http://dnsprivacy.org/running_a_dns_privacy_server/lets_encrypt_certificate_renewal/</loc>
     <lastmod>2021-07-21T14:28:05+01:00</lastmod>
