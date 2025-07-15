@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.130.0">
+    <meta name="generator" content="Hugo 0.147.9">
     <meta name="description" content="">
 
 
@@ -12,22 +12,22 @@
     <title>TCP Fast Open :: dnsprivacy.org</title>
 
     
-    <link href="/css/nucleus.css?1729262165" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1729262165" rel="stylesheet">
-    <link href="/css/hybrid.css?1729262165" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1729262165" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1729262165" rel="stylesheet">
-    <link href="/css/auto-complete.css?1729262165" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1729262165" rel="stylesheet">
-    <link href="/css/theme.css?1729262165" rel="stylesheet">
-    <link href="/css/tabs.css?1729262165" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1729262165" rel="stylesheet">
+    <link href="/css/nucleus.css?1752589492" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1752589492" rel="stylesheet">
+    <link href="/css/hybrid.css?1752589492" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1752589492" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1752589492" rel="stylesheet">
+    <link href="/css/auto-complete.css?1752589492" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1752589492" rel="stylesheet">
+    <link href="/css/theme.css?1752589492" rel="stylesheet">
+    <link href="/css/tabs.css?1752589492" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1752589492" rel="stylesheet">
     
-    <link href="/css/theme-blue.css?1729262165" rel="stylesheet">
+    <link href="/css/theme-blue.css?1752589492" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1729262165"></script>
+    <script src="/js/jquery-3.3.1.min.js?1752589492"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1729262165"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1729262165"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1752589492"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1752589492"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/dnsprivacy.org\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1729262165"></script>
+<script type="text/javascript" src="/js/search.js?1752589492"></script>
 
     
   </div>
@@ -1469,7 +1469,7 @@
         
 
 
-<!-- raw HTML omitted -->
+<div class="toc-macro rbtoc1624364157803">
 <ul>
 <li></li>
 <li><a href="#TCPFastOpen-References">References</a></li>
@@ -1504,7 +1504,7 @@
 </ul>
 </li>
 </ul>
-<!-- raw HTML omitted -->
+</div>
 <hr>
 <h1 id="references">References</h1>
 <p>TCP Fast Open (TFO) mechanism is described
@@ -1512,19 +1512,19 @@ in <a href="https://tools.ietf.org/html/rfc7413">https://tools.ietf.org/html/rf
 <p>Other considerations can be found in this <a href="http://www.icsi.berkeley.edu/pubs/networking/ICSI_tcpfastopen11.pdf">white
 paper</a>.</p>
 <h1 id="patches">Patches </h1>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<div>
+<div>
 <p>TFO is currently available available on Linux (full implementation in
 4.1), OS X 10.12 and server side will be available for FreeBSd 10/11.
 There are differences between the implementations described below.</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+</div>
+</div>
 <p>Patches for ldns, NSD and Unbound can be found in our Stash repo, which
 currently support TFO as implemented on Linux.</p>
 <p><a href="https://portal.sinodun.com/stash/projects/TDNS/repos/tcp_fast_open_patches/browse">https://portal.sinodun.com/stash/projects/TDNS/repos/tcp_fast_open_patches/browse</a></p>
 <p>Note that getdns 1.0 supports TFO on Linux and OS X.</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<div>
+<div>
 <p>To use these patches:</p>
 <ol>
 <li>
@@ -1543,8 +1543,8 @@ currently support TFO as implemented on Linux.</p>
 <p><em>make &amp; make install</em> as normal</p>
 </li>
 </ol>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+</div>
+</div>
 <h1 id="quick-guide">Quick guide</h1>
 <p>TCP fastopen [I-D.ietf-tcpm-fastopen] (TFO) allows data to be
 carried in the SYN packet (and optionally in the SYN-ACK). It therefore
@@ -1556,8 +1556,8 @@ connections to the same server. The cookie is stored by the client&rsquo;s TCP
 stack (kernel) and persists if either the client or server processes are
 restarted. TFO also falls back to a regular TCP handshake gracefully. </p>
 <h3 id="message-flow">Message flow </h3>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<div class="code panel pdl" style="border-width: 1px;">
+<div class="codeContent panelContent pdl">
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Requesting Fast Open Cookie in connection 1: 
 </span></span><span style="display:flex;"><span>TCP A <span style="color:#f92672">(</span>Client<span style="color:#f92672">)</span>                                   TCP B<span style="color:#f92672">(</span>Server<span style="color:#f92672">)</span> 
 </span></span><span style="display:flex;"><span>______________                                   _____________  
@@ -1577,8 +1577,8 @@ restarted. TFO also falls back to a regular TCP handshake gracefully. </p>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">#3 ESTABLISHED &lt;---- &lt;ACK=x+len(DATA_A)+1,DATA_B&gt;---- SYN-RCVD </span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">#4 ESTABLISHED ----- &lt;ACK=y+1&gt;--------------------&gt;   ESTABLISHED </span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">#5 ESTABLISHED --- &lt;ACK=y+len(DATA_B)+1&gt;----------&gt;   ESTABLISHED</span>
-</span></span></code></pre></div><!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+</span></span></code></pre></div></div>
+</div>
 <p> </p>
 <h1 id="implementation-details">Implementation details</h1>
 <p>Adding support for this to existing name server implementations
@@ -1595,7 +1595,7 @@ MSG_FASTOPEN. </p>
 <li>For blocking sockets this performs both the handshake and sends
 the data before returning.</li>
 </ul>
-<!-- raw HTML omitted -->
+<!-- -->
 <ul>
 <li>
 <p>For non-blocking socket it returns the number of bytes buffered
@@ -1626,28 +1626,28 @@ EISCONN.</p>
 <li>The normal connect() call is replaced by connectx(), which requires
 2 OS X specific flags:</li>
 </ul>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<div class="code panel pdl" style="border-width: 1px;">
+<div class="codeContent panelContent pdl">
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>connectx<span style="color:#f92672">(</span>fd, &amp;endpoints, SAE_ASSOCID_ANY,  
 </span></span><span style="display:flex;"><span>         CONNECT_DATA_IDEMPOTENT | CONNECT_RESUME_ON_READ_WRITE,
 </span></span><span style="display:flex;"><span>          NULL, 0, NULL, NULL<span style="color:#f92672">)</span>
-</span></span></code></pre></div><!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+</span></span></code></pre></div></div>
+</div>
 <ul>
 <li>The the usual socket functions (e.g. write()) can be used to send
 data. Initiating the TCP handshake is delayed until the first data
 is actually send.</li>
 </ul>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<div>
+<div>
 <p>The Linux implementation follows the pattern suggested in the appendix
 of the RFC for maximum backwards compatibility, however the OS X API
 offers some advantages because TFO can be used in conjunction with
 libraries that require a &lsquo;connected&rsquo; file descriptor to be available
 (e.g. OpenSSL). The hope is the Linux API will be extended to offer both
 modes (no FreeBSD client implemented yet).</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+</div>
+</div>
 <h2 id="server-side-code-changes">Server side code changes</h2>
 <ul>
 <li>The server must simply set the TCP_FASTOPEN flag using setsockopt()
@@ -1670,11 +1670,11 @@ the net.inet.tcp.fastopen_backlog kernel parameter.</li>
 4.1 has been set to 1 by default. This enables client mode but not
 server mode. To act in pure server mode set the integer value to 2.
 To enable both client and server mode, set it to 3, for example:</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<div class="code panel pdl" style="border-width: 1px;">
+<div class="codeContent panelContent pdl">
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sysctl -w net.ipv4.tcp_fastopen<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>
-</span></span></code></pre></div><!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+</span></span></code></pre></div></div>
+</div>
 </li>
 </ul>
 <h3 id="os-x">OS X</h3>
@@ -2585,16 +2585,16 @@ it is available quickly enough. </li>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1729262165"></script>
-    <script src="/js/perfect-scrollbar.min.js?1729262165"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1729262165"></script>
-    <script src="/js/jquery.sticky.js?1729262165"></script>
-    <script src="/js/featherlight.min.js?1729262165"></script>
-    <script src="/js/highlight.pack.js?1729262165"></script>
+    <script src="/js/clipboard.min.js?1752589492"></script>
+    <script src="/js/perfect-scrollbar.min.js?1752589492"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1752589492"></script>
+    <script src="/js/jquery.sticky.js?1752589492"></script>
+    <script src="/js/featherlight.min.js?1752589492"></script>
+    <script src="/js/highlight.pack.js?1752589492"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1729262165"></script>
-    <script src="/js/learn.js?1729262165"></script>
-    <script src="/js/hugo-learn.js?1729262165"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1752589492"></script>
+    <script src="/js/learn.js?1752589492"></script>
+    <script src="/js/hugo-learn.js?1752589492"></script>
     
     
 

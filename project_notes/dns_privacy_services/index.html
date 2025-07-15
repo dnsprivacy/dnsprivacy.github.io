@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.130.0">
+    <meta name="generator" content="Hugo 0.147.9">
     <meta name="description" content="">
 
 
@@ -12,22 +12,22 @@
     <title>DNS Privacy Services :: dnsprivacy.org</title>
 
     
-    <link href="/css/nucleus.css?1729262165" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1729262165" rel="stylesheet">
-    <link href="/css/hybrid.css?1729262165" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1729262165" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1729262165" rel="stylesheet">
-    <link href="/css/auto-complete.css?1729262165" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1729262165" rel="stylesheet">
-    <link href="/css/theme.css?1729262165" rel="stylesheet">
-    <link href="/css/tabs.css?1729262165" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1729262165" rel="stylesheet">
+    <link href="/css/nucleus.css?1752589492" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1752589492" rel="stylesheet">
+    <link href="/css/hybrid.css?1752589492" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1752589492" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1752589492" rel="stylesheet">
+    <link href="/css/auto-complete.css?1752589492" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1752589492" rel="stylesheet">
+    <link href="/css/theme.css?1752589492" rel="stylesheet">
+    <link href="/css/tabs.css?1752589492" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1752589492" rel="stylesheet">
     
-    <link href="/css/theme-blue.css?1729262165" rel="stylesheet">
+    <link href="/css/theme-blue.css?1752589492" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1729262165"></script>
+    <script src="/js/jquery-3.3.1.min.js?1752589492"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1729262165"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1729262165"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1752589492"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1752589492"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/dnsprivacy.org\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1729262165"></script>
+<script type="text/javascript" src="/js/search.js?1752589492"></script>
 
     
   </div>
@@ -1446,89 +1446,89 @@ Privacy Implementation Status</a></p>
 <p>The intension in future is to document what each service actually offers
 as it goes live, to allow users to make informed choices about which
 service they might utilise.</p>
-<!-- raw HTML omitted -->
+<div class="table-wrap">
 <table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Feature/Characteristic</td>
-<td>Relevant RFCs/I-Ds</td>
-<td>Notes</td>
-</tr>
-<tr>
-<td>DNS-over-TLS on port 853 (IPv4)</td>
-<td>RFC7858</td>
-<td></td>
-</tr>
-<tr>
-<td>DNS-over-TLS on port 853 (IPv6)</td>
-<td>RFC7858</td>
-<td></td>
-</tr>
-<tr>
-<td>Compliance with BCP195</td>
-<td>RRC7525</td>
-<td>In particular, MUST implement TLS 1.2, SHOULD NOT negotiate TLS 1.1<!-- raw HTML omitted --><!-- raw HTML omitted -->Use recommended Cipher Suites:<!-- raw HTML omitted --><!-- raw HTML omitted -->    TLS_DHE_RSA_WITH_AES_128_GCM_SHA256<!-- raw HTML omitted --><!-- raw HTML omitted -->    TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256<!-- raw HTML omitted --><!-- raw HTML omitted -->    TLS_DHE_RSA_WITH_AES_256_GCM_SHA384<!-- raw HTML omitted --><!-- raw HTML omitted -->    TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384</td>
-</tr>
-<tr>
-<td>TLS authentication via SPKI public keys provided securely via an out-of-band mechanism</td>
-<td>RFC7858,<!-- raw HTML omitted --><!-- raw HTML omitted -->draft-ietf-dprive-dtls-and-tls-profiles</td>
-<td>Required for Strict Privacy using SPKI pinsets</td>
-</tr>
-<tr>
-<td>Verifiable certificate/certificate chain</td>
-<td>RFC7858,<!-- raw HTML omitted --><!-- raw HTML omitted -->draft-ietf-dprive-dtls-and-tls-profiles</td>
-<td>Required for Strict Privacy using CA Certs</td>
-</tr>
-<tr>
-<td>Concurrent processing of TCP/TLS queries</td>
-<td>RFC7766</td>
-<td>Improves performance by eliminating head of line blocking at the query level</td>
-</tr>
-<tr>
-<td>EDNS0 Keepalive</td>
-<td>RFC7828</td>
-<td>Recommended for TLS connection management</td>
-</tr>
-<tr>
-<td>EDNS0 Client subnet privacy option</td>
-<td>RFC7871</td>
-<td>Allows end users to specify their client subnet should not be sent to an authoritative server in the ENDS0 Client Subnet option</td>
-</tr>
-<tr>
-<td>EDNS0 padding</td>
-<td>RFC7830</td>
-<td>Obfuscates message size, reduces effectiveness of traffic analysis.</td>
-</tr>
-<tr>
-<td>TCP Fast Open</td>
-<td>RFC7413</td>
-<td>Data can be sent in the TCP SYN. For TLS the Client Hello can therefore be sent in the SYN reducing latency.</td>
-</tr>
-<tr>
-<td>QNAME minimisation to Auth Servers</td>
-<td>RFC7816</td>
-<td>Reduce data sent to Authoritative servers, improves end user privacy</td>
-</tr>
-<tr>
-<td>De-identification of data</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>Data retention policy (if no de-identification)</td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th></th>
+          <th></th>
+          <th></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Feature/Characteristic</td>
+          <td>Relevant RFCs/I-Ds</td>
+          <td>Notes</td>
+      </tr>
+      <tr>
+          <td>DNS-over-TLS on port 853 (IPv4)</td>
+          <td>RFC7858</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>DNS-over-TLS on port 853 (IPv6)</td>
+          <td>RFC7858</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>Compliance with BCP195</td>
+          <td>RRC7525</td>
+          <td>In particular, MUST implement TLS 1.2, SHOULD NOT negotiate TLS 1.1<br><br>Use recommended Cipher Suites:<br><br>    TLS_DHE_RSA_WITH_AES_128_GCM_SHA256<br><br>    TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256<br><br>    TLS_DHE_RSA_WITH_AES_256_GCM_SHA384<br><br>    TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384</td>
+      </tr>
+      <tr>
+          <td>TLS authentication via SPKI public keys provided securely via an out-of-band mechanism</td>
+          <td>RFC7858,<br><br>draft-ietf-dprive-dtls-and-tls-profiles</td>
+          <td>Required for Strict Privacy using SPKI pinsets</td>
+      </tr>
+      <tr>
+          <td>Verifiable certificate/certificate chain</td>
+          <td>RFC7858,<br><br>draft-ietf-dprive-dtls-and-tls-profiles</td>
+          <td>Required for Strict Privacy using CA Certs</td>
+      </tr>
+      <tr>
+          <td>Concurrent processing of TCP/TLS queries</td>
+          <td>RFC7766</td>
+          <td>Improves performance by eliminating head of line blocking at the query level</td>
+      </tr>
+      <tr>
+          <td>EDNS0 Keepalive</td>
+          <td>RFC7828</td>
+          <td>Recommended for TLS connection management</td>
+      </tr>
+      <tr>
+          <td>EDNS0 Client subnet privacy option</td>
+          <td>RFC7871</td>
+          <td>Allows end users to specify their client subnet should not be sent to an authoritative server in the ENDS0 Client Subnet option</td>
+      </tr>
+      <tr>
+          <td>EDNS0 padding</td>
+          <td>RFC7830</td>
+          <td>Obfuscates message size, reduces effectiveness of traffic analysis.</td>
+      </tr>
+      <tr>
+          <td>TCP Fast Open</td>
+          <td>RFC7413</td>
+          <td>Data can be sent in the TCP SYN. For TLS the Client Hello can therefore be sent in the SYN reducing latency.</td>
+      </tr>
+      <tr>
+          <td>QNAME minimisation to Auth Servers</td>
+          <td>RFC7816</td>
+          <td>Reduce data sent to Authoritative servers, improves end user privacy</td>
+      </tr>
+      <tr>
+          <td>De-identification of data</td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>Data retention policy (if no de-identification)</td>
+          <td></td>
+          <td></td>
+      </tr>
+  </tbody>
 </table>
-<!-- raw HTML omitted -->
+</div>
 
 
 <footer class="footline">
@@ -2387,16 +2387,16 @@ service they might utilise.</p>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1729262165"></script>
-    <script src="/js/perfect-scrollbar.min.js?1729262165"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1729262165"></script>
-    <script src="/js/jquery.sticky.js?1729262165"></script>
-    <script src="/js/featherlight.min.js?1729262165"></script>
-    <script src="/js/highlight.pack.js?1729262165"></script>
+    <script src="/js/clipboard.min.js?1752589492"></script>
+    <script src="/js/perfect-scrollbar.min.js?1752589492"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1752589492"></script>
+    <script src="/js/jquery.sticky.js?1752589492"></script>
+    <script src="/js/featherlight.min.js?1752589492"></script>
+    <script src="/js/highlight.pack.js?1752589492"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1729262165"></script>
-    <script src="/js/learn.js?1729262165"></script>
-    <script src="/js/hugo-learn.js?1729262165"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1752589492"></script>
+    <script src="/js/learn.js?1752589492"></script>
+    <script src="/js/hugo-learn.js?1752589492"></script>
     
     
 

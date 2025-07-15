@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.130.0">
+    <meta name="generator" content="Hugo 0.147.9">
     <meta name="description" content="">
 
 
@@ -12,22 +12,22 @@
     <title>Data minimisation of DNS traffic :: dnsprivacy.org</title>
 
     
-    <link href="/css/nucleus.css?1729262165" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1729262165" rel="stylesheet">
-    <link href="/css/hybrid.css?1729262165" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1729262165" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1729262165" rel="stylesheet">
-    <link href="/css/auto-complete.css?1729262165" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1729262165" rel="stylesheet">
-    <link href="/css/theme.css?1729262165" rel="stylesheet">
-    <link href="/css/tabs.css?1729262165" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1729262165" rel="stylesheet">
+    <link href="/css/nucleus.css?1752589492" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1752589492" rel="stylesheet">
+    <link href="/css/hybrid.css?1752589492" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1752589492" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1752589492" rel="stylesheet">
+    <link href="/css/auto-complete.css?1752589492" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1752589492" rel="stylesheet">
+    <link href="/css/theme.css?1752589492" rel="stylesheet">
+    <link href="/css/tabs.css?1752589492" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1752589492" rel="stylesheet">
     
-    <link href="/css/theme-blue.css?1729262165" rel="stylesheet">
+    <link href="/css/theme-blue.css?1752589492" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1729262165"></script>
+    <script src="/js/jquery-3.3.1.min.js?1752589492"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1729262165"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1729262165"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1752589492"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1752589492"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/dnsprivacy.org\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1729262165"></script>
+<script type="text/javascript" src="/js/search.js?1752589492"></script>
 
     
   </div>
@@ -1491,7 +1491,7 @@ monitoring server performance or detecting and mitigating attacks
 operators need to keep logs of the DNS queries they see; in some
 circumstances they may need to share those logs with other operators. To
 preserve end user privacy,
-as <a href="http://portal.sinodun.com/#rfc6973">RFC6973</a><!-- raw HTML omitted -->17<!-- raw HTML omitted --> observes
+as <a href="http://portal.sinodun.com/#rfc6973">RFC6973</a><sup>17</sup> observes
 it is important that the data in these logs limits the identifiability
 of end users; more generally, that the data in the logs is kept to the
 minimum required for purpose, a process the RFC terms <em>data
@@ -1508,7 +1508,7 @@ should be used instead.</p>
 privacy-sensitive information is not one that currently has a generally
 agreed solution. This page gives an overview of current approaches to
 identifier
-pseudonymisation. As <a href="#DataminimisationofDNStraffic-rfc7626">RFC7626</a><!-- raw HTML omitted -->16<!-- raw HTML omitted --> makes
+pseudonymisation. As <a href="#DataminimisationofDNStraffic-rfc7626">RFC7626</a><sup>16</sup> makes
 clear, the big privacy risk in DNS is connecting DNS queries to an
 individual, so at present the main focus is on pseudonymising client IP
 addresses (though, of course, the MAC address, VLAN identifier and ARP
@@ -1518,7 +1518,7 @@ data may be useful in particularly localised environments).</p>
 pseudonomysation. This discussion uses the definitions
 from RFC697317 Section 3, with additional observations from <a href="#DataminimisationofDNStraffic-vanDijkhuizen">van
 Dijkhuizen et
-al.</a><!-- raw HTML omitted -->1<!-- raw HTML omitted --></p>
+al.</a><sup>1</sup></p>
 <ul>
 <li>
 <p><em>Anonymisation</em>. To enable anonymity of an individual, there must
@@ -1550,7 +1550,7 @@ techniques (in particular TSA) impractical, but also makes available a
 much larger amount of input entropy. Pseudonymised IPv6 addresses are
 therefore much better placed to resist brute force re-identification
 attacks than IPv4 addresses. Several authors (e.g. <a href="#DataminimisationofDNStraffic-circumventing">Brenker &amp;
-Arnes</a><!-- raw HTML omitted -->11<!-- raw HTML omitted -->) have
+Arnes</a><sup>11</sup>) have
 observed that today any IPv4 address pseudonymisation is vulnerable to a
 brute force attack, particularly if an attacker is capable of ensuring
 packets are captured by the target and the attacker can send forged
@@ -1585,7 +1585,7 @@ hash function or cryptographic block cipher, to generate a
 replacement de-identified value.</li>
 </ul>
 <p>This list is derived from RFC6235 and <a href="#DataminimisationofDNStraffic-vanDijkhuizen">van Dijkhuizen et
-al.</a><!-- raw HTML omitted -->1<!-- raw HTML omitted --></p>
+al.</a><sup>1</sup></p>
 <p>A pseudonymising technique may also have properties desirable in a
 particular application:</p>
 <ul>
@@ -1617,7 +1617,7 @@ simply sets to zero the least significant 8 bits of IPv4 addresses, and
 the least significant 80 bits of IPv6 addresses. The level of
 pseudonymisation this produces is perhaps questionable. There are <a href="#DataminimisationofDNStraffic-googlegeoip">some
 analysis
-results</a><!-- raw HTML omitted -->13<!-- raw HTML omitted --> which
+results</a><sup>13</sup> which
 suggest that the impact of this on reducing the accuracy of determining
 the user&rsquo;s location from their IP address is less than might be hoped;
 the average discrepancy in  identification of the user city for UK users
@@ -1625,7 +1625,7 @@ is no more than 17%. <em>Anonymisation: Format-preserving, Filtering (grey
 marking)</em>.</p>
 <h3 id="dnswasher">dnswasher</h3>
 <p>Since 2006, PowerDNS have included a data minimisation
-tool <a href="#DataminimisationofDNStraffic-dnswasher">dnswasher</a><!-- raw HTML omitted -->14<!-- raw HTML omitted --> with
+tool <a href="#DataminimisationofDNStraffic-dnswasher">dnswasher</a><sup>14</sup> with
 their PowerDNS product. This is a PCAP filter that performs a one-to-one
 mapping of end user IP addresses with an pseudonymised address. A table
 of user IP addresses and their de-identified counterparts is kept; the
@@ -1635,7 +1635,7 @@ order that addresses arrive in the input, and running over a large
 amount of data the address translation tables can grow to a significant
 size. <em>Anonymisation: Format-preserving, Enumeration</em>.</p>
 <h3 id="prefix-preserving-map">Prefix-preserving map</h3>
-<p>Used in <a href="#DataminimisationofDNStraffic-tcpdpriv">TCPdpriv</a><!-- raw HTML omitted -->2<!-- raw HTML omitted -->,
+<p>Used in <a href="#DataminimisationofDNStraffic-tcpdpriv">TCPdpriv</a><sup>2</sup>,
 this algorithm stores a set of original and pseudonymised IP address
 pairs. When a new IP address arrives, it is compared with previous
 addresses to determine the longest prefix match. The new address is
@@ -1652,15 +1652,15 @@ substitution</em>.</p>
 <p>Cryptographic prefix-preserving pseudonymisation was originally proposed
 as an improvement to the prefix-preserving map implemented in TCPdpriv,
 described in <a href="#DataminimisationofDNStraffic-cryptopan">Xu et
-al</a><!-- raw HTML omitted -->3<!-- raw HTML omitted --> and implemented
+al</a><sup>3</sup> and implemented
 in the <a href="http://portal.sinodun.com/#cryptopantool">Crypto-PAn
-tool</a><!-- raw HTML omitted -->4<!-- raw HTML omitted -->. Crypto-PAn
+tool</a><sup>4</sup>. Crypto-PAn
 is now frequently used as an acronym for the algorithm. Initially it was
 described for IPv4 addresses only; extension for IPv6 addresses was
 proposed in <a href="#DataminimisationofDNStraffic-cryptopanv6">Harvan &amp;
-Schönwälder</a><!-- raw HTML omitted -->5<!-- raw HTML omitted --> and
+Schönwälder</a><sup>5</sup> and
 implemented
-in <a href="#DataminimisationofDNStraffic-snmpdump">snmpdump</a><!-- raw HTML omitted -->6<!-- raw HTML omitted -->. This
+in <a href="#DataminimisationofDNStraffic-snmpdump">snmpdump</a><sup>6</sup>. This
 uses a cryptographic algorithm rather than a random value, and thus
 pseudonymity is determined uniquely by the encryption key, and is
 deterministic. It requires a separate AES encryption for each output
@@ -1670,7 +1670,7 @@ number of prefix bits. <em>Pseudonymisation:  Format-preserving, prefix
 preservation (general), cryptographic permutation.</em></p>
 <h3 id="top-hash-subtree-replicated-anonymisation">Top-hash Subtree-replicated Anonymisation</h3>
 <p>Proposed in <a href="#DataminimisationofDNStraffic-tsa">Ramaswamy &amp;
-Wolf</a><!-- raw HTML omitted -->7<!-- raw HTML omitted -->, Top-hash
+Wolf</a><sup>7</sup>, Top-hash
 Subtree-replicated Anonymisation (TSA) originated in response to the
 requirement for faster processing than Crypto-PAn. It used hashing for
 the most significant byte of an IPv4 address, and a pre-calculated
@@ -1684,22 +1684,22 @@ IPv6. <em>Pseudonymisation:  Format-preserving, prefix preservation
 (general), cryptographic permutation.</em></p>
 <h3 id="ipcipher">ipcipher</h3>
 <p>A recently-released proposal
-from <a href="#DataminimisationofDNStraffic-ipcipher">PowerDNS</a><!-- raw HTML omitted -->8<!-- raw HTML omitted -->,
+from <a href="#DataminimisationofDNStraffic-ipcipher">PowerDNS</a><sup>8</sup>,
 ipcipher  is a simple pseudonymisation technique for IPv4 and IPv6
 addresses. IPv6 addresses are encrypted directly with AES-128 using a
 key (which may be derived from a passphrase). IPv4 addresses are
 similarly encrypted, but using a recently proposed (and confusingly
 closely named)
-encryption <a href="#DataminimisationofDNStraffic-ipcypher">ipcypher</a><!-- raw HTML omitted -->9<!-- raw HTML omitted --> suitable
+encryption <a href="#DataminimisationofDNStraffic-ipcypher">ipcypher</a><sup>9</sup> suitable
 for 32bit block lengths. However, the author of ipcrypt <a href="#DataminimisationofDNStraffic-dontipcrypt">has since
-indicated</a><!-- raw HTML omitted -->10<!-- raw HTML omitted --> that
+indicated</a><sup>10</sup> that
 it has low security, and further analysis has revealed it is vulnerable
 to attack. At the time of writing, progress on ipcipher appears to have
 stalled.  <em>Pseudonymisation:  Format-preserving, cryptographic
 permutation</em>.</p>
 <h3 id="bloom-filters">Bloom filters</h3>
 <p><a href="#DataminimisationofDNStraffic-bloom">van Rijswijk-Deij et
-al</a><!-- raw HTML omitted -->15<!-- raw HTML omitted --> have recently
+al</a><sup>15</sup> have recently
 described work using Bloom filters to categorise query traffic and
 record the traffic as the state of multiple filters. By this means, it
 is possible to determine with a high probability if, for example, a
@@ -2642,16 +2642,16 @@ RFC6973, <a href="https://datatracker.ietf.org/doc/rfc6973/">https://datatracke
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1729262166"></script>
-    <script src="/js/perfect-scrollbar.min.js?1729262166"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1729262166"></script>
-    <script src="/js/jquery.sticky.js?1729262166"></script>
-    <script src="/js/featherlight.min.js?1729262166"></script>
-    <script src="/js/highlight.pack.js?1729262166"></script>
+    <script src="/js/clipboard.min.js?1752589492"></script>
+    <script src="/js/perfect-scrollbar.min.js?1752589492"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1752589492"></script>
+    <script src="/js/jquery.sticky.js?1752589492"></script>
+    <script src="/js/featherlight.min.js?1752589492"></script>
+    <script src="/js/highlight.pack.js?1752589492"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1729262166"></script>
-    <script src="/js/learn.js?1729262166"></script>
-    <script src="/js/hugo-learn.js?1729262166"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1752589492"></script>
+    <script src="/js/learn.js?1752589492"></script>
+    <script src="/js/hugo-learn.js?1752589492"></script>
     
     
 

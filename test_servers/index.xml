@@ -13,21 +13,21 @@
       <link>http://dnsprivacy.org/test_servers/map_of_test_server_locations/</link>
       <pubDate>Wed, 21 Jul 2021 11:36:47 +0100</pubDate>
       <guid>http://dnsprivacy.org/test_servers/map_of_test_server_locations/</guid>
-      <description>The map below is an static image of the current DNS-over-TLS test server locations. We don&amp;rsquo;t show Quad9 on here because they run an anycast service (see their website for details).&#xA;The icons reflect the software being used:&#xA;Green pin: Unbound Pink pin: Knot Resolver Blue pin: TLS proxy in front of a nameserver Blue flag: Unknown </description>
+      <description>&lt;p&gt;The map below is an static image of the current DNS-over-TLS test server&#xA;locations. We don&amp;rsquo;t show Quad9 on here because they run an anycast&#xA;service (see &lt;a href=&#34;https://quad9.net/about/&#34;&gt;their website&lt;/a&gt; for details).&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;The icons reflect the software being used:&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;em&gt;Green pin:&lt;/em&gt; Unbound&lt;/li&gt;&#xA;&lt;li&gt;&lt;em&gt;Pink pin:&lt;/em&gt; Knot Resolver&lt;/li&gt;&#xA;&lt;li&gt;&lt;em&gt;Blue pin:&lt;/em&gt; TLS proxy in front of a nameserver&lt;/li&gt;&#xA;&lt;li&gt;&lt;em&gt;Blue flag&lt;/em&gt;: Unknown&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;img src=&#34;http://dnsprivacy.org/attachments/11337857/11337856.png&#34; alt=&#34;Map&#34;&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>dnsprivacy Monitoring</title>
       <link>http://dnsprivacy.org/test_servers/monitoring/</link>
       <pubDate>Wed, 21 Jul 2021 11:53:47 +0100</pubDate>
       <guid>http://dnsprivacy.org/test_servers/monitoring/</guid>
-      <description>The URL for the DNS Privacy monitoring has changed - please update your bookmarks!&#xA;Visit the DNS Privacy Monitoring site</description>
+      <description>&lt;p&gt;The URL for the DNS Privacy monitoring has changed - please update your bookmarks!&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://github.com/dnsprivacy/dnsprivacy-monitoring/blob/main/RESULTS.md&#34;&gt;Visit the DNS Privacy Monitoring site&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>Live Traffic Levels</title>
       <link>http://dnsprivacy.org/test_servers/live_traffic_levels/</link>
       <pubDate>Wed, 21 Jul 2021 11:53:47 +0100</pubDate>
       <guid>http://dnsprivacy.org/test_servers/live_traffic_levels/</guid>
-      <description>This service is temporarily offline</description>
+      <description>&lt;p&gt;&lt;strong&gt;This service is temporarily offline&lt;/strong&gt;&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

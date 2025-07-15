@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.130.0">
+    <meta name="generator" content="Hugo 0.147.9">
     <meta name="description" content="">
 
 
@@ -12,22 +12,22 @@
     <title>Implementation Status :: dnsprivacy.org</title>
 
     
-    <link href="/css/nucleus.css?1729262165" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1729262165" rel="stylesheet">
-    <link href="/css/hybrid.css?1729262165" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1729262165" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1729262165" rel="stylesheet">
-    <link href="/css/auto-complete.css?1729262165" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1729262165" rel="stylesheet">
-    <link href="/css/theme.css?1729262165" rel="stylesheet">
-    <link href="/css/tabs.css?1729262165" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1729262165" rel="stylesheet">
+    <link href="/css/nucleus.css?1752589492" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1752589492" rel="stylesheet">
+    <link href="/css/hybrid.css?1752589492" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1752589492" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1752589492" rel="stylesheet">
+    <link href="/css/auto-complete.css?1752589492" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1752589492" rel="stylesheet">
+    <link href="/css/theme.css?1752589492" rel="stylesheet">
+    <link href="/css/tabs.css?1752589492" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1752589492" rel="stylesheet">
     
-    <link href="/css/theme-blue.css?1729262165" rel="stylesheet">
+    <link href="/css/theme-blue.css?1752589492" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1729262165"></script>
+    <script src="/js/jquery-3.3.1.min.js?1752589492"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1729262165"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1729262165"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1752589492"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1752589492"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/dnsprivacy.org\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1729262165"></script>
+<script type="text/javascript" src="/js/search.js?1752589492"></script>
 
     
   </div>
@@ -1496,327 +1496,327 @@ Material</a> page for more details on the
 individual features. </p>
 <h3 id="clientsforwarders">Clients/Forwarders</h3>
 <table>
-<thead>
-<tr>
-<th>Mode</th>
-<th style="text-align:center">Stub</th>
-<th style="text-align:center"></th>
-<th style="text-align:center"></th>
-<th style="text-align:center"></th>
-<th style="text-align:center"></th>
-<th style="text-align:center"></th>
-<th style="text-align:center">Caching forwarder/proxy</th>
-<th style="text-align:center"></th>
-<th style="text-align:center"></th>
-<th style="text-align:center"></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Software</strong></td>
-<td style="text-align:center"><a href="http://www.nlnetlabs.nl/projects/ldns/">ldns</a> (drill)</td>
-<td style="text-align:center"><a href="http://www.isi.edu/ant/software/index.html#digit">digit</a></td>
-<td style="text-align:center"><a href="https://getdnsapi.net/">getdns</a> (Stubby)</td>
-<td style="text-align:center">BIND (dig)</td>
-<td style="text-align:center">Knot (kdig)</td>
-<td style="text-align:center">Go DNS</td>
-<td style="text-align:center"><a href="http://unbound.net/">Unbound</a></td>
-<td style="text-align:center">BIND</td>
-<td style="text-align:center">Knot Res</td>
-<td style="text-align:center">dndist</td>
-</tr>
-<tr>
-<td><strong>Send ECS with SOURCE <!-- raw HTML omitted --> PREFIX-LENGTH value of 0</strong></td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
-<td><strong>TCP fast open (a)</strong></td>
-<td style="text-align:center">P</td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center"></td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center"></td>
-<td style="text-align:center">Y</td>
-</tr>
-<tr>
-<td><strong>Connection reuse (Q/R, Q/R, Q/R)</strong></td>
-<td style="text-align:center">P</td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center"></td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center">Y</td>
-</tr>
-<tr>
-<td><strong>Pipelining of queries(Q,Q,Q,R,R,R)</strong></td>
-<td style="text-align:center">n/a</td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center">n/a</td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center">Y</td>
-</tr>
-<tr>
-<td><strong>Process OOOR (Q1,Q2,R2,R1)</strong></td>
-<td style="text-align:center">n/a</td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center">n/a</td>
-<td style="text-align:center">W</td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
-<td><strong>EDNS0 Keepalive (b)</strong></td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-<td style="text-align:center">(c)</td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
-<td><strong>TLS encryption (Port 853)</strong></td>
-<td style="text-align:center">P</td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
-<td><strong>TLS authentication</strong></td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center"></td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center"></td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
-<td><strong>EDNS0 Padding</strong></td>
-<td style="text-align:center"></td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center"></td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
-<td><strong>TLS DNSSEC Chain Extension (e)</strong></td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th>Mode</th>
+          <th style="text-align: center">Stub</th>
+          <th style="text-align: center"></th>
+          <th style="text-align: center"></th>
+          <th style="text-align: center"></th>
+          <th style="text-align: center"></th>
+          <th style="text-align: center"></th>
+          <th style="text-align: center">Caching forwarder/proxy</th>
+          <th style="text-align: center"></th>
+          <th style="text-align: center"></th>
+          <th style="text-align: center"></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Software</strong></td>
+          <td style="text-align: center"><a href="http://www.nlnetlabs.nl/projects/ldns/">ldns</a> (drill)</td>
+          <td style="text-align: center"><a href="http://www.isi.edu/ant/software/index.html#digit">digit</a></td>
+          <td style="text-align: center"><a href="https://getdnsapi.net/">getdns</a> (Stubby)</td>
+          <td style="text-align: center">BIND (dig)</td>
+          <td style="text-align: center">Knot (kdig)</td>
+          <td style="text-align: center">Go DNS</td>
+          <td style="text-align: center"><a href="http://unbound.net/">Unbound</a></td>
+          <td style="text-align: center">BIND</td>
+          <td style="text-align: center">Knot Res</td>
+          <td style="text-align: center">dndist</td>
+      </tr>
+      <tr>
+          <td><strong>Send ECS with SOURCE <br/> PREFIX-LENGTH value of 0</strong></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+      </tr>
+      <tr>
+          <td><strong>TCP fast open (a)</strong></td>
+          <td style="text-align: center">P</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center">Y</td>
+      </tr>
+      <tr>
+          <td><strong>Connection reuse (Q/R, Q/R, Q/R)</strong></td>
+          <td style="text-align: center">P</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">Y</td>
+      </tr>
+      <tr>
+          <td><strong>Pipelining of queries(Q,Q,Q,R,R,R)</strong></td>
+          <td style="text-align: center">n/a</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">n/a</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">Y</td>
+      </tr>
+      <tr>
+          <td><strong>Process OOOR (Q1,Q2,R2,R1)</strong></td>
+          <td style="text-align: center">n/a</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">n/a</td>
+          <td style="text-align: center">W</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center"></td>
+      </tr>
+      <tr>
+          <td><strong>EDNS0 Keepalive (b)</strong></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center">(c)</td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+      </tr>
+      <tr>
+          <td><strong>TLS encryption (Port 853)</strong></td>
+          <td style="text-align: center">P</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center"></td>
+      </tr>
+      <tr>
+          <td><strong>TLS authentication</strong></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center"></td>
+      </tr>
+      <tr>
+          <td><strong>EDNS0 Padding</strong></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+      </tr>
+      <tr>
+          <td><strong>TLS DNSSEC Chain Extension (e)</strong></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+      </tr>
+  </tbody>
 </table>
 <h3 id="servers">Servers</h3>
 <table>
-<thead>
-<tr>
-<th>Mode</th>
-<th style="text-align:center">Load Balancer</th>
-<th style="text-align:center">Recursive</th>
-<th style="text-align:center"></th>
-<th style="text-align:center"></th>
-<th style="text-align:center"></th>
-<th style="text-align:center"></th>
-<th style="text-align:center"></th>
-<th style="text-align:center">Auth</th>
-<th style="text-align:center"></th>
-<th style="text-align:center"></th>
-<th style="text-align:center"></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Software</strong></td>
-<td style="text-align:center">dnsdist</td>
-<td style="text-align:center"><a href="http://unbound.net/">Unbound</a></td>
-<td style="text-align:center">BIND</td>
-<td style="text-align:center">Knot <!-- raw HTML omitted --><!-- raw HTML omitted -->Res</td>
-<td style="text-align:center">PowerDNS Recursive</td>
-<td style="text-align:center"><a href="https://coredns.io/">CoreDNS</a>(e)</td>
-<td style="text-align:center"><a href="https://github.com/tenta-browser/tenta-dns">Tenta</a>(e)</td>
-<td style="text-align:center"><a href="http://www.nlnetlabs.nl/projects/nsd/">NSD</a></td>
-<td style="text-align:center">BIND</td>
-<td style="text-align:center">Knot <!-- raw HTML omitted --><!-- raw HTML omitted -->Auth</td>
-<td style="text-align:center">PowerDNS Auth</td>
-</tr>
-<tr>
-<td><strong>QNAME minimisation</strong></td>
-<td style="text-align:center">n/a</td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-<td style="text-align:center">Y</td>
-</tr>
-<tr>
-<td><strong>TCP fast open(a)</strong></td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center">Y</td>
-<td></td>
-</tr>
-<tr>
-<td><strong>Process Pipelined queries</strong></td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center">Y</td>
-<td></td>
-</tr>
-<tr>
-<td><strong>Provide OOOR</strong></td>
-<td style="text-align:center">(d)</td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-<td style="text-align:center">n/a</td>
-<td style="text-align:center">n/a</td>
-<td style="text-align:center">n/a</td>
-<td></td>
-</tr>
-<tr>
-<td><strong>EDNS0 Keepalive(b)</strong></td>
-<td style="text-align:center"></td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center"></td>
-<td></td>
-</tr>
-<tr>
-<td><strong>TLS encryption (Port 853)</strong></td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center"></td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-<td></td>
-</tr>
-<tr>
-<td><strong>Provide TLS auth credentials</strong></td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center"></td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-<td></td>
-</tr>
-<tr>
-<td><strong>EDNS0 Padding (basic)</strong></td>
-<td style="text-align:center"></td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center">(f)</td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center"></td>
-<td></td>
-</tr>
-<tr>
-<td><strong>TLS DNSSEC Chain Extension(e)</strong></td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-<td></td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th>Mode</th>
+          <th style="text-align: center">Load Balancer</th>
+          <th style="text-align: center">Recursive</th>
+          <th style="text-align: center"></th>
+          <th style="text-align: center"></th>
+          <th style="text-align: center"></th>
+          <th style="text-align: center"></th>
+          <th style="text-align: center"></th>
+          <th style="text-align: center">Auth</th>
+          <th style="text-align: center"></th>
+          <th style="text-align: center"></th>
+          <th style="text-align: center"></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Software</strong></td>
+          <td style="text-align: center">dnsdist</td>
+          <td style="text-align: center"><a href="http://unbound.net/">Unbound</a></td>
+          <td style="text-align: center">BIND</td>
+          <td style="text-align: center">Knot <br><br>Res</td>
+          <td style="text-align: center">PowerDNS Recursive</td>
+          <td style="text-align: center"><a href="https://coredns.io/">CoreDNS</a>(e)</td>
+          <td style="text-align: center"><a href="https://github.com/tenta-browser/tenta-dns">Tenta</a>(e)</td>
+          <td style="text-align: center"><a href="http://www.nlnetlabs.nl/projects/nsd/">NSD</a></td>
+          <td style="text-align: center">BIND</td>
+          <td style="text-align: center">Knot <br><br>Auth</td>
+          <td style="text-align: center">PowerDNS Auth</td>
+      </tr>
+      <tr>
+          <td><strong>QNAME minimisation</strong></td>
+          <td style="text-align: center">n/a</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center">Y</td>
+      </tr>
+      <tr>
+          <td><strong>TCP fast open(a)</strong></td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">Y</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td><strong>Process Pipelined queries</strong></td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">Y</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td><strong>Provide OOOR</strong></td>
+          <td style="text-align: center">(d)</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center">n/a</td>
+          <td style="text-align: center">n/a</td>
+          <td style="text-align: center">n/a</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td><strong>EDNS0 Keepalive(b)</strong></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center"></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td><strong>TLS encryption (Port 853)</strong></td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td><strong>Provide TLS auth credentials</strong></td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td><strong>EDNS0 Padding (basic)</strong></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">(f)</td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center"></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td><strong>TLS DNSSEC Chain Extension(e)</strong></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td></td>
+      </tr>
+  </tbody>
 </table>
 <p>KEY:</p>
 <ul>
@@ -1862,31 +1862,31 @@ web browsers)</li>
 open-source DNS recursive resolvers/load-balancers</li>
 </ul>
 <table>
-<thead>
-<tr>
-<th><strong>Mode</strong></th>
-<th style="text-align:center"><strong>Load Balancer</strong></th>
-<th style="text-align:center"><strong>Recursive</strong></th>
-<th style="text-align:center"></th>
-<th style="text-align:center"></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Software</strong></td>
-<td style="text-align:center">dnsdist</td>
-<td style="text-align:center">Unbound</td>
-<td style="text-align:center">BIND</td>
-<td style="text-align:center">Knot Res</td>
-</tr>
-<tr>
-<td><strong>DoH support</strong></td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center">Y</td>
-<td style="text-align:center">Y</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th><strong>Mode</strong></th>
+          <th style="text-align: center"><strong>Load Balancer</strong></th>
+          <th style="text-align: center"><strong>Recursive</strong></th>
+          <th style="text-align: center"></th>
+          <th style="text-align: center"></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Software</strong></td>
+          <td style="text-align: center">dnsdist</td>
+          <td style="text-align: center">Unbound</td>
+          <td style="text-align: center">BIND</td>
+          <td style="text-align: center">Knot Res</td>
+      </tr>
+      <tr>
+          <td><strong>DoH support</strong></td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">Y</td>
+      </tr>
+  </tbody>
 </table>
 <h2 id="doq-implementation-status">DoQ Implementation status</h2>
 <p>DoQ implementations are still in the early stages, the list below is an overview of the current status.</p>
@@ -3166,16 +3166,16 @@ was added in development release 9.17.10</p>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1729262165"></script>
-    <script src="/js/perfect-scrollbar.min.js?1729262165"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1729262165"></script>
-    <script src="/js/jquery.sticky.js?1729262165"></script>
-    <script src="/js/featherlight.min.js?1729262165"></script>
-    <script src="/js/highlight.pack.js?1729262165"></script>
+    <script src="/js/clipboard.min.js?1752589492"></script>
+    <script src="/js/perfect-scrollbar.min.js?1752589492"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1752589492"></script>
+    <script src="/js/jquery.sticky.js?1752589492"></script>
+    <script src="/js/featherlight.min.js?1752589492"></script>
+    <script src="/js/highlight.pack.js?1752589492"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1729262165"></script>
-    <script src="/js/learn.js?1729262165"></script>
-    <script src="/js/hugo-learn.js?1729262165"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1752589492"></script>
+    <script src="/js/learn.js?1752589492"></script>
+    <script src="/js/hugo-learn.js?1752589492"></script>
     
     
 
