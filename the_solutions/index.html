@@ -12,22 +12,22 @@
     <title>The Solutions :: dnsprivacy.org</title>
 
     
-    <link href="/css/nucleus.css?1752589492" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1752589492" rel="stylesheet">
-    <link href="/css/hybrid.css?1752589492" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1752589492" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1752589492" rel="stylesheet">
-    <link href="/css/auto-complete.css?1752589492" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1752589492" rel="stylesheet">
-    <link href="/css/theme.css?1752589492" rel="stylesheet">
-    <link href="/css/tabs.css?1752589492" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1752589492" rel="stylesheet">
+    <link href="/css/nucleus.css?1752844954" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1752844954" rel="stylesheet">
+    <link href="/css/hybrid.css?1752844954" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1752844954" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1752844954" rel="stylesheet">
+    <link href="/css/auto-complete.css?1752844954" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1752844954" rel="stylesheet">
+    <link href="/css/theme.css?1752844954" rel="stylesheet">
+    <link href="/css/tabs.css?1752844954" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1752844954" rel="stylesheet">
     
-    <link href="/css/theme-blue.css?1752589492" rel="stylesheet">
+    <link href="/css/theme-blue.css?1752844954" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1752589492"></script>
+    <script src="/js/jquery-3.3.1.min.js?1752844954"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1752589492"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1752589492"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1752844954"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1752844954"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/dnsprivacy.org\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1752589492"></script>
+<script type="text/javascript" src="/js/search.js?1752844954"></script>
 
     
   </div>
@@ -1336,10 +1336,6 @@
               </li>
           
               <li>
-                  <a class="padding" href="https://twitter.com/DNSPrivacyProj"><i class='fab fa-twitter'></i> Twitter</a>
-              </li>
-          
-              <li>
                   <a class="padding" href="https://www.youtube.com/channel/UCaJWMY-m9ktZIbUNMi0Eh9g/playlists"><i class='fab fa-youtube'></i> YouTube</a>
               </li>
           
@@ -1449,6 +1445,7 @@
     <li><a href="#the-recursive-to-authoritative-problem">The Recursive to Authoritative Problem</a>
       <ul>
         <li><a href="#unilateral-probing">Unilateral Probing</a></li>
+        <li><a href="#deleg">DELEG</a></li>
       </ul>
     </li>
   </ul>
@@ -1537,13 +1534,19 @@ more information so it can trust the server. This problem space is very differen
 <li>Early solutions require hard-coding information of trusted servers in
 different ways e.g. Firefox&rsquo;s TRR list or Stubby&rsquo;s config file</li>
 <li>More
-recently work has been done in the ADD Working Group at IETF to find
-automated solutions to the variety of situations that clients have</li>
+recently <a href="https://datatracker.ietf.org/wg/add/about/">the ADD working group</a> is
+currently working on a range of proposals around this issue.</li>
 </ul>
 <h2 id="the-recursive-to-authoritative-problem">The Recursive to Authoritative Problem</h2>
-<p>After much discussion in DPRIVE, the attempts to provide an authenticated mechanism for encryption of transport between recursives and authoritatives was but on hold. There are fundamental technical issues blocking this path related to limitations of the parent-child relationship as currently defined in DNS zone data, and also significant deployment hurdles to modification in this specifications.</p>
+<p>After much discussion in DPRIVE, the attempts to provide an authenticated mechanism for encryption of transport
+between recursives and authoritatives was but on hold. There are fundamental technical issues blocking this path
+related to limitations of the parent-child relationship as currently defined in DNS zone data, and also
+significant deployment hurdles to modification in this specifications.</p>
 <h3 id="unilateral-probing">Unilateral Probing</h3>
 <p>As an interim solution the concept of &lsquo;Unilateral Probing&rsquo; has been introduced in draft <a href="https://datatracker.ietf.org/doc/draft-ietf-dprive-unilateral-probing/">https://datatracker.ietf.org/doc/draft-ietf-dprive-unilateral-probing/</a> and as of Jan 2023 various experimental implementations are in progress.</p>
+<h3 id="deleg">DELEG</h3>
+<p>Currently the <a href="https://datatracker.ietf.org/wg/deleg/about/">DELEG working group</a> is looking at developing mechanisms to allow authoritives to securely publish
+credentials that recursive resolvers can use to validate encrypted connections to them.</p>
 
 
 
@@ -2411,16 +2414,16 @@ automated solutions to the variety of situations that clients have</li>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1752589492"></script>
-    <script src="/js/perfect-scrollbar.min.js?1752589492"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1752589492"></script>
-    <script src="/js/jquery.sticky.js?1752589492"></script>
-    <script src="/js/featherlight.min.js?1752589492"></script>
-    <script src="/js/highlight.pack.js?1752589492"></script>
+    <script src="/js/clipboard.min.js?1752844954"></script>
+    <script src="/js/perfect-scrollbar.min.js?1752844954"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1752844954"></script>
+    <script src="/js/jquery.sticky.js?1752844954"></script>
+    <script src="/js/featherlight.min.js?1752844954"></script>
+    <script src="/js/highlight.pack.js?1752844954"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1752589492"></script>
-    <script src="/js/learn.js?1752589492"></script>
-    <script src="/js/hugo-learn.js?1752589492"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1752844954"></script>
+    <script src="/js/learn.js?1752844954"></script>
+    <script src="/js/hugo-learn.js?1752844954"></script>
     
     
 

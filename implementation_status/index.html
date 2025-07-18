@@ -12,22 +12,22 @@
     <title>Implementation Status :: dnsprivacy.org</title>
 
     
-    <link href="/css/nucleus.css?1752589492" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1752589492" rel="stylesheet">
-    <link href="/css/hybrid.css?1752589492" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1752589492" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1752589492" rel="stylesheet">
-    <link href="/css/auto-complete.css?1752589492" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1752589492" rel="stylesheet">
-    <link href="/css/theme.css?1752589492" rel="stylesheet">
-    <link href="/css/tabs.css?1752589492" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1752589492" rel="stylesheet">
+    <link href="/css/nucleus.css?1752844954" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1752844954" rel="stylesheet">
+    <link href="/css/hybrid.css?1752844954" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1752844954" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1752844954" rel="stylesheet">
+    <link href="/css/auto-complete.css?1752844954" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1752844954" rel="stylesheet">
+    <link href="/css/theme.css?1752844954" rel="stylesheet">
+    <link href="/css/tabs.css?1752844954" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1752844954" rel="stylesheet">
     
-    <link href="/css/theme-blue.css?1752589492" rel="stylesheet">
+    <link href="/css/theme-blue.css?1752844954" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1752589492"></script>
+    <script src="/js/jquery-3.3.1.min.js?1752844954"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1752589492"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1752589492"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1752844954"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1752844954"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/dnsprivacy.org\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1752589492"></script>
+<script type="text/javascript" src="/js/search.js?1752844954"></script>
 
     
   </div>
@@ -1336,10 +1336,6 @@
               </li>
           
               <li>
-                  <a class="padding" href="https://twitter.com/DNSPrivacyProj"><i class='fab fa-twitter'></i> Twitter</a>
-              </li>
-          
-              <li>
                   <a class="padding" href="https://www.youtube.com/channel/UCaJWMY-m9ktZIbUNMi0Eh9g/playlists"><i class='fab fa-youtube'></i> YouTube</a>
               </li>
           
@@ -1440,14 +1436,11 @@
         <li><a href="#librariestools">Libraries/tools</a></li>
       </ul>
     </li>
-    <li><a href="#recursive-to-authoritative-dotdoq">Recursive to Authoritative DoT/DoQ</a>
+    <li><a href="#recursive-to-authoritative----adotadoq">Recursive to Authoritative -  ADoT/ADoQ</a>
       <ul>
-        <li><a href="#authoritatives">Authoritatives</a></li>
-        <li><a href="#recursive-upstream-queries">Recursive (upstream queries)</a>
-          <ul>
-            <li><a href="#unilateral-probing-implementation-status">Unilateral Probing Implementation status</a></li>
-          </ul>
-        </li>
+        <li><a href="#rfc-9539---unilateral-probing">RFC 9539 - Unilateral Probing</a></li>
+        <li><a href="#open-source-implementation-overview">Open source implementation overview</a></li>
+        <li><a href="#operator-announcements">Operator announcements</a></li>
       </ul>
     </li>
     <li><a href="#xfrxot-implementation-status">XFR/XoT Implementation status</a>
@@ -1897,7 +1890,7 @@ open-source DNS recursive resolvers/load-balancers</li>
 <h3 id="resolvers-downstream-clients">Resolvers (downstream clients)</h3>
 <ol>
 <li><a href="https://dnsdist.org/guides/dns-over-quic.html">dnsdist</a> supports DNS-over-QUIC for incoming queries since 1.9.0.</li>
-<li><a href="https://github.com/NLnetLabs/unbound/pull/871">Unbound has an open pull request for DoQ downstream support</a></li>
+<li><a href="https://unbound.docs.nlnetlabs.nl/en/latest/topics/privacy/dns-over-quic.html">Unbound supports DoQ from v1.22.0</a></li>
 <li>AdGuard resolvers support DoQ</li>
 </ol>
 <h3 id="librariestools">Libraries/tools</h3>
@@ -1934,21 +1927,145 @@ of a simple client and server side proxy.</li>
 <li><a href="https://technitium.com/dns/">Technitium DNS Server</a> is an open source project which supports DoT, DoH and now DoQ. It also has support for both XFR-over-TLS and XFR-over-QUIC.</li>
 </ol>
 <p>Note that as of March 2022 there is early, experimental support for QUIC as a base transport protocol (i.e. without HTTP/3) in both <code>nginx</code> and <code>HAProxy</code> but that during work at the IETF 113 Hackathon neither could be configured to be useable for DoQ.</p>
-<h2 id="recursive-to-authoritative-dotdoq">Recursive to Authoritative DoT/DoQ</h2>
-<h3 id="authoritatives">Authoritatives</h3>
-<ul>
-<li>BIND supports DoT in Authoritative mode</li>
-<li><a href="https://lists.nic.cz/hyperkitty/list/knot-dns-users@lists.nic.cz/thread/FMJ3EQPQXKQZZVM3D374UO42MGXONO2M/">Knot Authoritative 3.3.0 includes DNS-over-QUIC and XFR-over-QUIC</a></li>
-<li>deSEC announced on the <a href="https://www.ietf.org/mailman/listinfo/dns-privacy">DPRIVE mailing list</a> that they have support for DoT and DoQ on our authoritative anycast deployments.</li>
-</ul>
-<h3 id="recursive-upstream-queries">Recursive (upstream queries)</h3>
-<h4 id="unilateral-probing-implementation-status">Unilateral Probing Implementation status</h4>
+<h2 id="recursive-to-authoritative----adotadoq">Recursive to Authoritative -  ADoT/ADoQ</h2>
+<h3 id="rfc-9539---unilateral-probing">RFC 9539 - Unilateral Probing</h3>
 <p><a href="https://datatracker.ietf.org/doc/rfc9539/">RFC 9539 - Unilateral Opportunistic Deployment of Encrypted Recursive-to-Authoritative DNS is now published</a></p>
-<p>There are some experimental implementation of this draft, a brief summary is given below.</p>
+<h3 id="open-source-implementation-overview">Open source implementation overview</h3>
+<table>
+  <thead>
+      <tr>
+          <th>Feature</th>
+          <th style="text-align: center"></th>
+          <th style="text-align: center"></th>
+          <th style="text-align: center"></th>
+          <th style="text-align: center">Recursives</th>
+          <th style="text-align: center"></th>
+          <th style="text-align: center"></th>
+          <th style="text-align: center">Load Balancer/proxy</th>
+          <th style="text-align: center"></th>
+          <th style="text-align: center"></th>
+          <th style="text-align: center">Auths</th>
+          <th style="text-align: center"></th>
+          <th style="text-align: center"></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Software</strong></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center">Unbound</td>
+          <td style="text-align: center">BIND</td>
+          <td style="text-align: center">Knot  Resolver</td>
+          <td style="text-align: center">PowerDNS Recursive</td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center">dnsdist</td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center">NSD</td>
+          <td style="text-align: center">BIND</td>
+          <td style="text-align: center">Knot Auth</td>
+          <td style="text-align: center">PowerDNS Auth</td>
+      </tr>
+      <tr>
+          <td></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+      </tr>
+      <tr>
+          <td><strong>Unilateral probing</strong></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"><a href="https://mailarchive.ietf.org/arch/msg/dns-privacy/U63a-sl9SfZDPp8aqcasNGNYDUI/">Prototyping at IETF Hackathon</a></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"><a href="https://blog.powerdns.com/2022/06/13/probing-dot-support-of-authoritative-servers-just-try-it">Experimental implementation</a></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td><strong>Other discovery</strong></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"><a href="https://www.knot-resolver.cz/documentation/latest/config-experimental-dot-auth.html#how-it-works">Experimental auto discovery</a></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+      </tr>
+      <tr>
+          <td><strong>DoT</strong></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center"></td>
+      </tr>
+      <tr>
+          <td><strong>DoQ</strong></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center"></td>
+      </tr>
+  </tbody>
+</table>
 <ul>
 <li><a href="https://blog.powerdns.com/2022/05/30/powerdns-recursor-4-7-0-released/">PowerDNS 4.7.0</a> supports an experimental version of this &ldquo;The implementation does not follow the existing draft to the letter, but was strongly inspired by it.&rdquo; <a href="https://blog.powerdns.com/2022/06/13/probing-dot-support-of-authoritative-servers-just-try-it/">More here.</a></li>
-<li>Google Public DNS have said they are looking at an experimental version although nothing is official.</li>
-<li>NLnet Labs reported work to implement this in Unbound at the IETF 116 hackathon (March 2023)</li>
+<li><a href="https://www.knot-resolver.cz/documentation/latest/config-experimental-dot-auth.html#how-it-works">Knot resolver</a> implements a custom auto-discovery feature based on an nameserver name format</li>
+<li>PowerDNS Auth does not implement any encrypted transports natively, but the same organisation develops <code>dnsdist</code> for use as load balancer/proxy to terminate encrypted connections</li>
+</ul>
+<h3 id="operator-announcements">Operator announcements</h3>
+<ul>
+<li><a href="https://security.googleblog.com/2024/03/google-public-dnss-approach-to-fight.html">Google Public DNS have said</a> they have implemented RFC9539 and &ldquo;And ADoT is in use for around 6% of egress traffic.&rdquo;</li>
+<li>deSEC announced on the <a href="https://www.ietf.org/mailman/listinfo/dns-privacy">DPRIVE mailing list</a> that they have support for DoT and DoQ on our authoritative anycast deployments.</li>
 </ul>
 <h2 id="xfrxot-implementation-status">XFR/XoT Implementation status</h2>
 
@@ -3166,16 +3283,16 @@ was added in development release 9.17.10</p>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1752589492"></script>
-    <script src="/js/perfect-scrollbar.min.js?1752589492"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1752589492"></script>
-    <script src="/js/jquery.sticky.js?1752589492"></script>
-    <script src="/js/featherlight.min.js?1752589492"></script>
-    <script src="/js/highlight.pack.js?1752589492"></script>
+    <script src="/js/clipboard.min.js?1752844954"></script>
+    <script src="/js/perfect-scrollbar.min.js?1752844954"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1752844954"></script>
+    <script src="/js/jquery.sticky.js?1752844954"></script>
+    <script src="/js/featherlight.min.js?1752844954"></script>
+    <script src="/js/highlight.pack.js?1752844954"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1752589492"></script>
-    <script src="/js/learn.js?1752589492"></script>
-    <script src="/js/hugo-learn.js?1752589492"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1752844954"></script>
+    <script src="/js/learn.js?1752844954"></script>
+    <script src="/js/hugo-learn.js?1752844954"></script>
     
     
 
