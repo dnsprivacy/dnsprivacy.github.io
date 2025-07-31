@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Initial Performance Measurements (Q1 2018) :: dnsprivacy.org</title>
+    <title>ADoX Status and Deployment :: dnsprivacy.org</title>
 
     
     <link href="/css/nucleus.css?1753971338" rel="stylesheet">
@@ -37,7 +37,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/performance_measurements/initial_performance_measurements_q1_2018/">
+  <body class="" data-url="/adox_status_and_deployment/">
     <nav id="sidebar" class="">
 
 
@@ -188,7 +188,7 @@
     
     <li data-nav-id="/adox_status_and_deployment/" title="ADoX Status and Deployment" class="dd-item
         
-        
+        active
         
         ">
       <a href="/adox_status_and_deployment/">
@@ -1032,7 +1032,7 @@
   
     
     <li data-nav-id="/performance_measurements/" title="Performance Measurements" class="dd-item
-        parent
+        
         
         
         ">
@@ -1058,7 +1058,7 @@
  
   
     
-      <li data-nav-id="/performance_measurements/initial_performance_measurements_q1_2018/" title="Initial Performance Measurements (Q1 2018)" class="dd-item active">
+      <li data-nav-id="/performance_measurements/initial_performance_measurements_q1_2018/" title="Initial Performance Measurements (Q1 2018)" class="dd-item ">
         <a href="/performance_measurements/initial_performance_measurements_q1_2018/">
         14.1. Initial Performance Measurements (Q1 2018)
         
@@ -1449,13 +1449,7 @@
             
           
           
-            
-            
-          
-          
-            <a href='/'>DNS Privacy Project</a> > <a href='/performance_measurements/'>Performance Measurements</a> > Initial Performance Measurements (Q1 2018)
-          
-        
+            <a href='/'>DNS Privacy Project</a> > ADoX Status and Deployment
           
         
           
@@ -1468,42 +1462,26 @@
     <div class="wrapper">
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#initial-work">Initial work</a></li>
-    <li><a href="#nameservers">Nameservers</a></li>
-    <li><a href="#test-setup">Test setup</a>
+    <li><a href="#what-is-adox">What is ADoX?</a></li>
+    <li><a href="#ietf-123-adox-deployment-initiative-july-2025">IETF 123 ADoX Deployment initiative (July 2025)</a></li>
+    <li><a href="#standards-work">Standards work</a>
       <ul>
-        <li><a href="#software">Software</a>
-          <ul>
-            <li><a href="#test-parameters">Test parameters</a></li>
-          </ul>
-        </li>
-        <li><a href="#hardware">Hardware</a></li>
-        <li><a href="#os-tuning">OS tuning</a></li>
-        <li><a href="#nameserver-configuration">Nameserver configuration</a></li>
+        <li><a href="#a-bit-of-history">A bit of history</a></li>
+        <li><a href="#rfc-9539---unilateral-probing">RFC 9539 - Unilateral Probing</a></li>
+        <li><a href="#internet-draft-authoritative-dns-transport-signaling">Internet Draft: Authoritative DNS Transport Signaling</a></li>
       </ul>
     </li>
-    <li><a href="#results">Results</a>
+    <li><a href="#implementation-status">Implementation Status</a>
       <ul>
-        <li><a href="#increasing-load">Increasing load</a>
-          <ul>
-            <li><a href="#udp-only">UDP only</a></li>
-            <li><a href="#udp-vs-tcp">UDP vs TCP</a></li>
-            <li><a href="#tcp-vs-tls">TCP vs TLS</a></li>
-            <li><a href="#tcp-and-tls-as-a-percentage-of-udp">TCP and TLS as a percentage of UDP</a></li>
-          </ul>
-        </li>
-        <li><a href="#vary-queries-per-connection">Vary queries per connection</a>
-          <ul>
-            <li><a href="#less-than-60000-queriesper-connection">Less than 60,000 queries per connection</a></li>
-            <li><a href="#less-than-10000-queriesper-connection">Less than 10,000 queries per connection</a></li>
-            <li><a href="#less-than-500-queries-per-connection">Less than 500 queries per connection</a></li>
-          </ul>
-        </li>
+        <li><a href="#open-source-implementation-overview">Open source implementation overview</a></li>
       </ul>
     </li>
-    <li><a href="#key-conclusions">Key conclusions</a></li>
-    <li><a href="#todo-list">TODO list</a></li>
-    <li><a href="#comments-on-test-stability">Comments on test stability</a></li>
+    <li><a href="#operator-activities">Operator activities</a>
+      <ul>
+        <li><a href="#auth-operators">Auth operators</a></li>
+        <li><a href="#recursive-operators">Recursive operators</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
     </div>
@@ -1521,308 +1499,282 @@
           
             <h1>
               
-              Initial Performance Measurements (Q1 2018)
+              ADoX Status and Deployment
             </h1>
           
 
         
 
 
-<div class="toc">
+
+	<div class="toc">
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#initial-work">Initial work</a></li>
-    <li><a href="#nameservers">Nameservers</a></li>
-    <li><a href="#test-setup">Test setup</a>
+    <li><a href="#what-is-adox">What is ADoX?</a></li>
+    <li><a href="#ietf-123-adox-deployment-initiative-july-2025">IETF 123 ADoX Deployment initiative (July 2025)</a></li>
+    <li><a href="#standards-work">Standards work</a>
       <ul>
-        <li><a href="#software">Software</a>
-          <ul>
-            <li><a href="#test-parameters">Test parameters</a></li>
-          </ul>
-        </li>
-        <li><a href="#hardware">Hardware</a></li>
-        <li><a href="#os-tuning">OS tuning</a></li>
-        <li><a href="#nameserver-configuration">Nameserver configuration</a></li>
+        <li><a href="#a-bit-of-history">A bit of history</a></li>
+        <li><a href="#rfc-9539---unilateral-probing">RFC 9539 - Unilateral Probing</a></li>
+        <li><a href="#internet-draft-authoritative-dns-transport-signaling">Internet Draft: Authoritative DNS Transport Signaling</a></li>
       </ul>
     </li>
-    <li><a href="#results">Results</a>
+    <li><a href="#implementation-status">Implementation Status</a>
       <ul>
-        <li><a href="#increasing-load">Increasing load</a>
-          <ul>
-            <li><a href="#udp-only">UDP only</a></li>
-            <li><a href="#udp-vs-tcp">UDP vs TCP</a></li>
-            <li><a href="#tcp-vs-tls">TCP vs TLS</a></li>
-            <li><a href="#tcp-and-tls-as-a-percentage-of-udp">TCP and TLS as a percentage of UDP</a></li>
-          </ul>
-        </li>
-        <li><a href="#vary-queries-per-connection">Vary queries per connection</a>
-          <ul>
-            <li><a href="#less-than-60000-queriesper-connection">Less than 60,000 queries per connection</a></li>
-            <li><a href="#less-than-10000-queriesper-connection">Less than 10,000 queries per connection</a></li>
-            <li><a href="#less-than-500-queries-per-connection">Less than 500 queries per connection</a></li>
-          </ul>
-        </li>
+        <li><a href="#open-source-implementation-overview">Open source implementation overview</a></li>
       </ul>
     </li>
-    <li><a href="#key-conclusions">Key conclusions</a></li>
-    <li><a href="#todo-list">TODO list</a></li>
-    <li><a href="#comments-on-test-stability">Comments on test stability</a></li>
+    <li><a href="#operator-activities">Operator activities</a>
+      <ul>
+        <li><a href="#auth-operators">Auth operators</a></li>
+        <li><a href="#recursive-operators">Recursive operators</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 </div>
-<p>Thanks to funding from the Open Technology Fund we have started work on
-some performance measurements for various DNS Privacy implementations.
-We report our initial results below.</p>
-<h2 id="initial-work">Initial work</h2>
-<p>The goal of the first phase of work it to get a general understanding of
-the characteristics of the behaviour of several open source recursive
-implemetnations under TCP and TLS load. The first measurements look at 2
-aspects:</p>
+<h2 id="what-is-adox">What is ADoX?</h2>
+<p>ADoX is used here as a short hand term for &lsquo;Recursive resolver to Authoritative server encrypted transport using DoT or DoQ&rsquo;.</p>
+<p>The term ADoT was defined in <a href="https://www.rfc-editor.org/rfc/rfc9499">RFC 9499: DNS Terminology</a>:</p>
+<blockquote>
+<p>&ldquo;Authoritative DoT (ADoT): &hellip; ADoT specifically means DNS-over-TLS for transport between recursive resolvers and authoritative servers&rdquo;</p></blockquote>
+<p>DoQ was also standardized for transport between recursives and authoritative servers in <a href="https://www.rfc-editor.org/rfc/rfc9250">RFC 9250</a>, so by extension ADoQ means <em>&ldquo;DNS-over-QUIC for transport between recursive resolvers and authoritative servers&rdquo;</em>.</p>
+<p>Since ADoT/Q is hard to say, we use ADoX (&lsquo;a-docks&rsquo;) here to mean encrypted transport using either TLS or QUIC!</p>
+<h2 id="ietf-123-adox-deployment-initiative-july-2025">IETF 123 ADoX Deployment initiative (July 2025)</h2>
+<p>A meeting was held to evaluate the current activities around and interest in deployment of ADoX. <a href="/adox_status_and_deployment/ietf123sidemeetingminutes">The minutes can be found here.</a></p>
+<h2 id="standards-work">Standards work</h2>
+<h3 id="a-bit-of-history">A bit of history</h3>
+<p>The DPRIVE working group at IETF was chartered to work on encrypting the stub to recursive communications from its creation in 2014 until 2018, when it was re-chartered to include working on the recursive resolver to authoritative server problem.</p>
+<p>Between 2018 and 2021 at least 6 solutions and at least 12 drafts were discussed in the working group to try to find a solution that enabled authoritative servers to securely publish credentials in the DNS that recursive resolvers could then use to authenticate encrypted connections to those servers.</p>
+<p>Unfortunately no solution found consensus due to several hurdles:</p>
 <ul>
-<li>How does TCP and TLS compare to UDP for a very small number of
-client connections (1-16)</li>
-<li>For a small number of connections how does performance vary with the
-number of queries per connection</li>
+<li>Primarily the fundamental technical issue that delegations (NS and glue records) are not DNSSEC signed and therefore secure credentials cannot be provided before a recursive resolver first attempts to connect the nameserver authoritative for the zone.</li>
+<li>Any change to this model would require protocol changes in the DNS, updates to the EPP provisioning protocol and therefore updates to registrar processes which were likely to take many, many years to deploy.</li>
+<li>Although several clever workarounds to try to overload/re-use existing records were proposed, none could find consensus due to one or more serious drawbacks.</li>
 </ul>
-<p>We concentrate on relative performance rather than absolute values.</p>
-<p>Results and configuration files can be found in the <a href="https://github.com/dnsprivacy/perfmeasurements_2018">Performance Testing
-git
-repo</a>.</p>
-<p>We also presented this work at RIPE
-76: <a href="https://ripe76.ripe.net/presentations/92-RIPE76_DNS_Privacy_measurements.pdf">Slides</a>, <a href="https://ripe76.ripe.net/archives/video/64">Video</a></p>
-
-<div class="notices infoblock" ><p>Further follow up work can be found here: <a href="/performance_measurements/follow-up_performance_measurements_q4_2108/">Follow-up Performance
-Measurements (Q4 2108)</a></p>
-</div>
-
-<h2 id="nameservers">Nameservers</h2>
-<p>We tested four nameservers:</p>
+<p>As a result, work stopped in DPRIVE in around 2021 on this and attention turned to trying to standardise an opportunistic model that could be used for experimentation (see below).</p>
+<p>Acknowledging the multiple restrictions that the current delegation model posed on the DNS protocol as whole, the IETF created the DELEG working group in 2024. It is hoped that work from that group will provide an mechanism to specify authenticated encryption credentials at the delegation point to be deployed within the DNS.</p>
+<h3 id="rfc-9539---unilateral-probing">RFC 9539 - Unilateral Probing</h3>
+<p><a href="https://datatracker.ietf.org/doc/rfc9539/">RFC 9539 - Unilateral Opportunistic Deployment of Encrypted Recursive-to-Authoritative DNS is now
+published</a> was published in February 2024.</p>
+<p>This document sets
+out steps that DNS servers (recursive resolvers and authoritative servers) can take unilaterally (without any
+coordination with other peers) to defend DNS query privacy against a passive network monitor by directly probing port 853 to see if an authoritative servers supports encrypted transports.</p>
+<h3 id="internet-draft-authoritative-dns-transport-signaling">Internet Draft: Authoritative DNS Transport Signaling</h3>
+<p>A new Internet Draft was first published in June 2025 proposing a new mechanism based on SVCB records <a href="https://datatracker.ietf.org/doc/draft-johani-dnsop-transport-signaling/">Authoritative DNS Transport Signaling</a>:</p>
+<blockquote>
+<p>This document proposes a mechanism for authoritative DNS servers to
+opportunistically signal their support for alternative transport
+protocols (e.g., DNS over TLS (DoT), DNS over HTTPS (DoH) and DNS
+over QUIC (DoQ)) directly within the Additional section of
+authoritative DNS responses.  This &ldquo;hint-based&rdquo; approach aims to
+enable resolvers to discover and upgrade transport connections more
+efficiently, thereby improving privacy, security, and performance for
+subsequent interactions.</p></blockquote>
+<p>The authors have an open source prototype implementation <a href="https://github.com/johanix/tdns">https://github.com/johanix/tdns</a> and would love feedback. This was discussed in the DNSOP meeting at IETF 123 and seems to be gaining support.</p>
+<h2 id="implementation-status">Implementation Status</h2>
+<h3 id="open-source-implementation-overview">Open source implementation overview</h3>
+<table>
+  <thead>
+      <tr>
+          <th>Feature</th>
+          <th style="text-align: center"></th>
+          <th style="text-align: center"></th>
+          <th style="text-align: center"></th>
+          <th style="text-align: center">Recursives</th>
+          <th style="text-align: center"></th>
+          <th style="text-align: center"></th>
+          <th style="text-align: center">Load Balancer/proxy</th>
+          <th style="text-align: center"></th>
+          <th style="text-align: center"></th>
+          <th style="text-align: center">Authoritatives</th>
+          <th style="text-align: center"></th>
+          <th style="text-align: center"></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Software</strong></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center">Unbound</td>
+          <td style="text-align: center">BIND</td>
+          <td style="text-align: center">Knot  Resolver</td>
+          <td style="text-align: center">PowerDNS Recursive</td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center">dnsdist</td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center">NSD</td>
+          <td style="text-align: center">BIND</td>
+          <td style="text-align: center">Knot Auth</td>
+          <td style="text-align: center">PowerDNS Auth (1)</td>
+      </tr>
+      <tr>
+          <td></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+      </tr>
+      <tr>
+          <td><strong>Unilateral probing</strong></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"><a href="https://mailarchive.ietf.org/arch/msg/dns-privacy/U63a-sl9SfZDPp8aqcasNGNYDUI/">Prototyping at <br> IETF Hackathon</a></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"><a href="https://blog.powerdns.com/2022/06/13/probing-dot-support-of-authoritative-servers-just-try-it">Experimental <br>  implementation</a></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td><strong>Other discovery</strong></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"><a href="https://www.knot-resolver.cz/documentation/latest/config-experimental-dot-auth.html#how-it-works">Experimental <br> auto discovery</a></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+      </tr>
+      <tr>
+          <td><strong>DoT</strong></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center"></td>
+      </tr>
+      <tr>
+          <td><strong>DoQ</strong></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center">Y</td>
+          <td style="text-align: center"></td>
+      </tr>
+  </tbody>
+</table>
 <ul>
-<li>Bind 9.12.1 (does not support TLS)</li>
-<li>Unbound 1.7.0</li>
-<li>Knot Resolver 2.3.0</li>
-<li>dnsdist 1.3.0</li>
+<li><a href="https://blog.powerdns.com/2022/05/30/powerdns-recursor-4-7-0-released/">PowerDNS Resolver 4.7.0</a> supports an experimental version of this &ldquo;The implementation does not follow the existing draft to the letter, but was strongly inspired by it.&rdquo; <a href="https://blog.powerdns.com/2022/06/13/probing-dot-support-of-authoritative-servers-just-try-it/">More here.</a></li>
+<li><a href="https://www.knot-resolver.cz/documentation/latest/config-experimental-dot-auth.html#how-it-works">Knot resolver</a> implements a custom auto-discovery feature based on an nameserver name format</li>
+<li>(1) PowerDNS Auth does not implement any encrypted transports natively, but the same organisation develops <a href="https://www.dnsdist.org/index.html">dnsdist</a> for use as load balancer/proxy to terminate encrypted connections</li>
 </ul>
-<h2 id="test-setup">Test setup</h2>
-<h3 id="software">Software</h3>
-<p>We have used the well known
-<a href="https://www.akamai.com/us/en/products/network-operator/measurement-tools.jsp">dnsperf</a>
-from Nominum (now owned by Akamai) for the basis of our testing. </p>
+<h2 id="operator-activities">Operator activities</h2>
+<p>This table is a work in progress and some entries require references and/or more details. Please send updates/corrections to <a href="mailto:sara@sinodun.com">sara@sinodun.com</a></p>
+<h3 id="auth-operators">Auth operators</h3>
+<table>
+  <thead>
+      <tr>
+          <th>Who</th>
+          <th>What</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>b-root</td>
+          <td><a href="https://b.root-servers.org/research/tls.html">Have enabled DNS over TLS support</a></td>
+      </tr>
+      <tr>
+          <td>Facebook</td>
+          <td><a href="https://engineering.fb.com/2018/12/21/security/dns-over-tls/">Did a pilot back in 2018</a> and are observed to have DoT enabled on port 853 today</td>
+      </tr>
+      <tr>
+          <td>deSEC</td>
+          <td>Announced on the <a href="https://www.ietf.org/mailman/listinfo/dns-privacy">DPRIVE mailing list</a> that they have support for DoT and DoQ on our authoritative anycast deployments.</td>
+      </tr>
+      <tr>
+          <td>CDN77</td>
+          <td>Observed to  have DoT enabled on port 853 today</td>
+      </tr>
+      <tr>
+          <td>ccTLDs</td>
+          <td>A few small TLDs e.g. .gr, .co, .kg are observed to  have DoT enabled on port 853 today</td>
+      </tr>
+  </tbody>
+</table>
 <ul>
-<li><strong>dnsperf</strong>: For UDP measurements to original tool from Nominum was
-used</li>
-<li><strong>dnsperf-tcp</strong>: For TCP measurements we used a fork from dnsperf
-with added TCP support. <a href="https://github.com/Sinodun/dnsperf-tcp">The code is available on
-github</a>. (This work was
-funded by a grant from NLnet Foundation).</li>
-<li><strong>dnsperf-tls</strong>: For TLS we had to re-factor dnsperf-tcp somewhat to
-accommodate TLS support. We implemented this with both OpenSSL and
-GnuTLS but saw no difference if performance of dnsperf and so we
-used the version with OpenSSL (TLS 1.2) for the tests below. <a href="https://github.com/Sinodun/dnsperf-tcp/tree/feature/tls_openssl">This
-code is also available on
-github</a>.
-We do note that we see some reduced performance for this version
-when using TCP and TLS at very low queries per connection (we
-believe due to limitations in the implementation because of how the
-dnsperf threading model interacts with TLS read/writes). </li>
+<li>PCH have discussed that they would like to enable this for customers in the near future.</li>
+<li>IBM are doing an internal proof-of-concept using ADoT and would like to offer this publicly in the future.</li>
+<li>Cloudflare are open to experiments using ADoX</li>
 </ul>
-<p>For future work we would like to create a bespoke testing tool designed
-to specifically handle TCP and TLS. We have started a review of
-<a href="/performance_measurements/review_of_dns_and_http_pm_tools/">existing testing tools here</a>.</p>
-<p>We control the test runs from Jenkins and the scripts use a mix of bash,
-awk and GNUplot to automatically generate plots of the results. </p>
-<h4 id="test-parameters">Test parameters</h4>
-<p>The results are the averages of 5 repeated runs each of 20 seconds with
-dnsperf set to allow a total of 5000 outstanding queries. We note that
-with a smaller number of outstanding queries we see quite different
-results and above this number we see no differences. </p>
-
-
-<img src="/attachments/14025132/14025129.png?width=50pc" />
-
-<h3 id="hardware">Hardware</h3>
-<p>Our current set up simply consists of one client machine and one
-nameserver machine connected via a 10Gb switch:</p>
-
-
-<img src="/attachments/14025132/14025123.png?width=25pc" />
-
+<h3 id="recursive-operators">Recursive operators</h3>
+<table>
+  <thead>
+      <tr>
+          <th>Who</th>
+          <th>What</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Google Public DNS</td>
+          <td><a href="https://security.googleblog.com/2024/03/google-public-dnss-approach-to-fight.html">Have said</a> they have implemented RFC9539 and &ldquo;And ADoT is in use for around 6% of egress traffic.&rdquo;</td>
+      </tr>
+      <tr>
+          <td>Quad9</td>
+          <td>Use PowerDNS Recursor and enabled RFC9538 probing in July 2025</td>
+      </tr>
+      <tr>
+          <td>Let&rsquo;s Encrypt</td>
+          <td>Are sharing plans to enable DoX from their Hickory recursive resolver to a set of auth servers that are known to support encrypted transports</td>
+      </tr>
+  </tbody>
+</table>
 <ul>
-<li>
-<p>The servers are both Supermicro Super Servers with a X10DRW-iT
-Motherboard running BIOS v2.0b. Each has 2 Intel(R) Xeon(R) CPU
-E5-2620 v4 @ 2.10GHz with 8 cores (16 threads).</p>
-</li>
-<li>
-<p>They have an Intel Corporation 82574L Gigabit Network
-Connection used for management and a dual port Intel Corporation
-Ethernet Controller 10-Gigabit X540-AT2 for load testing. The two
-10Gb interfaces are connected to a Netgear M4300-8X8F 10Gb switch.</p>
-</li>
-<li>
-<p>The servers are running Ubuntu 18.04 LTS</p>
-</li>
-<li>
-<p>The 10Gb ethernet controller (ixgbe) drivers have been upgraded to
-the latest from
-Intel <a href="https://downloadcenter.intel.com/download/14687/?product=60020">https://downloadcenter.intel.com/download/14687/?product=60020</a> version
-5.3.3.</p>
-</li>
+<li>DNS4EU have expressed being open to enabling ADoX but currently use Knot resolver which does not support it.</li>
 </ul>
-<p>See
-below
-for sample results on 18.04 without the spectre/meltdown fixes and
-16.04.</p>
-<h3 id="os-tuning">OS tuning</h3>
-<p>Only minimal OS tuning was performed in these first tests:</p>
-<ul>
-<li>The number of file descriptors was raised by adding the following
-to /etc/security/limits.conf</li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>* soft nofile 100000
-</span></span><span style="display:flex;"><span>* soft nofile 100000
-</span></span></code></pre></div><ul>
-<li>The following TCP TIME_WAIT and ephemeral port range changes were
-made</li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo sysctl -w net.ipv4.tcp_fin_timeout<span style="color:#f92672">=</span><span style="color:#ae81ff">20</span>
-</span></span><span style="display:flex;"><span>sudo sysctl -w net.ipv4.tcp_tw_reuse<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> 
-</span></span><span style="display:flex;"><span>sudo sysctl -w net.ipv4.ip_local_port_range<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1025 65535&#34;</span>
-</span></span></code></pre></div><h3 id="nameserver-configuration">Nameserver configuration</h3>
-<p>The nameserver test machine is also is set up with NSD acting as a root
-server that is able to answer all the questions in the
-queryfile-example-current from Nominum. At the start of each test run
-the recursive server cache was populated buy running the test queries
-against the nameserver which was configured to fetch the answers from
-the NSD instance. </p>
-<p>The configurations used for each nameserver are available in <a href="https://github.com/dnsprivacy/perfmeasurements_2018">the git
-repo</a>.</p>
-<p>In each case the nameserver was locked to four cores to ensure the
-client could saturate the nameserver. For Unbound, Knot resolver and
-BIND the nameserver was configured to use 4 threads. dnsdist was
-configured with 4 listeners and it should be noted that for TCP it uses
-a different threading model where it spawns a separate thread for each
-TCP connection it handles (creating them as required) so this most
-probably explains the different behaviour of dnsdist observed below.</p>
-<h2 id="results">Results</h2>
-<p>The test results and a full set of plots can be found in <a href="https://github.com/dnsprivacy/perfmeasurements_2018">the git
-repo</a>.</p>
-<h3 id="increasing-load">Increasing load</h3>
-<p>In the first test runs UDP, TCP and TLS were used to load the nameserver
-as the number of dnsperf clients were increased from 1 to 16. For TCP
-/TLS 20,000 queries per connection were sent so this is simulating
-persistent connections to measure the throughput of TCP/TLS
-connections. </p>
-<h4 id="udp-only">UDP only</h4>
-<p>We note that Unbound and dnsdist have the best performance here and BIND
-and Knot Resolver have lower UPD performance. It is interesting to note
-how flat the performance of BIND is compared to the other nameservers.</p>
 
 
-<img src="/attachments/14025132/14025120.png?width=50pc" />
-
-<h4 id="udp-vs-tcp">UDP vs TCP</h4>
-<p>The surprising finding here is that with these specific test conditions
-dnsdist shows much better TCP performance the UDP performance. But as
-noted above it uses a very different threading model to the other
-nameservers. The other nameservers all show a roughly similar decrease
-in throughput over TCP of around 50%.</p>
-<p>Note that Unbound serially processes the TCP queries on a connection
-(i.e. it processes and sends a response to a TCP query before processing
-the next query on the connection) instead of processing queries
-concurrently (as specified in RFC7766). Work is in progress to change
-this behaviour.  </p>
 
 
-<img src="/attachments/14025132/14025121.png?width=50pc" />
 
-<h4 id="tcp-vs-tls">TCP vs TLS</h4>
-<p>(BIND does not support TLS yet). As expected there is a drop in
-performance for TLS compared to TCP, of roughly 20-30%. </p>
-
-
-<img src="/attachments/14025132/14025122.png?width=50pc" />
-
-<h4 id="tcp-and-tls-as-a-percentage-of-udp">TCP and TLS as a percentage of UDP</h4>
-<p>The plot below show the TCP/TLS performance as a percentage of the UDP
-performance of the nameserver for loading with 8 clients (20,000 queries
-per connection for TCP/TLS). </p>
-<p>Whilst dnsdist show the best TCP performance, the relative drop in
-performance for TLS compared to TCP is significant.</p>
-<p>Unbound has the lowest TCP/TLS performance due to the lack of concurrent
-processing, whereas BIND and Knot have comparable UDP vs TCP
-performance. </p>
-
-
-<img src="/attachments/14025132/14025119.png?width=50pc" />
-
-<h3 id="vary-queries-per-connection">Vary queries per connection</h3>
-<h4 id="less-than-60000-queriesper-connection">Less than 60,000 queries per connection</h4>
-<p>Most of the nameservers show steady performance above 10,000 q/conn as
-would be expected.</p>
-
-
-<img src="/attachments/14025132/14025117.png?width=50pc" />
-
-<h4 id="less-than-10000-queriesper-connection">Less than 10,000 queries per connection</h4>
-<p>dnsdist has a relatively smooth decline in performance in this range,
-Unbound and BIND are much flatter and decline only below ~1500 q/con.
-It is noted that Knot appears very flat for TCP until much lower q/conn
-(but not for TLS - we think this is due to limitations in our test tool
-and are investigating).</p>
-
-
-<img src="/attachments/14025132/14025118.png?width=50pc" />
-
-<h4 id="less-than-500-queries-per-connection">Less than 500 queries per connection</h4>
-<p>By examining the region below 500 in detail we see a marked difference
-for Knot Resolver compared to the other nameservers. Unfortunately our
-current test configuration encounters issues at low numbers of q/con so
-we don&rsquo;t have numbers for below 60q/con. We are actively working to
-resolve this and extend these plots. </p>
-
-
-<img src="/attachments/14025132/14025115.png?width=50pc" />
-
-<p>The plot below includes a purely theoretical extrapolation of Knot
-resolver performance if amortization of the TCP handshake is the only
-factor that degrades performance (handshakes are amortized at (N+1)/N
-where N is the number of queries per connection).</p>
-
-
-<img src="/attachments/14025132/14025116.png?width=50pc" />
-
-<h2 id="key-conclusions">Key conclusions</h2>
-<ul>
-<li>Typically saw TCP was 40-50% of UDP throughput (except dnsdist,
-which uses a different threading model and performed better)</li>
-<li>TLS was 30-40% of UDP throughput</li>
-<li>Varying the number of queries per connection (including low numbers)
-shows amortisation of setup occurs between 100 or ~2000 q/conn
-depending on the nameserver</li>
-</ul>
-<h2 id="todo-list">TODO list</h2>
-<p>We clearly have more work to do to further investigate the behaviour we
-seen This includes:</p>
-<ul>
-<li>Drill to lower q/conn for TCP and TLS</li>
-<li>Dig into implementations….</li>
-<li>Experiment with OS and nameserver tuning</li>
-<li>Add more options: TFO, TLS Session Resumption, TLS 1.3,…</li>
-<li>Compare to TLS proxy e.g. nginx, haproxy</li>
-<li>Add concurrent processing to Unbound</li>
-<li>Scale to MANY clients </li>
-<li>Use new/different test tool?</li>
-</ul>
-<h2 id="comments-on-test-stability">Comments on test stability</h2>
-<p>We do note that we see variations of the order of 10-15% when performing
-identical test runs on the same setup at different times (e.g. on
-following days with not change to the setup).</p>
-<p>So each of the the data sets for a given setup is from sequential runs
-of the test suite for each nameserver for better comparison.</p>
-
-
-<footer class="footline">
+<footer class=" footline" >
 	
 </footer>
 
@@ -1924,6 +1876,7 @@ of the test suite for each nameserver for better comparison.</p>
             
                 
                     
+                    
                 
                 
 
@@ -1936,6 +1889,9 @@ of the test suite for each nameserver for better comparison.</p>
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -2472,7 +2428,6 @@ of the test suite for each nameserver for better comparison.</p>
             
                 
                     
-                    
                 
                 
 
@@ -2485,7 +2440,6 @@ of the test suite for each nameserver for better comparison.</p>
             
             
                 
-                    
                     
                 
                 
@@ -2502,9 +2456,6 @@ of the test suite for each nameserver for better comparison.</p>
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -2730,4 +2681,3 @@ of the test suite for each nameserver for better comparison.</p>
 
   </body>
 </html>
-
