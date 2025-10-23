@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Encrypted Zone Transfer :: dnsprivacy.org</title>
+    <title>OARC 45 Table Topic nodes :: dnsprivacy.org</title>
 
     
     <link href="/css/nucleus.css?1761216531" rel="stylesheet">
@@ -37,7 +37,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/encrypted-zone-transfer/">
+  <body class="" data-url="/adox_status_and_deployment/oarc45/">
     <nav id="sidebar" class="">
 
 
@@ -187,7 +187,7 @@
   
     
     <li data-nav-id="/adox_status_and_deployment/" title="ADoX Status and Deployment" class="dd-item
-        
+        parent
         
         
         ">
@@ -234,7 +234,7 @@
  
   
     
-      <li data-nav-id="/adox_status_and_deployment/oarc45/" title="OARC 45 Table Topic nodes" class="dd-item ">
+      <li data-nav-id="/adox_status_and_deployment/oarc45/" title="OARC 45 Table Topic nodes" class="dd-item active">
         <a href="/adox_status_and_deployment/oarc45/">
         5.1 OARC 45 Table Topic nodes
         
@@ -1006,7 +1006,7 @@
     
     <li data-nav-id="/encrypted-zone-transfer/" title="Encrypted Zone Transfer" class="dd-item
         
-        active
+        
         
         ">
       <a href="/encrypted-zone-transfer/">
@@ -1468,7 +1468,13 @@
             
           
           
-            <a href='/'>DNS Privacy Project</a> > Encrypted Zone Transfer
+            
+            
+          
+          
+            <a href='/'>DNS Privacy Project</a> > <a href='/adox_status_and_deployment/'>ADoX Status and Deployment</a> > OARC 45 Table Topic nodes
+          
+        
           
         
           
@@ -1492,157 +1498,46 @@
         
 
 
-
-	<h2 id="encrypted-zone-transfers">Encrypted Zone Transfers</h2>
-<div class="toc">
-  <nav id="TableOfContents">
-  <ul>
-    <li><a href="#encrypted-zone-transfers">Encrypted Zone Transfers</a></li>
-    <li><a href="#why-encrypt-zone-transfer">Why Encrypt Zone Transfer?</a></li>
-    <li><a href="#specifications">Specifications</a></li>
-    <li><a href="#implementations">Implementations</a></li>
-    <li><a href="#configuration">Configuration</a>
-      <ul>
-        <li><a href="#bind">BIND</a></li>
-        <li><a href="#nsd">NSD</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-</div>
-
-<div class="notices infoblock" ></div>
-
-<h2 id="why-encrypt-zone-transfer">Why Encrypt Zone Transfer?</h2>
-<p>The contents of the zone could include information such as names of persons
-used in names of hosts. Best practice is not to use personal information for
-domain names, but many such domain names exist. The contents of the zone could
-also include references to locations that allow inference about location
-information of the individuals associated with the zone&rsquo;s organization. It
-could also include references to other organizations. Examples of this could be:</p>
+<h1 id="adotq-table-talk-notes-and-feedback">ADoT/Q Table Talk notes and feedback</h1>
+<h2 id="general-notes">General notes:</h2>
+<p>This table talk had 10 or more attendees everyday and we had discussions at full capacity</p>
+<p>Attendees representing various parts of DNS ecosystem, including researchers, software vendors, Resolver operators, Authoritative operators and Root operators</p>
+<h2 id="8-oct-2025---day-1">8 Oct 2025 - Day 1</h2>
+<p><strong>Attendees</strong> (not a complete list): K root, H root, NS1, Quad9, Infoblox</p>
 <ul>
-<li>Person-laptop.example.org</li>
-<li>MX-for-Location.example.org</li>
-<li>Service-tenant-from-another-org.example.org</li>
+<li>When enabling encryption on root or high-traffic authoritative servers, there are uncertainties regarding potential impacts on load and stability.</li>
+<li>Root operators generally view themselves as the last group to enable this feature.</li>
+<li>Given the widespread use of QNAME minimization, this topic may be less relevant to root operators and more applicable to authoritative servers.</li>
+<li>There was discussion about how using hyperlocal roots might benefit resolver operators.</li>
+<li>One perspective was that resolver operators prefer to limit the operational risks of running hyperlocal roots, especially since many already operate very close to root instances.</li>
+<li>On the authoritative side, there is limited customer demand. As commercial entities, authoritative operators tend to prioritize based on customer needs, and they do not observe significant awareness or demand for encrypted transport from the customers.</li>
+<li>Recursive operators, based on their operational experience, see clear value in enabling encryption between resolvers and authoritative servers. They have observed instances of targeted censorship that encryption could help mitigate.</li>
+<li>At the same time, there is reluctance to share such experiences publicly, as this could draw unwanted attention and potentially affect their presence in certain regions.</li>
+<li>There is also a risk of censorship at the protocol level. In such cases, resolvers may silently fall back to Do53, which undermines the purpose of encryption.</li>
+<li>Although most authoritative software stacks already support at least DoT, the resolver ecosystem still lags behind. Some major resolver implementations lack DoT or DoQ support for outbound queries.</li>
+<li>Overall, there appears to be limited awareness of this topic, and the importance or benefits of encryption are not well understood across different stakeholders.</li>
+<li>Software vendors are waiting for the standardization of DELEG, which is expected to enable broader adoption of encrypted DNS between resolvers and authoritative servers (ADoX).</li>
 </ul>
-<p>Additionally, the full zone contents expose all the IP addresses of endpoints
-held in the DNS records, which can make reconnaissance and attack targeting
-easier, particularly for IPv6 addresses or private networks. There may also be
-regulatory, policy, or other reasons why the zone contents in full must be
-treated as private.</p>
-<h2 id="specifications">Specifications</h2>
-<p><a href="https://www.ietf.org/rfc/rfc9103.html">RFC 9103 - Zone Transfer over TLS
-(XoT)</a> was standardized by the IETF in
-2021. I describes how to use DNS over TLS to secure zone transfers in combination with
-TSIG, ACLs and certificate authentication of the server.</p>
-<p><a href="https://www.ietf.org/rfc/rfc9250.html">RFC 9250 - DNS over Dedicated QUIC connections
-(DoQ)</a> additionally defines how to use
-DoQ for encrypted zone transfer in an entirely analogous way to using DNS over
-TLS.</p>
-<h2 id="implementations">Implementations</h2>
-<p>Both BIND (from 9.18) and NSD (from 4.3.7) support zone transfer of TLS (XoT). See
-<a href="/implementation_status/#xfrxot-implementation-status">this table</a> for more
-details.</p>
-<h2 id="configuration">Configuration</h2>
-<h3 id="bind">BIND</h3>
-<p>To configure a BIND primary for XoT (secured by client ACL and TSIG key) use something like the following:</p>
-<pre tabindex="0"><code class="language-base" data-lang="base">options {
-    ...
-    listen-on port 8853 tls &#34;xot&#34; {any;};
-    ...
-}
-
-tls &#34;xot&#34; {
-    cert-file &#34;&lt;cert-file-path&gt;&#34;;
-    key-file  &#34;&lt;key-file-path&gt;&#34;;
-    protocols { TLSv1.3; };
-    session-tickets yes;
-};
-
-acl xot-secondaries {b.b.b.b;};
-
-key &#34;xot-key&#34; {
-    algorithm hmac-sha256;
-    secret &#34;&#34;;
-};
-
-acl xot-acl { !{ !xot-secondaries; any; }; key xot-key ;};
-
-zone {
-  type primary;
-  ...
-  allow-transfer transport tls { xot-acl; };
-  ...
-}
-</code></pre><p>(The double negation in the <code>acl</code> clause is to restrict access to servers that are both secondaries AND have the
-correct key. Otherwise the <code>first match</code> behaviour of BIND will match any secondary and not go on to check the second clause, see
-the last few paragraphs of section 6.1 here: <a href="https://bind9.readthedocs.io/en/v9.18.1/security.html">Access Control Lists</a></p>
-<p>To configure a BIND seconday for XoT (secured by authenticating the server certificate and TSIG key) use something like the following:</p>
-<pre tabindex="0"><code class="language-base" data-lang="base">tls &#34;xot&#34; {
-    remote-hostname &#34;my-xot-primary.org&#34;;
-    protocols { TLSv1.3; };
-    session-tickets yes;
-};
-
-key &#34;xot-key&#34; {
-    algorithm hmac-sha256;
-    secret &#34;&#34;;
-};
-
-zone {
-  type secondary;
-  ...
-  primaries { a.a.a.a port 853 key xot-key tls &#34;xot&#34; ;};
-  ...
-}
-</code></pre>
-<div class="notices info" ><p>To help with testing there is the option to use a transient per <code>named</code> process key/cert on the
-BIND primary. For this option, use
-<code>listen-on port 8853 tls ephemeral {any;};</code>
-in the primary config
-and remove the <code>remote-hostname</code> from the secondary config. While this is
-convenient for testing is is NOT secure enough to use in a production
-environment!</p>
-</div>
-
-<h3 id="nsd">NSD</h3>
-<p>To configure an NSD primary for XoT (secured by client ACL and TSIG key) use something like the following:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ini" data-lang="ini"><span style="display:flex;"><span><span style="color:#a6e22e">zone:</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">...</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">tls-service-key: &#34;&lt;path_to_private_key&gt;&#34;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">tls-service-pem: &#34;&lt;path_to_certifcate_file&gt;&#34;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">tls-port: 853</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">provide-xfr: b.b.b.b@853 &#34;xot-key&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">key:</span>
-</span></span><span style="display:flex;"><span>     <span style="color:#a6e22e">name: &#34;xot-key&#34;</span>
-</span></span><span style="display:flex;"><span>     <span style="color:#a6e22e">algorithm: hmac-sha256</span>
-</span></span><span style="display:flex;"><span>     <span style="color:#a6e22e">secret: &#34;&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">};</span>
-</span></span></code></pre></div><p>To configure an NSD secondary for XoT (secured by authenticating the server certificate and TSIG key) use something like the following:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ini" data-lang="ini"><span style="display:flex;"><span><span style="color:#a6e22e">zone:</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">...</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">request-xfr: a.a.a.a &#34;xot-key&#34; &#34;xot&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">tls-auth:</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">name: &#34;xot&#34;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">auth-domain-name: &#34;my-xot-primary.org&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">key:</span>
-</span></span><span style="display:flex;"><span>     <span style="color:#a6e22e">name: &#34;xot-key&#34;</span>
-</span></span><span style="display:flex;"><span>     <span style="color:#a6e22e">algorithm: hmac-sha256</span>
-</span></span><span style="display:flex;"><span>     <span style="color:#a6e22e">secret: &#34;&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">};</span>
-</span></span></code></pre></div>
-<div class="notices info" ><p>NSD also supports mutual TLS authentication, see <a href="https://nsd.docs.nlnetlabs.nl/en/latest/manpages/nsd.conf.html#tls-auth-declarations">TLS Auth Declarations</a></p>
-</div>
+<h2 id="9-oct-2025--day-2">9 Oct 2025- Day 2</h2>
+<p><strong>Attendees</strong>  (not a complete list): Switch (.ch), SIDN (.nl), deNIC (.de), nic.at, Google, RIPE NCC</p>
+<ul>
+<li>Representatives from several ccTLDs noted that there is little to no demand for encrypted resolver-to-authoritative communication, and the topic has not been widely discussed or considered a requirement.</li>
+<li>At the same time, they expressed concerns about potential impacts on performance and stability. (Similar concerns were raised by root operators in the previous day’s session.)</li>
+<li>There is a lack of secure signaling mechanisms.</li>
+<li>Google has supported DoT for resolver-to-authoritative communication for 5+ years.</li>
+<li>Quad9 began a canary deployment of Opportunistic DoT earlier this year and plans full deployment by Q4 2025.</li>
+<li>There is a general lack of awareness about this issue across the DNS ecosystem.</li>
+<li>Authoritative operators view encryption as operationally complex and costly, particularly since there is no visible demand for it. There were clear concerns about certificate management aspect.</li>
+<li>Current resolver and authoritative software implementations do not provide sufficient observability or statistics, which makes operators hesitant to deploy due to the inability to assess impact.</li>
+<li>However, such requirements have not been formally raised with software vendors.</li>
+<li>DNS operators at various levels are now recognized as critical infrastructure operators (particularly in the EU). This increased responsibility makes them more cautious about taking on additional risks, such as enabling encryption, and slows down decision making process.</li>
+<li>There are concerns about the lack of transparency and absence of signaling between resolvers and authoritative servers in failure scenarios.</li>
+<li>Handling of failure conditions remains unclear. For example, how to deal with expired certificates. And what happens when encrypted connection to Authoritative fails for any reason. There is particular concerns about risk of TLD zone becoming inaccessible due to failure on establishing encrypted connections.</li>
+<li>There is no best-practices document or operational guidance currently available on this topic.</li>
+</ul>
 
 
-
-
-
-
-<footer class=" footline" >
+<footer class="footline">
 	
 </footer>
 
@@ -1746,6 +1641,7 @@ environment!</p>
             
                 
                     
+                    
                 
                 
 
@@ -1758,6 +1654,9 @@ environment!</p>
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1775,85 +1674,6 @@ environment!</p>
             
                 
                     
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
                     
                 
                 
@@ -1874,68 +1694,8 @@ environment!</p>
             
                 
                     
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
                         
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
                         
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
                     
                 
                 
@@ -2005,41 +1765,6 @@ environment!</p>
                     
                     
 
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
                     
             
         
@@ -2155,6 +1880,184 @@ environment!</p>
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
                     
@@ -2278,7 +2181,6 @@ environment!</p>
             
                 
                     
-                    
                 
                 
 
@@ -2294,9 +2196,6 @@ environment!</p>
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -2567,3 +2466,4 @@ environment!</p>
 
   </body>
 </html>
+
