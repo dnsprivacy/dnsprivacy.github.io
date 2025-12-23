@@ -12,22 +12,22 @@
     <title>Encrypted Zone Transfer :: dnsprivacy.org</title>
 
     
-    <link href="/css/nucleus.css?1764350196" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1764350196" rel="stylesheet">
-    <link href="/css/hybrid.css?1764350196" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1764350196" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1764350196" rel="stylesheet">
-    <link href="/css/auto-complete.css?1764350196" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1764350196" rel="stylesheet">
-    <link href="/css/theme.css?1764350196" rel="stylesheet">
-    <link href="/css/tabs.css?1764350196" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1764350196" rel="stylesheet">
+    <link href="/css/nucleus.css?1766486635" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1766486635" rel="stylesheet">
+    <link href="/css/hybrid.css?1766486635" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1766486635" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1766486635" rel="stylesheet">
+    <link href="/css/auto-complete.css?1766486635" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1766486635" rel="stylesheet">
+    <link href="/css/theme.css?1766486635" rel="stylesheet">
+    <link href="/css/tabs.css?1766486635" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1766486635" rel="stylesheet">
     
-    <link href="/css/theme-blue.css?1764350196" rel="stylesheet">
+    <link href="/css/theme-blue.css?1766486635" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1764350196"></script>
+    <script src="/js/jquery-3.3.1.min.js?1766486635"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -37,7 +37,7 @@
     </style>
     
   </head>
-  <body class="" data-url="/encrypted-zone-transfer/">
+  <body class="" data-url="/encrypted_zone_transfer/">
     <nav id="sidebar" class="">
 
 
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1764350196"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1764350196"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1766486635"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1766486635"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/dnsprivacy.org\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1764350196"></script>
+<script type="text/javascript" src="/js/search.js?1766486635"></script>
 
     
   </div>
@@ -1004,12 +1004,12 @@
  
   
     
-    <li data-nav-id="/encrypted-zone-transfer/" title="Encrypted Zone Transfer" class="dd-item
+    <li data-nav-id="/encrypted_zone_transfer/" title="Encrypted Zone Transfer" class="dd-item
         
         active
         
         ">
-      <a href="/encrypted-zone-transfer/">
+      <a href="/encrypted_zone_transfer/">
           12. Encrypted Zone Transfer
           
       </a>
@@ -1507,6 +1507,11 @@
         <li><a href="#nsd">NSD</a></li>
       </ul>
     </li>
+    <li><a href="#xfrxot-implementation-status">XFR/XoT Implementation status</a>
+      <ul>
+        <li><a href="#other-implementation-work">Other implementation work</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 </div>
@@ -1541,14 +1546,14 @@ DoQ for encrypted zone transfer in an entirely analogous way to using DNS over
 TLS.</p>
 <h2 id="implementations">Implementations</h2>
 <p>Both BIND (from 9.18) and NSD (from 4.3.7) support zone transfer of TLS (XoT). See
-<a href="/implementation_status/#xfrxot-implementation-status">this table</a> for more
+<a href="/encrypted_zone_transfer/#xfrxot-implementation-status">this table</a> for more
 details.</p>
 <h2 id="configuration">Configuration</h2>
 <h3 id="bind">BIND</h3>
 <p>To configure a BIND primary for XoT (secured by client ACL and TSIG key) use something like the following:</p>
 <pre tabindex="0"><code class="language-base" data-lang="base">options {
     ...
-    listen-on port 8853 tls &#34;xot&#34; {any;};
+    listen-on port 853 tls &#34;xot&#34; {any;};
     ...
 }
 
@@ -1637,6 +1642,350 @@ environment!</p>
 <div class="notices info" ><p>NSD also supports mutual TLS authentication, see <a href="https://nsd.docs.nlnetlabs.nl/en/latest/manpages/nsd.conf.html#tls-auth-declarations">TLS Auth Declarations</a></p>
 </div>
 
+<h2 id="xfrxot-implementation-status">XFR/XoT Implementation status</h2>
+
+<div class="notices info" ><p>This table is a work in progress - please notify us it
+updates/corrections are needed</p>
+</div>
+
+<p>This table reflects some of the current behaviour on implementations and
+also some features proposed
+in <a href="https://www.rfc-editor.org/rfc/rfc9103.html">RFC9103</a>.
+It is noted that some name servers will behave differently when starting
+up and first loading zones to steady state behaviour. </p>
+
+
+<div class="table-wrap">
+
+<table class="wrapped confluenceTable">
+<tbody>
+<tr class="header">
+<th >Feature </th>
+<th colspan="2" >BIND</th>
+<th colspan="2" >NSD</th>
+<th colspan="2" >Knot Auth</th>
+<th colspan="2" >PowerDNS</th>
+</tr>
+
+<tr class="odd">
+<td class="highlight-grey confluenceTd" title="Background colour : Grey" data-highlight-colour="grey"><strong>Features applicable to Secondary</strong></td>
+<td class="highlight-grey confluenceTd" title="Background colour : Grey" data-highlight-colour="grey">Sec</td>
+<td class="highlight-grey confluenceTd" title="Background colour : Grey" data-highlight-colour="grey">Pri</td>
+<td class="highlight-grey confluenceTd" title="Background colour : Grey" data-highlight-colour="grey">Sec</td>
+<td class="highlight-grey confluenceTd" title="Background colour : Grey" data-highlight-colour="grey">Pri</td>
+<td class="highlight-grey confluenceTd" title="Background colour : Grey" data-highlight-colour="grey">Sec</td>
+<td class="highlight-grey confluenceTd" title="Background colour : Grey" data-highlight-colour="grey">Pri</td>
+<td class="highlight-grey confluenceTd" title="Background colour : Grey" data-highlight-colour="grey">Sec</td>
+<td class="highlight-grey confluenceTd" title="Background colour : Grey" data-highlight-colour="grey">Pri</td>
+</tr>
+<tr class="even">
+<td class="highlight-grey confluenceTd" title="Background colour : Grey" data-highlight-colour="grey"><p>TCP: Typically performs AXFRs for different<br />
+zones in parallel to the same primary using<br />
+separate connections (in steady state)</p></td>
+<td >Y<br />
+</td>
+<td style="text-align: center;" class="confluenceTd"><br />
+</td>
+<td > Y<br />
+</td>
+<td style="text-align: center;" class="confluenceTd"><br />
+</td>
+<td > Y<br />
+</td>
+<td style="text-align: center;" class="confluenceTd"><br />
+</td>
+<td > Y<br />
+</td>
+<td style="text-align: center;" class="confluenceTd"><br />
+</td>
+</tr>
+<tr class="odd">
+<td class="highlight-grey confluenceTd" title="Background colour : Grey" data-highlight-colour="grey">TCP: Typically performs IXFRs in parallel to AXFRs<br />
+to the same primary using<br />
+separate connections (in steady state)</td>
+<td > Y<br />
+</td>
+<td style="text-align: center;" class="confluenceTd"><br />
+</td>
+<td > Y<br />
+</td>
+<td style="text-align: center;" class="confluenceTd"><br />
+</td>
+<td > Y<br />
+</td>
+<td style="text-align: center;" class="confluenceTd"><br />
+</td>
+<td > Y<br />
+</td>
+<td style="text-align: center;" class="confluenceTd"><br />
+</td>
+</tr>
+<tr class="even">
+<td class="highlight-grey confluenceTd" title="Background colour : Grey" data-highlight-colour="grey">TCP: Connection re-use for XFRs<br />
+to same primary is possible</td>
+<td style="text-align: center;" class="confluenceTd"><br />
+</td>
+<td style="text-align: center;" class="confluenceTd"><br />
+</td>
+<td style="text-align: center;" class="highlight-blue confluenceTd" title="Background colour : Blue" data-highlight-colour="blue">(a)</td>
+<td style="text-align: center;" class="confluenceTd"><br />
+</td>
+<td style="text-align: center;" class="confluenceTd"><br />
+</td>
+<td style="text-align: center;" class="confluenceTd"><br />
+</td>
+<td style="text-align: center;" class="confluenceTd"><br />
+</td>
+<td style="text-align: center;" class="confluenceTd"><br />
+</td>
+</tr>
+<tr class="odd">
+<td class="highlight-grey confluenceTd" title="Background colour : Grey" data-highlight-colour="grey">TCP: When re-using connections, will pipeline<br />
+all XFR requests </td>
+<td style="text-align: center;" class="confluenceTd"><br />
+</td>
+<td style="text-align: center;" class="confluenceTd"><br />
+</td>
+<td > Y<br />
+</td>
+<td style="text-align: center;" class="confluenceTd"><br />
+</td>
+<td style="text-align: center;" class="confluenceTd"><br />
+</td>
+<td style="text-align: center;" class="confluenceTd"><br />
+</td>
+<td style="text-align: center;" class="confluenceTd"><br />
+</td>
+<td style="text-align: center;" class="confluenceTd"><br />
+</td>
+</tr>
+<tr class="even">
+<td class="highlight-grey confluenceTd" title="Background colour : Grey" data-highlight-colour="grey">Handle empty AXFR responses</td>
+<td> NT<br />
+</td>
+<td> NT<br />
+</td>
+<td> NT<br />
+</td>
+<td> NT<br />
+</td>
+<td> NT<br />
+</td>
+<td> NT<br />
+</td>
+<td> NT<br />
+</td>
+<td> NT<br />
+</td>
+</tr>
+<tr class="odd">
+<td class="highlight-grey confluenceTd" title="Background colour : Grey" data-highlight-colour="grey">Supports XoT</td>
+<td class="highlight-yellow confluenceTd" title="Background colour : Yellow" data-highlight-colour="yellow"> 9.18</td>
+<td class="confluenceTd"></td>
+<td class="highlight-blue confluenceTd" title="Background colour : Blue" data-highlight-colour="blue">v4.3.7</td>
+<td class="confluenceTd"><br /></td>
+<td class="highlight-yellow confluenceTd" title="Background colour : Yellow" data-highlight-colour="yellow"> 3.3.0</td>
+<td class="confluenceTd"><br /></td>
+<td class="confluenceTd"><br /></td>
+<td class="confluenceTd"><br /></td>
+</tr>
+<tr class="even">
+<td class="highlight-grey confluenceTd" title="Background colour : Grey" data-highlight-colour="grey"><strong>Feature applicable to Primary</strong></td>
+<td style="text-align: center;" class="highlight-grey confluenceTd" title="Background colour : Grey" data-highlight-colour="grey"><br />
+</td>
+<td style="text-align: center;" class="highlight-grey confluenceTd" title="Background colour : Grey" data-highlight-colour="grey"><br />
+</td>
+<td style="text-align: center;" class="highlight-grey confluenceTd" title="Background colour : Grey" data-highlight-colour="grey"><br />
+</td>
+<td style="text-align: center;" class="highlight-grey confluenceTd" title="Background colour : Grey" data-highlight-colour="grey"><br />
+</td>
+<td style="text-align: center;" class="highlight-grey confluenceTd" title="Background colour : Grey" data-highlight-colour="grey"><br />
+</td>
+<td style="text-align: center;" class="highlight-grey confluenceTd" title="Background colour : Grey" data-highlight-colour="grey"><br />
+</td>
+<td style="text-align: center;" class="highlight-grey confluenceTd" title="Background colour : Grey" data-highlight-colour="grey"><br />
+</td>
+<td style="text-align: center;" class="highlight-grey confluenceTd" title="Background colour : Grey" data-highlight-colour="grey"><br />
+</td>
+</tr>
+<tr class="odd">
+<td class="highlight-grey confluenceTd" title="Background colour : Grey" data-highlight-colour="grey"><p>Handle pipelined XFR requests on one<br />
+connection for different zones</p></td>
+<td style="text-align: center;" class="confluenceTd"><br />
+</td>
+<td > Y<br />
+</td>
+<td style="text-align: center;" class="confluenceTd"><br />
+</td>
+<td > Y(b)</td>
+<td style="text-align: center;" class="confluenceTd"><br />
+</td>
+<td > Y<br />
+</td>
+<td style="text-align: center;" class="confluenceTd"><br />
+</td>
+<td > Y<br />
+</td>
+</tr>
+<tr class="even">
+<td class="highlight-grey confluenceTd" title="Background colour : Grey" data-highlight-colour="grey">Always sends AXFR responses for different zones serially<br />
+on the same connection (not intermingled)</td>
+<td style="text-align: center;" class="confluenceTd"><br />
+</td>
+<td > Y<br />
+</td>
+<td style="text-align: center;" class="confluenceTd"><br />
+</td>
+<td > Y<br />
+</td>
+<td style="text-align: center;" class="confluenceTd"><br />
+</td>
+<td > Y<br />
+</td>
+<td style="text-align: center;" class="confluenceTd"><br />
+</td>
+<td > Y<br />
+</td>
+</tr>
+<tr class="odd">
+<td class="highlight-grey confluenceTd" title="Background colour : Grey" data-highlight-colour="grey"><p>Sends all AXFR/IXFR responses serially<br />
+on the same connection</p></td>
+<td class="confluenceTd"><br />
+</td>
+<td style="text-align: center;" class="confluenceTd"> (d)</td>
+<td class="confluenceTd"><br />
+</td>
+<td style="text-align: center;" class="highlight-red confluenceTd" title="Background colour : Red" data-highlight-colour="red">(b)</td>
+<td class="confluenceTd"><br />
+</td>
+<td class="highlight-green confluenceTd" title="Background colour : Green" data-highlight-colour="green"><br />
+</td>
+<td class="confluenceTd"><br />
+</td>
+<td class="highlight-green confluenceTd" title="Background colour : Green" data-highlight-colour="green"><br />
+</td>
+</tr>
+<tr class="even">
+<td class="highlight-grey confluenceTd" title="Background colour : Grey" data-highlight-colour="grey">Handle sequential XFR requests on one<br />
+connection for the same zone</td>
+<td style="text-align: center;" class="confluenceTd"><br />
+</td>
+<td > Y<br />
+</td>
+<td style="text-align: center;" class="confluenceTd"><br />
+</td>
+<td style="text-align: center;" class="highlight-blue confluenceTd" title="Background colour : Blue" data-highlight-colour="blue">(c)</td>
+<td style="text-align: center;" class="confluenceTd"><br />
+</td>
+<td > Y<br />
+</td>
+<td style="text-align: center;" class="confluenceTd"><br />
+</td>
+<td > Y<br />
+</td>
+</tr>
+<tr class="odd">
+<td class="highlight-grey confluenceTd" title="Background colour : Grey" data-highlight-colour="grey"><br />
+</td>
+<td style="text-align: center;" class="confluenceTd"><br />
+</td>
+<td style="text-align: center;" class="confluenceTd"><br />
+</td>
+<td style="text-align: center;" class="confluenceTd"><br />
+</td>
+<td style="text-align: center;" class="confluenceTd"><br />
+</td>
+<td style="text-align: center;" class="confluenceTd"><br />
+</td>
+<td style="text-align: center;" class="confluenceTd"><br />
+</td>
+<td style="text-align: center;" class="confluenceTd"><br />
+</td>
+<td style="text-align: center;" class="confluenceTd"><br />
+</td>
+</tr>
+<tr class="even">
+<td class="highlight-grey confluenceTd" title="Background colour : Grey" data-highlight-colour="grey">Default size of XFR response</td>
+<td style="text-align: center;" class="confluenceTd"><br />
+</td>
+<td style="text-align: center;" class="confluenceTd">~20kB</td>
+<td style="text-align: center;" class="confluenceTd"><br />
+</td>
+<td style="text-align: center;" class="confluenceTd">16kB</td>
+<td style="text-align: center;" class="confluenceTd"><br />
+</td>
+<td style="text-align: center;" class="confluenceTd">16kB</td>
+<td style="text-align: center;" class="confluenceTd"><br />
+</td>
+<td style="text-align: center;" class="confluenceTd">4-8kB</td>
+</tr>
+<tr class="odd">
+<td class="highlight-grey confluenceTd" title="Background colour : Grey" data-highlight-colour="grey">Explicit configuration limit on num of concurrent XFRs</td>
+<td style="text-align: center;" class="confluenceTd"><br />
+</td>
+<td > Y<br />
+</td>
+<td style="text-align: center;" class="confluenceTd"><br />
+</td>
+<td style="text-align: center;" class="confluenceTd">(e)</td>
+<td style="text-align: center;" class="confluenceTd"><br />
+</td>
+<td style="text-align: center;" class="confluenceTd">(e)</td>
+<td style="text-align: center;" class="confluenceTd"><br />
+</td>
+<td style="text-align: center;" class="confluenceTd">(e)</td>
+</tr>
+<tr class="even">
+<td class="highlight-grey confluenceTd" title="Background colour : Grey" data-highlight-colour="grey">Supports XoT</td>
+<td class="highlight-yellow confluenceTd" title="Background colour : Yellow" data-highlight-colour="yellow"></td>
+<td class="confluenceTd">9.18
+</td>
+<td class="confluenceTd"><br />
+</td>
+<td class="confluenceTd"><br />
+</td>
+<td class="confluenceTd"><br />
+</td>
+<td class="highlight-yellow confluenceTd" title="Background colour : Yellow" data-highlight-colour="yellow"> 3.3.0</td>
+<td class="confluenceTd"><br />
+</td>
+<td class="confluenceTd"><br />
+</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+
+<p>KEY:</p>
+<ul>
+<li>Y - indicates latest release supports this functionality</li>
+<li>NT - not tested yet, or cannot be tested.</li>
+</ul>
+<p>(a) Current release will re-use connections if the max outgoing TPC
+connections is hit. <a href="https://github.com/NLnetLabs/nsd/pull/145">This PR</a>
+provides a configuration option to make that behaviour the default.<br>
+(b) NSD does not support IXFR as a primary<br>
+(c) Because NSD requires a reload to update a zone, an old version of
+the zone will currently be sent on a TCP connection opened before the
+reload. A fix/workaournd is proposed.<br>
+(d) e.g. If BIND receives an IXFR request whilst sending a large AXFR
+response, it will send the IXFR response immediately intermingled with
+the AXFR response.<br>
+(e) Whilst there is no limit explicitly for XFRs, the primary has a
+configuration option to limit the total number of incoming TCP
+connections<br>
+     (defaults for relevant limits are: BIND - 25, NSD - 100, Knot - one
+half of the file descriptor limit for the server process, - PowerDNS
+20<br>
+(g) <a href="https://gitlab.isc.org/isc-projects/bind9/-/issues/1784">See this issue for
+progress.</a> Support
+was added in development release 9.17.10</p>
+<p>Note that as of 2025  BIND and NSD support Zone transfers over DoT only, while KnoT supports DoQ only.</p>
+<h3 id="other-implementation-work">Other implementation work</h3>
+<ul>
+<li><a href="https://technitium.com/dns/">Technitium DNS Server</a> is an open source project which supports DoT, DoH and now DoQ. It also has support for both XFR-over-TLS and XFR-over-QUIC.</li>
+</ul>
 
 
 
@@ -2552,16 +2901,16 @@ environment!</p>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1764350196"></script>
-    <script src="/js/perfect-scrollbar.min.js?1764350196"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1764350196"></script>
-    <script src="/js/jquery.sticky.js?1764350196"></script>
-    <script src="/js/featherlight.min.js?1764350196"></script>
-    <script src="/js/highlight.pack.js?1764350196"></script>
+    <script src="/js/clipboard.min.js?1766486635"></script>
+    <script src="/js/perfect-scrollbar.min.js?1766486635"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1766486635"></script>
+    <script src="/js/jquery.sticky.js?1766486635"></script>
+    <script src="/js/featherlight.min.js?1766486635"></script>
+    <script src="/js/highlight.pack.js?1766486635"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1764350196"></script>
-    <script src="/js/learn.js?1764350196"></script>
-    <script src="/js/hugo-learn.js?1764350196"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1766486635"></script>
+    <script src="/js/learn.js?1766486635"></script>
+    <script src="/js/hugo-learn.js?1766486635"></script>
     
     
 

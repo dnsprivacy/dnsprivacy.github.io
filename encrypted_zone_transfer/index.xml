@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Encrypted Zone Transfer on dnsprivacy.org</title>
-    <link>http://dnsprivacy.org/encrypted-zone-transfer/</link>
+    <link>http://dnsprivacy.org/encrypted_zone_transfer/</link>
     <description>Recent content in Encrypted Zone Transfer on dnsprivacy.org</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate></lastBuildDate>
-    <atom:link href="http://dnsprivacy.org/encrypted-zone-transfer/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://dnsprivacy.org/encrypted_zone_transfer/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
