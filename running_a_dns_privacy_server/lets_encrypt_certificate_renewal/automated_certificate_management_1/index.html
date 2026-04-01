@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.148.2">
+    <meta name="generator" content="Hugo 0.157.0">
     <meta name="description" content="">
 
 
@@ -12,22 +12,22 @@
     <title>Certificate management Method 1 :: dnsprivacy.org</title>
 
     
-    <link href="/css/nucleus.css?1766486635" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1766486635" rel="stylesheet">
-    <link href="/css/hybrid.css?1766486635" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1766486635" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1766486635" rel="stylesheet">
-    <link href="/css/auto-complete.css?1766486635" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1766486635" rel="stylesheet">
-    <link href="/css/theme.css?1766486635" rel="stylesheet">
-    <link href="/css/tabs.css?1766486635" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1766486635" rel="stylesheet">
+    <link href="/css/nucleus.css?1775061010" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1775061010" rel="stylesheet">
+    <link href="/css/hybrid.css?1775061010" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1775061010" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1775061010" rel="stylesheet">
+    <link href="/css/auto-complete.css?1775061010" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1775061010" rel="stylesheet">
+    <link href="/css/theme.css?1775061010" rel="stylesheet">
+    <link href="/css/tabs.css?1775061010" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1775061010" rel="stylesheet">
     
-    <link href="/css/theme-blue.css?1766486635" rel="stylesheet">
+    <link href="/css/theme-blue.css?1775061010" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1766486635"></script>
+    <script src="/js/jquery-3.3.1.min.js?1775061010"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1766486635"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1766486635"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1775061010"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1775061010"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/dnsprivacy.org\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1766486635"></script>
+<script type="text/javascript" src="/js/search.js?1775061010"></script>
 
     
   </div>
@@ -1581,14 +1581,14 @@ dnsovertls1.&lt;YOURDOMAIN&gt;. and dnsovertls.&lt;YOURDOMAIN&gt;.</p>
 <p>Add CNAME RRs to the &lt;YOURDOMAIN&gt; zone like these. These will redirect
 queries for the dns-01 challenge to a dedicated zone which can exist on
 and be served by a dedicated certificate management server</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>_acme-challenge.dnsovertls1.&lt;YOURDOMAIN&gt;. <span style="color:#ae81ff">300</span> CNAME dnsovertls1.&lt;YOURDOMAIN&gt;.acme.&lt;YOURDOMAIN&gt;.
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>_acme-challenge.dnsovertls1.&lt;YOURDOMAIN&gt;. <span style="color:#ae81ff">300</span> CNAME dnsovertls1.&lt;YOURDOMAIN&gt;.acme.&lt;YOURDOMAIN&gt;.
 </span></span><span style="display:flex;"><span>_acme-challenge.dnsovertls.&lt;YOURDOMAIN&gt;. <span style="color:#ae81ff">300</span> CNAME dnsovertls.&lt;YOURDOMAIN&gt;.acme.&lt;YOURDOMAIN&gt;.
 </span></span></code></pre></div><p>Delegate acme.&lt;YOURDOMAIN&gt; to the certificate management server by
 adding NS and DS RRs to the &lt;YOURDOMAIN&gt; zone. Lets assume the server
 is called ns1.acme.&lt;YOURDOMAIN&gt;</p>
 <p>Create an empty zone for acme.&lt;YOURDOMAIN&gt; (SOA and NS and A/AAAA RRs).
 Configure knot to sign the domain</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ini" data-lang="ini"><span style="display:flex;"><span><span style="color:#a6e22e">server:</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-ini" data-lang="ini"><span style="display:flex;"><span><span style="color:#a6e22e">server:</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">listen: &lt;YOURIP4&gt;@53</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">listen: &lt;YOURIP6&gt;@53</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">user: knot:knot</span>
@@ -1606,7 +1606,7 @@ Configure knot to sign the domain</p>
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">file: &#34;acme.&lt;YOURDOMAIN&gt;.zone&#34;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">dnssec-signing: on</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">dnssec-policy: dnssec</span>
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>acme.&lt;YOURDOMAIN&gt;.       <span style="color:#ae81ff">3600</span>    SOA     ns1.acme.&lt;YOURDOMAIN&gt;. user.&lt;YOURDOMAIN&gt;. <span style="color:#ae81ff">2016120927</span> <span style="color:#ae81ff">30000</span> <span style="color:#ae81ff">300</span> <span style="color:#ae81ff">604800</span> <span style="color:#ae81ff">300</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>acme.&lt;YOURDOMAIN&gt;.       <span style="color:#ae81ff">3600</span>    SOA     ns1.acme.&lt;YOURDOMAIN&gt;. user.&lt;YOURDOMAIN&gt;. <span style="color:#ae81ff">2016120927</span> <span style="color:#ae81ff">30000</span> <span style="color:#ae81ff">300</span> <span style="color:#ae81ff">604800</span> <span style="color:#ae81ff">300</span>
 </span></span><span style="display:flex;"><span>acme.&lt;YOURDOMAIN&gt;.       <span style="color:#ae81ff">3600</span>    NS      ns1.acme.&lt;YOURDOMAIN&gt;.
 </span></span><span style="display:flex;"><span>ns1.acme.&lt;YOURDOMAIN&gt;.   <span style="color:#ae81ff">3600</span>    A       &lt;YOURIP4&gt;
 </span></span><span style="display:flex;"><span>ns1.acme.&lt;YOURDOMAIN&gt;.   <span style="color:#ae81ff">3600</span>    AAAA    &lt;YOURIP6&gt;
@@ -1619,7 +1619,7 @@ This will allow you to run the scripts for debugging without exceeding
 the production Let&rsquo;s Encrypt limits</p>
 </div>
 </p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">## CA=&#34;https://acme-staging.api.letsencrypt.org/directory&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">## CA=&#34;https://acme-staging.api.letsencrypt.org/directory&#34;</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">## CA_TERMS=&#34;https://acme-staging.api.letsencrypt.org/terms&#34;</span>
 </span></span><span style="display:flex;"><span>LICENSE<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://letsencrypt.org/documents/LE-SA-v1.1.1-August-1-2016.pdf&#34;</span>
 </span></span><span style="display:flex;"><span>CERTDIR<span style="color:#f92672">=</span>/&lt;PATH&gt;/dehydrated/certs
@@ -1634,12 +1634,12 @@ SPKI pinning will work.</p>
 <h3 id="create-a-domains-file">Create a domains file</h3>
 <p>Create a dehydrated.domains file
 (<em>/&lt;PATH&gt;/dehydrated/dehydrated.domains</em>)</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>dnsovertls.&lt;YOURDOMAIN&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>dnsovertls.&lt;YOURDOMAIN&gt;
 </span></span><span style="display:flex;"><span>dnsovertls1.&lt;YOURDOMAIN&gt;
 </span></span></code></pre></div><h3 id="write-a-hook-script">Write a hook script</h3>
 <p>Create a hook.sh script (<em>/&lt;PATH&gt;/dehydrated/hook.sh</em>). </p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/usr/bin/env bash
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/usr/bin/env bash
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>set -e
 </span></span><span style="display:flex;"><span>set -u
 </span></span><span style="display:flex;"><span>set -o pipefail
@@ -1707,9 +1707,9 @@ SPKI pinning will work.</p>
 </span></span><span style="display:flex;"><span>   <span style="color:#66d9ef">for</span> i in <span style="color:#66d9ef">$(</span>awk <span style="color:#e6db74">&#39; { print $1 } &#39;</span> /&lt;PATH&gt;/dehydrated/dehydrated.domains <span style="color:#66d9ef">)</span> ; <span style="color:#66d9ef">do</span>
 </span></span><span style="display:flex;"><span>      CERTPATH<span style="color:#f92672">=</span>/srv/ftp/certs/$i
 </span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">if</span> <span style="color:#f92672">[[</span> ! -d <span style="color:#e6db74">${</span>CERTPATH<span style="color:#e6db74">}</span> <span style="color:#f92672">]]</span> <span style="color:#f92672">||</span> <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>         <span style="color:#f92672">[[</span> <span style="color:#66d9ef">$(</span>stat -c %a <span style="color:#e6db74">${</span>CERTPATH<span style="color:#e6db74">}</span><span style="color:#66d9ef">)</span> -ne <span style="color:#ae81ff">770</span> <span style="color:#f92672">]]</span> <span style="color:#f92672">||</span> <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>         <span style="color:#f92672">[[</span> <span style="color:#66d9ef">$(</span>stat -c %U <span style="color:#e6db74">${</span>CERTPATH<span style="color:#e6db74">}</span><span style="color:#66d9ef">)</span> !<span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&lt;USER THE CERTS ARE CREATED BY&gt;&#34;</span> <span style="color:#f92672">]]</span> <span style="color:#f92672">||</span> <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>         <span style="color:#f92672">[[</span> <span style="color:#66d9ef">$(</span>stat -c %G <span style="color:#e6db74">${</span>CERTPATH<span style="color:#e6db74">}</span><span style="color:#66d9ef">)</span> !<span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;ftp&#34;</span> <span style="color:#f92672">]]</span> ; <span style="color:#66d9ef">then</span> 
+</span></span></span><span style="display:flex;"><span>         <span style="color:#f92672">[[</span> <span style="color:#66d9ef">$(</span>stat -c %a <span style="color:#e6db74">${</span>CERTPATH<span style="color:#e6db74">}</span><span style="color:#66d9ef">)</span> -ne <span style="color:#ae81ff">770</span> <span style="color:#f92672">]]</span> <span style="color:#f92672">||</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>         <span style="color:#f92672">[[</span> <span style="color:#66d9ef">$(</span>stat -c %U <span style="color:#e6db74">${</span>CERTPATH<span style="color:#e6db74">}</span><span style="color:#66d9ef">)</span> !<span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&lt;USER THE CERTS ARE CREATED BY&gt;&#34;</span> <span style="color:#f92672">]]</span> <span style="color:#f92672">||</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>         <span style="color:#f92672">[[</span> <span style="color:#66d9ef">$(</span>stat -c %G <span style="color:#e6db74">${</span>CERTPATH<span style="color:#e6db74">}</span><span style="color:#66d9ef">)</span> !<span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;ftp&#34;</span> <span style="color:#f92672">]]</span> ; <span style="color:#66d9ef">then</span> 
 </span></span><span style="display:flex;"><span>           echo <span style="color:#e6db74">&#34;Creating, chmod, chown FTP directory for </span>$i<span style="color:#e6db74">&#34;</span>
 </span></span><span style="display:flex;"><span>           mkdir -p <span style="color:#e6db74">${</span>CERTPATH<span style="color:#e6db74">}</span>
 </span></span><span style="display:flex;"><span>           chown &lt;USER THE CERTS ARE CREATED BY&gt;:ftp <span style="color:#e6db74">${</span>CERTPATH<span style="color:#e6db74">}</span>
@@ -1772,8 +1772,8 @@ SPKI pinning will work.</p>
 </span></span></code></pre></div><h2 id="write-a-script-to-download-the-certificates-to-your-dns-servers">Write a script to download the certificates to your DNS servers</h2>
 <p>Do something like the following on each servers to download the
 certificates from your main certificate server. </p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/usr/bin/env bash
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/usr/bin/env bash
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>set -e
 </span></span><span style="display:flex;"><span>set -u
 </span></span><span style="display:flex;"><span>set -o pipefail
@@ -1787,11 +1787,11 @@ certificates from your main certificate server. </p>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">## you might need to ensure the correct user can access the certificate files</span>
 </span></span><span style="display:flex;"><span>SERVICEAPP<span style="color:#f92672">=</span>$1
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[[</span> <span style="color:#e6db74">${</span>SERVICEAPP<span style="color:#e6db74">}</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;haproxy&#34;</span> <span style="color:#f92672">]]</span> <span style="color:#f92672">||</span> <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>   <span style="color:#f92672">[[</span> <span style="color:#e6db74">${</span>SERVICEAPP<span style="color:#e6db74">}</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;knot-resolver&#34;</span> <span style="color:#f92672">]]</span> ; <span style="color:#66d9ef">then</span>
+</span></span></span><span style="display:flex;"><span>   <span style="color:#f92672">[[</span> <span style="color:#e6db74">${</span>SERVICEAPP<span style="color:#e6db74">}</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;knot-resolver&#34;</span> <span style="color:#f92672">]]</span> ; <span style="color:#66d9ef">then</span>
 </span></span><span style="display:flex;"><span>  GROUPUSER<span style="color:#f92672">=</span><span style="color:#e6db74">${</span>SERVICEAPP<span style="color:#e6db74">}</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">elif</span> <span style="color:#f92672">[[</span> <span style="color:#e6db74">${</span>SERVICEAPP<span style="color:#e6db74">}</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;apache2&#34;</span> <span style="color:#f92672">]]</span> <span style="color:#f92672">||</span> <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>     <span style="color:#f92672">[[</span> <span style="color:#e6db74">${</span>SERVICEAPP<span style="color:#e6db74">}</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;apache&#34;</span> <span style="color:#f92672">]]</span> <span style="color:#f92672">||</span> <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>     <span style="color:#f92672">[[</span> <span style="color:#e6db74">${</span>SERVICEAPP<span style="color:#e6db74">}</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;nginx&#34;</span> <span style="color:#f92672">]]</span> ; <span style="color:#66d9ef">then</span>
+</span></span></span><span style="display:flex;"><span>     <span style="color:#f92672">[[</span> <span style="color:#e6db74">${</span>SERVICEAPP<span style="color:#e6db74">}</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;apache&#34;</span> <span style="color:#f92672">]]</span> <span style="color:#f92672">||</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>     <span style="color:#f92672">[[</span> <span style="color:#e6db74">${</span>SERVICEAPP<span style="color:#e6db74">}</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;nginx&#34;</span> <span style="color:#f92672">]]</span> ; <span style="color:#66d9ef">then</span>
 </span></span><span style="display:flex;"><span>  GROUPUSER<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;www-data&#34;</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span>
 </span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;Unsupported service application. Exiting...&#34;</span>
@@ -1801,9 +1801,9 @@ certificates from your main certificate server. </p>
 </span></span><span style="display:flex;"><span>CERTPATH<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/etc/certs&#34;</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[[</span> ! -d <span style="color:#e6db74">${</span>CERTPATH<span style="color:#e6db74">}</span> <span style="color:#f92672">]]</span> <span style="color:#f92672">||</span> <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>   <span style="color:#f92672">[[</span> <span style="color:#66d9ef">$(</span>stat -c %a <span style="color:#e6db74">${</span>CERTPATH<span style="color:#e6db74">}</span><span style="color:#66d9ef">)</span> -ne <span style="color:#ae81ff">750</span> <span style="color:#f92672">]]</span> <span style="color:#f92672">||</span> <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>   <span style="color:#f92672">[[</span> <span style="color:#66d9ef">$(</span>stat -c %U <span style="color:#e6db74">${</span>CERTPATH<span style="color:#e6db74">}</span><span style="color:#66d9ef">)</span> !<span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;root&#34;</span> <span style="color:#f92672">]]</span> <span style="color:#f92672">||</span> <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>   <span style="color:#f92672">[[</span> <span style="color:#66d9ef">$(</span>stat -c %G <span style="color:#e6db74">${</span>CERTPATH<span style="color:#e6db74">}</span><span style="color:#66d9ef">)</span> !<span style="color:#f92672">=</span> <span style="color:#e6db74">${</span>GROUPUSER<span style="color:#e6db74">}</span> <span style="color:#f92672">]]</span> ; <span style="color:#66d9ef">then</span>
+</span></span></span><span style="display:flex;"><span>   <span style="color:#f92672">[[</span> <span style="color:#66d9ef">$(</span>stat -c %a <span style="color:#e6db74">${</span>CERTPATH<span style="color:#e6db74">}</span><span style="color:#66d9ef">)</span> -ne <span style="color:#ae81ff">750</span> <span style="color:#f92672">]]</span> <span style="color:#f92672">||</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>   <span style="color:#f92672">[[</span> <span style="color:#66d9ef">$(</span>stat -c %U <span style="color:#e6db74">${</span>CERTPATH<span style="color:#e6db74">}</span><span style="color:#66d9ef">)</span> !<span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;root&#34;</span> <span style="color:#f92672">]]</span> <span style="color:#f92672">||</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>   <span style="color:#f92672">[[</span> <span style="color:#66d9ef">$(</span>stat -c %G <span style="color:#e6db74">${</span>CERTPATH<span style="color:#e6db74">}</span><span style="color:#66d9ef">)</span> !<span style="color:#f92672">=</span> <span style="color:#e6db74">${</span>GROUPUSER<span style="color:#e6db74">}</span> <span style="color:#f92672">]]</span> ; <span style="color:#66d9ef">then</span>
 </span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;No </span><span style="color:#e6db74">${</span>CERTPATH<span style="color:#e6db74">}</span><span style="color:#e6db74"> directory or permissions not good.&#34;</span>
 </span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;Do something like:&#34;</span>
 </span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;  sudo mkdir -p </span><span style="color:#e6db74">${</span>CERTPATH<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
@@ -1816,10 +1816,10 @@ certificates from your main certificate server. </p>
 </span></span><span style="display:flex;"><span>cd <span style="color:#e6db74">${</span>CERTPATH<span style="color:#e6db74">}</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[[</span> ! -f privkey.pem <span style="color:#f92672">]]</span> <span style="color:#f92672">||</span> <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>   <span style="color:#f92672">[[</span> <span style="color:#66d9ef">$(</span>stat -c %a privkey.pem<span style="color:#66d9ef">)</span> -ne <span style="color:#ae81ff">640</span> <span style="color:#f92672">]]</span> <span style="color:#f92672">||</span> <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>   <span style="color:#f92672">[[</span> <span style="color:#66d9ef">$(</span>stat -c %U privkey.pem<span style="color:#66d9ef">)</span> !<span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;root&#34;</span> <span style="color:#f92672">]]</span> <span style="color:#f92672">||</span> <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>   <span style="color:#f92672">[[</span> <span style="color:#66d9ef">$(</span>stat -c %G <span style="color:#e6db74">${</span>CERTPATH<span style="color:#e6db74">}</span>/privkey.pem<span style="color:#66d9ef">)</span> !<span style="color:#f92672">=</span> <span style="color:#e6db74">${</span>GROUPUSER<span style="color:#e6db74">}</span> <span style="color:#f92672">]]</span> <span style="color:#f92672">||</span> <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>   <span style="color:#f92672">[[</span> ! -s privkey.pem <span style="color:#f92672">]]</span> ; <span style="color:#66d9ef">then</span>
+</span></span></span><span style="display:flex;"><span>   <span style="color:#f92672">[[</span> <span style="color:#66d9ef">$(</span>stat -c %a privkey.pem<span style="color:#66d9ef">)</span> -ne <span style="color:#ae81ff">640</span> <span style="color:#f92672">]]</span> <span style="color:#f92672">||</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>   <span style="color:#f92672">[[</span> <span style="color:#66d9ef">$(</span>stat -c %U privkey.pem<span style="color:#66d9ef">)</span> !<span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;root&#34;</span> <span style="color:#f92672">]]</span> <span style="color:#f92672">||</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>   <span style="color:#f92672">[[</span> <span style="color:#66d9ef">$(</span>stat -c %G <span style="color:#e6db74">${</span>CERTPATH<span style="color:#e6db74">}</span>/privkey.pem<span style="color:#66d9ef">)</span> !<span style="color:#f92672">=</span> <span style="color:#e6db74">${</span>GROUPUSER<span style="color:#e6db74">}</span> <span style="color:#f92672">]]</span> <span style="color:#f92672">||</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>   <span style="color:#f92672">[[</span> ! -s privkey.pem <span style="color:#f92672">]]</span> ; <span style="color:#66d9ef">then</span>
 </span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;Private key not found or permissions not good. Exiting...&#34;</span>
 </span></span><span style="display:flex;"><span>  exit <span style="color:#ae81ff">1</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
@@ -1839,8 +1839,8 @@ certificates from your main certificate server. </p>
 </span></span><span style="display:flex;"><span>curl -s --ssl-reqd --tlsv1 -O ftp://ns1.acme.&lt;YOURDOMAIN&gt;:21/certs/<span style="color:#e6db74">${</span>CN<span style="color:#e6db74">}</span>/chain.pem
 </span></span><span style="display:flex;"><span>curl -s --ssl-reqd --tlsv1 -O ftp://ns1.acme.&lt;YOURDOMAIN&gt;:21/certs/<span style="color:#e6db74">${</span>CN<span style="color:#e6db74">}</span>/fullchain.pem
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[[</span> ! -s cert.pem <span style="color:#f92672">]]</span> <span style="color:#f92672">||</span> <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>   <span style="color:#f92672">[[</span> ! -s chain.pem <span style="color:#f92672">]]</span> <span style="color:#f92672">||</span> <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>   <span style="color:#f92672">[[</span> ! -s fullchain.pem <span style="color:#f92672">]]</span> ; <span style="color:#66d9ef">then</span>
+</span></span></span><span style="display:flex;"><span>   <span style="color:#f92672">[[</span> ! -s chain.pem <span style="color:#f92672">]]</span> <span style="color:#f92672">||</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>   <span style="color:#f92672">[[</span> ! -s fullchain.pem <span style="color:#f92672">]]</span> ; <span style="color:#66d9ef">then</span>
 </span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;At least one of the certificate files is empty or missing. Exiting...&#34;</span>
 </span></span><span style="display:flex;"><span>  exit <span style="color:#ae81ff">1</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
@@ -1851,8 +1851,8 @@ certificates from your main certificate server. </p>
 </span></span><span style="display:flex;"><span>chown root:<span style="color:#e6db74">${</span>GROUPUSER<span style="color:#e6db74">}</span> cert.pem chain.pem fullchain.pem keycert.pem
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[[</span> <span style="color:#e6db74">${</span>SERVICEAPP<span style="color:#e6db74">}</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;haproxy&#34;</span> <span style="color:#f92672">]]</span> <span style="color:#f92672">||</span> <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>   <span style="color:#f92672">[[</span> <span style="color:#e6db74">${</span>SERVICEAPP<span style="color:#e6db74">}</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;apache2&#34;</span> <span style="color:#f92672">]]</span> <span style="color:#f92672">||</span> <span style="color:#ae81ff">\
-</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>   <span style="color:#f92672">[[</span> <span style="color:#e6db74">${</span>SERVICEAPP<span style="color:#e6db74">}</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;nginx&#34;</span> <span style="color:#f92672">]]</span> ; <span style="color:#66d9ef">then</span>
+</span></span></span><span style="display:flex;"><span>   <span style="color:#f92672">[[</span> <span style="color:#e6db74">${</span>SERVICEAPP<span style="color:#e6db74">}</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;apache2&#34;</span> <span style="color:#f92672">]]</span> <span style="color:#f92672">||</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span>   <span style="color:#f92672">[[</span> <span style="color:#e6db74">${</span>SERVICEAPP<span style="color:#e6db74">}</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;nginx&#34;</span> <span style="color:#f92672">]]</span> ; <span style="color:#66d9ef">then</span>
 </span></span><span style="display:flex;"><span>  INITNAME<span style="color:#f92672">=</span><span style="color:#e6db74">${</span>SERVICEAPP<span style="color:#e6db74">}</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">elif</span> <span style="color:#f92672">[[</span> <span style="color:#e6db74">${</span>SERVICEAPP<span style="color:#e6db74">}</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;apache&#34;</span> <span style="color:#f92672">]]</span> ; <span style="color:#66d9ef">then</span>
 </span></span><span style="display:flex;"><span>  INITNAME<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;apache2&#34;</span>
@@ -2776,16 +2776,16 @@ certificates from your main certificate server. </p>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1766486635"></script>
-    <script src="/js/perfect-scrollbar.min.js?1766486635"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1766486635"></script>
-    <script src="/js/jquery.sticky.js?1766486635"></script>
-    <script src="/js/featherlight.min.js?1766486635"></script>
-    <script src="/js/highlight.pack.js?1766486635"></script>
+    <script src="/js/clipboard.min.js?1775061010"></script>
+    <script src="/js/perfect-scrollbar.min.js?1775061010"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1775061010"></script>
+    <script src="/js/jquery.sticky.js?1775061010"></script>
+    <script src="/js/featherlight.min.js?1775061010"></script>
+    <script src="/js/highlight.pack.js?1775061010"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1766486635"></script>
-    <script src="/js/learn.js?1766486635"></script>
-    <script src="/js/hugo-learn.js?1766486635"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1775061010"></script>
+    <script src="/js/learn.js?1775061010"></script>
+    <script src="/js/hugo-learn.js?1775061010"></script>
     
     
 

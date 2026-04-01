@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.148.2">
+    <meta name="generator" content="Hugo 0.157.0">
     <meta name="description" content="">
 
 
@@ -12,22 +12,22 @@
     <title>Certificate management method 2 :: dnsprivacy.org</title>
 
     
-    <link href="/css/nucleus.css?1766486635" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1766486635" rel="stylesheet">
-    <link href="/css/hybrid.css?1766486635" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1766486635" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1766486635" rel="stylesheet">
-    <link href="/css/auto-complete.css?1766486635" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1766486635" rel="stylesheet">
-    <link href="/css/theme.css?1766486635" rel="stylesheet">
-    <link href="/css/tabs.css?1766486635" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1766486635" rel="stylesheet">
+    <link href="/css/nucleus.css?1775061010" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1775061010" rel="stylesheet">
+    <link href="/css/hybrid.css?1775061010" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1775061010" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1775061010" rel="stylesheet">
+    <link href="/css/auto-complete.css?1775061010" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1775061010" rel="stylesheet">
+    <link href="/css/theme.css?1775061010" rel="stylesheet">
+    <link href="/css/tabs.css?1775061010" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1775061010" rel="stylesheet">
     
-    <link href="/css/theme-blue.css?1766486635" rel="stylesheet">
+    <link href="/css/theme-blue.css?1775061010" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1766486635"></script>
+    <script src="/js/jquery-3.3.1.min.js?1775061010"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1766486635"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1766486635"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1775061010"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1775061010"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/dnsprivacy.org\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1766486635"></script>
+<script type="text/javascript" src="/js/search.js?1775061010"></script>
 
     
   </div>
@@ -1522,7 +1522,7 @@ solution!</p>
 <ul>
 <li>
 <p>An example configuration file is:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>CA=&#34;https://acme-v01.api.letsencrypt.org/directory&#34;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>CA=&#34;https://acme-v01.api.letsencrypt.org/directory&#34;
 </span></span><span style="display:flex;"><span>#CA=&#34;https://acme-staging.api.letsencrypt.org/directory&#34;
 </span></span><span style="display:flex;"><span>LICENSE=&#34;https://letsencrypt.org/documents/LE-SA-v1.1.1-August-1-2016.pdf&#34;
 </span></span><span style="display:flex;"><span>CERTDIR=/usr/local/etc/dehydrated/certs
@@ -1534,20 +1534,20 @@ solution!</p>
 </span></span></code></pre></div></li>
 <li>
 <p>Private keys are then stored in</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>/usr/local/etc/dehydrated/certs/&lt;domain&gt;/privkey.pem
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>/usr/local/etc/dehydrated/certs/&lt;domain&gt;/privkey.pem
 </span></span></code></pre></div></li>
 <li>
 <p>The SubjectAltNames are then enumerated in the file</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>/usr/local/etc/dehydrated/domains.txt
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>/usr/local/etc/dehydrated/domains.txt
 </span></span></code></pre></div><p>Add one line in this for each &lsquo;group&rsquo; of names that should share a
 certificate e.g</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>example.com www.example.com example.org
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>example.com www.example.com example.org
 </span></span><span style="display:flex;"><span>example1.com www.example1.com example1.net
 </span></span></code></pre></div></li>
 <li>
 <p>Then the challenge record needs to be provisioned in the
 corresponding zone in a record of the form</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>_acme-challenge.&lt;domain name&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>_acme-challenge.&lt;domain name&gt;
 </span></span></code></pre></div></li>
 <li>
 <p>If you have many zones it can be helpful to use CNAMES to redirect
@@ -1566,8 +1566,8 @@ hosted <strong>only</strong> on the server that also runs dehydrated. </p>
 domain. An example script is included below</p>
 <div class="code panel pdl" style="border-width: 1px;">
 <div class="codeContent panelContent pdl">
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/sh
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/sh
+</span></span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>zonefile<span style="color:#f92672">=</span>/usr/local/etc/dehydrated/acmezone
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>deploy_challenge<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
@@ -2528,16 +2528,16 @@ domain. An example script is included below</p>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1766486635"></script>
-    <script src="/js/perfect-scrollbar.min.js?1766486635"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1766486635"></script>
-    <script src="/js/jquery.sticky.js?1766486635"></script>
-    <script src="/js/featherlight.min.js?1766486635"></script>
-    <script src="/js/highlight.pack.js?1766486635"></script>
+    <script src="/js/clipboard.min.js?1775061010"></script>
+    <script src="/js/perfect-scrollbar.min.js?1775061010"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1775061010"></script>
+    <script src="/js/jquery.sticky.js?1775061010"></script>
+    <script src="/js/featherlight.min.js?1775061010"></script>
+    <script src="/js/highlight.pack.js?1775061010"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1766486635"></script>
-    <script src="/js/learn.js?1766486635"></script>
-    <script src="/js/hugo-learn.js?1766486635"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1775061010"></script>
+    <script src="/js/learn.js?1775061010"></script>
+    <script src="/js/hugo-learn.js?1775061010"></script>
     
     
 

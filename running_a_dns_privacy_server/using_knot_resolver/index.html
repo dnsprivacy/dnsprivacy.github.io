@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.148.2">
+    <meta name="generator" content="Hugo 0.157.0">
     <meta name="description" content="">
 
 
@@ -12,22 +12,22 @@
     <title>Using Knot Resolver :: dnsprivacy.org</title>
 
     
-    <link href="/css/nucleus.css?1766486635" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1766486635" rel="stylesheet">
-    <link href="/css/hybrid.css?1766486635" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1766486635" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1766486635" rel="stylesheet">
-    <link href="/css/auto-complete.css?1766486635" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1766486635" rel="stylesheet">
-    <link href="/css/theme.css?1766486635" rel="stylesheet">
-    <link href="/css/tabs.css?1766486635" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1766486635" rel="stylesheet">
+    <link href="/css/nucleus.css?1775061010" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1775061010" rel="stylesheet">
+    <link href="/css/hybrid.css?1775061010" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1775061010" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1775061010" rel="stylesheet">
+    <link href="/css/auto-complete.css?1775061010" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1775061010" rel="stylesheet">
+    <link href="/css/theme.css?1775061010" rel="stylesheet">
+    <link href="/css/tabs.css?1775061010" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1775061010" rel="stylesheet">
     
-    <link href="/css/theme-blue.css?1766486635" rel="stylesheet">
+    <link href="/css/theme-blue.css?1775061010" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1766486635"></script>
+    <script src="/js/jquery-3.3.1.min.js?1775061010"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1766486635"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1766486635"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1775061010"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1775061010"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/dnsprivacy.org\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1766486635"></script>
+<script type="text/javascript" src="/js/search.js?1775061010"></script>
 
     
   </div>
@@ -1517,7 +1517,7 @@
 <h2 id="config-file">Config file</h2>
 <p>An example configuration file for Knot that runs DNS-over-TLS on port
 853 is below.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#75715e">-- Default empty Knot DNS Resolver configuration in -*- lua -*-</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#75715e">-- Default empty Knot DNS Resolver configuration in -*- lua -*-</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">-- Bind ports as privileged user (root) --</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">-- net = { &#39;127.0.0.1&#39;, &#39;::1&#39;, net.ens160 }</span>
 </span></span><span style="display:flex;"><span>net.tls(<span style="color:#e6db74">&#39;/etc/sinodun/certs/fullchain.pem&#39;</span>,<span style="color:#e6db74">&#39;/etc/sinodun/certs/privkey.pem&#39;</span>)
@@ -1532,7 +1532,7 @@
 <li>If you are using systemd with socket-based activation you need to remove
 the net.listen lines above and instead run</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span>    systemctl edit kresd<span style="color:#f92672">-</span>tls.socket. 
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span>    systemctl edit kresd<span style="color:#f92672">-</span>tls.socket. 
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">and</span> put  
 </span></span><span style="display:flex;"><span>    [Socket]. 
 </span></span><span style="display:flex;"><span>    ListenStream<span style="color:#f92672">=</span><span style="color:#ae81ff">145.100.185.17</span>:<span style="color:#ae81ff">853</span>   
@@ -2469,16 +2469,16 @@ the <code>/etc/letsencrypt/certs/000``&lt;N&gt;_chain.pem </code>file) to the 
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1766486635"></script>
-    <script src="/js/perfect-scrollbar.min.js?1766486635"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1766486635"></script>
-    <script src="/js/jquery.sticky.js?1766486635"></script>
-    <script src="/js/featherlight.min.js?1766486635"></script>
-    <script src="/js/highlight.pack.js?1766486635"></script>
+    <script src="/js/clipboard.min.js?1775061010"></script>
+    <script src="/js/perfect-scrollbar.min.js?1775061010"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1775061010"></script>
+    <script src="/js/jquery.sticky.js?1775061010"></script>
+    <script src="/js/featherlight.min.js?1775061010"></script>
+    <script src="/js/highlight.pack.js?1775061010"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1766486635"></script>
-    <script src="/js/learn.js?1766486635"></script>
-    <script src="/js/hugo-learn.js?1766486635"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1775061010"></script>
+    <script src="/js/learn.js?1775061010"></script>
+    <script src="/js/hugo-learn.js?1775061010"></script>
     
     
 

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.148.2">
+    <meta name="generator" content="Hugo 0.157.0">
     <meta name="description" content="">
 
 
@@ -12,22 +12,22 @@
     <title>DNS Privacy Clients :: dnsprivacy.org</title>
 
     
-    <link href="/css/nucleus.css?1766486635" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1766486635" rel="stylesheet">
-    <link href="/css/hybrid.css?1766486635" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1766486635" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1766486635" rel="stylesheet">
-    <link href="/css/auto-complete.css?1766486635" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1766486635" rel="stylesheet">
-    <link href="/css/theme.css?1766486635" rel="stylesheet">
-    <link href="/css/tabs.css?1766486635" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1766486635" rel="stylesheet">
+    <link href="/css/nucleus.css?1775061010" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1775061010" rel="stylesheet">
+    <link href="/css/hybrid.css?1775061010" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1775061010" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1775061010" rel="stylesheet">
+    <link href="/css/auto-complete.css?1775061010" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1775061010" rel="stylesheet">
+    <link href="/css/theme.css?1775061010" rel="stylesheet">
+    <link href="/css/tabs.css?1775061010" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1775061010" rel="stylesheet">
     
-    <link href="/css/theme-blue.css?1766486635" rel="stylesheet">
+    <link href="/css/theme-blue.css?1775061010" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1766486635"></script>
+    <script src="/js/jquery-3.3.1.min.js?1775061010"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1766486635"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1766486635"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1775061010"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1775061010"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/dnsprivacy.org\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1766486635"></script>
+<script type="text/javascript" src="/js/search.js?1775061010"></script>
 
     
   </div>
@@ -1548,7 +1548,8 @@ release notes say:</p>
 turned off by default, use DNSOverTLS=opportunistic to turn it on in
 resolved.conf. We intend to make this the default as soon as couple
 of additional techniques for optimizing the initial latency caused by
-establishing a TLS/TCP connection are implemented.</p></blockquote>
+establishing a TLS/TCP connection are implemented.</p>
+</blockquote>
 <p>However see <a href="https://www.internetsociety.org/blog/2018/12/dns-privacy-in-linux-systemd/">this ISOC
 article</a>
 on some issues with this implementation.</p>
@@ -1577,7 +1578,7 @@ file</a>!</li>
 file so that connections can be authenticated. The path will depend
 on your OS and installation.</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ini" data-lang="ini"><span style="display:flex;"><span><span style="color:#a6e22e">server:</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-ini" data-lang="ini"><span style="display:flex;"><span><span style="color:#a6e22e">server:</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">directory: &#34;/etc/unbound&#34;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">username: unbound</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">chroot: &#34;/etc/unbound&#34;</span>
@@ -1607,7 +1608,7 @@ configuration up</a>.</p>
 
 <p>Or, if you want to set this up yourself, an example config for this is:</p>
 <p>Unbound config</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ini" data-lang="ini"><span style="display:flex;"><span><span style="color:#a6e22e">server:</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-ini" data-lang="ini"><span style="display:flex;"><span><span style="color:#a6e22e">server:</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">use-syslog: yes</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">username: &#34;unbound&#34;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">directory: &#34;/etc/unbound&#34;</span>
@@ -1619,7 +1620,7 @@ configuration up</a>.</p>
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">forward-addr: 127.0.0.1@8053</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">forward-addr: ::1@8053</span>
 </span></span></code></pre></div><p>Stubby config</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">resolution_type</span>: <span style="color:#ae81ff">GETDNS_RESOLUTION_STUB</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">resolution_type</span>: <span style="color:#ae81ff">GETDNS_RESOLUTION_STUB</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">dns_transport_list</span>:
 </span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">GETDNS_TRANSPORT_TLS</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">tls_authentication</span>: <span style="color:#ae81ff">GETDNS_AUTHENTICATION_REQUIRED</span>
@@ -2746,16 +2747,16 @@ something like the following example for macOS:</p>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1766486635"></script>
-    <script src="/js/perfect-scrollbar.min.js?1766486635"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1766486635"></script>
-    <script src="/js/jquery.sticky.js?1766486635"></script>
-    <script src="/js/featherlight.min.js?1766486635"></script>
-    <script src="/js/highlight.pack.js?1766486635"></script>
+    <script src="/js/clipboard.min.js?1775061010"></script>
+    <script src="/js/perfect-scrollbar.min.js?1775061010"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1775061010"></script>
+    <script src="/js/jquery.sticky.js?1775061010"></script>
+    <script src="/js/featherlight.min.js?1775061010"></script>
+    <script src="/js/highlight.pack.js?1775061010"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1766486635"></script>
-    <script src="/js/learn.js?1766486635"></script>
-    <script src="/js/hugo-learn.js?1766486635"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1775061010"></script>
+    <script src="/js/learn.js?1775061010"></script>
+    <script src="/js/hugo-learn.js?1775061010"></script>
     
     
 

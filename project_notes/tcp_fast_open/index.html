@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.148.2">
+    <meta name="generator" content="Hugo 0.157.0">
     <meta name="description" content="">
 
 
@@ -12,22 +12,22 @@
     <title>TCP Fast Open :: dnsprivacy.org</title>
 
     
-    <link href="/css/nucleus.css?1766486635" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1766486635" rel="stylesheet">
-    <link href="/css/hybrid.css?1766486635" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1766486635" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1766486635" rel="stylesheet">
-    <link href="/css/auto-complete.css?1766486635" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1766486635" rel="stylesheet">
-    <link href="/css/theme.css?1766486635" rel="stylesheet">
-    <link href="/css/tabs.css?1766486635" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1766486635" rel="stylesheet">
+    <link href="/css/nucleus.css?1775061010" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1775061010" rel="stylesheet">
+    <link href="/css/hybrid.css?1775061010" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1775061010" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1775061010" rel="stylesheet">
+    <link href="/css/auto-complete.css?1775061010" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1775061010" rel="stylesheet">
+    <link href="/css/theme.css?1775061010" rel="stylesheet">
+    <link href="/css/tabs.css?1775061010" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1775061010" rel="stylesheet">
     
-    <link href="/css/theme-blue.css?1766486635" rel="stylesheet">
+    <link href="/css/theme-blue.css?1775061010" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1766486635"></script>
+    <script src="/js/jquery-3.3.1.min.js?1775061010"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1766486635"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1766486635"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1775061010"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1775061010"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/dnsprivacy.org\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1766486635"></script>
+<script type="text/javascript" src="/js/search.js?1775061010"></script>
 
     
   </div>
@@ -1630,7 +1630,7 @@ restarted. TFO also falls back to a regular TCP handshake gracefully. </p>
 <h3 id="message-flow">Message flow </h3>
 <div class="code panel pdl" style="border-width: 1px;">
 <div class="codeContent panelContent pdl">
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Requesting Fast Open Cookie in connection 1: 
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>Requesting Fast Open Cookie in connection 1: 
 </span></span><span style="display:flex;"><span>TCP A <span style="color:#f92672">(</span>Client<span style="color:#f92672">)</span>                                   TCP B<span style="color:#f92672">(</span>Server<span style="color:#f92672">)</span> 
 </span></span><span style="display:flex;"><span>______________                                   _____________  
 </span></span><span style="display:flex;"><span>CLOSED                                                  LISTEN 
@@ -1700,7 +1700,7 @@ EISCONN.</p>
 </ul>
 <div class="code panel pdl" style="border-width: 1px;">
 <div class="codeContent panelContent pdl">
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>connectx<span style="color:#f92672">(</span>fd, &amp;endpoints, SAE_ASSOCID_ANY,  
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>connectx<span style="color:#f92672">(</span>fd, &amp;endpoints, SAE_ASSOCID_ANY,  
 </span></span><span style="display:flex;"><span>         CONNECT_DATA_IDEMPOTENT | CONNECT_RESUME_ON_READ_WRITE,
 </span></span><span style="display:flex;"><span>          NULL, 0, NULL, NULL<span style="color:#f92672">)</span>
 </span></span></code></pre></div></div>
@@ -1744,7 +1744,7 @@ server mode. To act in pure server mode set the integer value to 2.
 To enable both client and server mode, set it to 3, for example:</p>
 <div class="code panel pdl" style="border-width: 1px;">
 <div class="codeContent panelContent pdl">
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sysctl -w net.ipv4.tcp_fastopen<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sysctl -w net.ipv4.tcp_fastopen<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>
 </span></span></code></pre></div></div>
 </div>
 </li>
@@ -2705,16 +2705,16 @@ it is available quickly enough. </li>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1766486635"></script>
-    <script src="/js/perfect-scrollbar.min.js?1766486635"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1766486635"></script>
-    <script src="/js/jquery.sticky.js?1766486635"></script>
-    <script src="/js/featherlight.min.js?1766486635"></script>
-    <script src="/js/highlight.pack.js?1766486635"></script>
+    <script src="/js/clipboard.min.js?1775061010"></script>
+    <script src="/js/perfect-scrollbar.min.js?1775061010"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1775061010"></script>
+    <script src="/js/jquery.sticky.js?1775061010"></script>
+    <script src="/js/featherlight.min.js?1775061010"></script>
+    <script src="/js/highlight.pack.js?1775061010"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1766486635"></script>
-    <script src="/js/learn.js?1766486635"></script>
-    <script src="/js/hugo-learn.js?1766486635"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1775061010"></script>
+    <script src="/js/learn.js?1775061010"></script>
+    <script src="/js/hugo-learn.js?1775061010"></script>
     
     
 

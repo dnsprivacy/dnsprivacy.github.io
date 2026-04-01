@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.148.2">
+    <meta name="generator" content="Hugo 0.157.0">
     <meta name="description" content="">
 
 
@@ -12,22 +12,22 @@
     <title>ADoX Status and Deployment :: dnsprivacy.org</title>
 
     
-    <link href="/css/nucleus.css?1766486635" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1766486635" rel="stylesheet">
-    <link href="/css/hybrid.css?1766486635" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1766486635" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1766486635" rel="stylesheet">
-    <link href="/css/auto-complete.css?1766486635" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1766486635" rel="stylesheet">
-    <link href="/css/theme.css?1766486635" rel="stylesheet">
-    <link href="/css/tabs.css?1766486635" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1766486635" rel="stylesheet">
+    <link href="/css/nucleus.css?1775061010" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1775061010" rel="stylesheet">
+    <link href="/css/hybrid.css?1775061010" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1775061010" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1775061010" rel="stylesheet">
+    <link href="/css/auto-complete.css?1775061010" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1775061010" rel="stylesheet">
+    <link href="/css/theme.css?1775061010" rel="stylesheet">
+    <link href="/css/tabs.css?1775061010" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1775061010" rel="stylesheet">
     
-    <link href="/css/theme-blue.css?1766486635" rel="stylesheet">
+    <link href="/css/theme-blue.css?1775061010" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1766486635"></script>
+    <script src="/js/jquery-3.3.1.min.js?1775061010"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1766486635"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1766486635"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1775061010"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1775061010"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/dnsprivacy.org\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1766486635"></script>
+<script type="text/javascript" src="/js/search.js?1775061010"></script>
 
     
   </div>
@@ -1506,8 +1506,8 @@
     </li>
     <li><a href="#operator-activities">Operator activities</a>
       <ul>
-        <li><a href="#auth-operators">Auth operators</a></li>
         <li><a href="#recursive-operators">Recursive operators</a></li>
+        <li><a href="#auth-operators">Auth operators</a></li>
       </ul>
     </li>
   </ul>
@@ -1561,8 +1561,8 @@
     </li>
     <li><a href="#operator-activities">Operator activities</a>
       <ul>
-        <li><a href="#auth-operators">Auth operators</a></li>
         <li><a href="#recursive-operators">Recursive operators</a></li>
+        <li><a href="#auth-operators">Auth operators</a></li>
       </ul>
     </li>
   </ul>
@@ -1572,9 +1572,11 @@
 <p>ADoX is used here as a short hand term for &lsquo;Recursive resolver to Authoritative server encrypted transport using DoT or DoQ&rsquo;.</p>
 <p>The term ADoT was defined in <a href="https://www.rfc-editor.org/rfc/rfc9499">RFC 9499: DNS Terminology</a>:</p>
 <blockquote>
-<p>&ldquo;Authoritative DoT (ADoT): &hellip; ADoT specifically means DNS-over-TLS for transport between recursive resolvers and authoritative servers&rdquo;</p></blockquote>
+<p>&ldquo;Authoritative DoT (ADoT): &hellip; ADoT specifically means DNS-over-TLS for transport between recursive resolvers and authoritative servers&rdquo;</p>
+</blockquote>
 <p>DoQ was also standardized for transport between recursives and authoritative servers in <a href="https://www.rfc-editor.org/rfc/rfc9250">RFC 9250</a>, so by extension ADoQ means <em>&ldquo;DNS-over-QUIC for transport between recursive resolvers and authoritative servers&rdquo;</em>.</p>
-<p>Since ADoT/Q is hard to say, we use ADoX (&lsquo;a-docks&rsquo;) here to mean encrypted transport using either TLS or QUIC!</p>
+<p>Since ADoT/Q is hard to say, we also use ADoX (&lsquo;a-docks&rsquo;) here to mean encrypted transport using either TLS or QUIC!</p>
+<p>Who is doing ADoX today? See <a href="/adox_status_and_deployment#operator-activities">Operator Activities</a> and the <a href="https://codeberg.org/saradickinson/adot_zones_monitor/src/branch/main/results.md">ADOT zone monitoring tool</a></p>
 <h2 id="adox-deployment-initiative">ADoX Deployment initiative</h2>
 <p>This is a general initiative with a number of goals around increasing ADoX deployment:</p>
 <ul>
@@ -1619,7 +1621,8 @@ over QUIC (DoQ)) directly within the Additional section of
 authoritative DNS responses.  This &ldquo;hint-based&rdquo; approach aims to
 enable resolvers to discover and upgrade transport connections more
 efficiently, thereby improving privacy, security, and performance for
-subsequent interactions.</p></blockquote>
+subsequent interactions.</p>
+</blockquote>
 <p>The authors have an open source prototype implementation <a href="https://github.com/johanix/tdns">https://github.com/johanix/tdns</a> and would love feedback. This was discussed in the DNSOP meeting at IETF 123 and seems to be gaining support.</p>
 <h2 id="implementation-status">Implementation Status</h2>
 <p>The following tables give an overview of the implementation status of various features in popular Open source implementations</p>
@@ -1777,42 +1780,6 @@ subsequent interactions.</p></blockquote>
 </ul>
 <h2 id="operator-activities">Operator activities</h2>
 <p>This table is a work in progress and some entries require references and/or more details. Please send updates/corrections to <a href="mailto:sara@sinodun.com">sara@sinodun.com</a></p>
-<h3 id="auth-operators">Auth operators</h3>
-<table>
-  <thead>
-      <tr>
-          <th>Who</th>
-          <th>What</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>b-root</td>
-          <td><a href="https://b.root-servers.org/research/tls.html">Have enabled DNS over TLS support</a></td>
-      </tr>
-      <tr>
-          <td>Facebook</td>
-          <td><a href="https://engineering.fb.com/2018/12/21/security/dns-over-tls/">Did a pilot back in 2018</a> and are observed to have DoT enabled on port 853 today</td>
-      </tr>
-      <tr>
-          <td>deSEC</td>
-          <td>Announced on the <a href="https://www.ietf.org/mailman/listinfo/dns-privacy">DPRIVE mailing list</a> that they have support for DoT and DoQ on our authoritative anycast deployments.</td>
-      </tr>
-      <tr>
-          <td>CDN77</td>
-          <td>Observed to  have DoT enabled on port 853 today</td>
-      </tr>
-      <tr>
-          <td>ccTLDs</td>
-          <td>A few small TLDs e.g. .gr, .co, .kg are observed to  have DoT enabled on port 853 today</td>
-      </tr>
-  </tbody>
-</table>
-<ul>
-<li>PCH have discussed that they would like to enable this for customers in the near future.</li>
-<li>IBM are doing an internal proof-of-concept using ADoT and would like to offer this publicly in the future.</li>
-<li>Cloudflare are open to experiments using ADoX</li>
-</ul>
 <h3 id="recursive-operators">Recursive operators</h3>
 <table>
   <thead>
@@ -1824,11 +1791,11 @@ subsequent interactions.</p></blockquote>
   <tbody>
       <tr>
           <td>Google Public DNS</td>
-          <td><a href="https://security.googleblog.com/2024/03/google-public-dnss-approach-to-fight.html">Have said</a> they have implemented RFC9539 and &ldquo;And ADoT is in use for around 6% of egress traffic.&rdquo;</td>
+          <td><strong>Unilateral probing:</strong> <a href="https://security.googleblog.com/2024/03/google-public-dnss-approach-to-fight.html">Said</a> they have implemented RFC9539 and &ldquo;And ADoT is in use for around 6% of egress traffic.&rdquo;</td>
       </tr>
       <tr>
           <td>Quad9</td>
-          <td>Use PowerDNS Recursor and enabled RFC9539 probing in July 2025</td>
+          <td><strong>Unilateral probing:</strong> They use PowerDNS Recursor and enabled RFC9539 probing in July 2025</td>
       </tr>
       <tr>
           <td>Let&rsquo;s Encrypt</td>
@@ -1838,6 +1805,72 @@ subsequent interactions.</p></blockquote>
 </table>
 <ul>
 <li>DNS4EU have expressed being open to enabling ADoX but currently use Knot resolver which does not support it.</li>
+</ul>
+<h3 id="auth-operators">Auth operators</h3>
+<p>A monitoring tool is now available at <a href="https://codeberg.org/saradickinson/adot_zones_monitor/src/branch/main/results.md">ADoT Zone monitoring</a> which is currently run on a monthly
+basis to list a total of around 25 nameservers and 65 zones that answer queries on port 853 over DNS-over-TLS. A summary is produced below.</p>
+<table>
+  <thead>
+      <tr>
+          <th>Who</th>
+          <th>What</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>b-root and h-root</td>
+          <td><a href="https://b.root-servers.org/research/tls.html">Have enabled DNS over TLS support</a></td>
+      </tr>
+      <tr>
+          <td>Facebook</td>
+          <td><a href="https://engineering.fb.com/2018/12/21/security/dns-over-tls/">Did a pilot back in 2018</a> and are observed to have DoT enabled on port 853 today on facebook.com, instagram.com and whatsapp.com zones.</td>
+      </tr>
+      <tr>
+          <td>ccTLDs</td>
+          <td>Two ccTLDs .gr (Greece) .kg (Krgyzstan) have DoT enabled on port 853 today</td>
+      </tr>
+      <tr>
+          <td>deSEC</td>
+          <td>Announced on the <a href="https://www.ietf.org/mailman/listinfo/dns-privacy">DPRIVE mailing list</a> that they have support for DoT and DoQ on our authoritative anycast deployments.</td>
+      </tr>
+      <tr>
+          <td>Wikimedia</td>
+          <td>Have DoT enabled on multiple zones including wikipedia.org</td>
+      </tr>
+      <tr>
+          <td>CDN77</td>
+          <td>Hosting provider</td>
+      </tr>
+      <tr>
+          <td>One.com</td>
+          <td>Hosting provider</td>
+      </tr>
+      <tr>
+          <td>NextDNS</td>
+          <td>Hosting provider</td>
+      </tr>
+      <tr>
+          <td>namebay.co</td>
+          <td>Hosting provider</td>
+      </tr>
+      <tr>
+          <td>Timeweb</td>
+          <td>Hosting provider</td>
+      </tr>
+      <tr>
+          <td>Wedos</td>
+          <td>Hosting provider</td>
+      </tr>
+      <tr>
+          <td>Others</td>
+          <td>powerdns.com, wildberries.ru, m-online.net,&hellip;</td>
+      </tr>
+  </tbody>
+</table>
+<ul>
+<li>PCH have discussed that they would like to enable this for customers in the near future.</li>
+<li>IBM are doing an internal proof-of-concept using ADoT and would like to offer this publicly in the future.</li>
+<li>Cloudflare are open to experiments using ADoX</li>
 </ul>
 
 
@@ -2752,16 +2785,16 @@ subsequent interactions.</p></blockquote>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1766486635"></script>
-    <script src="/js/perfect-scrollbar.min.js?1766486635"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1766486635"></script>
-    <script src="/js/jquery.sticky.js?1766486635"></script>
-    <script src="/js/featherlight.min.js?1766486635"></script>
-    <script src="/js/highlight.pack.js?1766486635"></script>
+    <script src="/js/clipboard.min.js?1775061010"></script>
+    <script src="/js/perfect-scrollbar.min.js?1775061010"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1775061010"></script>
+    <script src="/js/jquery.sticky.js?1775061010"></script>
+    <script src="/js/featherlight.min.js?1775061010"></script>
+    <script src="/js/highlight.pack.js?1775061010"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1766486635"></script>
-    <script src="/js/learn.js?1766486635"></script>
-    <script src="/js/hugo-learn.js?1766486635"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1775061010"></script>
+    <script src="/js/learn.js?1775061010"></script>
+    <script src="/js/hugo-learn.js?1775061010"></script>
     
     
 
