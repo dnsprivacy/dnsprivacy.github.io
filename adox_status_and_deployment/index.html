@@ -12,22 +12,22 @@
     <title>ADoX Status and Deployment :: dnsprivacy.org</title>
 
     
-    <link href="/css/nucleus.css?1775061010" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1775061010" rel="stylesheet">
-    <link href="/css/hybrid.css?1775061010" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1775061010" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1775061010" rel="stylesheet">
-    <link href="/css/auto-complete.css?1775061010" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1775061010" rel="stylesheet">
-    <link href="/css/theme.css?1775061010" rel="stylesheet">
-    <link href="/css/tabs.css?1775061010" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1775061010" rel="stylesheet">
+    <link href="/css/nucleus.css?1775133257" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1775133257" rel="stylesheet">
+    <link href="/css/hybrid.css?1775133257" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1775133257" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1775133257" rel="stylesheet">
+    <link href="/css/auto-complete.css?1775133257" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1775133257" rel="stylesheet">
+    <link href="/css/theme.css?1775133257" rel="stylesheet">
+    <link href="/css/tabs.css?1775133257" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1775133257" rel="stylesheet">
     
-    <link href="/css/theme-blue.css?1775061010" rel="stylesheet">
+    <link href="/css/theme-blue.css?1775133257" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1775061010"></script>
+    <script src="/js/jquery-3.3.1.min.js?1775133257"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1775061010"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1775061010"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1775133257"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1775133257"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/dnsprivacy.org\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1775061010"></script>
+<script type="text/javascript" src="/js/search.js?1775133257"></script>
 
     
   </div>
@@ -1506,8 +1506,17 @@
     </li>
     <li><a href="#operator-activities">Operator activities</a>
       <ul>
-        <li><a href="#recursive-operators">Recursive operators</a></li>
-        <li><a href="#auth-operators">Auth operators</a></li>
+        <li><a href="#recursive-operators">Recursive operators</a>
+          <ul>
+            <li><a href="#adot">ADoT</a></li>
+          </ul>
+        </li>
+        <li><a href="#auth-operators">Auth operators</a>
+          <ul>
+            <li><a href="#dot">DoT</a></li>
+            <li><a href="#adoq">ADoQ</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
   </ul>
@@ -1561,8 +1570,17 @@
     </li>
     <li><a href="#operator-activities">Operator activities</a>
       <ul>
-        <li><a href="#recursive-operators">Recursive operators</a></li>
-        <li><a href="#auth-operators">Auth operators</a></li>
+        <li><a href="#recursive-operators">Recursive operators</a>
+          <ul>
+            <li><a href="#adot">ADoT</a></li>
+          </ul>
+        </li>
+        <li><a href="#auth-operators">Auth operators</a>
+          <ul>
+            <li><a href="#dot">DoT</a></li>
+            <li><a href="#adoq">ADoQ</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
   </ul>
@@ -1577,6 +1595,10 @@
 <p>DoQ was also standardized for transport between recursives and authoritative servers in <a href="https://www.rfc-editor.org/rfc/rfc9250">RFC 9250</a>, so by extension ADoQ means <em>&ldquo;DNS-over-QUIC for transport between recursive resolvers and authoritative servers&rdquo;</em>.</p>
 <p>Since ADoT/Q is hard to say, we also use ADoX (&lsquo;a-docks&rsquo;) here to mean encrypted transport using either TLS or QUIC!</p>
 <p>Who is doing ADoX today? See <a href="/adox_status_and_deployment#operator-activities">Operator Activities</a> and the <a href="https://codeberg.org/saradickinson/adot_zones_monitor/src/branch/main/results.md">ADOT zone monitoring tool</a></p>
+
+<div class="notices infoblock" ><p>While most activity is around DoT, as of April 2026 h-root have a experimental DoQ service available!</p>
+</div>
+
 <h2 id="adox-deployment-initiative">ADoX Deployment initiative</h2>
 <p>This is a general initiative with a number of goals around increasing ADoX deployment:</p>
 <ul>
@@ -1781,6 +1803,7 @@ subsequent interactions.</p>
 <h2 id="operator-activities">Operator activities</h2>
 <p>This table is a work in progress and some entries require references and/or more details. Please send updates/corrections to <a href="mailto:sara@sinodun.com">sara@sinodun.com</a></p>
 <h3 id="recursive-operators">Recursive operators</h3>
+<h4 id="adot">ADoT</h4>
 <table>
   <thead>
       <tr>
@@ -1807,6 +1830,7 @@ subsequent interactions.</p>
 <li>DNS4EU have expressed being open to enabling ADoX but currently use Knot resolver which does not support it.</li>
 </ul>
 <h3 id="auth-operators">Auth operators</h3>
+<h4 id="dot">DoT</h4>
 <p>A monitoring tool is now available at <a href="https://codeberg.org/saradickinson/adot_zones_monitor/src/branch/main/results.md">ADoT Zone monitoring</a> which is currently run on a monthly
 basis to list a total of around 25 nameservers and 65 zones that answer queries on port 853 over DNS-over-TLS. A summary is produced below.</p>
 <table>
@@ -1819,7 +1843,7 @@ basis to list a total of around 25 nameservers and 65 zones that answer queries 
   <tbody>
       <tr>
           <td>b-root and h-root</td>
-          <td><a href="https://b.root-servers.org/research/tls.html">Have enabled DNS over TLS support</a></td>
+          <td><a href="https://b.root-servers.org/research/tls.html">Have enabled experimental DNS over TLS support</a></td>
       </tr>
       <tr>
           <td>Facebook</td>
@@ -1872,6 +1896,8 @@ basis to list a total of around 25 nameservers and 65 zones that answer queries 
 <li>IBM are doing an internal proof-of-concept using ADoT and would like to offer this publicly in the future.</li>
 <li>Cloudflare are open to experiments using ADoX</li>
 </ul>
+<h4 id="adoq">ADoQ</h4>
+<p>As of April 2026, h-root also have an experimental DoQ service running. Anyone interested in testing is welcome to try it out and contact them at <a href="mailto:hroot@arl.army.mil">hroot@arl.army.mil</a> with any issues.</p>
 
 
 
@@ -2785,16 +2811,16 @@ basis to list a total of around 25 nameservers and 65 zones that answer queries 
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1775061010"></script>
-    <script src="/js/perfect-scrollbar.min.js?1775061010"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1775061010"></script>
-    <script src="/js/jquery.sticky.js?1775061010"></script>
-    <script src="/js/featherlight.min.js?1775061010"></script>
-    <script src="/js/highlight.pack.js?1775061010"></script>
+    <script src="/js/clipboard.min.js?1775133257"></script>
+    <script src="/js/perfect-scrollbar.min.js?1775133257"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1775133257"></script>
+    <script src="/js/jquery.sticky.js?1775133257"></script>
+    <script src="/js/featherlight.min.js?1775133257"></script>
+    <script src="/js/highlight.pack.js?1775133257"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1775061010"></script>
-    <script src="/js/learn.js?1775061010"></script>
-    <script src="/js/hugo-learn.js?1775061010"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1775133257"></script>
+    <script src="/js/learn.js?1775133257"></script>
+    <script src="/js/hugo-learn.js?1775133257"></script>
     
     
 
