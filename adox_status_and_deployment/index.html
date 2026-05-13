@@ -12,22 +12,22 @@
     <title>ADoX Status and Deployment :: dnsprivacy.org</title>
 
     
-    <link href="/css/nucleus.css?1776443440" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1776443440" rel="stylesheet">
-    <link href="/css/hybrid.css?1776443440" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1776443440" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1776443440" rel="stylesheet">
-    <link href="/css/auto-complete.css?1776443440" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1776443440" rel="stylesheet">
-    <link href="/css/theme.css?1776443440" rel="stylesheet">
-    <link href="/css/tabs.css?1776443440" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1776443440" rel="stylesheet">
+    <link href="/css/nucleus.css?1778669822" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1778669822" rel="stylesheet">
+    <link href="/css/hybrid.css?1778669822" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1778669822" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1778669822" rel="stylesheet">
+    <link href="/css/auto-complete.css?1778669822" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1778669822" rel="stylesheet">
+    <link href="/css/theme.css?1778669822" rel="stylesheet">
+    <link href="/css/tabs.css?1778669822" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1778669822" rel="stylesheet">
     
-    <link href="/css/theme-blue.css?1776443440" rel="stylesheet">
+    <link href="/css/theme-blue.css?1778669822" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1776443440"></script>
+    <script src="/js/jquery-3.3.1.min.js?1778669822"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1776443440"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1776443440"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1778669822"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1778669822"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/dnsprivacy.org\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1776443440"></script>
+<script type="text/javascript" src="/js/search.js?1778669822"></script>
 
     
   </div>
@@ -1506,6 +1506,11 @@
     </li>
     <li><a href="#operator-activities">Operator activities</a>
       <ul>
+        <li><a href="#deployment-measurements">Deployment measurements</a>
+          <ul>
+            <li><a href="#adox-auth-monitoring-tool">ADoX Auth monitoring tool</a></li>
+          </ul>
+        </li>
         <li><a href="#recursive-operators">Recursive operators</a>
           <ul>
             <li><a href="#adot">ADoT</a></li>
@@ -1513,7 +1518,7 @@
         </li>
         <li><a href="#auth-operators">Auth operators</a>
           <ul>
-            <li><a href="#dot">DoT</a></li>
+            <li><a href="#adot-1">ADoT</a></li>
             <li><a href="#adoq">ADoQ</a></li>
           </ul>
         </li>
@@ -1570,6 +1575,11 @@
     </li>
     <li><a href="#operator-activities">Operator activities</a>
       <ul>
+        <li><a href="#deployment-measurements">Deployment measurements</a>
+          <ul>
+            <li><a href="#adox-auth-monitoring-tool">ADoX Auth monitoring tool</a></li>
+          </ul>
+        </li>
         <li><a href="#recursive-operators">Recursive operators</a>
           <ul>
             <li><a href="#adot">ADoT</a></li>
@@ -1577,7 +1587,7 @@
         </li>
         <li><a href="#auth-operators">Auth operators</a>
           <ul>
-            <li><a href="#dot">DoT</a></li>
+            <li><a href="#adot-1">ADoT</a></li>
             <li><a href="#adoq">ADoQ</a></li>
           </ul>
         </li>
@@ -1801,7 +1811,12 @@ subsequent interactions.</p>
 <li>(1) PowerDNS Auth does not implement any encrypted transports natively, but the same organisation develops <a href="https://www.dnsdist.org/index.html">dnsdist</a> for use as load balancer/proxy to terminate encrypted connections</li>
 </ul>
 <h2 id="operator-activities">Operator activities</h2>
-<p>This table is a work in progress and some entries require references and/or more details. Please send updates/corrections to <a href="mailto:sara@sinodun.com">sara@sinodun.com</a></p>
+<p>This details below are a work in progress and some entries require references and/or more details. Please send updates/corrections to <a href="mailto:sara@sinodun.com">sara@sinodun.com</a></p>
+<h3 id="deployment-measurements">Deployment measurements</h3>
+<p><a href="https://labs.ripe.net/author/yevheniya-nosyk/adox-deployment-in-the-wild/">An in-depth study of ADoX deployment in early 2026 by Kor Labs is also available</a> and <a href="https://indico.dns-oarc.net/event/56/contributions/1221/attachments/1164/2466/presentation.pdf">presentation at OARC</a></p>
+<h4 id="adox-auth-monitoring-tool">ADoX Auth monitoring tool</h4>
+<p>A monitoring tool (kindly hosted by DNS-OARC) is now available at <a href="https://gitlab.com/DNS-OARC/adox-deployment-initiative/adox-zones-monitor/-/blob/main/results.md?ref_type=heads">ADoX Zone monitoring</a> which is currently run on a monthly
+basis. As of May 2026 it lists a total of around 25 nameservers and 65 zones that answer queries on port 853 over DNS-over-TLS. A summary is produced below.</p>
 <h3 id="recursive-operators">Recursive operators</h3>
 <h4 id="adot">ADoT</h4>
 <table>
@@ -1830,9 +1845,7 @@ subsequent interactions.</p>
 <li>DNS4EU have expressed being open to enabling ADoX but currently use Knot resolver which does not support it.</li>
 </ul>
 <h3 id="auth-operators">Auth operators</h3>
-<h4 id="dot">DoT</h4>
-<p>A monitoring tool is now available at <a href="https://codeberg.org/saradickinson/adot_zones_monitor/src/branch/main/results.md">ADoT Zone monitoring</a> which is currently run on a monthly
-basis to list a total of around 25 nameservers and 65 zones that answer queries on port 853 over DNS-over-TLS. A summary is produced below.</p>
+<h4 id="adot-1">ADoT</h4>
 <table>
   <thead>
       <tr>
@@ -2811,16 +2824,16 @@ basis to list a total of around 25 nameservers and 65 zones that answer queries 
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1776443440"></script>
-    <script src="/js/perfect-scrollbar.min.js?1776443440"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1776443440"></script>
-    <script src="/js/jquery.sticky.js?1776443440"></script>
-    <script src="/js/featherlight.min.js?1776443440"></script>
-    <script src="/js/highlight.pack.js?1776443440"></script>
+    <script src="/js/clipboard.min.js?1778669822"></script>
+    <script src="/js/perfect-scrollbar.min.js?1778669822"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1778669822"></script>
+    <script src="/js/jquery.sticky.js?1778669822"></script>
+    <script src="/js/featherlight.min.js?1778669822"></script>
+    <script src="/js/highlight.pack.js?1778669822"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1776443440"></script>
-    <script src="/js/learn.js?1776443440"></script>
-    <script src="/js/hugo-learn.js?1776443440"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1778669822"></script>
+    <script src="/js/learn.js?1778669822"></script>
+    <script src="/js/hugo-learn.js?1778669822"></script>
     
     
 
