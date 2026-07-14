@@ -12,22 +12,22 @@
     <title>ADoX Status and Deployment :: dnsprivacy.org</title>
 
     
-    <link href="/css/nucleus.css?1783692984" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1783692984" rel="stylesheet">
-    <link href="/css/hybrid.css?1783692984" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1783692984" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1783692984" rel="stylesheet">
-    <link href="/css/auto-complete.css?1783692984" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1783692984" rel="stylesheet">
-    <link href="/css/theme.css?1783692984" rel="stylesheet">
-    <link href="/css/tabs.css?1783692984" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1783692984" rel="stylesheet">
+    <link href="/css/nucleus.css?1784036168" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1784036168" rel="stylesheet">
+    <link href="/css/hybrid.css?1784036168" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1784036168" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1784036168" rel="stylesheet">
+    <link href="/css/auto-complete.css?1784036168" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1784036168" rel="stylesheet">
+    <link href="/css/theme.css?1784036168" rel="stylesheet">
+    <link href="/css/tabs.css?1784036168" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1784036168" rel="stylesheet">
     
-    <link href="/css/theme-blue.css?1783692984" rel="stylesheet">
+    <link href="/css/theme-blue.css?1784036168" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1783692984"></script>
+    <script src="/js/jquery-3.3.1.min.js?1784036168"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -56,14 +56,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1783692984"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1783692984"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1784036168"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1784036168"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/dnsprivacy.org\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1783692984"></script>
+<script type="text/javascript" src="/js/search.js?1784036168"></script>
 
     
   </div>
@@ -1495,7 +1495,7 @@
       <ul>
         <li><a href="#a-bit-of-history">A bit of history</a></li>
         <li><a href="#rfc-9539---unilateral-probing">RFC 9539 - Unilateral Probing</a></li>
-        <li><a href="#internet-draft-authoritative-dns-transport-signaling">Internet Draft: Authoritative DNS Transport Signaling</a></li>
+        <li><a href="#internet-draft---authoritative-dns-transport-signaling">Internet Draft - Authoritative DNS Transport Signaling</a></li>
       </ul>
     </li>
     <li><a href="#implementation-status">Implementation Status</a>
@@ -1565,7 +1565,7 @@
       <ul>
         <li><a href="#a-bit-of-history">A bit of history</a></li>
         <li><a href="#rfc-9539---unilateral-probing">RFC 9539 - Unilateral Probing</a></li>
-        <li><a href="#internet-draft-authoritative-dns-transport-signaling">Internet Draft: Authoritative DNS Transport Signaling</a></li>
+        <li><a href="#internet-draft---authoritative-dns-transport-signaling">Internet Draft - Authoritative DNS Transport Signaling</a></li>
       </ul>
     </li>
     <li><a href="#implementation-status">Implementation Status</a>
@@ -1606,7 +1606,15 @@
 </blockquote>
 <p>DoQ was also standardized for transport between recursives and authoritative servers in <a href="https://www.rfc-editor.org/rfc/rfc9250">RFC 9250</a>, so by extension ADoQ means <em>&ldquo;DNS-over-QUIC for transport between recursive resolvers and authoritative servers&rdquo;</em>.</p>
 <p>Since ADoT/Q is hard to say, we also use ADoX (&lsquo;a-docks&rsquo;) here to mean encrypted transport using either TLS or QUIC!</p>
-<p>Who is doing ADoX today? See <a href="/adox_status_and_deployment#operator-activities">Operator Activities</a> and the <a href="https://codeberg.org/saradickinson/adot_zones_monitor/src/branch/main/results.md">ADOT zone monitoring tool</a> for the most recent measurements of ADoX in the wild!</p>
+<ul>
+<li>Who is doing ADoX today? See <a href="/adox_status_and_deployment#operator-activities">Operator Activities</a> and the <a href="https://codeberg.org/saradickinson/adot_zones_monitor/src/branch/main/results.md">ADOT zone monitoring tool</a> for the most recent measurements of ADoX in the wild!</li>
+<li>What specifications are they using? Either
+<ul>
+<li><a href="https://datatracker.ietf.org/doc/rfc9539/">RFC 9539 - Unilateral Opportunistic Deployment of Encrypted Recursive-to-Authoritative DNS</a> or</li>
+<li>The experimental <a href="https://datatracker.ietf.org/doc/draft-johani-dnsop-transport-signaling/">OOTS Transport Signaling</a>. For more details on this, <a href="/adox_status_and_deployment/#internet-draft---authoritative-dns-transport-signaling">see below</a>.</li>
+</ul>
+</li>
+</ul>
 
 <div class="notices infoblock" ><p>While most activity is around DoT, as of April 2026 h-root have a experimental DoQ service available!</p>
 </div>
@@ -1645,17 +1653,13 @@ published</a> was published in February 2024.</p>
 <p>This document sets
 out steps that DNS servers (recursive resolvers and authoritative servers) can take unilaterally (without any
 coordination with other peers) to defend DNS query privacy against a passive network monitor by directly probing port 853 to see if an authoritative servers supports encrypted transports.</p>
-<h3 id="internet-draft-authoritative-dns-transport-signaling">Internet Draft: Authoritative DNS Transport Signaling</h3>
-<p>A new Internet Draft was first published in June 2025 proposing a new mechanism based on SVCB records <a href="https://datatracker.ietf.org/doc/draft-johani-dnsop-transport-signaling/">Authoritative DNS Transport Signaling</a>:</p>
+<h3 id="internet-draft---authoritative-dns-transport-signaling">Internet Draft - Authoritative DNS Transport Signaling</h3>
+<p>A new Internet Draft was first published in June 2025 proposing a new mechanism based on SVCB records <a href="https://datatracker.ietf.org/doc/draft-johani-dnsop-transport-signaling/">Authoritative DNS Transport Signaling</a>. After significant revisions a new version is a work-in-progress in GitHub <a href="https://github.com/johanix/draft-johani-dnsop-transport-signaling">Opportunistic Operator based SVCB transport signaling (OOTS)</a></p>
 <blockquote>
-<p>This document proposes a mechanism for authoritative DNS servers to
-opportunistically signal their support for alternative transport
-protocols (e.g., DNS over TLS (DoT), DNS over HTTPS (DoH) and DNS
-over QUIC (DoQ)) directly within the Additional section of
-authoritative DNS responses.  This &ldquo;hint-based&rdquo; approach aims to
-enable resolvers to discover and upgrade transport connections more
-efficiently, thereby improving privacy, security, and performance for
-subsequent interactions.</p>
+<p>This document proposes an Opportunistic Operator Transport Signaling mechanism (OOTS) based on SVCB records, to enable operators of authoritative DNS servers to signal their support for alternative transport protocols (e.g., DNS over TLS (DoT) and DNS over QUIC (DoQ)). These SVCB records can contain a new (experimental) SVCB &ldquo;oots&rdquo; key which contains fine grained information about the support for specific transports.</p>
+</blockquote>
+<blockquote>
+<p>Recursive resolvers can obtain these records either by requesting they be included in the Additional section of authoritative DNS responses (Passive mode) or by direct DNS queries (Probe mode). Resolvers can then Opportunistically upgrade connections to the authoritative to encrypted transports according to local policy, thereby improving privacy, security, and performance for subsequent interactions.</p>
 </blockquote>
 <p>The authors have an open source prototype implementation <a href="https://github.com/johanix/tdns">https://github.com/johanix/tdns</a> and would love feedback. This was discussed in the DNSOP meeting at IETF 123 and seems to be gaining support.</p>
 <h2 id="implementation-status">Implementation Status</h2>
@@ -2828,16 +2832,16 @@ basis. As of June 2026 it lists a total of around 25 nameservers and 65 zones th
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1783692984"></script>
-    <script src="/js/perfect-scrollbar.min.js?1783692984"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1783692984"></script>
-    <script src="/js/jquery.sticky.js?1783692984"></script>
-    <script src="/js/featherlight.min.js?1783692984"></script>
-    <script src="/js/highlight.pack.js?1783692984"></script>
+    <script src="/js/clipboard.min.js?1784036168"></script>
+    <script src="/js/perfect-scrollbar.min.js?1784036168"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1784036168"></script>
+    <script src="/js/jquery.sticky.js?1784036168"></script>
+    <script src="/js/featherlight.min.js?1784036168"></script>
+    <script src="/js/highlight.pack.js?1784036168"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1783692984"></script>
-    <script src="/js/learn.js?1783692984"></script>
-    <script src="/js/hugo-learn.js?1783692984"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1784036168"></script>
+    <script src="/js/learn.js?1784036168"></script>
+    <script src="/js/hugo-learn.js?1784036168"></script>
     
     
 
